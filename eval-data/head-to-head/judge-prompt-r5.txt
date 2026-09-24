@@ -1,0 +1,27 @@
+You are grading nine different responses to the same question. Nine different methods produced these responses. Your job is to assess answer quality only. Do not try to guess which method produced which response — that will bias your scoring. Ignore length: a longer answer is not a better answer.
+
+The question:
+"""
+{question}
+"""
+
+{responses}
+
+Grade in three passes.
+
+PASS 0 — Errors. For each of A–I, list the factual or logical errors you can identify on the page, one line each, or write "none found". An overstated claim counts as an error when the point made only supports a weaker one ("decisive", "always", "proves" where the honest word is "suggests"); so does advice that contradicts the facts the question states. Do not count omissions here.
+
+PASS 1 — Ranking. Rank the nine responses from best to worst on overall usefulness to the person asking, one sentence per response on why it sits where it does.
+
+PASS 2 — Absolute. Correctness must agree with PASS 0: a response with any error you listed cannot score 5 on correctness, and one with a material error — one that would change what the reader does or believes — cannot score above 3. For each of A–I, score each axis 1-5 independently, with one-line justification. Axes: Correctness (factually right, logic intact), Insight (non-obvious, generative), Practical usefulness (actionable, right scope), Risk awareness (what could go wrong, hidden assumptions), Dissent quality (are the strongest counter-arguments to its own recommendation presented, and presented fairly). Use this fenced format exactly so the orchestrator can parse:
+
+```scores
+response: A
+correctness: 1-5
+insight: 1-5
+practical: 1-5
+risk: 1-5
+dissent: 1-5
+```
+
+[Repeat for B, C, D, E, F, G, H, I.]

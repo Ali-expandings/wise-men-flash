@@ -50,3 +50,7 @@ A run cut by the usage limit is resumed from its transcript, marked interrupted,
 ## Amendment 1 (2026-09-24, before any run)
 
 A clarification, not a change of method: round 4's files are now copied byte-identical into this repository. The judge prompt is [`head-to-head/judge-prompt-5.txt`](head-to-head/judge-prompt-5.txt), the round-4 answers reused in Part A are in [`head-to-head/raw/`](head-to-head/raw/), and the normalization and bootstrap are the ones in [`head-to-head/flash4.py`](head-to-head/flash4.py), copied from the wise-men repository's `h2h.py` and `h2h4.py`.
+
+## Amendment 2 (2026-09-24, before any run)
+
+Superseded by head-to-head round 5 ([`head-to-head/PREREG-5.md`](head-to-head/PREREG-5.md), pre-registered in the wise-men repository at `6182087` and copied here byte-identical): this skill, invoked as its own skill, runs next to wise-men 3.14.0 and every rival from rounds 1–4 on eight new questions, every answer new, judged in one sitting. H1 and H2 above are tested there, as round 5's H2 and H3, on new questions instead of R401–R405. H3 above — the 0.1.0 changes against the 3.13 `--fast` profile — is not tested: it needs the old profile re-run on the same questions, and round 5 does not include it. Parts A and B of this file will not run.
