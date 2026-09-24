@@ -1,0 +1,33 @@
+# Round 5 questions, exactly as returned by the blind author (prompt: question-author-prompt-5.txt; PREREG-5.md). Not edited.
+- id: R501
+  domain: engineering
+  shape: choice
+  text: "Our app serves about 2,000 business customers from one shared Postgres database, and their data stays separate only because every query filters by customer ID, which our ORM adds automatically unless someone writes raw SQL. After an internal report nearly showed one customer another customer's invoices, I'm choosing between turning on the database's row-level security and keeping the check in our application code, enforced by a query wrapper and lint rules that reject any query without a customer filter. Row-level security feels like the sturdier fix, but I'm worried about connection pooling, harder debugging, and performance surprises on our heaviest queries. Which would you pick, and what would change your answer?"
+- id: R502
+  domain: engineering
+  shape: diagnosis
+  text: "We freeze production deploys for the last two weeks of December, and three years in a row, the first two weeks of January have been our worst stretch for outages, even though January traffic is lower than December's. Our 60 engineers keep merging code during the freeze and it all ships once the freeze lifts, but each incident review blames a different specific bug, so nobody treats it as one pattern. What is actually going wrong, and is the freeze protecting us or just moving the risk to January?"
+- id: R503
+  domain: product
+  shape: questionable-premise
+  text: "Of the last ten mid-size deals we lost, our sales team logged 'missing automation features' as the reason for seven, and our closest competitor has a polished automation builder. I'm deciding whether to spend two quarters building our own or to buy a small startup that already has one, which would use up most of our cash reserve. For a company of about 80 people, which path makes more sense?"
+- id: R504
+  domain: business
+  shape: trust-a-number
+  text: "Our head of growth presented a customer lifetime value of $15,000, calculated by dividing our $180 average monthly revenue per customer by our 1.2% monthly churn rate, and wants to raise what we're willing to spend to win a new customer to $5,000. We've only been selling for three years, so no customer has actually stayed with us longer than 36 months. How far should I trust that $15,000, and what would a more honest estimate look like?"
+- id: R505
+  domain: research
+  shape: evidence
+  text: "A study of health records from several million people found that those who took a common acid-reflux medication for more than five years were about 30% more likely to be diagnosed with dementia, and my mother has taken it daily for over a decade. How seriously should I take this kind of large records-based study, and what are the ways it usually goes wrong? I don't want to scare her into stopping a drug she may need, but I also don't want to wave away a real risk."
+- id: R506
+  domain: writing
+  shape: register
+  text: "Three months ago I wrote the analysis our executives used to justify closing our smallest regional office, and I've just found a formula error that overstated that office's losses by about 40%. The office is already closed and its staff were laid off. I can't decide whether my correction to the executive team should read as a plain technical fix or a personal apology, or whether it should say anything about how the decision might have gone with the right numbers. What tone is right for a message like this, and how do these usually go wrong?"
+- id: R507
+  domain: ethics
+  shape: obligations
+  text: "I'm the hiring manager for a team lead role, and a former colleague told me privately that our top candidate left their last job in the middle of an internal investigation into how they treated junior staff. She asked me not to repeat it, she doesn't know how the investigation ended, and the candidate's formal references are glowing. What do I owe the candidate, the people who would report to them, and my former colleague, and what can I realistically do with information I can't verify or cite?"
+- id: R508
+  domain: personal
+  shape: personal
+  text: "My boss is retiring next year and has offered to sell me the landscaping business I've worked at for eight years, which would take most of our savings plus a bank loan, and my partner is supportive but nervous. I'm leaning toward yes because I already run the crews and know most of the clients by name, but I've never handled the books, the bidding, or the cash flow, and I can't tell whether clients are loyal to the business or to him. Is my leaning reasonable, and what would make you tell me to walk away?"
