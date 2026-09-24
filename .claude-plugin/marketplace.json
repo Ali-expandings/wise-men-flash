@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wise-men-flash",
+  "description": "A three-member Claude council that answers a hard question in about eleven minutes: anchor, one domain lens, Devil's Advocate, one synthesis check, a decision memo.",
+  "owner": { "name": "Ali-expandings", "url": "https://github.com/Ali-expandings" },
+  "plugins": [
+    { "name": "wise-men-flash", "source": "./", "description": "Fast council: three independent members down different reasoning paths, one synthesis check, chairman decision memo with preserved counter-position.", "category": "productivity" }
+  ]
+}
