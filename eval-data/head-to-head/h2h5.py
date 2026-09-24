@@ -32,6 +32,9 @@ PRICE = {"haiku": (1, 5), "sonnet": (3, 15), "opus": (5, 25), "fable": (10, 50)}
 
 STOPPED = ("**Stopped early: {n} of {total} questions.** The round was pre-registered at eight questions and stopped after {n}. {todo} were never run: no answer or judgment exists "
            "for them, and nothing here says how any arm does on those questions. Every comparison below is over the questions run; intervals are 95% percentile bootstraps over them.")
+STATUS = "in progress"  # "in progress" while questions remain to run; "stopped" only if the round ends before eight
+IN_PROGRESS = ("**In progress: {n} of {total} questions judged.** The remaining questions ({todo}) run after the account's weekly usage limit resets, in the pre-registered order; "
+               "this file, the README tables and the charts are regenerated as each one is judged. Every comparison below is over the questions judged so far; intervals are 95% percentile bootstraps over them, and with this few questions they are wide.")
 DISCLOSURES = [
     "- Every answer is new: all nine arms answered every question in this round, in the same days and on the same models. No earlier answer is reused.",
     "- Rival versions: each rival skill at its latest commit on 2026-09-24. Only superpowers brainstorming had changed since the earlier rounds (2026-09-19: a shared-understanding step and path-specific approval gates). "
@@ -236,7 +239,7 @@ def report(): print("\n".join(lines("results")))
 def readme(view): print("\n".join(lines(view)))
 def results():
     R = load(); todo = [q for q in QIDS if q not in R]
-    L = ["# Head-to-head round 5 results", ""] + ([STOPPED.format(n=len(R), total=len(QIDS), todo=", ".join(todo)), ""] if todo else [])
+    L = ["# Head-to-head round 5 results", ""] + ([(IN_PROGRESS if STATUS == "in progress" else STOPPED).format(n=len(R), total=len(QIDS), todo=", ".join(q for q in RUN_ORDER if q in todo)), ""] if todo else [])
     L += ["Eight questions written for this round by an author that knew nothing about the arms ([`PREREG-5.md`](PREREG-5.md), [`questions-r5.yaml`](questions-r5.yaml)); nine arms, every answer new; three blind Opus judges per question with sealed orders ([`blinding5.yaml`](blinding5.yaml)) and round 4's error-first judge prompt for nine answers ([`judge-prompt-r5.txt`](judge-prompt-r5.txt)). "
           "Minutes are the orchestrator's first-to-last transcript timestamp; calls are its subagent spawns; USD prices every token the run used — the orchestrator's and every agent spawned under it, input, output, cache reads and cache writes — at 2026-07 list rates. No council can be faster or cheaper than the plain answer; the pre-registered time and cost comparisons are against the rival councils.", ""] + lines("results")
     L += ["", "## Per question (mean of three judges, total /25)", "", "| question | " + " | ".join(NAMES[a] for a in ARMS) + " |", "|---|" + "--:|" * len(ARMS)] + [f"| {q} ({QS[q]['domain']}, {QS[q]['shape']}) | " + " | ".join(r2(R[q][a]["composite"]) for a in ARMS) + " |" for q in QIDS if q in R]

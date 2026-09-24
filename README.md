@@ -6,7 +6,7 @@ The fast tier of the [wise-men](https://github.com/Ali-expandings/wise-men) coun
 
 <p align="center">
   <strong>Clearly ahead of every rival council on every question it was tested on — 23.3/25 against llm-council 17.9, Warp's council 17.5 and a plain answer 16.3 — and within half a point of the full wise-men council (23.8) in under a third of its time: 10.8 minutes and four subagent calls a question</strong><br>
-  <sub>Pre-registered blind head-to-head on five questions new to the project, three blind judges each, under a judge prompt that lists every error before it scores. Measured as the <code>--fast</code> arm of wise-men 3.13, the profile this skill ships; this skill's own standalone round is pre-registered and not yet run. <a href="#does-it-work">Charts, method and caveats</a>.</sub>
+  <sub>Pre-registered blind head-to-head on five questions new to the project, three blind judges each, under a judge prompt that lists every error before it scores. Measured as the <code>--fast</code> arm of wise-men 3.13, the profile this skill ships. Its own round, run as installed against every rival at its latest version, is in progress: 3 of 8 questions judged, ahead of all seven rivals on each. <a href="#does-it-work">Charts, method and caveats</a>.</sub>
 </p>
 
 ```
@@ -19,6 +19,45 @@ Then: *"flash council: should we move everyone to annual billing to cut churn?"*
 ---
 
 ## Does it work?
+
+**Round 5 — in progress, 3 of 8 questions judged** (pre-registered in [`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md) before its questions were written). This skill, run as installed, next to the full wise-men council (3.14.0) and every rival the wise-men study has tested — Warp's council, llm-council, LifeOS Council, ECC's council, superpowers brainstorming and mattpocock grilling, each at its latest version — plus a plain answer. Eight new questions from a blind author, one of each kind; every answer new; three blind Opus judges per question under the error-first judge. This is the standalone measurement the caveats below promised (it supersedes `PREREG-1`). The remaining five questions run after the account's weekly usage limit resets, and the table and charts below are regenerated as each one is judged.
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-dark.svg"><img src="assets/round5.svg" width="860" alt="Round 5, in progress, 3 of 8 questions: wise-men full council 23.7, wise-men-flash 22.9, Warp council 19.0, llm-council 17.4, LifeOS Council 17.3, plain answer 16.8, grilling 16.6, ECC council 16.6, brainstorming 15.0; flash ahead of all seven rivals with every interval above zero"></picture></p>
+
+| round 5 (3 of 8 questions) | total /25 | correct | insight | practical | risk | dissent | median minutes | median calls | median list-price USD |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| wise-men 3.14.0 | 23.7 | 3.9 | 5.0 | 4.9 | 5.0 | 4.9 | 49.1 | 16 | 15.64 |
+| **wise-men-flash 0.1.0** | 22.9 | 3.7 | 4.9 | 4.7 | 4.7 | 5.0 | 16.8 | 4 | 3.93 |
+| Warp council | 19.0 | 4.0 | 3.7 | 4.0 | 4.1 | 3.2 | 11.3 | 3 | 2.83 |
+| llm-council | 17.4 | 3.3 | 3.9 | 3.2 | 3.7 | 3.3 | 15.7 | 11 | 4.52 |
+| LifeOS Council | 17.3 | 3.0 | 3.8 | 2.9 | 3.4 | 4.2 | 8.7 | 12 | 3.90 |
+| plain answer | 16.8 | 4.2 | 3.0 | 4.0 | 3.3 | 2.2 | 1.6 | 0 | 0.26 |
+| mattpocock grilling | 16.6 | 3.8 | 3.6 | 3.8 | 3.2 | 2.2 | 4.9 | 0 | 0.59 |
+| ECC council | 16.6 | 3.4 | 3.3 | 3.3 | 3.4 | 3.0 | 5.1 | 3 | 1.49 |
+| superpowers brainstorming | 15.0 | 2.9 | 3.2 | 3.6 | 3.1 | 2.2 | 5.2 | 0 | 0.68 |
+
+- wise-men-flash 0.1.0 against wise-men 3.14.0: −0.8 [−2.7, +0.7], W–T–L 1–0–2 — behind, with an interval that includes zero.
+- wise-men-flash 0.1.0 against Warp council: +3.9 [+2.3, +5.7], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against llm-council: +5.4 [+1.0, +9.0], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against LifeOS Council: +5.6 [+3.0, +10.3], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against ECC council: +6.3 [+5.0, +7.3], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against superpowers brainstorming: +7.9 [+5.7, +11.0], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against mattpocock grilling: +6.3 [+4.3, +9.0], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against plain answer: +6.1 [+4.7, +7.7], W–T–L 3–0–0 — clearly ahead.
+- wise-men-flash 0.1.0: beats every rival — clearly ahead of all seven.
+
+- Axes, wise-men-flash 0.1.0: the highest dissent quality of the nine arms; above every rival on 4 of 5 axes.
+- Time and cost, wise-men-flash 0.1.0: median 16.8 min and $3.93 a question; faster than no rival council, cheaper than llm-council.
+
+Judge agreement: mean SD of the three judges' totals 0.71.
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-questions-dark.svg"><img src="assets/round5-questions.svg" width="860" alt="Round 5 per-question scores so far: wise-men-flash ahead of the best rival on all 3 questions judged"></picture></p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-axes-dark.svg"><img src="assets/round5-axes.svg" width="860" alt="Round 5 scoreboard so far, means over 3 questions, total and each rubric axis for all nine arms"></picture></p>
+
+So far flash is ahead of all seven rivals on every question judged, and 0.8 behind the full wise-men council overall, with an interval that includes zero. Correctness is its weakest axis (3.7), below the plain answer, Warp's council and grilling. Three questions are too few to rest a claim on; the pre-registered claims apply to the finished round. Per-question scores, run times, costs and disclosures so far: [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md).
+
+**Round 4** — the round that first measured this profile, as an arm inside wise-men.
 
 Round 4 of the wise-men head-to-head ([pre-registered](eval-data/head-to-head/PREREG-4.md) before any run) put five ways of answering against eight questions written for the round by an author that knew nothing about the skills being tested: the full wise-men council; its three-member `--fast` profile, which is the profile this skill ships; Warp's council, the most-installed general-purpose council skill, and llm-council; and a plain answer with no skill. For every question, three fresh Opus judges read the five answers under letters, each in its own sealed order, listed every error they could find, then scored five axes. The round was stopped at five of its eight questions to conserve usage.
 
@@ -54,16 +93,16 @@ Ahead by = mean per-question gap in total score, with a 95% bootstrap interval o
 
 **The caveats, plainly.**
 
-- **Inherited, not re-measured.** These numbers are the `--fast` arm of wise-men 3.13.0, run inside wise-men before this repository existed. Flash 0.1.0 packages that profile with the rule wise-men added right after the round — nothing about how an answer was produced appears in it — and small changes to its domain seat and Devil's Advocate prompts ([CHANGELOG](CHANGELOG.md)). Those changes are unmeasured; this skill's own round is [pre-registered](eval-data/PREREG-1.md) and waiting to run.
+- **Inherited, not re-measured.** These numbers are the `--fast` arm of wise-men 3.13.0, run inside wise-men before this repository existed. Flash 0.1.0 packages that profile with the rule wise-men added right after the round — nothing about how an answer was produced appears in it — and small changes to its domain seat and Devil's Advocate prompts ([CHANGELOG](CHANGELOG.md)). Those changes are measured by round 5, which is in progress (above).
 - **Five questions, three kinds missing.** Pre-registered at eight and stopped at five at the owner's request, after three questions' scores were known — not a blind stop. The writing, ethics and personal-decision questions were never run.
 - **The scores carry a penalty this skill now prevents.** Three of the five measured answers closed with a note about how they were produced, and the judges docked it as process residue.
 - **One model family.** Every judge and every arm is a Claude model; there are no human grades. Warp's council ran on Claude models only, though its skill asks for a model-diverse council.
 
 Per-question scores, run times, costs and every deviation: [`RESULTS.md`](eval-data/head-to-head/RESULTS.md). Raw answers, blinded packets, judgments and parsed scores: [`eval-data/`](eval-data/). Reproduce with `python3 eval-data/head-to-head/flash4.py report`; `verify` rebuilds every packet the judges read from the raw answers, byte for byte, and re-parses every judgment.
 
-### Next: its own round
+### Its own round
 
-[`PREREG-1.md`](eval-data/PREREG-1.md), committed before any run, measures this skill as installed — a fresh session per question, `/wise-men-flash`, the same five questions — judged in one sitting next to round 4's answers with the same judge prompt, three judges and bootstrap. It fixes in advance what counts: clearly ahead of every rival, not clearly behind the full council, and no axis below the measured profile's. If the 0.1.0 changes lose ground, they revert; they are not re-tuned on the judgments.
+Round 5 ([`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md)) is this skill's own measurement, run as installed, and it supersedes the smaller round first planned in [`PREREG-1.md`](eval-data/PREREG-1.md) (Amendment 2). It fixed in advance what counts: clearly ahead of every rival, and not clearly behind the full council. PREREG-1's third test — the 0.1.0 changes against the 3.13 `--fast` profile — needs the old profile re-run and is not part of round 5.
 
 ## What you get
 
@@ -204,8 +243,8 @@ What they have that this doesn't: Warp's council is built for a model-diverse pa
 SKILL.md               the whole protocol, self-contained (the only file Claude Code loads)
 agents/wise-member.md  tool-restricted member agent — registered by the plugin install
 examples/              two real round-4 answers, verbatim, with the judges' scores
-eval-data/             PREREG-1 (this skill's own round) and round 4: raw answers, blinded packets,
-                       judgments, parsed scores, flash4.py, RESULTS.md
+eval-data/             rounds 4 and 5: raw answers, blinded packets, judgments, parsed scores,
+                       flash4.py, h2h5.py, RESULTS.md, RESULTS-V5.md; PREREG-1 (superseded)
 scripts/check.sh       consistency and reproduction checks — run before every commit
 scripts/make_charts.py regenerates assets/*.svg (light + dark) from the data
 assets/                banner + charts (hand-authored SVG)

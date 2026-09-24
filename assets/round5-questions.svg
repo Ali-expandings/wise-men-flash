@@ -1,0 +1,66 @@
+<svg viewBox="0 0 860 290" width="860" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Round 5 (in progress) per-question scores over 3 questions: wise-men-flash versus the best rival ahead 3, tied 0, behind 0</title>
+<text x="40" y="32" font-size="16" font-weight="600" fill="#1f2328" text-anchor="start" >Round 5, in progress, question by question</text>
+<text x="40" y="52" font-size="12" font-weight="400" fill="#59636e" text-anchor="start" >Mean of three blind judges' totals (max 25): flash, the full wise-men council, six rival skills and a plain answer</text>
+<text x="660" y="90" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >flash vs the best rival</text>
+<line x1="300" y1="96" x2="300" y2="192" stroke="#d8dee4" stroke-width="1" />
+<text x="300" y="208" font-size="11" font-weight="400" fill="#818b98" text-anchor="middle" >10</text>
+<line x1="413.3" y1="96" x2="413.3" y2="192" stroke="#d8dee4" stroke-width="1" />
+<text x="413.3" y="208" font-size="11" font-weight="400" fill="#818b98" text-anchor="middle" >15</text>
+<line x1="526.7" y1="96" x2="526.7" y2="192" stroke="#d8dee4" stroke-width="1" />
+<text x="526.7" y="208" font-size="11" font-weight="400" fill="#818b98" text-anchor="middle" >20</text>
+<line x1="640" y1="96" x2="640" y2="192" stroke="#d8dee4" stroke-width="1" />
+<text x="640" y="208" font-size="11" font-weight="400" fill="#818b98" text-anchor="middle" >25</text>
+<text x="40" y="116" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >R506</text>
+<text x="84" y="116" font-size="12" font-weight="400" fill="#1f2328" text-anchor="start" >Correcting the error behind a closure</text>
+<line x1="398.2" y1="112" x2="609.8" y2="112" stroke="#d8dee4" stroke-width="2" />
+<circle cx="466.2" cy="112" r="7" fill="none" stroke="#59636e" stroke-width="1.6"/>
+<circle cx="473.8" cy="112" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="398.2" cy="112" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="526.7" cy="112" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="436" cy="112" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="473.8" cy="112" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="398.2" cy="112" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="609.8" cy="112" r="6" fill="none" stroke="#9e1b24" stroke-width="2"/>
+<circle cx="602.2" cy="112" r="6.5" fill="#b8740c" stroke="#ffffff" stroke-width="2"/>
+<text x="660" y="116" font-size="12" font-weight="400" fill="#1f2328" text-anchor="start" >ahead</text>
+<text x="712" y="116" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >LifeOS 20.0</text>
+<text x="40" y="148" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >R501</text>
+<text x="84" y="148" font-size="12" font-weight="400" fill="#1f2328" text-anchor="start" >Row-level security or app-layer checks?</text>
+<line x1="368" y1="144" x2="617.3" y2="144" stroke="#d8dee4" stroke-width="2" />
+<circle cx="443.6" cy="144" r="7" fill="none" stroke="#59636e" stroke-width="1.6"/>
+<circle cx="534.2" cy="144" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="473.8" cy="144" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="383.1" cy="144" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="466.2" cy="144" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="368" cy="144" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="488.9" cy="144" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="602.2" cy="144" r="6" fill="none" stroke="#9e1b24" stroke-width="2"/>
+<circle cx="617.3" cy="144" r="6.5" fill="#b8740c" stroke="#ffffff" stroke-width="2"/>
+<text x="660" y="148" font-size="12" font-weight="400" fill="#1f2328" text-anchor="start" >ahead</text>
+<text x="712" y="148" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >Warp 20.3</text>
+<text x="40" y="180" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >R507</text>
+<text x="84" y="180" font-size="12" font-weight="400" fill="#1f2328" text-anchor="start" >An unverifiable tip about a candidate</text>
+<line x1="398.2" y1="176" x2="617.3" y2="176" stroke="#d8dee4" stroke-width="2" />
+<circle cx="451.1" cy="176" r="7" fill="none" stroke="#59636e" stroke-width="1.6"/>
+<circle cx="504" cy="176" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="534.2" cy="176" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="488.9" cy="176" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="443.6" cy="176" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="398.2" cy="176" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="458.7" cy="176" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<circle cx="617.3" cy="176" r="6" fill="none" stroke="#9e1b24" stroke-width="2"/>
+<circle cx="556.9" cy="176" r="6.5" fill="#b8740c" stroke="#ffffff" stroke-width="2"/>
+<text x="660" y="180" font-size="12" font-weight="400" fill="#1f2328" text-anchor="start" >ahead</text>
+<text x="712" y="180" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >llm-council 20.3</text>
+<circle cx="46" cy="232" r="6.5" fill="#b8740c" stroke="#ffffff" stroke-width="2"/>
+<text x="58" y="236" font-size="11" font-weight="400" fill="#59636e" text-anchor="start" >wise-men-flash</text>
+<circle cx="170" cy="232" r="6" fill="none" stroke="#9e1b24" stroke-width="2"/>
+<text x="182" y="236" font-size="11" font-weight="400" fill="#59636e" text-anchor="start" >full wise-men council</text>
+<circle cx="318" cy="232" r="4.5" fill="#8c959f" stroke="#ffffff" stroke-width="2"/>
+<text x="328" y="236" font-size="11" font-weight="400" fill="#59636e" text-anchor="start" >the six rival skills</text>
+<circle cx="456" cy="232" r="7" fill="none" stroke="#59636e" stroke-width="1.6"/>
+<text x="468" y="236" font-size="11" font-weight="400" fill="#59636e" text-anchor="start" >plain answer</text>
+<text x="40" y="258" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >Against the best rival on each question: ahead 3, tied 0, behind 0. Questions in the pre-registered run order.</text>
+<text x="40" y="274" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >In progress: 3 of 8 pre-registered questions judged; the rest run after the account's weekly usage limit resets, and these charts are regenerated then.</text>
+</svg>
