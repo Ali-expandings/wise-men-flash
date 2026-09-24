@@ -1,0 +1,155 @@
+seed: 20260919
+note: sealed answer order per question and judge, generated before any round-4 run
+map:
+  R401:
+    j1:
+      A: llm-council
+      B: wise-men-3.13-fast
+      C: direct
+      D: warp-council
+      E: wise-men-3.13
+    j2:
+      A: wise-men-3.13-fast
+      B: direct
+      C: wise-men-3.13
+      D: warp-council
+      E: llm-council
+    j3:
+      A: wise-men-3.13-fast
+      B: direct
+      C: warp-council
+      D: wise-men-3.13
+      E: llm-council
+  R402:
+    j1:
+      A: direct
+      B: llm-council
+      C: wise-men-3.13-fast
+      D: wise-men-3.13
+      E: warp-council
+    j2:
+      A: wise-men-3.13-fast
+      B: direct
+      C: warp-council
+      D: llm-council
+      E: wise-men-3.13
+    j3:
+      A: warp-council
+      B: llm-council
+      C: wise-men-3.13-fast
+      D: wise-men-3.13
+      E: direct
+  R403:
+    j1:
+      A: llm-council
+      B: wise-men-3.13
+      C: direct
+      D: warp-council
+      E: wise-men-3.13-fast
+    j2:
+      A: wise-men-3.13-fast
+      B: warp-council
+      C: llm-council
+      D: direct
+      E: wise-men-3.13
+    j3:
+      A: direct
+      B: llm-council
+      C: wise-men-3.13
+      D: warp-council
+      E: wise-men-3.13-fast
+  R404:
+    j1:
+      A: direct
+      B: wise-men-3.13
+      C: wise-men-3.13-fast
+      D: warp-council
+      E: llm-council
+    j2:
+      A: wise-men-3.13-fast
+      B: wise-men-3.13
+      C: warp-council
+      D: direct
+      E: llm-council
+    j3:
+      A: wise-men-3.13-fast
+      B: llm-council
+      C: warp-council
+      D: direct
+      E: wise-men-3.13
+  R405:
+    j1:
+      A: warp-council
+      B: llm-council
+      C: wise-men-3.13
+      D: direct
+      E: wise-men-3.13-fast
+    j2:
+      A: wise-men-3.13
+      B: llm-council
+      C: warp-council
+      D: direct
+      E: wise-men-3.13-fast
+    j3:
+      A: direct
+      B: wise-men-3.13
+      C: warp-council
+      D: wise-men-3.13-fast
+      E: llm-council
+  R406:
+    j1:
+      A: wise-men-3.13-fast
+      B: llm-council
+      C: wise-men-3.13
+      D: warp-council
+      E: direct
+    j2:
+      A: wise-men-3.13-fast
+      B: direct
+      C: warp-council
+      D: wise-men-3.13
+      E: llm-council
+    j3:
+      A: llm-council
+      B: wise-men-3.13-fast
+      C: warp-council
+      D: direct
+      E: wise-men-3.13
+  R407:
+    j1:
+      A: warp-council
+      B: llm-council
+      C: wise-men-3.13-fast
+      D: wise-men-3.13
+      E: direct
+    j2:
+      A: warp-council
+      B: direct
+      C: wise-men-3.13
+      D: llm-council
+      E: wise-men-3.13-fast
+    j3:
+      A: warp-council
+      B: wise-men-3.13
+      C: wise-men-3.13-fast
+      D: llm-council
+      E: direct
+  R408:
+    j1:
+      A: llm-council
+      B: direct
+      C: warp-council
+      D: wise-men-3.13
+      E: wise-men-3.13-fast
+    j2:
+      A: direct
+      B: warp-council
+      C: llm-council
+      D: wise-men-3.13-fast
+      E: wise-men-3.13
+    j3:
+      A: wise-men-3.13
+      B: warp-council
+      C: llm-council
+      D: direct
+      E: wise-men-3.13-fast

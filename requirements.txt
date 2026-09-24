@@ -1,0 +1,3 @@
+# Only needed to re-run the eval analysis and the charts (eval-data/head-to-head/flash4.py, scripts/make_charts.py).
+# The skill itself requires nothing — it is markdown that Claude Code reads.
+PyYAML>=6.0

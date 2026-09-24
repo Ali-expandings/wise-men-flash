@@ -1,0 +1,32 @@
+Writing task. Do not use any tools, do not read any files, do not invoke skills. Write eight new questions of the kind a thoughtful person brings to a trusted expert advisor when the answer is genuinely hard: several defensible answers, real stakes, and enough context in the question itself to answer it without asking anything back.
+
+Requirements for every question:
+- First person, plain language, 2–4 sentences, self-contained (no company names, no real people, no links, nothing that needs looking up to understand the question).
+- Hard because of trade-offs or hidden assumptions, not because of obscure trivia.
+- New: do not reuse the situations in the three style examples below, and avoid these already-used topics: monolith vs microservices, event sourcing, entering a market with one dominant player, per-seat vs usage pricing, the replication crisis, blameless postmortems, discovering a gender pay gap, doing a PhD at 35, meta-analyses with gray literature, cold emails to a VP, a report who is job hunting, senior IC vs manager track, and A/B tests stopped early.
+
+Write exactly one question for each slot, in this order:
+1. engineering — a choice between two concrete technical options
+2. engineering — a diagnosis question ("why does this keep happening / what is actually going wrong")
+3. product or strategy — a decision whose framing quietly contains a questionable premise
+4. business or pricing — how far to trust a specific number or claim someone has presented
+5. research or evidence — how seriously to take a particular kind of study or finding, and what the real failure modes are
+6. writing or communication — a question about the right tone or register for a specific hard message, and what usually goes wrong
+7. ethics — what the asker's obligations are and what they can actually do, in a situation with no clean answer
+8. personal decision — a life or career choice where the asker states a leaning and a doubt
+
+Style examples (for tone and length only):
+- "Why do event-sourced systems get so messy in practice? I understand the theory and the tutorials make it look clean, but I've seen two companies abandon it mid-implementation."
+- "How seriously should I take a meta-analysis that finds a significant effect when half the underlying studies are unpublished and were located via a "gray literature search"? What are the actual failure modes here?"
+- "Should I take the senior IC offer at a slightly smaller company or the manager track at my current one? I'm 32, I like coding more than meetings, but I feel like I should be more strategic about career at this point."
+
+Reply with ONLY a YAML list, no commentary, in exactly this form:
+
+- id: R401
+  domain: engineering
+  shape: choice
+  text: "…"
+- id: R402
+  …
+
+Use ids R401–R408 in slot order, domains exactly: engineering, engineering, product, business, research, writing, ethics, personal; shapes exactly: choice, diagnosis, questionable-premise, trust-a-number, evidence, register, obligations, personal.

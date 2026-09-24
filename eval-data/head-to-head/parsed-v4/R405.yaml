@@ -1,0 +1,110 @@
+question_id: R405
+judges:
+  j1:
+    warp-council:
+      correctness: 3
+      insight: 3
+      practical: 4
+      risk: 4
+      dissent: 3
+      composite: 17
+    llm-council:
+      correctness: 4
+      insight: 4
+      practical: 4
+      risk: 4
+      dissent: 4
+      composite: 20
+    wise-men-3.13:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 5
+      composite: 24
+    direct:
+      correctness: 4
+      insight: 4
+      practical: 5
+      risk: 3
+      dissent: 1
+      composite: 17
+    wise-men-3.13-fast:
+      correctness: 5
+      insight: 5
+      practical: 4
+      risk: 5
+      dissent: 4
+      composite: 23
+  j2:
+    wise-men-3.13:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 5
+      composite: 24
+    llm-council:
+      correctness: 3
+      insight: 4
+      practical: 4
+      risk: 4
+      dissent: 4
+      composite: 19
+    warp-council:
+      correctness: 3
+      insight: 3
+      practical: 4
+      risk: 3
+      dissent: 3
+      composite: 16
+    direct:
+      correctness: 4
+      insight: 3
+      practical: 5
+      risk: 3
+      dissent: 2
+      composite: 17
+    wise-men-3.13-fast:
+      correctness: 4
+      insight: 4
+      practical: 4
+      risk: 5
+      dissent: 4
+      composite: 21
+  j3:
+    direct:
+      correctness: 4
+      insight: 4
+      practical: 4
+      risk: 3
+      dissent: 2
+      composite: 17
+    wise-men-3.13:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 5
+      composite: 24
+    warp-council:
+      correctness: 3
+      insight: 3
+      practical: 4
+      risk: 3
+      dissent: 3
+      composite: 16
+    wise-men-3.13-fast:
+      correctness: 4
+      insight: 5
+      practical: 4
+      risk: 5
+      dissent: 5
+      composite: 23
+    llm-council:
+      correctness: 3
+      insight: 4
+      practical: 3
+      risk: 4
+      dissent: 4
+      composite: 18

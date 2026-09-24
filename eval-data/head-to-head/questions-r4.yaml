@@ -1,0 +1,40 @@
+# Round 4 questions, exactly as returned by the blind author (prompt in PREREG-4.md). Not edited.
+- id: R401
+  domain: engineering
+  shape: choice
+  text: "We need full-text search over about four million documents and I can either add a search extension to the Postgres database we already run, or stand up a dedicated search cluster. Postgres means one less system to operate but I'm told relevance ranking gets bad past a certain size, and the dedicated cluster means a second copy of the data that can drift. We're a team of five with no one who has run a search cluster before."
+
+- id: R402
+  domain: engineering
+  shape: diagnosis
+  text: "Every few weeks our nightly data pipeline fails with a different error, someone reruns it, and it passes. We've added retries, alerting, and more logging over two years and the failure rate hasn't really changed — just the error messages. What is actually going wrong here, and why do these incidents keep looking like unrelated one-offs?"
+
+- id: R403
+  domain: product
+  shape: questionable-premise
+  text: "Our onboarding has a 40% drop-off at step three, so we're planning a quarter of work to redesign that step and cut the drop-off in half. Leadership wants a target number before we start. How should I think about setting that target, and is there anything about how we've framed this project that I should push back on first?"
+
+- id: R404
+  domain: business
+  shape: trust-a-number
+  text: "A vendor says their tool will cut our support ticket volume by 30%, and they've shown me a case study from a customer who says they saw exactly that. The contract is a meaningful chunk of my annual budget. How much weight should I put on that number, and what would I need to see to believe it applies to us?"
+
+- id: R405
+  domain: research
+  shape: evidence
+  text: "A team is arguing for a policy change based on a natural experiment — a rule changed in one region and not another, and outcomes diverged afterward. It's not a randomized trial but everyone says it's the next best thing. How seriously should I take this kind of evidence, and where do these designs usually go wrong?"
+
+- id: R406
+  domain: writing
+  shape: register
+  text: "I have to tell a long-time customer that we're discontinuing the product they built their workflow on, with twelve months' notice. I've written three drafts and they all sound either corporate and cold or apologetic to the point of sounding unsure. What's the right register here, and what do people usually get wrong in messages like this?"
+
+- id: R407
+  domain: ethics
+  shape: obligations
+  text: "I'm a contractor and I've found that the system I'm building collects far more personal data than the client's own privacy policy describes. It's probably sloppiness rather than intent, and the person who'd have to fix it is the one who built it and is under pressure to ship. My contract ends in six weeks. What do I actually owe here, and what are my real options?"
+
+- id: R408
+  domain: personal
+  shape: personal
+  text: "I've been offered a role in another country that pays well and is a clear step up, but my parents are in their seventies and healthy for now. I'm leaning toward taking it and telling myself I can fly back often, but I suspect I'm discounting how fast that situation can change. Am I talking myself into this?"

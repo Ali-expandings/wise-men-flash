@@ -46,3 +46,7 @@ Minutes = first-to-last transcript timestamp; calls = spawned agents; USD at lis
 ## Stop rules and disclosures
 
 A run cut by the usage limit is resumed from its transcript, marked interrupted, and excluded from time medians only. Part B skipped for usage is disclosed, not silently dropped. No re-judging after seeing scores; no question dropped after seeing scores. Every deviation from this file is listed in `RESULTS-1.md`.
+
+## Amendment 1 (2026-09-24, before any run)
+
+A clarification, not a change of method: round 4's files are now copied byte-identical into this repository. The judge prompt is [`head-to-head/judge-prompt-5.txt`](head-to-head/judge-prompt-5.txt), the round-4 answers reused in Part A are in [`head-to-head/raw/`](head-to-head/raw/), and the normalization and bootstrap are the ones in [`head-to-head/flash4.py`](head-to-head/flash4.py), copied from the wise-men repository's `h2h.py` and `h2h4.py`.

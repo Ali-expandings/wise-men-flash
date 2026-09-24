@@ -1,0 +1,50 @@
+<svg viewBox="0 0 860 456" width="860" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Round 4 mean total score out of 25 on 5 new questions, three blind judges each: wise-men full council 23.8, wise-men-flash 23.3, llm-council 17.9, Warp council 17.5, plain answer 16.3</title>
+<text x="40" y="32" font-size="16" font-weight="600" fill="#e6edf3" text-anchor="start" >Round 4: total score on new questions — 5 of 8 questions run, three blind judges each</text>
+<text x="40" y="52" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >Sum of 5 rubric axes (1–5 each, max 25), mean of 3 judges, averaged over the questions. Right: flash's lead, 95% bootstrap interval.</text>
+<text x="40" y="68" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >Questions written by an author that knew nothing about the arms; a stricter judge that lists every error before it scores.</text>
+<text x="840" y="100" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >flash ahead by [95%]</text>
+<line x1="250" y1="108" x2="250" y2="336" stroke="#262c36" stroke-width="1" />
+<text x="250" y="352" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >0</text>
+<line x1="328" y1="108" x2="328" y2="336" stroke="#262c36" stroke-width="1" />
+<text x="328" y="352" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >5</text>
+<line x1="406" y1="108" x2="406" y2="336" stroke="#262c36" stroke-width="1" />
+<text x="406" y="352" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >10</text>
+<line x1="484" y1="108" x2="484" y2="336" stroke="#262c36" stroke-width="1" />
+<text x="484" y="352" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >15</text>
+<line x1="562" y1="108" x2="562" y2="336" stroke="#262c36" stroke-width="1" />
+<text x="562" y="352" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >20</text>
+<line x1="640" y1="108" x2="640" y2="336" stroke="#262c36" stroke-width="1" />
+<text x="640" y="352" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >25</text>
+<text x="236" y="127" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >wise-men full council</text>
+<text x="236" y="142" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >wise-men 3.13 · members, review, debate</text>
+<path d="M250,118h367.3a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-367.3z" fill="#b8323a"/>
+<text x="629.3" y="134" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="start" >23.8</text>
+<text x="840" y="134" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >−0.5  [−1.2, +0.1]</text>
+<rect x="32" y="155" width="816" height="44" rx="6" fill="#e2a336" fill-opacity="0.10"/>
+<text x="236" y="173" font-size="13" font-weight="700" fill="#e6edf3" text-anchor="end" >wise-men-flash</text>
+<text x="236" y="188" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >measured as wise-men 3.13 --fast</text>
+<path d="M250,164h359a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-359z" fill="#e2a336"/>
+<text x="621" y="180" font-size="13" font-weight="700" fill="#e6edf3" text-anchor="start" >23.3</text>
+<text x="840" y="180" font-size="12" font-weight="400" fill="#6e7681" text-anchor="end" >—</text>
+<text x="236" y="219" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >llm-council</text>
+<text x="236" y="234" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >aiwithremy · 1.0k installs</text>
+<path d="M250,210h274.7a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-274.7z" fill="#7d8590"/>
+<text x="536.7" y="226" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="start" >17.9</text>
+<text x="840" y="226" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="end" >+5.4  [+3.4, +7.9]</text>
+<text x="236" y="265" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >Warp council</text>
+<text x="236" y="280" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >warpdotdev · 24.5k installs</text>
+<path d="M250,256h269.5a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-269.5z" fill="#7d8590"/>
+<text x="531.5" y="272" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="start" >17.5</text>
+<text x="840" y="272" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="end" >+5.7  [+4.8, +6.7]</text>
+<text x="236" y="311" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >plain answer</text>
+<text x="236" y="326" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >no skill</text>
+<path d="M250.8,302.8h249.3a4,4 0 0 1 4,4v12.5a4,4 0 0 1 -4,4h-249.3z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="512.8" y="318" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="start" >16.3</text>
+<text x="840" y="318" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="end" >+6.9  [+5.5, +8.3]</text>
+<text x="40" y="378" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >An interval above zero is the pre-registered bar for "clearly ahead": met against 3 of 3 rivals. Against the full wise-men council,</text>
+<text x="40" y="394" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >flash is 0.5 behind with an interval that includes zero. Flash was measured as the --fast arm of wise-men 3.13, the profile this skill ships.</text>
+<text x="40" y="410" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >Pre-registered at eight questions and stopped at five at the owner's request, after three questions' scores were known; the writing,</text>
+<text x="40" y="426" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >ethics and personal-decision questions were not run. Intervals resample the five questions (10,000 draws), not judges.</text>
+<text x="40" y="442" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >N = 5 · one top-level model ran every arm · Warp's council on Claude models only · three fresh Opus judges per question · PREREG-4.md</text>
+</svg>

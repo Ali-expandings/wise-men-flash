@@ -1,0 +1,110 @@
+<svg viewBox="0 0 860 362" width="860" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Round 4 scoreboard, means over 5 questions: wise-men full council: total 23.8, correctness 4.0, insight 5.0, practical use 4.9, risk awareness 4.9, dissent quality 5.0; wise-men-flash: total 23.3, correctness 4.3, insight 4.7, practical use 4.7, risk awareness 4.9, dissent quality 4.7; llm-council: total 17.9, correctness 3.1, insight 3.9, practical use 3.3, risk awareness 3.8, dissent quality 3.7; Warp council: total 17.5, correctness 3.4, insight 3.5, practical use 4.0, risk awareness 3.7, dissent quality 3.0; plain answer: total 16.3, correctness 3.9, insight 3.5, practical use 4.2, risk awareness 2.9, dissent quality 1.8</title>
+<text x="40" y="32" font-size="16" font-weight="600" fill="#e6edf3" text-anchor="start" >Round 4 scoreboard — the total and each rubric axis</text>
+<text x="40" y="52" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >Mean of three judges over the 5 questions run · total out of 25, each axis 1–5 · sorted by total · the plain answer is the outlined bar</text>
+<text x="222" y="104" font-size="11" font-weight="600" fill="#e6edf3" text-anchor="start" >Total /25</text>
+<text x="364" y="104" font-size="11" font-weight="600" fill="#e6edf3" text-anchor="start" >Correctness</text>
+<text x="458" y="104" font-size="11" font-weight="600" fill="#e6edf3" text-anchor="start" >Insight</text>
+<text x="552" y="104" font-size="11" font-weight="600" fill="#e6edf3" text-anchor="start" >Practical use</text>
+<text x="646" y="104" font-size="11" font-weight="600" fill="#e6edf3" text-anchor="start" >Risk awareness</text>
+<text x="740" y="104" font-size="11" font-weight="600" fill="#e6edf3" text-anchor="start" >Dissent quality</text>
+<text x="206" y="139" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >wise-men full council</text>
+<rect x="222" y="130" width="80" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M222,130h73.2a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-73.2z" fill="#b8323a"/>
+<text x="310" y="139" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >23.8</text>
+<rect x="364" y="130" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M364,130h33.8a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-33.8z" fill="#b8323a"/>
+<text x="418" y="139" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >4.0</text>
+<rect x="458" y="130" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M458,130h43a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-43z" fill="#b8323a"/>
+<text x="512" y="139" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >5.0</text>
+<rect x="552" y="130" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M552,130h41.8a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-41.8z" fill="#b8323a"/>
+<text x="606" y="139" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >4.9</text>
+<rect x="646" y="130" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M646,130h42.4a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-42.4z" fill="#b8323a"/>
+<text x="700" y="139" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >4.9</text>
+<rect x="740" y="130" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M740,130h43a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-43z" fill="#b8323a"/>
+<text x="794" y="139" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >5.0</text>
+<rect x="32" y="154" width="816" height="30" rx="6" fill="#e2a336" fill-opacity="0.10"/>
+<text x="206" y="173" font-size="13" font-weight="700" fill="#e6edf3" text-anchor="end" >wise-men-flash</text>
+<rect x="222" y="164" width="80" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M222,164h71.5a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-71.5z" fill="#e2a336"/>
+<text x="310" y="173" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >23.3</text>
+<rect x="364" y="164" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M364,164h36.3a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-36.3z" fill="#e2a336"/>
+<text x="418" y="173" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >4.3</text>
+<rect x="458" y="164" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M458,164h39.9a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-39.9z" fill="#e2a336"/>
+<text x="512" y="173" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >4.7</text>
+<rect x="552" y="164" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M552,164h40.5a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-40.5z" fill="#e2a336"/>
+<text x="606" y="173" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >4.7</text>
+<rect x="646" y="164" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M646,164h42.4a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-42.4z" fill="#e2a336"/>
+<text x="700" y="173" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >4.9</text>
+<rect x="740" y="164" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M740,164h39.9a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-39.9z" fill="#e2a336"/>
+<text x="794" y="173" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >4.7</text>
+<text x="206" y="207" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >llm-council</text>
+<rect x="222" y="198" width="80" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M222,198h54.2a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-54.2z" fill="#7d8590"/>
+<text x="310" y="207" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >17.9</text>
+<rect x="364" y="198" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M364,198h25.8a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-25.8z" fill="#7d8590"/>
+<text x="418" y="207" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.1</text>
+<rect x="458" y="198" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M458,198h33.2a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-33.2z" fill="#7d8590"/>
+<text x="512" y="207" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.9</text>
+<rect x="552" y="198" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M552,198h27.7a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-27.7z" fill="#7d8590"/>
+<text x="606" y="207" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.3</text>
+<rect x="646" y="198" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M646,198h32a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-32z" fill="#7d8590"/>
+<text x="700" y="207" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.8</text>
+<rect x="740" y="198" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M740,198h30.7a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-30.7z" fill="#7d8590"/>
+<text x="794" y="207" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.7</text>
+<text x="206" y="241" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >Warp council</text>
+<rect x="222" y="232" width="80" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M222,232h53.1a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-53.1z" fill="#7d8590"/>
+<text x="310" y="241" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >17.5</text>
+<rect x="364" y="232" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M364,232h28.3a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-28.3z" fill="#7d8590"/>
+<text x="418" y="241" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.4</text>
+<rect x="458" y="232" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M458,232h28.9a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-28.9z" fill="#7d8590"/>
+<text x="512" y="241" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.5</text>
+<rect x="552" y="232" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M552,232h33.8a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-33.8z" fill="#7d8590"/>
+<text x="606" y="241" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >4.0</text>
+<rect x="646" y="232" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M646,232h30.7a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-30.7z" fill="#7d8590"/>
+<text x="700" y="241" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.7</text>
+<rect x="740" y="232" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M740,232h24.6a3,3 0 0 1 3,3v4a3,3 0 0 1 -3,3h-24.6z" fill="#7d8590"/>
+<text x="794" y="241" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.0</text>
+<text x="206" y="275" font-size="13" font-weight="500" fill="#e6edf3" text-anchor="end" >plain answer</text>
+<rect x="222" y="266" width="80" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M222.8,266.8h47.8a3,3 0 0 1 3,3v2.5a3,3 0 0 1 -3,3h-47.8z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="310" y="275" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >16.3</text>
+<rect x="364" y="266" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M364.8,266.8h31.1a3,3 0 0 1 3,3v2.5a3,3 0 0 1 -3,3h-31.1z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="418" y="275" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.9</text>
+<rect x="458" y="266" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M458.8,266.8h28a3,3 0 0 1 3,3v2.5a3,3 0 0 1 -3,3h-28z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="512" y="275" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >3.5</text>
+<rect x="552" y="266" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M552.8,266.8h34.1a3,3 0 0 1 3,3v2.5a3,3 0 0 1 -3,3h-34.1z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="606" y="275" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >4.2</text>
+<rect x="646" y="266" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M646.8,266.8h22.5a3,3 0 0 1 3,3v2.5a3,3 0 0 1 -3,3h-22.5z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="700" y="275" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >2.9</text>
+<rect x="740" y="266" width="46" height="10" rx="3" fill="#262c36" fill-opacity="0.6"/>
+<path d="M740.8,266.8h12.1a3,3 0 0 1 3,3v2.5a3,3 0 0 1 -3,3h-12.1z" fill="none" stroke="#9198a1" stroke-width="1.5"/>
+<text x="794" y="275" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >1.8</text>
+<text x="40" y="316" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >Bold = highest in the column (ties bolded together). wise-men-flash had the top correctness and shared the top risk awareness;</text>
+<text x="40" y="332" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >it scored above every rival on 5 of 5 axes, and the full wise-men council led the rest. Warp's council ran on Claude models only.</text>
+<text x="40" y="348" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >N = 5 of 8 pre-registered questions, three blind judges each, means shown.</text>
+</svg>

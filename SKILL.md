@@ -165,17 +165,17 @@ Any FAIL is blocking. Fix, or ship with the objection quoted. (GROUNDING and CON
 
 ## Model routing
 
-Confirm each id against your own `/model` list before trusting it — names move, the protocol never hard-codes one.
+Set `model` on each Agent call by tier alias — the aliases follow the current models, so the protocol never hard-codes an id. If a tier looks wrong, check your own `/model` list.
 
-| Seat | Model (2026-07) | Why |
-|---|---|---|
-| Practitioner anchor | Opus 5 — `claude-opus-5` | owns correctness; the strongest seat |
-| Domain member | Sonnet 5 — `claude-sonnet-5` | the workhorse lens |
-| Devil's Advocate | Opus 5 — `claude-opus-5` | a weak DA is council theatre; always the strong tier |
-| Stage 4.5 checker | Haiku 4.5 — `claude-haiku-4-5` | it checks the draft against the question — four yes/no checks, no answers to cross-reference; keeping it cheap keeps the incentive to actually run it |
-| Chairman | main thread | the strongest model you have; never delegated |
+| Seat | Agent `model` | Current model in the tier (2026-09-24) | Why |
+|---|---|---|---|
+| Practitioner anchor | `opus` | Opus 5.5 | owns correctness; the strongest seat |
+| Domain member | `sonnet` | Sonnet 5 | the workhorse lens |
+| Devil's Advocate | `opus` | Opus 5.5 | a weak DA is council theatre; always the strong tier |
+| Stage 4.5 checker | `haiku` | Haiku 4.5 | it checks the draft against the question — four yes/no checks, no answers to cross-reference; keeping it cheap keeps the incentive to actually run it |
+| Chairman | main thread | — | the strongest model you have; never delegated |
 
-Overrides: `--strong` puts the domain member on the strong tier too; `--cheap` drops the anchor/DA to mid (a weaker council — disclose it). If a listed model doesn't exist for you, remap the tier and change nothing else.
+Round 4 measured this routing on 2026-09-18, with the tiers as they stood that day; a newer model in a seat is untested there, not assumed better. Overrides: `--strong` puts the domain member on the strong tier too; `--cheap` drops the anchor/DA to mid (a weaker council — disclose it). If a tier doesn't exist for you, use the nearest one and change nothing else.
 
 ## Honest limits
 
