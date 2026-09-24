@@ -189,6 +189,7 @@ def costs():
     """Per arm: minutes, calls and USD from the raw headers; runs whose note says they were interrupted are left out of the time figures only."""
     C = {a: {"min": [], "usd": [], "calls": []} for a in ARMS}
     for q in QIDS:
+        if not os.path.exists(os.path.join(H, "parsed-v5", q + ".yaml")): continue  # time and cost only for questions that are judged
         for a in ARMS:
             p = os.path.join(H, "raw", q, a + ".md")
             if not os.path.exists(p): continue
