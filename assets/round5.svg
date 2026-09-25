@@ -1,6 +1,6 @@
 <svg viewBox="0 0 860 590" width="860" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
-<title>Round 5 (in progress) mean total score out of 25 on 4 new questions, three blind judges each: wise-men full council 23.8, wise-men-flash 23.1, Warp council 18.7, LifeOS Council 17.5, plain answer 17.0, ECC council 16.8, llm-council 16.4, brainstorming 15.8, grilling 15.8</title>
-<text x="40" y="32" font-size="16" font-weight="600" fill="#1f2328" text-anchor="start" >Round 5, in progress: every rival at its latest version — 4 of 8 new questions, three blind judges each</text>
+<title>Round 5 (in progress) mean total score out of 25 on 5 new questions, three blind judges each: wise-men full council 23.7, wise-men-flash 23.1, Warp council 18.5, LifeOS Council 17.8, llm-council 17.3, plain answer 17.0, ECC council 16.3, grilling 16.1, brainstorming 16.0</title>
+<text x="40" y="32" font-size="16" font-weight="600" fill="#1f2328" text-anchor="start" >Round 5, in progress: every rival at its latest version — 5 of 8 new questions, three blind judges each</text>
 <text x="40" y="52" font-size="12" font-weight="400" fill="#59636e" text-anchor="start" >Sum of 5 rubric axes (1–5 each, max 25), mean of 3 judges, averaged over the questions. Right: flash's lead, 95% bootstrap interval.</text>
 <text x="40" y="68" font-size="12" font-weight="400" fill="#59636e" text-anchor="start" >Nine arms judged together under the error-first judge; questions from a blind author; every answer new, this skill run as installed.</text>
 <text x="840" y="100" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >flash ahead by [95%]</text>
@@ -18,51 +18,51 @@
 <text x="640" y="518" font-size="11" font-weight="400" fill="#818b98" text-anchor="middle" >25</text>
 <text x="236" y="127" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >wise-men full council</text>
 <text x="236" y="142" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >wise-men 3.14.0 · sibling skill</text>
-<path d="M250,118h366.5a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-366.5z" fill="#9e1b24"/>
-<text x="628.5" y="134" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >23.8</text>
-<text x="840" y="134" font-size="12" font-weight="400" fill="#59636e" text-anchor="end" >−0.7  [−2.1, +0.4]</text>
+<path d="M250,118h366.2a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-366.2z" fill="#9e1b24"/>
+<text x="628.2" y="134" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >23.7</text>
+<text x="840" y="134" font-size="12" font-weight="400" fill="#59636e" text-anchor="end" >−0.6  [−1.7, +0.3]</text>
 <rect x="32" y="153" width="816" height="42" rx="6" fill="#b8740c" fill-opacity="0.10"/>
 <text x="236" y="171" font-size="13" font-weight="700" fill="#1f2328" text-anchor="end" >wise-men-flash</text>
 <text x="236" y="186" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >this repo · v0.1.0, three members</text>
-<path d="M250,162h356.1a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-356.1z" fill="#b8740c"/>
-<text x="618.1" y="178" font-size="13" font-weight="700" fill="#1f2328" text-anchor="start" >23.1</text>
+<path d="M250,162h356.9a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-356.9z" fill="#b8740c"/>
+<text x="618.9" y="178" font-size="13" font-weight="700" fill="#1f2328" text-anchor="start" >23.1</text>
 <text x="840" y="178" font-size="12" font-weight="400" fill="#818b98" text-anchor="end" >—</text>
 <text x="236" y="215" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >Warp council</text>
 <text x="236" y="230" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >warpdotdev</text>
-<path d="M250,206h287.2a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-287.2z" fill="#8c959f"/>
-<text x="549.2" y="222" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >18.7</text>
-<text x="840" y="222" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+4.4  [+3.0, +5.8]</text>
+<path d="M250,206h284.1a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-284.1z" fill="#8c959f"/>
+<text x="546.1" y="222" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >18.5</text>
+<text x="840" y="222" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+4.7  [+3.3, +5.8]</text>
 <text x="236" y="259" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >LifeOS Council</text>
 <text x="236" y="274" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >danielmiessler/LifeOS</text>
-<path d="M250,250h269a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-269z" fill="#8c959f"/>
-<text x="531" y="266" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >17.5</text>
-<text x="840" y="266" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+5.6  [+3.2, +8.6]</text>
-<text x="236" y="303" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >plain answer</text>
-<text x="236" y="318" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >no skill</text>
-<path d="M250.8,294.8h259.7a4,4 0 0 1 4,4v12.5a4,4 0 0 1 -4,4h-259.7z" fill="none" stroke="#59636e" stroke-width="1.5"/>
-<text x="523.2" y="310" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >17.0</text>
-<text x="840" y="310" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+6.1  [+5.0, +7.3]</text>
-<text x="236" y="347" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >ECC council</text>
-<text x="236" y="362" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >affaan-m/ECC</text>
-<path d="M250,338h257.3a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-257.3z" fill="#8c959f"/>
-<text x="519.3" y="354" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >16.8</text>
-<text x="840" y="354" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+6.3  [+5.4, +7.1]</text>
-<text x="236" y="391" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >llm-council</text>
-<text x="236" y="406" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >aiwithremy</text>
-<path d="M250,382h252.1a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-252.1z" fill="#8c959f"/>
-<text x="514.1" y="398" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >16.4</text>
-<text x="840" y="398" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+6.7  [+3.0, +9.7]</text>
-<text x="236" y="435" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >brainstorming</text>
-<text x="236" y="450" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >obra/superpowers</text>
-<path d="M250,426h241.7a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-241.7z" fill="#8c959f"/>
-<text x="503.7" y="442" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >15.8</text>
-<text x="840" y="442" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+7.3  [+5.7, +9.7]</text>
-<text x="236" y="479" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >grilling</text>
-<text x="236" y="494" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >mattpocock/skills</text>
-<path d="M250,470h241.7a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-241.7z" fill="#8c959f"/>
-<text x="503.7" y="486" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >15.8</text>
-<text x="840" y="486" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+7.3  [+5.0, +9.7]</text>
+<path d="M250,250h273.7a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-273.7z" fill="#8c959f"/>
+<text x="535.7" y="266" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >17.8</text>
+<text x="840" y="266" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+5.3  [+3.4, +7.9]</text>
+<text x="236" y="303" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >llm-council</text>
+<text x="236" y="318" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >aiwithremy</text>
+<path d="M250,294h266.4a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-266.4z" fill="#8c959f"/>
+<text x="528.4" y="310" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >17.3</text>
+<text x="840" y="310" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+5.8  [+2.6, +9.0]</text>
+<text x="236" y="347" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >plain answer</text>
+<text x="236" y="362" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >no skill</text>
+<path d="M250.8,338.8h259.7a4,4 0 0 1 4,4v12.5a4,4 0 0 1 -4,4h-259.7z" fill="none" stroke="#59636e" stroke-width="1.5"/>
+<text x="523.2" y="354" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >17.0</text>
+<text x="840" y="354" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+6.1  [+5.3, +7.0]</text>
+<text x="236" y="391" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >ECC council</text>
+<text x="236" y="406" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >affaan-m/ECC</text>
+<path d="M250,382h250.8a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-250.8z" fill="#8c959f"/>
+<text x="512.8" y="398" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >16.3</text>
+<text x="840" y="398" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+6.8  [+5.7, +7.9]</text>
+<text x="236" y="435" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >grilling</text>
+<text x="236" y="450" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >mattpocock/skills</text>
+<path d="M250,426h247.7a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-247.7z" fill="#8c959f"/>
+<text x="509.7" y="442" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >16.1</text>
+<text x="840" y="442" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+7.0  [+5.1, +9.1]</text>
+<text x="236" y="479" font-size="13" font-weight="500" fill="#1f2328" text-anchor="end" >brainstorming</text>
+<text x="236" y="494" font-size="11" font-weight="400" fill="#818b98" text-anchor="end" >obra/superpowers</text>
+<path d="M250,470h245.6a4,4 0 0 1 4,4v14a4,4 0 0 1 -4,4h-245.6z" fill="#8c959f"/>
+<text x="507.6" y="486" font-size="13" font-weight="500" fill="#1f2328" text-anchor="start" >16.0</text>
+<text x="840" y="486" font-size="12" font-weight="600" fill="#1f2328" text-anchor="end" >+7.1  [+5.8, +9.1]</text>
 <text x="40" y="544" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >An interval above zero is the pre-registered bar for "clearly ahead": met against 7 of 7 rivals so far. The red bar is the full wise-men council.</text>
-<text x="40" y="560" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >In progress: 4 of 8 pre-registered questions judged; the rest run after the account's weekly usage limit resets, and these charts are regenerated then.</text>
-<text x="40" y="576" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >N = 4 · Warp's council on Claude models only · LifeOS and brainstorming given the files their skills name · three fresh Opus judges per question · PREREG-5.md</text>
+<text x="40" y="560" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >In progress: 5 of 8 pre-registered questions judged; the rest run after the account's weekly usage limit resets, and these charts are regenerated then.</text>
+<text x="40" y="576" font-size="11" font-weight="400" fill="#818b98" text-anchor="start" >N = 5 · Warp's council on Claude models only · LifeOS and brainstorming given the files their skills name · three fresh Opus judges per question · PREREG-5.md</text>
 </svg>
