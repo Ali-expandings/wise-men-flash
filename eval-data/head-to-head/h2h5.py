@@ -42,6 +42,8 @@ DISCLOSURES = [
     "- Adaptations, unchanged from earlier rounds: brainstorming, grilling and ECC's council state the answers they assume instead of waiting for a human; Warp's council runs its members on Claude models only, with no approval pause; LifeOS Council skips its local voice notification.",
     "- Orchestrators run on Sonnet; each skill's own subagents run on the models the skill names, through Claude Code's tier aliases as they resolved during the run. Every judge and every arm is a Claude model, and every spawned agent inherits the account's global instruction to write tersely. No human grades were collected.",
     "- Cost is priced at the 2026-07 list rates in this file; a model released since is priced at its tier's rate.",
+    "- Order: each question's first arm started in the pre-registered order, but to fit the account's usage limits the questions overlapped — a later question's arms ran while an earlier question's slowest arm finished — and R505 was judged before R504. Judges saw one question each, so the order of judging touches no score.",
+    "- Web use: every arm ran with the tools Claude Code gives a general-purpose agent, web search included, and no arm prompt mentions the web. A scan of every run's transcripts — the orchestrator and every agent spawned under it — found web use only in the runs whose notes below say so.",
 ]
 
 def r1(x): return str(Decimal(str(x)).quantize(Decimal("0.1"), ROUND_HALF_UP))

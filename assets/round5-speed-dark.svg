@@ -1,0 +1,96 @@
+<svg viewBox="0 0 860 472" width="860" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>Round 5 (in progress) score against median minutes per question: wise-men full council 23.7 in 49.1 min at $16.31, wise-men-flash 23.4 in 16.8 min at $3.93, Warp council 19.0 in 10.0 min at $2.64, LifeOS Council 17.9 in 9.1 min at $3.90, plain answer 16.9 in 1.5 min at $0.26, llm-council 16.8 in 15.3 min at $4.89, brainstorming 16.1 in 7.9 min at $1.40, ECC council 15.9 in 5.1 min at $1.35, grilling 15.0 in 5.2 min at $0.63</title>
+<text x="40" y="32" font-size="16" font-weight="600" fill="#e6edf3" text-anchor="start" >Round 5, in progress: score against time — every arm, median minutes per question</text>
+<text x="40" y="52" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >Mean of three blind judges' totals (max 25) against the median minutes per question. Cost: every token of the run and its subagents, list price.</text>
+<line x1="90" y1="100" x2="90" y2="360" stroke="#262c36" stroke-width="1" />
+<text x="90" y="376" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >1</text>
+<line x1="169.7" y1="100" x2="169.7" y2="360" stroke="#262c36" stroke-width="1" />
+<text x="169.7" y="376" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >2</text>
+<line x1="275.1" y1="100" x2="275.1" y2="360" stroke="#262c36" stroke-width="1" />
+<text x="275.1" y="376" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >5</text>
+<line x1="354.9" y1="100" x2="354.9" y2="360" stroke="#262c36" stroke-width="1" />
+<text x="354.9" y="376" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >10</text>
+<line x1="434.6" y1="100" x2="434.6" y2="360" stroke="#262c36" stroke-width="1" />
+<text x="434.6" y="376" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >20</text>
+<line x1="540" y1="100" x2="540" y2="360" stroke="#262c36" stroke-width="1" />
+<text x="540" y="376" font-size="11" font-weight="400" fill="#6e7681" text-anchor="middle" >50</text>
+<line x1="90" y1="360" x2="540" y2="360" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="336.4" x2="540" y2="336.4" stroke="#262c36" stroke-width="1" />
+<text x="82" y="340.4" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >15</text>
+<line x1="90" y1="312.7" x2="540" y2="312.7" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="289.1" x2="540" y2="289.1" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="265.5" x2="540" y2="265.5" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="241.8" x2="540" y2="241.8" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="218.2" x2="540" y2="218.2" stroke="#262c36" stroke-width="1" />
+<text x="82" y="222.2" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >20</text>
+<line x1="90" y1="194.5" x2="540" y2="194.5" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="170.9" x2="540" y2="170.9" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="147.3" x2="540" y2="147.3" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="123.6" x2="540" y2="123.6" stroke="#262c36" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="90" y1="100" x2="540" y2="100" stroke="#262c36" stroke-width="1" />
+<text x="82" y="104" font-size="11" font-weight="400" fill="#6e7681" text-anchor="end" >25</text>
+<text x="315" y="396" font-size="11" font-weight="400" fill="#9198a1" text-anchor="middle" >median minutes per question (log scale)</text>
+<text x="56" y="230" font-size="11" font-weight="400" fill="#9198a1" text-anchor="middle" transform="rotate(-90 56 230)">total /25</text>
+<circle cx="537.9" cy="131.5" r="6" fill="#b8323a" stroke="#0d1117" stroke-width="2"/>
+<circle cx="354.9" cy="240.7" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<circle cx="403.8" cy="294.7" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<circle cx="344" cy="268.8" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<circle cx="277.4" cy="316.1" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<circle cx="327.8" cy="309.4" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<circle cx="279.6" cy="335.2" r="6" fill="#6e7681" stroke="#0d1117" stroke-width="2"/>
+<circle cx="136.6" cy="292.5" r="7" fill="none" stroke="#9198a1" stroke-width="1.6"/>
+<circle cx="414.5" cy="138.3" r="7.5" fill="#e2a336" stroke="#0d1117" stroke-width="2"/>
+<text x="526.9" y="122.5" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="end" >wise-men full council</text>
+<text x="425.5" y="142.3" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >wise-men-flash</text>
+<text x="365.9" y="244.7" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="start" >Warp council</text>
+<text x="355" y="272.8" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="start" >LifeOS Council</text>
+<text x="147.6" y="296.5" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="start" >plain answer</text>
+<text x="414.8" y="298.7" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="start" >llm-council</text>
+<text x="327.8" y="297.4" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="middle" >brainstorming</text>
+<text x="266.4" y="320.1" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="end" >ECC council</text>
+<text x="290.6" y="339.2" font-size="12" font-weight="500" fill="#e6edf3" text-anchor="start" >grilling</text>
+<text x="580" y="118" font-size="11" font-weight="600" fill="#6e7681" text-anchor="start" >arm</text>
+<text x="752" y="118" font-size="11" font-weight="600" fill="#6e7681" text-anchor="end" >score</text>
+<text x="796" y="118" font-size="11" font-weight="600" fill="#6e7681" text-anchor="end" >min</text>
+<text x="842" y="118" font-size="11" font-weight="600" fill="#6e7681" text-anchor="end" >cost</text>
+<text x="580" y="144" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >wise-men full council</text>
+<text x="752" y="144" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >23.7</text>
+<text x="796" y="144" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >49.1</text>
+<text x="842" y="144" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$16.31</text>
+<rect x="572" y="153" width="280" height="24" rx="6" fill="#e2a336" fill-opacity="0.10"/>
+<text x="580" y="170" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="start" >wise-men-flash</text>
+<text x="752" y="170" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="end" >23.4</text>
+<text x="796" y="170" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="end" >16.8</text>
+<text x="842" y="170" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="end" >$3.93</text>
+<text x="580" y="196" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >Warp council</text>
+<text x="752" y="196" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >19.0</text>
+<text x="796" y="196" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >10.0</text>
+<text x="842" y="196" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$2.64</text>
+<text x="580" y="222" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >LifeOS Council</text>
+<text x="752" y="222" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >17.9</text>
+<text x="796" y="222" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >9.1</text>
+<text x="842" y="222" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$3.90</text>
+<text x="580" y="248" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >plain answer</text>
+<text x="752" y="248" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >16.9</text>
+<text x="796" y="248" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >1.5</text>
+<text x="842" y="248" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$0.26</text>
+<text x="580" y="274" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >llm-council</text>
+<text x="752" y="274" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >16.8</text>
+<text x="796" y="274" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >15.3</text>
+<text x="842" y="274" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$4.89</text>
+<text x="580" y="300" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >brainstorming</text>
+<text x="752" y="300" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >16.1</text>
+<text x="796" y="300" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >7.9</text>
+<text x="842" y="300" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$1.40</text>
+<text x="580" y="326" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >ECC council</text>
+<text x="752" y="326" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >15.9</text>
+<text x="796" y="326" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >5.1</text>
+<text x="842" y="326" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$1.35</text>
+<text x="580" y="352" font-size="12" font-weight="400" fill="#9198a1" text-anchor="start" >grilling</text>
+<text x="752" y="352" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >15.0</text>
+<text x="796" y="352" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >5.2</text>
+<text x="842" y="352" font-size="12" font-weight="400" fill="#9198a1" text-anchor="end" >$0.63</text>
+<text x="40" y="426" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >wise-men-flash scored 0.3 below the full wise-men council in 34% of its time and 24% of its cost, and 4.3 above the best-scoring rival, Warp council,</text>
+<text x="40" y="442" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >taking 6.8 minutes longer and $1.29 more a question. Time: the orchestrator's first-to-last transcript timestamp, median over runs the usage limit did not interrupt.</text>
+<text x="40" y="458" font-size="11" font-weight="400" fill="#6e7681" text-anchor="start" >In progress: 7 of 8 pre-registered questions judged; the rest are being run in the pre-registered order, and these charts are regenerated as each is judged.</text>
+</svg>

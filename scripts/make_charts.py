@@ -8,7 +8,7 @@ with <picture>. The numbers come from eval-data/head-to-head/ through flash4.py,
 so a chart cannot disagree with the results file. Text always uses neutral ink, never a series colour: identity comes
 from the mark beside the text. Drawing helpers and banner sprites follow the wise-men repository's, so the two
 projects read as one family: flash is marked in amber, the full wise-men council in its own dark red."""
-import os, sys, statistics as st
+import os, sys, math, statistics as st
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "eval-data", "head-to-head"))
 import flash4 as F
@@ -166,7 +166,7 @@ def g_load(): R = G.load(); return {q: {a: R[q][a] for a in G.ARMS} for q in G.R
 def g_mean(rows, a, k="composite"): return st.mean(r[a][k] for r in rows.values())
 def g_bar(a, x, y, w, h, r=4): return hbar_outline(x, y, w, h, C["TXT"], r) if a == "direct" else hbar(x, y, w, h, C["ACCENT"] if a == G.FL else C["SIB"] if a == G.WM else C["BAR2"], r)
 def g_arms(rows): return sorted(G.ARMS, key=lambda a: (-g_mean(rows, a), G.ARMS.index(a)))
-def g_note(n): return f"In progress: {n} of 8 pre-registered questions judged; the rest run after the account's weekly usage limit resets, and these charts are regenerated then." if n < 8 else ""
+def g_note(n): return f"In progress: {n} of 8 pre-registered questions judged; the rest are being run in the pre-registered order, and these charts are regenerated as each is judged." if n < 8 else ""
 
 def chart_round5(R):
     n = len(R); x0, sc, top, rh = 250, 15.6, 112, 44; arms = g_arms(R); bottom = top + rh * len(arms) - 6
@@ -235,6 +235,43 @@ def chart_round5_axes(R):
     b += t(40, fy + 16, g_note(n) or f"N = {n} questions, three blind judges each, means shown.", 11, C["MUTE"])
     return svg(860, fy + 30, b, f"Round 5 scoreboard{' (in progress)' if n < 8 else ''}, means over {n} questions: " + "; ".join(f"{G_NAME[a]}: total {r1(g_mean(R, a))}, " + ", ".join(f"{AXIS_NAME[x].lower()} {r1(g_mean(R, a, x))}" for x in AXES) for a in arms))
 
+def chart_round5_speed(R):
+    n = len(R); Cs = G.costs(); sc = {a: g_mean(R, a) for a in G.ARMS}; m = {a: G.med(Cs[a]["min"]) for a in G.ARMS}; usd = {a: G.med(Cs[a]["usd"]) for a in G.ARMS}
+    xlo = 0.5 if min(m.values()) < 1 else 1; xhi = 100 if max(m.values()) > 50 else 50; ylo, yhi = min(14, int(min(sc.values())) - 1), 25
+    px0, px1, py0, py1 = 90, 540, 100, 360  # time on a log scale: seven of the nine arms answer inside ten minutes
+    X = lambda v: px0 + math.log(v / xlo) / math.log(xhi / xlo) * (px1 - px0); Y = lambda s: py1 - (s - ylo) / (yhi - ylo) * (py1 - py0)
+    b = t(40, 32, f"Round 5{', in progress' if n < 8 else ''}: score against time — every arm, median minutes per question", 16, C["INK"], 600)
+    b += t(40, 52, "Mean of three blind judges' totals (max 25) against the median minutes per question. Cost: every token of the run and its subagents, list price.", 12, C["TXT"])
+    for g in (0.5, 1, 2, 5, 10, 20, 50, 100):
+        if xlo <= g <= xhi: b += line(X(g), py0, X(g), py1, C["GRID"]) + t(X(g), py1 + 16, num(float(g)), 11, C["MUTE"], anchor="middle")
+    for g in range(ylo, yhi + 1): b += line(px0, Y(g), px1, Y(g), C["GRID"], 1, 'stroke-opacity="0.5"' if g % 5 else "") + (t(px0 - 8, Y(g) + 4, g, 11, C["MUTE"], anchor="end") if g % 5 == 0 else "")
+    b += t((px0 + px1) / 2, py1 + 36, "median minutes per question (log scale)", 11, C["TXT"], anchor="middle")
+    b += t(px0 - 34, (py0 + py1) / 2, "total /25", 11, C["TXT"], anchor="middle", extra=f'transform="rotate(-90 {num(px0 - 34)} {num((py0 + py1) / 2)})"')
+    pts = {a: (X(m[a]), Y(sc[a])) for a in G.ARMS}; boxes = [(x - 8, y - 8, x + 8, y + 8) for x, y in pts.values()]; labels = ""
+    def free(bx): return px0 - 4 <= bx[0] and bx[2] <= px1 + 30 and py0 - 14 <= bx[1] and bx[3] <= py1 + 2 and not any(bx[0] < o[2] and o[0] < bx[2] and bx[1] < o[3] and o[1] < bx[3] for o in boxes)
+    for a in sorted(G.ARMS, key=lambda a: (a not in (G.FL, G.WM), -sc[a])):  # the two wise-men arms place their labels first
+        x, y = pts[a]; name = G_NAME[a]; w = len(name) * 6.6 + 4
+        for dx, dy, anc in ((11, 4, "start"), (-11, 4, "end"), (0, -12, "middle"), (0, 20, "middle"), (11, -9, "start"), (11, 16, "start"), (-11, -9, "end"), (-11, 16, "end")):
+            x0 = x + dx if anc == "start" else x + dx - w if anc == "end" else x - w / 2; bx = (x0, y + dy - 11, x0 + w, y + dy + 3)
+            if free(bx): break
+        boxes.append(bx); labels += t(x + dx, y + dy, name, 12, C["INK"], 700 if a == G.FL else 500, anc)
+    for a in sorted(G.ARMS, key=lambda a: a == G.FL):
+        x, y = pts[a]; b += ring(x, y, 7, C["TXT"]) if a == "direct" else dot(x, y, 7.5 if a == G.FL else 6, C["ACCENT"] if a == G.FL else C["SIB"] if a == G.WM else C["OTHER"])
+    b += labels
+    tx, ty = 580, 118; b += t(tx, ty, "arm", 11, C["MUTE"], 600) + t(tx + 172, ty, "score", 11, C["MUTE"], 600, "end") + t(tx + 216, ty, "min", 11, C["MUTE"], 600, "end") + t(tx + 262, ty, "cost", 11, C["MUTE"], 600, "end")
+    for i, a in enumerate(g_arms(R)):
+        y = ty + 26 + i * 26; hero = a == G.FL
+        if hero: b += band(y - 17, 24, tx - 8, 280)
+        w, col = (700, C["INK"]) if hero else (400, C["TXT"])
+        b += t(tx, y, G_NAME[a], 12, col, w) + t(tx + 172, y, r1(sc[a]), 12, col, w, "end") + t(tx + 216, y, r1(m[a]), 12, col, w, "end") + t(tx + 262, y, f"${G.r2(usd[a])}", 12, col, w, "end")
+    best = max(G.RIVALS, key=lambda a: (sc[a], -G.ARMS.index(a))); fy = max(py1 + 66, ty + 26 * 10 + 20)
+    dw, dt, dc = sc[G.FL] - sc[G.WM], m[G.FL] - m[best], usd[G.FL] - usd[best]
+    b += t(40, fy, f"wise-men-flash scored {r1(abs(dw))} {'below' if dw < 0 else 'above'} the full wise-men council in {round(m[G.FL] / m[G.WM] * 100)}% of its time and {round(usd[G.FL] / usd[G.WM] * 100)}% of its cost, and "
+                   f"{r1(sc[G.FL] - sc[best])} above the best-scoring rival, {G_NAME[best]},", 11, C["MUTE"])
+    b += t(40, fy + 16, f"taking {r1(abs(dt))} minutes {'longer' if dt > 0 else 'less'} and ${G.r2(abs(dc))} {'more' if dc > 0 else 'less'} a question. Time: the orchestrator's first-to-last transcript timestamp, median over runs the usage limit did not interrupt.", 11, C["MUTE"])
+    b += t(40, fy + 32, g_note(n) or f"N = {n} questions · PREREG-5.md · no council can beat a plain answer on time or cost.", 11, C["MUTE"])
+    return svg(860, fy + 46, b, f"Round 5{' (in progress)' if n < 8 else ''} score against median minutes per question: " + ", ".join(f"{G_NAME[a]} {r1(sc[a])} in {r1(m[a])} min at ${G.r2(usd[a])}" for a in g_arms(R)))
+
 # ---------- banner: three council members and a bolt in the wise-men pixel style, one 5 px grid, three-tone shading ----------
 BU, B_OUTLINE = 5, "#120b09"
 B_RAMP = {  # material: highlight, base, shadow
@@ -298,7 +335,7 @@ def banner():
 if __name__ == "__main__":
     R = F.load(); R5 = g_load(); os.makedirs(OUT, exist_ok=True); wrote = []
     charts = [("round4", chart_round4, R), ("round4-questions", chart_questions, R), ("round4-axes", chart_axes, R), ("round4-speed", chart_speed, R),
-              ("round5", chart_round5, R5), ("round5-questions", chart_round5_questions, R5), ("round5-axes", chart_round5_axes, R5)]
+              ("round5", chart_round5, R5), ("round5-questions", chart_round5_questions, R5), ("round5-axes", chart_round5_axes, R5), ("round5-speed", chart_round5_speed, R5)]
     for theme, suffix in (("light", ""), ("dark", "-dark")):
         C.clear(); C.update(THEMES[theme])
         for name, fn, data in charts:

@@ -6,7 +6,7 @@ The fast tier of the [wise-men](https://github.com/Ali-expandings/wise-men) coun
 
 <p align="center">
   <strong>Clearly ahead of every rival council on every question it was tested on — 23.3/25 against llm-council 17.9, Warp's council 17.5 and a plain answer 16.3 — and within half a point of the full wise-men council (23.8) in under a third of its time: 10.8 minutes and four subagent calls a question</strong><br>
-  <sub>Pre-registered blind head-to-head on five questions new to the project, three blind judges each, under a judge prompt that lists every error before it scores. Measured as the <code>--fast</code> arm of wise-men 3.13, the profile this skill ships. Its own round, run as installed against every rival at its latest version, is in progress: 6 of 8 questions judged, ahead of all seven rivals on each. <a href="#does-it-work">Charts, method and caveats</a>.</sub>
+  <sub>Pre-registered blind head-to-head on five questions new to the project, three blind judges each, under a judge prompt that lists every error before it scores. Measured as the <code>--fast</code> arm of wise-men 3.13, the profile this skill ships. Its own round, run as installed against every rival at its latest version, is in progress: 7 of 8 questions judged, ahead of all seven rivals on each. <a href="#does-it-work">Charts, method and caveats</a>.</sub>
 </p>
 
 ```
@@ -20,42 +20,44 @@ Then: *"flash council: should we move everyone to annual billing to cut churn?"*
 
 ## Does it work?
 
-**Round 5 — in progress, 6 of 8 questions judged** (pre-registered in [`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md) before its questions were written). This skill, run as installed, next to the full wise-men council (3.14.0) and every rival the wise-men study has tested — Warp's council, llm-council, LifeOS Council, ECC's council, superpowers brainstorming and mattpocock grilling, each at its latest version — plus a plain answer. Eight new questions from a blind author, one of each kind; every answer new; three blind Opus judges per question under the error-first judge. This is the standalone measurement the caveats below promised (it supersedes `PREREG-1`). The remaining questions are being run in the pre-registered order, and the table and charts below are regenerated as each one is judged.
+**Round 5 — in progress, 7 of 8 questions judged** (pre-registered in [`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md) before its questions were written). This skill, run as installed, next to the full wise-men council (3.14.0) and every rival the wise-men study has tested — Warp's council, llm-council, LifeOS Council, ECC's council, superpowers brainstorming and mattpocock grilling, each at its latest version — plus a plain answer. Eight new questions from a blind author, one of each kind; every answer new; three blind Opus judges per question under the error-first judge. This is the standalone measurement the caveats below promised (it supersedes `PREREG-1`). The remaining questions are being run in the pre-registered order, and the table and charts below are regenerated as each one is judged.
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-dark.svg"><img src="assets/round5.svg" width="860" alt="Round 5, in progress, 6 of 8 questions judged: wise-men 3.14.0 23.7, wise-men-flash 0.1.0 23.3, Warp council 18.7, LifeOS Council 17.9, llm-council 16.9, ECC council 16.3, plain answer 16.2, superpowers brainstorming 16.0, mattpocock grilling 15.4"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-dark.svg"><img src="assets/round5.svg" width="860" alt="Round 5, in progress, 7 of 8 questions judged: wise-men 3.14.0 23.7, wise-men-flash 0.1.0 23.4, Warp council 19.0, LifeOS Council 17.9, plain answer 16.9, llm-council 16.8, superpowers brainstorming 16.1, ECC council 15.9, mattpocock grilling 15.0"></picture></p>
 
-| round 5 (6 of 8 questions) | total /25 | correct | insight | practical | risk | dissent | median minutes | median calls | median list-price USD |
+| round 5 (7 of 8 questions) | total /25 | correct | insight | practical | risk | dissent | median minutes | median calls | median list-price USD |
 |---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| wise-men 3.14.0 | 23.7 | 3.9 | 5.0 | 4.8 | 5.0 | 4.9 | 50.2 | 16 | 17.72 |
-| **wise-men-flash 0.1.0** | 23.3 | 3.8 | 4.9 | 4.8 | 4.8 | 4.9 | 16.7 | 4 | 3.88 |
-| Warp council | 18.7 | 3.8 | 3.7 | 4.1 | 4.1 | 3.0 | 9.7 | 3 | 2.47 |
-| LifeOS Council | 17.9 | 3.1 | 3.8 | 3.2 | 3.7 | 4.2 | 8.9 | 12 | 3.88 |
-| llm-council | 16.9 | 2.9 | 3.9 | 3.2 | 3.7 | 3.3 | 14.1 | 11 | 4.71 |
-| ECC council | 16.3 | 3.4 | 3.2 | 3.2 | 3.2 | 3.2 | 4.9 | 3 | 1.33 |
-| plain answer | 16.2 | 4.0 | 3.1 | 3.9 | 3.2 | 2.0 | 1.5 | 0 | 0.26 |
-| superpowers brainstorming | 16.0 | 3.3 | 3.2 | 3.7 | 3.4 | 2.4 | 8.3 | 1 | 1.48 |
-| mattpocock grilling | 15.4 | 3.3 | 3.4 | 3.6 | 3.1 | 2.1 | 5.1 | 0 | 0.61 |
+| wise-men 3.14.0 | 23.7 | 3.9 | 5.0 | 4.9 | 5.0 | 4.9 | 49.1 | 16 | 16.31 |
+| **wise-men-flash 0.1.0** | 23.4 | 3.8 | 5.0 | 4.9 | 4.8 | 5.0 | 16.8 | 4 | 3.93 |
+| Warp council | 19.0 | 3.9 | 3.8 | 4.1 | 4.1 | 3.1 | 10.0 | 3 | 2.64 |
+| LifeOS Council | 17.9 | 3.1 | 3.7 | 3.2 | 3.7 | 4.0 | 9.1 | 12 | 3.90 |
+| plain answer | 16.9 | 4.1 | 3.2 | 4.0 | 3.3 | 2.1 | 1.5 | 0 | 0.26 |
+| llm-council | 16.8 | 2.9 | 3.9 | 3.1 | 3.6 | 3.2 | 15.3 | 11 | 4.89 |
+| superpowers brainstorming | 16.1 | 3.3 | 3.3 | 3.7 | 3.4 | 2.4 | 7.9 | 1 | 1.40 |
+| ECC council | 15.9 | 3.4 | 3.0 | 3.1 | 3.2 | 3.0 | 5.1 | 3 | 1.35 |
+| mattpocock grilling | 15.0 | 3.1 | 3.3 | 3.5 | 3.1 | 2.0 | 5.2 | 0 | 0.63 |
 
-- wise-men-flash 0.1.0 against wise-men 3.14.0: −0.4 [−1.3, +0.3], W–T–L 2–0–4 — behind, with an interval that includes zero.
-- wise-men-flash 0.1.0 against Warp council: +4.6 [+3.4, +5.5], W–T–L 6–0–0 — clearly ahead.
-- wise-men-flash 0.1.0 against llm-council: +6.3 [+3.4, +9.0], W–T–L 6–0–0 — clearly ahead.
-- wise-men-flash 0.1.0 against LifeOS Council: +5.3 [+3.7, +7.6], W–T–L 6–0–0 — clearly ahead.
-- wise-men-flash 0.1.0 against ECC council: +7.0 [+6.1, +7.9], W–T–L 6–0–0 — clearly ahead.
-- wise-men-flash 0.1.0 against superpowers brainstorming: +7.3 [+6.0, +8.9], W–T–L 6–0–0 — clearly ahead.
-- wise-men-flash 0.1.0 against mattpocock grilling: +7.8 [+5.8, +10.2], W–T–L 6–0–0 — clearly ahead.
-- wise-men-flash 0.1.0 against plain answer: +7.1 [+5.6, +9.1], W–T–L 6–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against wise-men 3.14.0: −0.3 [−1.2, +0.4], W–T–L 3–0–4 — behind, with an interval that includes zero.
+- wise-men-flash 0.1.0 against Warp council: +4.3 [+3.3, +5.3], W–T–L 7–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against llm-council: +6.6 [+4.0, +8.9], W–T–L 7–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against LifeOS Council: +5.5 [+4.0, +7.4], W–T–L 7–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against ECC council: +7.5 [+6.3, +8.8], W–T–L 7–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against superpowers brainstorming: +7.2 [+6.1, +8.7], W–T–L 7–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against mattpocock grilling: +8.3 [+6.2, +10.3], W–T–L 7–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against plain answer: +6.5 [+4.9, +8.5], W–T–L 7–0–0 — clearly ahead.
 - wise-men-flash 0.1.0: beats every rival — clearly ahead of all seven.
 
-- Axes, wise-men-flash 0.1.0: the highest score on no axis of the nine arms, tied for the highest practical use and dissent quality; above every rival on 4 of 5 axes.
-- Time and cost, wise-men-flash 0.1.0: median 16.7 min and $3.88 a question; faster than no rival council, cheaper than llm-council.
+- Axes, wise-men-flash 0.1.0: the highest dissent quality of the nine arms, tied for the highest practical use; above every rival on 4 of 5 axes.
+- Time and cost, wise-men-flash 0.1.0: median 16.8 min and $3.93 a question; faster than no rival council, cheaper than llm-council.
 
 Judge agreement: mean SD of the three judges' totals 0.67.
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-questions-dark.svg"><img src="assets/round5-questions.svg" width="860" alt="Round 5 per-question scores, 6 questions: wise-men-flash ahead of the best rival on 6 of 6"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-questions-dark.svg"><img src="assets/round5-questions.svg" width="860" alt="Round 5 per-question scores, 7 questions: wise-men-flash ahead of the best rival on 7 of 7"></picture></p>
 
-<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-axes-dark.svg"><img src="assets/round5-axes.svg" width="860" alt="Round 5 scoreboard, means over 6 questions, total and each rubric axis for all nine arms"></picture></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-axes-dark.svg"><img src="assets/round5-axes.svg" width="860" alt="Round 5 scoreboard, means over 7 questions, total and each rubric axis for all nine arms"></picture></p>
 
-So far flash is ahead of all seven rivals on every question judged, and 0.4 behind the full wise-men council overall (behind, with an interval that includes zero). Correctness is its weakest showing: the plain answer (4.00) and Warp's council (3.83) score higher than flash (3.78). With this few questions the intervals are wide; the pre-registered claims apply to the finished round. Per-question scores, run times, costs and disclosures so far: [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md).
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-speed-dark.svg"><img src="assets/round5-speed.svg" width="860" alt="Round 5 score against median minutes per question, 7 questions: wise-men 3.14.0 23.7 in 49.1 min at $16.31, wise-men-flash 0.1.0 23.4 in 16.8 min at $3.93, Warp council 19.0 in 10.0 min at $2.64, LifeOS Council 17.9 in 9.1 min at $3.90, plain answer 16.9 in 1.5 min at $0.26, llm-council 16.8 in 15.3 min at $4.89, superpowers brainstorming 16.1 in 7.9 min at $1.40, ECC council 15.9 in 5.1 min at $1.35, mattpocock grilling 15.0 in 5.2 min at $0.63"></picture></p>
+
+So far flash is ahead of all seven rivals on every question judged, and 0.3 behind the full wise-men council overall (behind, with an interval that includes zero). Correctness is its weakest showing: the plain answer (4.1) and Warp's council (3.9) score higher than flash (3.8). With this few questions the intervals are wide; the pre-registered claims apply to the finished round. Per-question scores, run times, costs and disclosures so far: [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md).
 
 **Round 4** — the round that first measured this profile, as an arm inside wise-men.
 
