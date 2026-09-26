@@ -184,7 +184,7 @@ def chart_round5(R):
         if hero: b += t(840, y + 22, "—", 12, C["MUTE"], anchor="end"); continue
         c = G.compare(R, a, G.FL); b += t(840, y + 22, f"{sg(c['diff'])}  [{sg(c['lo'])}, {sg(c['hi'])}]", 12, C["INK"] if c["lo"] > 0 else C["TXT"], 600 if c["lo"] > 0 else 400, "end")
     fy = bottom + 42; clear = sum(G.compare(R, a, G.FL)["lo"] > 0 for a in G.RIVALS)
-    b += t(40, fy, f"An interval above zero is the pre-registered bar for \"clearly ahead\": met against {clear} of {len(G.RIVALS)} rivals so far. The red bar is the full wise-men council.", 11, C["MUTE"])
+    b += t(40, fy, f"An interval above zero is the pre-registered bar for \"clearly ahead\": met against {clear} of {len(G.RIVALS)} rivals{' so far' if n < 8 else ''}. The red bar is the full wise-men council.", 11, C["MUTE"])
     b += t(40, fy + 16, g_note(n) or "Intervals resample questions (10,000 draws), not judges.", 11, C["MUTE"])
     b += t(40, fy + 32, f"N = {n} · Warp's council on Claude models only · LifeOS and brainstorming given the files their skills name · three fresh Opus judges per question · PREREG-5.md", 11, C["MUTE"])
     return svg(860, fy + 46, b, f"Round 5{' (in progress)' if n < 8 else ''} mean total score out of 25 on {n} new questions, three blind judges each: " + ", ".join(f"{G_NAME[a]} {r1(g_mean(R, a))}" for a in arms))
@@ -231,7 +231,7 @@ def chart_round5_axes(R):
             b += f'<rect x="{num(x)}" y="{num(yc - 5)}" width="{num(w)}" height="10" rx="3" fill="{C["GRID"]}" fill-opacity="0.6"/>\n' + g_bar(a, x, yc - 5, v / mx * w, 10, 3)
             b += t(x + w + 8, yc + 4, r1(v), 12, C["INK"] if top_v else C["TXT"], 700 if top_v else 400)
     above = sum(all(g_mean(R, G.FL, x) > g_mean(R, a, x) for a in G.RIVALS) for x in AXES); fy = top + rh * len(arms) + 28
-    b += t(40, fy, f"Bold = highest in the column (ties bolded together). wise-men-flash scored above every rival on {above} of the 5 axes so far.", 11, C["MUTE"])
+    b += t(40, fy, f"Bold = highest in the column (ties bolded together). wise-men-flash scored above every rival on {above} of the 5 axes{' so far' if n < 8 else ''}.", 11, C["MUTE"])
     b += t(40, fy + 16, g_note(n) or f"N = {n} questions, three blind judges each, means shown.", 11, C["MUTE"])
     return svg(860, fy + 30, b, f"Round 5 scoreboard{' (in progress)' if n < 8 else ''}, means over {n} questions: " + "; ".join(f"{G_NAME[a]}: total {r1(g_mean(R, a))}, " + ", ".join(f"{AXIS_NAME[x].lower()} {r1(g_mean(R, a, x))}" for x in AXES) for a in arms))
 
@@ -329,7 +329,7 @@ def banner():
     b += (f'<text x="{tx}" y="106" font-size="50" font-weight="800" fill="#f0f6fc" text-anchor="start" letter-spacing="-1.5">wise-men-'
           f'<tspan fill="#e2a336">flash</tspan></text>\n')
     b += t(tx + 2, 134, "Three Claude subagents down three reasoning paths, one checked", 15, "#9198a1")
-    b += t(tx + 2, 154, "decision memo with the dissent intact — in about eleven minutes.", 15, "#9198a1")
+    b += t(tx + 2, 154, "decision memo, dissent intact — in a third of the full council's time.", 15, "#9198a1")
     return svg(860, 190, b, "wise-men-flash: a pixel-art council of three, a Devil's Advocate, a practitioner in a hard hat and an analyst, beside a lightning bolt")
 
 if __name__ == "__main__":

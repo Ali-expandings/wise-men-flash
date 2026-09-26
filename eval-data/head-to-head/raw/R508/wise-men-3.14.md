@@ -1,5 +1,6 @@
 # arm: wise-men-3.14 (Ali-expandings/wise-men SKILL.md v3.14.0, as of 770c75a) | question: R508 | orchestrator: general-purpose/sonnet | run: 2026-09-25 (round 5, PREREG-5 rules)
 # minutes: 47.1 | subagent calls: 17 (transcripts matched: 15) | tokens in/out/cache-read/cache-write: 72/612473/1815805/1083370 | list-price USD: 16.31
+# note: 2 of its member spawns (the Devil's Advocate and one domain member) were refused by the harness's limit of 20 concurrent subagents, because other arms were running at the same time, and were retried once each, successfully; the council ran complete; the refused attempts are counted in its 17 calls and add to its minutes, and cost nothing
 
 ## Recommendation
 

@@ -1,5 +1,6 @@
 # arm: llm-council (aiwithremy/claude-skills-llm-council 55ee36e89e0f) | question: R505 | orchestrator: general-purpose/sonnet | run: 2026-09-25 (round 5, PREREG-5 rules)
 # minutes: 21.1 | subagent calls: 14 (transcripts matched: 11) | tokens in/out/cache-read/cache-write: 36/219720/1051636/712236 | list-price USD: 6.28
+# note: 3 of its reviewer spawns were refused by the harness's limit of 20 concurrent subagents, because other arms were running at the same time, and were retried once each, successfully; the council ran complete; the refused attempts are counted in its 14 calls and add to its minutes, and cost nothing
 
 ## Council Verdict: Long-Term PPI Use and the Dementia Study
 

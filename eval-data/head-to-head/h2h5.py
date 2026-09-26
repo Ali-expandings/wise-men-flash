@@ -43,6 +43,7 @@ DISCLOSURES = [
     "- Orchestrators run on Sonnet; each skill's own subagents run on the models the skill names, through Claude Code's tier aliases as they resolved during the run. Every judge and every arm is a Claude model, and every spawned agent inherits the account's global instruction to write tersely. No human grades were collected.",
     "- Cost is priced at the 2026-07 list rates in this file; a model released since is priced at its tier's rate.",
     "- Order: each question's first arm started in the pre-registered order, but to fit the account's usage limits the questions overlapped — a later question's arms ran while an earlier question's slowest arm finished — and R505 was judged before R504. Judges saw one question each, so the order of judging touches no score.",
+    "- Concurrency: arms ran side by side, and Claude Code allows 20 subagents at once in a session. Six spawns in three runs (R504 and R508 wise-men 3.14.0, R505 llm-council) were refused at that limit and retried successfully, so every council ran complete; the refused attempts count in those runs' calls and add to their minutes, and cost nothing. No other run hit the limit.",
     "- Web use: every arm ran with the tools Claude Code gives a general-purpose agent, web search included, and no arm prompt mentions the web. A scan of every run's transcripts — the orchestrator and every agent spawned under it — found web use only in the runs whose notes below say so.",
 ]
 
@@ -233,7 +234,8 @@ def lines(view="results"):
               f"; above every rival on {above} of 5 axes."]
     if timed:
         for h in heroes:
-            fast = [NAMES[a] for a in COUNCILS if med(C[h]["min"]) < med(C[a]["min"])]; cheap = [NAMES[a] for a in COUNCILS if med(C[h]["usd"]) < med(C[a]["usd"])]
+            fast = [NAMES[a] + (" (by under a tenth of a minute)" if r1(med(C[h]["min"])) == r1(med(C[a]["min"])) else "") for a in COUNCILS if med(C[h]["min"]) < med(C[a]["min"])]
+            cheap = [NAMES[a] + (" (by under a cent)" if r2(med(C[h]["usd"])) == r2(med(C[a]["usd"])) else "") for a in COUNCILS if med(C[h]["usd"]) < med(C[a]["usd"])]  # the rule is the median, however small the gap; say so when the rounded figures tie
             L += [f"- Time and cost, {NAMES[h]}: median {r1(med(C[h]['min']))} min and ${r2(med(C[h]['usd']))} a question; faster than {and_join(fast) if fast else 'no rival council'}, cheaper than {and_join(cheap) if cheap else 'no rival council'}."]
     sds = [R[q]["_sd"][a] for q in R for a in ARMS]; L += ["", f"Judge agreement: mean SD of the three judges' totals {r2(st.mean(sds))}."]
     return L

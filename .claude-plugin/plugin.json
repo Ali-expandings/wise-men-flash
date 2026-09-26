@@ -1,7 +1,7 @@
 {
   "name": "wise-men-flash",
-  "version": "0.1.0",
-  "description": "The fast tier of the wise-men council as its own skill: three Claude subagents (a practitioner anchor, one domain lens, a Devil's Advocate) reasoning down different paths, one synthesis check, a decision memo — about eleven minutes, four calls.",
+  "version": "0.1.1",
+  "description": "The fast tier of the wise-men council as its own skill: three Claude subagents (a practitioner anchor, one domain lens, a Devil's Advocate) reasoning down different paths, one synthesis check, a decision memo — four calls, about a third of the full council's time.",
   "author": { "name": "Ali-expandings", "url": "https://github.com/Ali-expandings" },
   "homepage": "https://github.com/Ali-expandings/wise-men-flash",
   "repository": "https://github.com/Ali-expandings/wise-men-flash",

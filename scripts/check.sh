@@ -50,7 +50,7 @@ if python3 -c 'import yaml' 2>/dev/null; then
 else say "PyYAML missing — evidence checks skipped" warn; fi
 
 # 6. Headline figures agree between the README and SKILL.md
-ok6=1; for n in '23\.3' '23\.8' 'eleven minutes'; do grep -qE -- "$n" README.md && grep -qE -- "$n" SKILL.md || { bad "figure '$n' missing from README or SKILL.md"; ok6=0; }; done
+ok6=1; for n in '23\.4' '23\.6' '16\.7'; do grep -qE -- "$n" README.md && grep -qE -- "$n" SKILL.md || { bad "figure '$n' missing from README or SKILL.md"; ok6=0; }; done
 [ $ok6 = 1 ] && say "headline figures present in README and SKILL.md" ok
 
 # 7. PII / secrets sweep of the working tree and of the git history
