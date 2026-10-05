@@ -17,6 +17,9 @@ c=$(grep -m1 -oE '\*\*[0-9]+\.[0-9]+\.[0-9]+\*\*' CHANGELOG.md | tr -d '*')
 grep -Eq 'resources/(personas|prompts|model-routing|council-record)' SKILL.md && bad "SKILL.md points at resource files this skill does not ship" || say "SKILL.md self-contained" ok
 grep -qE '\$[0-9]' SKILL.md && bad 'SKILL.md contains $<digit> (Claude Code substitutes it)' || say 'no $<digit> in SKILL.md' ok
 
+python3 -c 'import yaml,sys; d=yaml.safe_load(open("SKILL.md").read().split("---")[1]); sys.exit(0 if d.get("name") and d.get("description") else 1)' 2>/dev/null \
+  && say "SKILL.md frontmatter is strict YAML (npx skills can read it)" ok || { say "SKILL.md frontmatter fails strict YAML (quote it, or drop the ': ')" FAIL; fail=1; }
+
 # 3. The protocol's invariants
 missing=""; for k in DISSENT DISCLOSURE CLAIMS COVERAGE; do grep -q "$k" SKILL.md || missing="$missing $k"; done
 [ -z "$missing" ] && say "four synthesis checks present" ok || bad "synthesis check(s) missing:$missing"

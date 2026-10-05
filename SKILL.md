@@ -1,7 +1,7 @@
 ---
 name: wise-men-flash
-version: 0.1.1
-description: Use when the user asks for a "flash council", "quick council", "fast panel", "wise men flash", "quick second opinion from a panel", or invokes /wise-men-flash — and when they want a council-quality answer to a hard question fast (four subagent calls and about a third of the full council's time: a median 16.7 minutes in its own pre-registered round) rather than the full wise-men protocol. A three-member council: a practitioner anchor named for the job the question belongs to, one domain member, and a Devil's Advocate — each reasoning down a different path, spawned in parallel. No peer-review round, no debate; the main thread synthesizes one decision memo, and a single fresh checker verifies it before the user sees it. Members are offline (Read/Grep/Glob only). Its answer is a decision memo — Recommendation / Why / What to do / Risks / Strongest counter-position / Confidence — with no council mechanics in it. Sibling of the full `wise-men` skill: same answer format, one fixed fast tier instead of five. Pure Claude — no external APIs.
+version: 0.1.2
+description: Use when the user asks for a "flash council", "quick council", "fast panel", "wise men flash", "quick second opinion from a panel", or invokes /wise-men-flash — and when they want a council-quality answer to a hard question fast (four subagent calls and about a third of the full council's time, a median 16.7 minutes in its own pre-registered round) rather than the full wise-men protocol. A three-member council of a practitioner anchor named for the job the question belongs to, one domain member, and a Devil's Advocate — each reasoning down a different path, spawned in parallel. No peer-review round, no debate; the main thread synthesizes one decision memo, and a single fresh checker verifies it before the user sees it. Members are offline (Read/Grep/Glob only). Its answer is a decision memo — Recommendation / Why / What to do / Risks / Strongest counter-position / Confidence — with no council mechanics in it. Sibling of the full `wise-men` skill, with the same answer format and one fixed fast tier instead of five. Pure Claude — no external APIs.
 ---
 
 # wise-men-flash
@@ -21,8 +21,8 @@ You (main thread) are the orchestrator and the Chairman. These steps are MECHANI
    - **Devil's Advocate** — attacks the answer the other two will converge on. Owns dissent. **Strong model. Never abstains.**
    Assign each member ONE distinct reasoning procedure (precedent / first principles / base rates / incentives / falsification) — this, not the job titles, is what makes their errors decorrelate. Give the domain member and the DA *different* procedures from the anchor and from each other.
 2. **Brief** (Stage 0.5): one shared, facts-only context brief, identical for every member — file paths, quoted requirements, numbers, the artifact or where to Read it, plus any current fact you gathered at step 0, with dates. No opinions, no tentative conclusion — one steer in the brief anchors all three members and destroys the independence that makes them worth spawning. Include the inconvenient facts. "None needed — the question is self-contained" is a valid brief.
-3. **Spawn** (Stage 1): all three members in ONE message, parallel `Agent` calls, subagent_type `wise-men-flash:wise-member` (plugin install) or `wise-member` (clone + copy install), each at the model its seat calls for. Each prompt = persona block + reasoning procedure + shared brief + injection-guarded question + the 5-section contract (below). Members are OFFLINE.
-4. **Validate**: two checks per member — (a) the 5-section structure OR the explicit "OUT OF DOMAIN — defer" marker is present, and (b) all five headers appear with a substantive sentence each. Fail → retry that member ONCE at +1 model tier (ceiling opus; at ceiling, retry once same model). A spawn error, timeout or empty result takes the same path. Still failing → record it failed (an execution failure is not an abstention), drop it from synthesis, and disclose in the footer. A DA that abstains is a validator failure — retry; if it persists, the council is degraded, say so.
+3. **Spawn** (Stage 1): all three members in ONE message, parallel `Agent` calls, subagent_type `wise-men-flash:wise-member` (plugin install) or `wise-member` (clone + copy install), each at the model its seat calls for (tiers resolved from this environment first, once per run: see Model routing). Each prompt = persona block + reasoning procedure + shared brief + injection-guarded question + the 5-section contract (below). Members are OFFLINE.
+4. **Validate**: two checks per member — (a) the 5-section structure OR the explicit "OUT OF DOMAIN — defer" marker is present, and (b) all five headers appear with a substantive sentence each. Fail → retry that member ONCE at +1 model tier (ceiling: the strong tier; at ceiling, retry once same model). A spawn error, timeout or empty result takes the same path. Still failing → record it failed (an execution failure is not an abstention), drop it from synthesis, and disclose in the footer. A DA that abstains is a validator failure — retry; if it persists, the council is degraded, say so.
 5. **Synthesize** (Stage 4): you write the decision memo (format and rules below). No peer review, no debate — those are the full skill's tiers. Draft, then self-check against the memo rules before the checker sees it.
 6. **Verify** (Stage 4.5): every load-bearing factual claim a member FLAGGED as unverified that survived into your draft, you check now (web, grep, tests). A result that changes a claim rewrites that sentence and its Confidence line; a result that changes nothing adds nothing; what you could not check stays marked. What changed is logged in the council record when one is written and NOWHERE else — never in the answer.
 7. **Check** (Stage 4.5, cont.): spawn ONE fresh `wise-member` at the **cheap** model, given the question and your corrected draft inline (no packet — there was no peer review). It runs the four checks below in one pass and returns the fixed form only. Fix what it flags, or ship your version with its objection quoted in one footer line. Never silently override it.
@@ -165,17 +165,24 @@ Any FAIL is blocking. Fix, or ship with the objection quoted. (GROUNDING and CON
 
 ## Model routing
 
-Set `model` on each Agent call by tier alias — the aliases follow the current models, so the protocol never hard-codes an id. If a tier looks wrong, check your own `/model` list.
+Route by tier, never by model id. Model names change faster than this file, so resolve the tiers from the environment you are running in, once per run, before the first spawn:
 
-| Seat | Agent `model` | Current model in the tier (2026-09-24) | Why |
+1. **Read the allowed values of the Agent tool's `model` parameter.** That list, not this file, is what exists on this machine and plan.
+2. **Map the tiers to aliases:** strong = `opus`, mid = `sonnet`, cheap = `haiku`. Claude Code points each alias at the newest model in its family, so a new model release needs no edit here.
+3. **A tier missing from the list, or a spawn rejected for its model:** use the nearest tier that exists (strong → mid, mid → cheap, cheap → mid), retry that spawn once, keep the remap for the rest of the run, and add one footer line naming the requested and the actual tier.
+4. **No `model` parameter at all** (another agent harness, or a provider that fixes the model): omit the field, so every seat runs on the session's model, and add one footer line: single-model council.
+
+Never fail a council over a model name.
+
+| Seat | Tier | Agent `model` | Why |
 |---|---|---|---|
-| Practitioner anchor | `opus` | Opus 5.5 | owns correctness; the strongest seat |
-| Domain member | `sonnet` | Sonnet 5 | the workhorse lens |
-| Devil's Advocate | `opus` | Opus 5.5 | a weak DA is council theatre; always the strong tier |
-| Stage 4.5 checker | `haiku` | Haiku 4.5 | it checks the draft against the question — four yes/no checks, no answers to cross-reference; keeping it cheap keeps the incentive to actually run it |
+| Practitioner anchor | strong | `opus` | owns correctness; the strongest seat |
+| Domain member | mid | `sonnet` | the workhorse lens |
+| Devil's Advocate | strong | `opus` | a weak DA is council theatre; always the strong tier |
+| Stage 4.5 checker | cheap | `haiku` | it checks the draft against the question — four yes/no checks, no answers to cross-reference; keeping it cheap keeps the incentive to actually run it |
 | Chairman | main thread | — | the strongest model you have; never delegated |
 
-Round 4 measured this routing on 2026-09-18, with the tiers as they stood that day; a newer model in a seat is untested there, not assumed better. Overrides: `--strong` puts the domain member on the strong tier too; `--cheap` drops the anchor/DA to mid (a weaker council — disclose it). If a tier doesn't exist for you, use the nearest one and change nothing else.
+What was measured: the same aliases resolved to Opus 5, Sonnet 5 and Haiku 4.5 in round 4 (2026-09-18) and to Opus 5.5, Sonnet 5 and Haiku 4.5 in round 5 (2026-09-24), with no change to this file. A newer model behind an alias is untested by those rounds, not assumed better. Overrides: `--strong` puts the domain member on the strong tier too; `--cheap` drops the anchor/DA to mid (a weaker council — disclose it).
 
 ## Honest limits
 

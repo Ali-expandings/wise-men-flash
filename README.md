@@ -106,7 +106,7 @@ Per-question scores, run times, costs and every deviation: [`RESULTS.md`](eval-d
 
 Round 5 ([`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md)) is this skill's own measurement, run as installed, and it superseded the smaller round first planned in [`PREREG-1.md`](eval-data/PREREG-1.md) (Amendment 2). It fixed in advance what counts — clearly ahead of every rival, and not clearly behind the full council — and both held: clearly ahead of all seven rivals, and 0.3 behind the full council with an interval from −1.0 to +0.3. PREREG-1's third test — the 0.1.0 changes against the 3.13 `--fast` profile — needs the old profile re-run and was not part of round 5.
 
-**The caveats of round 5, plainly.** Eight questions, so the intervals are real but not narrow. Every judge and every arm is a Claude model, and there are no human grades. Some arms used the web on some questions — flash on one, through its own verification step — and a few runs had a subagent refused by Claude Code's limit on concurrent subagents and retried; each case is disclosed in [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md). Correctness is flash's weakest axis: the plain answer scored higher on it (4.3 to 3.8), as did Warp's council (3.9).
+**The caveats of round 5, plainly.** Eight questions, so the intervals are real but not narrow. Every judge and every arm is a Claude model, and there are no human grades. Some arms used the web on some questions — flash on one, through its own verification step — and a few runs had a subagent refused by Claude Code's limit on concurrent subagents and retried; each case is disclosed in [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md). Correctness is flash's weakest axis: the plain answer scored higher on it (4.3 to 3.8), as did Warp's council (3.9). Dollar figures follow the pre-registered rule, the 2026-07 price table in `h2h5.py` with a newer model priced at its tier's rate; at the per-model prices Anthropic lists on 2026-10-05 the same tokens cost less, medians flash $2.92, the full council $12.60, LifeOS Council $2.63, llm-council $3.51, Warp's council $1.98 and ECC's council $0.93. The order is unchanged except that flash is no longer cheaper than LifeOS Council.
 
 ## What you get
 
@@ -141,7 +141,14 @@ git clone https://github.com/Ali-expandings/wise-men-flash.git ~/.claude/skills/
 mkdir -p ~/.claude/agents && [ -f ~/.claude/agents/wise-member.md ] || cp ~/.claude/skills/wise-men-flash/agents/wise-member.md ~/.claude/agents/
 ```
 
-The second line matters for the clone path. `wise-member` is a tool-restricted agent — Read, Grep and Glob only; it cannot spawn agents, run commands or edit files — used for every member and for the checker, so a council cannot recurse or touch your files. The plugin install registers it as `wise-men-flash:wise-member`. If the full wise-men skill is already installed, its `wise-member` has the same boundary, so the line keeps it rather than overwriting it. Without either, the skill still runs and says so once: members are then only asked not to spawn.
+**Or with [skills.sh](https://skills.sh)** (Claude Code and other coding agents):
+
+```bash
+npx skills add Ali-expandings/wise-men-flash -g
+mkdir -p ~/.claude/agents && [ -f ~/.claude/agents/wise-member.md ] || cp ~/.claude/skills/wise-men-flash/agents/wise-member.md ~/.claude/agents/
+```
+
+The second line matters for the clone and skills.sh paths. `wise-member` is a tool-restricted agent — Read, Grep and Glob only; it cannot spawn agents, run commands or edit files — used for every member and for the checker, so a council cannot recurse or touch your files. The plugin install registers it as `wise-men-flash:wise-member`. If the full wise-men skill is already installed, its `wise-member` has the same boundary, so the line keeps it rather than overwriting it. Without either, the skill still runs and says so once: members are then only asked not to spawn.
 
 Requires [Claude Code](https://claude.com/claude-code). No API keys, no external services, no Python except to re-run the analysis. Restart Claude Code, then:
 
