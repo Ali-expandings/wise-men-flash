@@ -16,6 +16,20 @@ The fast tier of the [wise-men](https://github.com/Ali-expandings/wise-men) coun
 
 Then: *"flash council: should we move everyone to annual billing to cut churn?"*
 
+## What you get, in two minutes
+
+You ask (shortened): *"My boss is retiring and offered to sell me the landscaping business I've worked at for eight years. It would take most of our savings plus a bank loan. I run the crews and know the clients, but I've never handled the books, the bidding or the cash flow. Is my leaning toward yes reasonable, and what would make you tell me to walk away?"*
+
+About fifteen minutes later, one memo comes back. It opens:
+
+> **Recommendation** — Your leaning is reasonable as a reason to pursue this deal. It is not yet a reason to sign. Don't answer the offer with a flat yes or no. Turn it into a staged purchase. Take over the bidding and the books under him for the coming season. Have an outside accountant rebuild the real earnings. Tie part of the price to the revenue that stays after he leaves. Write your walk-away conditions down before you see the final numbers.
+
+and, further down, it keeps the best case against itself:
+
+> **Strongest counter-position** — Position: do not buy the client goodwill at all. "'Do diligence, then decide' assumes diligence can settle whether clients are loyal, and it cannot: loyalty shows itself only after he stops answering the phone, which is after you have paid." … The goodwill is partly your own eight years sold back to you. If it is really yours, starting your own outfit may cost little more than equipment.
+
+In between: why, the first steps with a decision date, seven concrete walk-away conditions, the risks both ways and confidence per claim. [The full memo](eval-data/consistency-check/answers/R508-new.md) is a real 0.2.0 run on a question from round 5.
+
 ---
 
 ## Does it work?
@@ -121,7 +135,7 @@ A decision memo, and nothing else:
 ## Confidence                  per load-bearing claim, from evidence — never from agreement
 ```
 
-No "the panel agreed", no scores, no vote counts, no account of how the answer was made. A footer appears only when something real degraded — a member failed, the restricted agent was missing — or when a fact was corrected against a source.
+No "the panel agreed", no scores, no vote counts, no account of how the answer was made. A footer appears only when something real degraded — a member failed, the restricted agent was missing — when a fact was corrected against a source, or when the memo ships with a caveat about its content that could not be resolved.
 
 Two real answers from round 4, verbatim, each with how the three blind judges scored every arm on that question: [an engineering choice](examples/engineering-choice.md) (24.0/25, the top score on its question) and [how far to trust a vendor's number](examples/trust-a-number.md) (23.3/25).
 
@@ -202,7 +216,7 @@ flowchart TB
 | A Devil's Advocate on the strong model, aimed at the premise the answer leans on, never allowed to abstain | a token contrarian too weak to change the outcome |
 | The answer is a decision memo with confidence per claim, and agreement between members never counts as evidence | council talk burying the answer; three members converging being mistaken for proof |
 | Claims the members flagged are checked before the answer ships, and a correction rewrites the sentence | the reader acting on the overstated version |
-| One fresh checker, on a cheap model so it always runs: dissent, disclosure, claims, coverage | the Chairman grading its own homework |
+| One fresh checker, on a cheap model so it always runs: dissent, disclosure, claims, coverage, consistency | the Chairman grading its own homework |
 | A four-call ceiling | a "fast" council that quietly grows into a slow one |
 
 Where the speed comes from, measured in round 4: no peer-review round, no debate, and a synthesis check that took 0.5–2.1 minutes on the cheap model against 9–11 minutes for the full council's six-item check.
