@@ -1,0 +1,177 @@
+# wise-men-flash: the details
+
+The [README](README.md) is the short version. This page has the evaluation, the design and the limits.
+
+## Does it work?
+
+**Round 5 — complete, all eight questions** (pre-registered in [`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md) before its questions were written). This skill, run as installed, next to the full wise-men council (3.14.0) and every rival the wise-men study has tested — Warp's council, llm-council, LifeOS Council, ECC's council, superpowers brainstorming and mattpocock grilling, each at its latest version — plus a plain answer. Eight new questions from a blind author, one of each kind; every answer new; three blind Opus judges per question under the error-first judge. This is the standalone measurement the caveats below promised (it supersedes `PREREG-1`). 
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-dark.svg"><img src="assets/round5.svg" width="860" alt="Round 5, complete, all eight questions: wise-men 3.14.0 23.6, wise-men-flash 0.1.0 23.4, Warp council 19.1, LifeOS Council 17.5, llm-council 16.8, plain answer 16.8, superpowers brainstorming 16.3, ECC council 15.5, mattpocock grilling 14.9"></picture></p>
+
+| round 5 (8 of 8 questions) | total /25 | correct | insight | practical | risk | dissent | median minutes | median calls | median list-price USD |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| wise-men 3.14.0 | 23.6 | 3.8 | 5.0 | 4.9 | 5.0 | 4.9 | 50.2 | 16 | 17.72 |
+| **wise-men-flash 0.1.0** | 23.4 | 3.8 | 5.0 | 4.9 | 4.8 | 5.0 | 16.7 | 4 | 3.95 |
+| Warp council | 19.1 | 3.9 | 3.8 | 4.1 | 4.1 | 3.2 | 9.7 | 3 | 2.67 |
+| LifeOS Council | 17.5 | 3.0 | 3.6 | 3.2 | 3.7 | 4.0 | 9.3 | 12 | 3.95 |
+| llm-council | 16.8 | 2.9 | 3.9 | 3.2 | 3.7 | 3.2 | 15.5 | 11 | 5.28 |
+| plain answer | 16.8 | 4.3 | 3.2 | 4.0 | 3.3 | 2.1 | 1.6 | 0 | 0.26 |
+| superpowers brainstorming | 16.3 | 3.4 | 3.3 | 3.7 | 3.4 | 2.4 | 7.5 | 0.5 | 1.19 |
+| ECC council | 15.5 | 3.3 | 3.0 | 3.1 | 3.2 | 3.0 | 5.1 | 3 | 1.40 |
+| mattpocock grilling | 14.9 | 3.0 | 3.3 | 3.5 | 3.1 | 2.0 | 5.6 | 0 | 0.67 |
+
+- wise-men-flash 0.1.0 against wise-men 3.14.0: −0.3 [−1.0, +0.3], W–T–L 3–1–4 — behind, with an interval that includes zero.
+- wise-men-flash 0.1.0 against Warp council: +4.3 [+3.4, +5.2], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against llm-council: +6.6 [+4.3, +8.6], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against LifeOS Council: +5.9 [+4.4, +7.5], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against ECC council: +7.9 [+6.6, +9.2], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against superpowers brainstorming: +7.1 [+6.2, +8.4], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against mattpocock grilling: +8.5 [+6.6, +10.3], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0 against plain answer: +6.6 [+5.2, +8.3], W–T–L 8–0–0 — clearly ahead.
+- wise-men-flash 0.1.0: beats every rival — clearly ahead of all seven.
+
+- Axes, wise-men-flash 0.1.0: the highest dissent quality of the nine arms, tied for the highest practical use; above every rival on 4 of 5 axes.
+- Time and cost, wise-men-flash 0.1.0: median 16.7 min and $3.95 a question; faster than no rival council, cheaper than llm-council and LifeOS Council (by under a cent).
+
+Judge agreement: mean SD of the three judges' totals 0.65.
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-questions-dark.svg"><img src="assets/round5-questions.svg" width="860" alt="Round 5 per-question scores, 8 questions: wise-men-flash ahead of the best rival on 8 of 8"></picture></p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-axes-dark.svg"><img src="assets/round5-axes.svg" width="860" alt="Round 5 scoreboard, means over 8 questions, total and each rubric axis for all nine arms"></picture></p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round5-speed-dark.svg"><img src="assets/round5-speed.svg" width="860" alt="Round 5 score against median minutes per question, 8 questions: wise-men 3.14.0 23.6 in 50.2 min at $17.72, wise-men-flash 0.1.0 23.4 in 16.7 min at $3.95, Warp council 19.1 in 9.7 min at $2.67, LifeOS Council 17.5 in 9.3 min at $3.95, llm-council 16.8 in 15.5 min at $5.28, plain answer 16.8 in 1.6 min at $0.26, superpowers brainstorming 16.3 in 7.5 min at $1.19, ECC council 15.5 in 5.1 min at $1.40, mattpocock grilling 14.9 in 5.6 min at $0.67"></picture></p>
+
+**What it shows.** Flash was clearly ahead of each of the seven rivals — every interval above zero — so under the wording fixed in PREREG-5 it beats every rival (H2 met); it was ahead of all seven rivals on all eight questions. Against the full wise-men council it finished 0.3 behind, −0.3 [−1.0, +0.3], ahead on 3, level on 1 and behind on 4 of the eight questions — not clearly behind, as pre-registered (H3 met). It took a median 16.7 minutes and $3.95 a question, against the full council's 50.2 minutes and $17.72 — 33% of the time and 22% of the cost. ECC's council, the quickest rival council, answered in 5.1 minutes for $1.40 and scored 7.9 lower. Correctness is its weakest showing: the plain answer (4.3) and Warp's council (3.9) score higher than flash (3.8). Per-question scores, run times, costs and disclosures: [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md).
+
+**Round 4** — the round that first measured this profile, as an arm inside wise-men.
+
+Round 4 of the wise-men head-to-head ([pre-registered](eval-data/head-to-head/PREREG-4.md) before any run) put five ways of answering against eight questions written for the round by an author that knew nothing about the skills being tested: the full wise-men council; its three-member `--fast` profile, which is the profile this skill ships; Warp's council, the most-installed general-purpose council skill, and llm-council; and a plain answer with no skill. For every question, three fresh Opus judges read the five answers under letters, each in its own sealed order, listed every error they could find, then scored five axes. The round was stopped at five of its eight questions to conserve usage.
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round4-dark.svg"><img src="assets/round4.svg" width="860" alt="Round 4 mean total score out of 25 on 5 new questions, three blind judges each: wise-men full council 23.8, wise-men-flash 23.3, llm-council 17.9, Warp council 17.5, plain answer 16.3. Flash ahead of llm-council by 5.4, Warp council by 5.7 and the plain answer by 6.9, every interval above zero; behind the full council by 0.5 with an interval that includes zero."></picture></p>
+
+| round 4 (5 of 8 questions) | total /25 | correct | insight | practical | risk | dissent | median minutes | median calls | median list-price USD |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| wise-men 3.13 full council | 23.8 | 4.0 | 5.0 | 4.9 | 4.9 | 5.0 | 37.3 | 11 | 9.59 |
+| **wise-men-flash** (measured as wise-men 3.13 `--fast`) | 23.3 | 4.3 | 4.7 | 4.7 | 4.9 | 4.7 | 10.8 | 4 | 2.09 |
+| llm-council | 17.9 | 3.1 | 3.9 | 3.3 | 3.8 | 3.7 | 18.0 | 11 | 6.43 |
+| Warp council | 17.5 | 3.4 | 3.5 | 4.0 | 3.7 | 3.0 | 9.3 | 3 | 2.03 |
+| plain answer | 16.3 | 3.9 | 3.5 | 4.2 | 2.9 | 1.8 | 1.8 | 0 | 0.27 |
+
+- wise-men-flash against Warp council: +5.7 [+4.8, +6.7], W–T–L 5–0–0 — clearly ahead.
+- wise-men-flash against llm-council: +5.4 [+3.4, +7.9], W–T–L 5–0–0 — clearly ahead.
+- wise-men-flash against plain answer: +6.9 [+5.5, +8.3], W–T–L 5–0–0 — clearly ahead.
+- wise-men-flash against wise-men 3.13 full council: −0.5 [−1.2, +0.1], W–T–L 1–0–4 — behind, with an interval that includes zero.
+
+- Axes: wise-men-flash had the highest correctness of the five arms, tied with the full council for the highest risk awareness, and scored above every rival on 5 of 5 axes; the full council led insight, practical use and dissent quality.
+- Time and cost, medians per question: the plain answer 1.8 min, $0.27; Warp council 9.3 min, $2.03; wise-men-flash 10.8 min, $2.09; llm-council 18.0 min, $6.43; the full wise-men council 37.3 min, $9.59. wise-men-flash was faster and cheaper than the full wise-men council and llm-council; Warp council was 1.5 min quicker and $0.06 cheaper, and scored 5.7 lower.
+
+Judge agreement: mean SD of the three judges' totals 0.58.
+
+Ahead by = mean per-question gap in total score, with a 95% bootstrap interval over questions (10,000 resamples, seed 20260919); W–T–L = questions won, tied and lost on the mean of the three judges. Minutes run from the orchestrator's first to last transcript timestamp; cost prices every token of the run and of every agent it spawned, at list price.
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round4-questions-dark.svg"><img src="assets/round4-questions.svg" width="860" alt="Round 4 per-question scores: wise-men-flash ahead of the best rival on all 5 questions; the full wise-men council higher on 4 of 5, by 0.3 to 1.7 points"></picture></p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round4-axes-dark.svg"><img src="assets/round4-axes.svg" width="860" alt="Round 4 scoreboard, means over 5 questions: wise-men full council total 23.8, correctness 4.0, insight 5.0, practical use 4.9, risk awareness 4.9, dissent quality 5.0; wise-men-flash total 23.3, correctness 4.3, insight 4.7, practical use 4.7, risk awareness 4.9, dissent quality 4.7; llm-council 17.9; Warp council 17.5; plain answer 16.3"></picture></p>
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/round4-speed-dark.svg"><img src="assets/round4-speed.svg" width="860" alt="Round 4 score against median minutes per question: wise-men full council 23.8 in 37.3 minutes at $9.59, wise-men-flash 23.3 in 10.8 minutes at $2.09, llm-council 17.9 in 18.0 minutes at $6.43, Warp council 17.5 in 9.3 minutes at $2.03, plain answer 16.3 in 1.8 minutes at $0.27"></picture></p>
+
+**What it shows.** Flash finished ahead of Warp's council, llm-council and the plain answer on every one of the five questions, by 5.4 to 6.9 points of 25 on average, and every interval excludes zero — under the wording fixed in the pre-registration, it beats every rival. It scored above every rival on all five axes and had the highest correctness of the five arms. Against the full wise-men council it was half a point behind, with an interval that includes zero: the full council scored higher on four questions, by 0.3 to 1.7 points, and flash higher on the first. It got there in 10.8 minutes and $2.09 a question against the full council's 37.3 minutes and $9.59; it was faster and cheaper than llm-council too, while Warp's council answered 1.5 minutes sooner and scored 5.7 points lower.
+
+**The caveats, plainly.**
+
+- **Inherited, not re-measured.** These numbers are the `--fast` arm of wise-men 3.13.0, run inside wise-men before this repository existed. Flash 0.1.0 packages that profile with the rule wise-men added right after the round — nothing about how an answer was produced appears in it — and small changes to its domain seat and Devil's Advocate prompts ([CHANGELOG](CHANGELOG.md)). Round 5 (above) measured this skill, those changes included, as installed.
+- **Five questions, three kinds missing.** Pre-registered at eight and stopped at five at the owner's request, after three questions' scores were known — not a blind stop. The writing, ethics and personal-decision questions were never run.
+- **The scores carry a penalty this skill now prevents.** Three of the five measured answers closed with a note about how they were produced, and the judges docked it as process residue.
+- **One model family.** Every judge and every arm is a Claude model; there are no human grades. Warp's council ran on Claude models only, though its skill asks for a model-diverse council.
+
+Per-question scores, run times, costs and every deviation: [`RESULTS.md`](eval-data/head-to-head/RESULTS.md). Raw answers, blinded packets, judgments and parsed scores: [`eval-data/`](eval-data/). Reproduce with `python3 eval-data/head-to-head/flash4.py report`; `verify` rebuilds every packet the judges read from the raw answers, byte for byte, and re-parses every judgment.
+
+### Its own round
+
+Round 5 ([`PREREG-5.md`](eval-data/head-to-head/PREREG-5.md)) is this skill's own measurement, run as installed, and it superseded the smaller round first planned in [`PREREG-1.md`](eval-data/PREREG-1.md) (Amendment 2). It fixed in advance what counts — clearly ahead of every rival, and not clearly behind the full council — and both held: clearly ahead of all seven rivals, and 0.3 behind the full council with an interval from −1.0 to +0.3. PREREG-1's third test — the 0.1.0 changes against the 3.13 `--fast` profile — needs the old profile re-run and was not part of round 5.
+
+**The caveats of round 5, plainly.** Eight questions, so the intervals are real but not narrow. Every judge and every arm is a Claude model, and there are no human grades. Some arms used the web on some questions — flash on one, through its own verification step — and a few runs had a subagent refused by Claude Code's limit on concurrent subagents and retried; each case is disclosed in [`RESULTS-V5.md`](eval-data/head-to-head/RESULTS-V5.md). Correctness is flash's weakest axis: the plain answer scored higher on it (4.3 to 3.8), as did Warp's council (3.9). Dollar figures follow the pre-registered rule, the 2026-07 price table in `h2h5.py` with a newer model priced at its tier's rate; at the per-model prices Anthropic lists on 2026-10-05 the same tokens cost less, medians flash $2.92, the full council $12.60, LifeOS Council $2.63, llm-council $3.51, Warp's council $1.98 and ECC's council $0.93. The order is unchanged except that flash is no longer cheaper than LifeOS Council.
+
+## How it works
+
+```mermaid
+flowchart TB
+    Q["<b>Your question</b><br/>one question? worth a council?<br/>current facts gathered once"]
+    Q --> B["<b>Same verified facts</b><br/>one facts-only brief for all three"]
+    B --> M1 & M2 & M3
+    subgraph council["3 members · in parallel · read-only · no peeking"]
+        M1["<b>Practitioner anchor</b><br/>strong model<br/>owns correctness<br/>and the first step"]
+        M2["<b>Domain lens</b><br/>mid model<br/>the sharpest frame<br/>for this domain"]
+        M3["<b>Devil's Advocate</b><br/>strong model<br/>attacks the premise<br/>never abstains"]
+    end
+    M1 & M2 & M3 --> D["<b>Validator</b><br/>five sections each · one retry"]
+    D --> C["<b>Chairman</b> — the main thread<br/>one decision memo<br/>evidence over agreement"]
+    C --> V["<b>Flagged facts checked</b><br/>a correction rewrites the sentence"]
+    V --> K["<b>Independent check</b><br/>cheap model, one pass<br/>dissent · disclosure · claims · coverage"]
+    K -.->|"fails: fix, or ship with its objection quoted"| C
+    K --> A("<b>Your answer</b><br/>a decision memo · the first step<br/>strongest counter-position intact<br/>no council talk")
+
+    classDef key stroke:#b8740c,stroke-width:2px
+    class M1,M3,C,K key
+```
+
+**Each piece exists to block a specific failure:**
+
+| Technique | Failure it prevents |
+|---|---|
+| Each member reasons by a different method — precedent, first principles, base rates, incentives or falsification | three answers that agree for the same wrong reason |
+| One verified, facts-only brief, identical for every member | members arguing from different — or invented — facts |
+| Members are read-only agents that never see each other's answers | groupthink, runaway subagents, a member editing your files |
+| A practitioner seat on the strong model, named for the job the question belongs to | answers that skip the steps a professional would take |
+| A Devil's Advocate on the strong model, aimed at the premise the answer leans on, never allowed to abstain | a token contrarian too weak to change the outcome |
+| The answer is a decision memo with confidence per claim, and agreement between members never counts as evidence | council talk burying the answer; three members converging being mistaken for proof |
+| Claims the members flagged are checked before the answer ships, and a correction rewrites the sentence | the reader acting on the overstated version |
+| One fresh checker, on a cheap model so it always runs: dissent, disclosure, claims, coverage, consistency | the Chairman grading its own homework |
+| A four-call ceiling | a "fast" council that quietly grows into a slow one |
+
+Where the speed comes from, measured in round 4: no peer-review round, no debate, and a synthesis check that took 0.5–2.1 minutes on the cheap model against 9–11 minutes for the full council's six-item check.
+
+## Flash or the full council?
+
+| | wise-men-flash | [wise-men](https://github.com/Ali-expandings/wise-men) |
+|---|---|---|
+| round 5, total /25 | 23.4 | 23.6 |
+| round 5, median minutes · calls · list-price cost | 16.7 · 4 · $3.95 | 50.2 · 16 · $17.72 |
+| round 4, total /25 | 23.3 | 23.8 |
+| round 4, median minutes · calls · list-price cost | 10.8 · 4 · $2.09 | 37.3 · 11 · $9.59 |
+| members | 3: anchor, one domain lens, Devil's Advocate | 3–7, by tier |
+| peer review | none | 3–7 graders, rubric-scored |
+| debate | none | on a mechanical trigger at deep and paranoid |
+| synthesis check | four items, cheap model | six items, mid model |
+| tiers | one | solo · quick · standard · deep · paranoid |
+| answer | the same decision memo | the same decision memo |
+
+Reach for flash when the decision is real but does not justify an hour: most hard questions. Reach for the full council when the call is irreversible or high-blast-radius, when the question is compound, or when you want the scored peer review and the debate — in round 5 it bought back 0.3 of a point (half a point in round 4) at three times the time and four and a half times the cost.
+
+## How it compares
+
+Against the two rival councils measured in both rounds (features from their READMEs and skill files, as surveyed in the [wise-men landscape](https://github.com/Ali-expandings/wise-men/blob/master/resources/landscape.md), 2026-09-16/17); round 5 also measured LifeOS Council, ECC's council, superpowers brainstorming and mattpocock grilling — all in the table under [Does it work?](#does-it-work):
+
+| | wise-men-flash | [Warp council](https://github.com/warpdotdev/common-skills) 24.5k installs | [llm-council](https://github.com/aiwithremy/claude-skills-llm-council) 1.0k installs |
+|---|---|---|---|
+| round 5, total /25 | **23.4** | 19.1 | 16.8 |
+| round 5, median minutes · calls · list-price cost | 16.7 · 4 · $3.95 | 9.7 · 3 · $2.67 | 15.5 · 11 · $5.28 |
+| round 4, total /25 | **23.3** | 17.5 | 17.9 |
+| round 4, median minutes · calls · list-price cost | 10.8 · 4 · $2.09 | 9.3 · 3 · $2.03 | 18.0 · 11 · $6.43 |
+| members | 3: a practitioner anchor, one domain lens and a Devil's Advocate, each assigned a different reasoning method | 3 by default, one per model family | 5 advisors |
+| peer review | none | none | "review each other", method unspecified |
+| independent check of the synthesis | yes | no | no |
+| members structurally unable to spawn, run or write | yes | read-only by instruction | not mentioned |
+| dissent in the answer | strongest counter-position, aimed at the premise | consensus and disagreements | agree / clash sections |
+| evidence in the repo | raw answers, judgments, scripts | none | none |
+
+What they have that this doesn't: Warp's council is built for a model-diverse panel — one member per model family; here it ran on Claude models only — and offers an optional second-round critique; llm-council has its advisors review each other. Neither ships an eval.
+
+## Limits
+
+- **Single-model.** Every member is Claude, so persona and method diversity approximates, but does not achieve, architectural diversity. Shared blind spots survive.
+- **The Chairman is the orchestrator.** The same thread picks the roster and writes the memo; the one fresh checker mitigates that, it does not remove it.
+- **Members are offline.** They cannot browse or run anything. Facts go in through the brief; claims they flag are checked by the orchestrator afterwards.
+- **No peer review, no debate.** That is the trade for speed, and the reason the full council exists.
+- **Two rounds, one judge family.** Round 5 measured this skill as installed on eight questions; round 4 measured its profile inside wise-men on five. Every judge and every arm is a Claude model, with no human grades — see the caveats above.
+
