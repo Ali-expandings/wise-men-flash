@@ -33,7 +33,7 @@ Real example, shortened. Question: *"My boss offered to sell me the landscaping 
 
 ## Does it work?
 
-In a blind test on eight new questions, judged by three Claude Opus judges that didn't know which answer came from which tool, it scored 23.4/25. The full wise-men council scored 23.6 and took three times as long (16.7 vs 50.2 minutes). Seven other council skills scored 14.9 to 19.1. Every judge and every answer was a Claude model, with no human grading, so read it as a strong signal, not proof.
+In a blind test on eight new questions, judged by three Claude Opus judges that didn't know which answer came from which tool, it scored 23.4/25. The full wise-men council scored 23.6 and took three times as long (16.7 vs 50.2 minutes). Six other popular Claude Code skills and a plain answer scored 14.9 to 19.1. On correctness alone, the plain answer scored higher (4.3 vs 3.8). Every judge and every answer was a Claude model, with no human grading, so read it as a strong signal, not proof.
 
 Charts, method, caveats and how it works: [DETAILS.md](DETAILS.md).
 
