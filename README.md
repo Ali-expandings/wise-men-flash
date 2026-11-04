@@ -38,6 +38,9 @@ In a blind test on eight new questions, judged by three Claude Opus judges that 
 > "I tried both: wise-men and also the flash version, pretty good results. great job."
 > — [Bilgin Ibryam](https://generativeprogrammer.com), Generative Programmer
 
+> In a small blind test of his own checker rules, the dissent requirement "is the part that earned its place." (His caveats: small sample, Claude checking Claude.)
+> — [Jim Tooher](https://github.com/mrtooher/fable-mode), fable-mode
+
 Charts, method, caveats and how it works: [DETAILS.md](DETAILS.md).
 
 ## When not to use it
