@@ -19,6 +19,8 @@ Restart Claude Code, then ask:
 /wise-men-flash should we move everyone to annual billing to cut churn?
 ```
 
+**Want to decide first?** Add `--my-call-first`. When the memo is ready, the skill asks for your own call and reason before showing it, then shows where the memo agrees or differs and asks for your second call. Optional, because the extra step is only worth it on hard calls.
+
 ## What comes back
 
 A memo with six parts: **Recommendation, Why, What to do, Risks, Strongest counter-position, Confidence.** No "the panel agreed", no scores.

@@ -1,7 +1,7 @@
 ---
 name: wise-men-flash
-version: 0.2.0
-description: Use when the user asks for a "flash council", "quick council", "fast panel", "wise men flash", "quick second opinion from a panel", or invokes /wise-men-flash — and when they want a council-quality answer to a hard question fast (four subagent calls and about a third of the full council's time, a median 16.7 minutes in its own pre-registered round) rather than the full wise-men protocol. A three-member council of a practitioner anchor named for the job the question belongs to, one domain member, and a Devil's Advocate — each reasoning down a different path, spawned in parallel. No peer-review round, no debate; the main thread synthesizes one decision memo, and a single fresh checker verifies it before the user sees it. Members are offline (Read/Grep/Glob only). Its answer is a decision memo — Recommendation / Why / What to do / Risks / Strongest counter-position / Confidence — with no council mechanics in it. Sibling of the full `wise-men` skill, with the same answer format and one fixed fast tier instead of five. Pure Claude — no external APIs.
+version: 0.3.0
+description: Use when the user asks for a "flash council", "quick council", "fast panel", "wise men flash", "quick second opinion from a panel", or invokes /wise-men-flash — and when they want a council-quality answer to a hard question fast (four subagent calls and about a third of the full council's time, a median 16.7 minutes in its own pre-registered round) rather than the full wise-men protocol. A three-member council of a practitioner anchor named for the job the question belongs to, one domain member, and a Devil's Advocate — each reasoning down a different path, spawned in parallel. No peer-review round, no debate; the main thread synthesizes one decision memo, and a single fresh checker verifies it before the user sees it. Members are offline (Read/Grep/Glob only). Its answer is a decision memo — Recommendation / Why / What to do / Risks / Strongest counter-position / Confidence — with no council mechanics in it. Optional my-call-first mode (`--my-call-first`, or "my call first") asks for the user's own call and its reason before the memo, then for a second call after it. Sibling of the full `wise-men` skill, with the same answer format and one fixed fast tier instead of five. Pure Claude — no external APIs.
 ---
 
 # wise-men-flash
@@ -15,6 +15,7 @@ The fast tier of the wise-men council, extracted into its own skill. Three membe
 You (main thread) are the orchestrator and the Chairman. These steps are MECHANICAL. Every deviation MUST be disclosed in the final output's footer — a silently shortcut council is the fake-council anti-pattern.
 
 0. **Pre-flight** (4 checks). If the user already invoked the skill, do NOT ask "want a council?" — they asked for one. If the question is trivial, one-line, a settled fact, or a choice reversible in minutes, say so and answer directly; a council is overkill. If it is compound, split it and say which part you are answering. If it hinges on a current external fact (a price, a version, a tool's present state), gather that fact ONCE now and put it in the brief with its date — never let offline members answer time-sensitive questions from training data.
+0b. **Your call first** — only when the user asks for it (`--my-call-first`, "my call first", "let me decide first", "ask me before you answer"); otherwise skip this step. Strip the flag or phrase from the question before it goes anywhere. Pre-flight questions (step 0) still come first. Then run steps 1–6 as normal and draft the six sections. Before the user sees any of it, ask exactly one thing and stop: *"The memo is ready. Before you see it: what's your call, and the one reason it rests on? A line or two is enough."* Asking now rather than at the start keeps the call out of the brief, the member prompts and your six sections, which are already written. When they answer, write the closing section (**my-call-first mode** below), then run step 7 with their call passed to the checker and the closing section included in the draft it checks. After the call is known, the only changes allowed to the six sections are fixes the checker asks for.
 1. **Roster** (Stage 0): three members.
    - **Practitioner anchor** — named for the actual job the question belongs to (an SRE lead, an employment lawyer, a pricing lead, a launch DevRel lead). Owns correctness and completeness: the concrete first step and the must-check facts. **Strong model.**
    - **One domain member** — the sharpest single lens for this question's domain (see the heuristics below). Owns the non-obvious frame. **Mid model.**
@@ -25,7 +26,7 @@ You (main thread) are the orchestrator and the Chairman. These steps are MECHANI
 4. **Validate**: two checks per member — (a) the 5-section structure OR the explicit "OUT OF DOMAIN — defer" marker is present, and (b) all five headers appear with a substantive sentence each. Fail → retry that member ONCE at +1 model tier (ceiling: the strong tier; at ceiling, retry once same model). A spawn error, timeout or empty result takes the same path. Still failing → record it failed (an execution failure is not an abstention), drop it from synthesis, and disclose in the footer. A DA that abstains is a validator failure — retry; if it persists, the council is degraded, say so.
 5. **Synthesize** (Stage 4): you write the decision memo (format and rules below). No peer review, no debate — those are the full skill's tiers. Draft, then self-check against the memo rules before the checker sees it — above all **one memo, one story** (below): no section may contradict another.
 6. **Verify** (Stage 4.5): every load-bearing factual claim a member FLAGGED as unverified that survived into your draft, you check now (web, grep, tests). A result that changes a claim rewrites that sentence and its Confidence line; a result that changes nothing adds nothing; what you could not check stays marked. Each correction that changes a claim gets one footer line (the footer rule below) and, when a council record is written, its row in the verification table there. Nothing else about verification appears in the answer.
-7. **Check** (Stage 4.5, cont.): spawn ONE fresh `wise-member` at the **cheap** model with the checker prompt below: the question, the shared brief and your corrected draft, each wrapped as data (no member answers, no packet — there was no peer review). It runs the five checks in one pass and returns the fixed form only. Fix what it flags. If you ship over an objection, quote the objection itself — what it says is wrong with the memo — as one footer caveat line, without naming the check. Never silently override it.
+7. **Check** (Stage 4.5, cont.): spawn ONE fresh `wise-member` at the **cheap** model with the checker prompt below: the question, the shared brief and your corrected draft, each wrapped as data (no member answers, no packet — there was no peer review). It runs the five checks in one pass (six in my-call-first mode, with the user's call passed in) and returns the fixed form only. Fix what it flags. If you ship over an objection, quote the objection itself — what it says is wrong with the memo — as one footer caveat line, without naming the check. Never silently override it.
 8. **Output**: the decision memo, nothing before `## Recommendation`, one status line per stage while running (no play-by-play). If the question concerns a real project, write a **council record** — one markdown file with the question, the brief, the three member answers, the checker's verdicts, a verification table (claim / how it was checked / result) and the run's cost — to the project's notes or handoff folder, and offer once to add a one-paragraph summary of the decision to the user's notes.
 
 **Spend ceiling**: flash is four calls in a clean run (three members + one checker). A fault-recovery retry under step 4 or Model routing does not count against it and never costs the checker its call; nothing else is ever added. Never turn it into a bigger council without an explicit user "go" — if a question feels like it needs peer review or debate, say so and point at the full `wise-men` skill rather than quietly spawning more.
@@ -139,11 +140,21 @@ You are the Chairman. Do not spawn a subagent for synthesis — it is your job, 
 [High / Medium / Low per load-bearing claim, from the evidence behind each — never from agreement or "all three converged". Then the material unknowns.]
 ```
 
-Optional footer, and only when there is something real to put in it: degradations (a failed or abstaining member, a failed DA, a fallback agent), factual claims corrected during verification, and an objection you shipped over (quoted as a caveat about the content), one line each. **None → no footer.** Nothing about the check, the tier, the roster or "the council" ever appears — not above `## Recommendation`, not in the footer.
+Optional footer, and only when there is something real to put in it: degradations (a failed or abstaining member, a failed DA, a fallback agent), factual claims corrected during verification (each line starts "Correction:" and says what the memo now says, never how it was found), and an objection you shipped over (quoted as a caveat about the content), one line each. **None → no footer.** Nothing about the check, the tier, the roster or "the council" ever appears — not above `## Recommendation`, not in the footer.
 
 **One memo, one story**: the memo is checked as a whole, not section by section. Before the checker sees it, reread every absolute claim in Recommendation, Why, What to do and the cost-of-being-wrong line ("strictly safer", "nothing is irreversible", "no customer has ever", "your job stays intact") against Risks, the counter-position and the question's own premises — keep it only if it survives them. Compute a range at both ends, and make every number in a later section match the one it came from. This is where round 5 lost its correctness points: on seven of eight questions the judges found a section contradicting another. In a pre-registered check on four of those questions (`eval-data/consistency-check/`), this rule and the CONSISTENCY check cut what the judges found from 14 contradictions to 6.
 
 **Counter-position rule**: it must argue AGAINST the Recommendation, quoted not softened; re-stating the recommendation with hedges is not dissent. Choose it by aim — name the premise or mitigation the Recommendation leans on, give the strongest case it fails, from the members' risks and weakest assumptions and the memo's own analysis. A well-argued side-hypothesis is not the counter-position. A valid point the answer needs belongs in the answer, not here.
+
+**my-call-first mode** (runbook step 0b): the six sections are drafted before you ask for the user's call, so they cannot lean toward or against it; do not revise them afterwards except for fixes the checker asks for. Then add one closing section after `## Confidence`:
+
+```
+## Your call and this memo
+
+[Their call and reason, quoted in one line. Where this memo agrees and where it differs, plainly. If it differs: the strongest point against their call, and what evidence would show they are right. If it agrees: what would make you both wrong. If it agrees in part, say which part each way. If the choice turns on a value or trade-off only they can weigh, name it and leave it to them. End with the second decision, as one line: "Your second call: keep yours, switch, or change it, and the reason in a line."]
+```
+
+When they give the second call, take it as theirs: no praise for switching, no second argument for keeping. If a council record is written, it holds both calls and their reasons, and the six sections as drafted before the call, so any later change can be seen. The footer, if any, goes after this section. The mode adds one question to the user and no subagent calls.
 
 **Evidence over agreement**: three members converging is not evidence and never appears as support. When the DA's reframe is the sharpest thing in the material, it may lead the diagnosis — but check or flag its factual claims first and keep the anchor's executable steps unless the evidence says otherwise.
 
@@ -166,7 +177,11 @@ You are checking a decision memo before it reaches the person who asked. Do not 
 {the corrected draft}
 </draft>
 
-Run the five checks below in one pass and reply in the return format only, one line of evidence each.
+<user_call>
+{my-call-first mode only: the user's first call and reason, verbatim; omit this block otherwise}
+</user_call>
+
+Run the five checks below in one pass (and the sixth when a user_call block is present) and reply in the return format only, one line of evidence each.
 ```
 
 The five checks:
@@ -176,6 +191,7 @@ The five checks:
 3. **CLAIMS** — Is every load-bearing precedent, statistic, base rate, date or legal effect from the brief, marked unverified once, or cut — with no tag on textbook facts and no plain statement of a shaky one — and do the numbers agree?
 4. **COVERAGE** — Does the memo answer every part of the question with concrete steps, saying each thing once, in sections that fit the question's shape, without handing an accuracy decision to an interested party?
 5. **CONSISTENCY** — Does any sentence contradict another part of the memo or the question's premises: an absolute claim ("strictly safer", "nothing is irreversible", "no customer ever") that Risks or the counter-position undercut, a reversibility line the Risks disprove, a number that disagrees with the memo's own arithmetic, or a range computed at one end only?
+6. **DEFERENCE** (my-call-first mode only) — Does the memo hold its own line against the user's call: Recommendation and counter-position argued from the evidence, not bent toward or away from their view; the closing section quoting the call fairly, naming the strongest point against it (or, if the memo agrees, what would make both wrong), and leaving the second decision to them? The closing section's restatement of where the memo agrees and differs is required by design and is not a COVERAGE repeat.
 
 Return format:
 ```
@@ -184,6 +200,7 @@ DISCLOSURE: PASS / FAIL — [evidence]
 CLAIMS: PASS / FAIL — [evidence]
 COVERAGE: PASS / FAIL — [evidence]
 CONSISTENCY: PASS / FAIL — [evidence]
+DEFERENCE: PASS / FAIL — [evidence]   (only when a user_call block was sent; leave this line out otherwise)
 ```
 Any FAIL is blocking. Fix, or ship with the objection quoted. (GROUNDING and CONFIDENCE — the full skill's other two checks — need the member answers cross-referenced and are the full `wise-men` skill's job, not flash's: flash's checker sees the question, the brief and the draft, never the member answers. Whether the counter-position quotes the DA faithfully and whether the anchor's steps survived are yours to check at step 5.)
 
@@ -214,6 +231,7 @@ What was measured: the same aliases resolved to Opus 5, Sonnet 5 and Haiku 4.5 i
 - **Chairman = orchestrator** (a conflict of interest): the same thread picked the roster and wrote the memo. The one fresh checker is the mitigation, not a cure — it matters most when the main-thread model is not the strongest available.
 - **Members are offline**: they reason and flag; the orchestrator verifies afterwards (runbook step 6). A council cannot look anything up.
 - **No peer review, no debate**: that is the trade for speed. The full `wise-men` skill buys back the score those stages add (round 5: the full council 23.6 to flash's 23.4; round 4: 23.8 to 23.3 — both inside judge noise) at about three times the time and four and a half times the cost. On a hard, multi-part or irreversible question, spend it.
+- **my-call-first is unmeasured**: it follows HCI work on cognitive forcing (asking for a person's own judgment before they see AI advice tends to cut over-reliance, at the cost of an extra step people can find annoying), which is why it is opt-in. Whether it improves decisions made with this skill has not been tested.
 - **Measured twice, by Claude judges only**: round 5 ran this skill as installed on eight questions (23.4/25); round 4 ran the profile it was extracted from as an arm inside `wise-men` on five (23.3/25). Every judge and every arm was a Claude model; there are no human grades.
 
 ## Credits
