@@ -447,7 +447,9 @@ def extract():
     for ver, q, sess, ag in todo:
         i = tinfo(ag); assert i["session"] == sess, (q, ver, "session id differs", i["session"])
         assert QS[q]["text"] in i["prompt"], (q, ver, "the checker prompt does not hold this question")
-        d, how, intro = draft_of(i["prompt"])
+        try: d, how, intro = draft_of(i["prompt"])
+        except StopIteration:
+            print(f"draft {q} {ver}: NO extractable draft in the checker's first prompt (agent {ag}): the pair is dropped and disclosed (PREREG-6 exclusions)"); continue
         if ver == "0.2.0": assert how == "the <draft> block", (q, how)
         n = normalize("wise-men", d); red = re.sub(r"\bAli\b", "the user", n)
         sp = shipped_file(q, ver); sh = normalize("wise-men", rd(sp)); v = verdict(i["rows"])
