@@ -1,0 +1,135 @@
+# audit: plain-memo attempt 1 | question: R506 | auditor: fresh wise-member/opus = claude-opus-5-5 | run: 2026-11-08 (round 6, PREREG-6 rules)
+# input: prompts/R506-plain-memo-audit-1.txt (sha256 b374b8b1005366cc), read under a neutral file name | tools used: Read x1
+# session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: ab1d85884e2aba473 | transcript sha256: 611139fe07535a32348666d37b8935861e5825331cae260a9088b9fbd733b49c
+# minutes: 1.8 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 4/12359/18150/21229 | list-price USD: 0.45
+
+```audit
+R1: S1
+R2: S1
+R3: S1, S2
+R4: S3
+R5: S4
+R6: S4
+R7: S6
+R8: S6
+R9: S7
+R10: S10
+R11: S10
+R12: S13
+R13: S15
+R14: S16, S17, S18
+R15: S18
+R16: STRONGER — S29 — the source only says to "consider" a short verbal heads-up; the rewrite turns this into a flat instruction to give one (the rest restates S27, S26, S19)
+R17: S28
+R18: S1
+R19: S5
+R20: S8, S9
+R21: S8
+R22: S8
+R23: S8
+R24: S9
+R25: S6, S7, S8, S9
+R26: S10, S11
+R27: S11
+R28: S12
+R29: S12
+R30: S12
+R31: S12
+R32: S13, S23
+R33: S14
+R34: S14
+R35: S15, S16
+R36: S16
+R37: S17
+R38: S18
+R39: S18
+R40: S18
+R41: S29
+R42: S29, S26, S19
+R43: S1
+R44: S2, S4, S6, S9
+R45: S29
+R46: S27, S19
+R47: S26, S19
+R48: S18
+R49: S18
+R50: S28
+R51: S28, S4
+R52: S4
+R53: S28, S6
+R54: S6
+R55: S7
+R56: S28, S24
+R57: S24, S19
+R58: S24, S19
+R59: S25, S19
+R60: S28
+R61: S28
+R62: S13, S18
+R63: S13
+R64: S23, S18, S10
+R65: S14
+R66: S14
+R67: S19
+R68: S20, S19
+R69: S21, S19
+R70: S23, S19
+R71: S24, S19
+R72: S26, S27, S19
+R73: S19
+R74: S20, S19
+R75: S20
+R76: S9, S20
+R77: S21, S19
+R78: S21, S22
+R79: S22
+R80: S23, S19
+R81: S23
+R82: S24, S19
+R83: S24
+R84: S25
+R85: S26, S19
+R86: S26
+R87: CONNECTIVE
+R88: S8
+R89: S15, S17
+R90: S16, S17
+R91: S18
+R92: CONNECTIVE
+R93: S10
+R94: S11
+R95: S12
+R96: S12
+R97: S13, S18
+R98: S14
+R99: S14
+R100: S18
+R101: S18
+R102: S18
+R103: S18
+R104: CONNECTIVE
+R105: S1, S2
+R106: S3
+R107: S4
+R108: S6, S7
+R109: S8, S9
+R110: S11
+R111: S12
+R112: S13
+R113: S14
+R114: S16, S17
+R115: S18
+R116: S28
+R117: S25
+R118: CONNECTIVE
+R119: S11
+R120: S12
+R121: S19, S20, S21, S23, S24, S26
+R122: CONNECTIVE
+R123: S12
+R124: CONNECTIVE
+R125: S12
+R126: S12
+R127: S12
+R128: S24
+```

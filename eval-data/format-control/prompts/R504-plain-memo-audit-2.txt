@@ -1,0 +1,191 @@
+You are checking a rewrite against its source, sentence by sentence. The rewrite was meant to put the source into a fixed six-section format while saying nothing the source does not say, at the same certainty.
+
+The rules the rewrite had to follow.
+Allowed: restating a source sentence in fuller words; splitting or merging sentences; moving content between sections; restating a point where the format calls for it (the first section sums up what the later sections say); connecting sentences that make no claim; and three fixed sentences, used when the source gives nothing for a section: "No further risks are named.", "No case against this recommendation is made beyond the risks above." and "No unknowns are named."
+Not allowed: any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state (a fact from the question counts as new unless the source states it); and any change in how certain a claim is, in either direction.
+The last section labels claims High, Medium or Low by a fixed rule from the source's own wording: a claim the source states without a hedge is High; with "likely", "probably", "usually", "typically" or "suggests", Medium; with "may", "might", "could", "possibly" or "unclear", Low. A label that follows this rule is not a change in certainty; a label that breaks it is.
+
+For every rewrite sentence, R1 to R78, give exactly one line, in one of these forms:
+R<k>: S<i>, S<j>                  the source sentence or sentences it restates (name all of them)
+R<k>: CONNECTIVE                  it only connects or introduces, and makes no claim
+R<k>: FIXED                       it is one of the three fixed sentences, word for word
+R<k>: NEW — <what is new>         it states something the source does not; if it otherwise restates source sentences, name them: R<k>: NEW — S<i>, S<j> — <what is new>
+R<k>: STRONGER — S<i> — <what changed>    it states a source claim with more certainty than the source does
+R<k>: WEAKER — S<i> — <what changed>      it states a source claim with less certainty than the source does
+Judge each rewrite sentence against the whole source, not only against the sentences near it. A source sentence that is only a bold lead-in or a line ending in a colon is restated by any rewrite sentence that carries the content it introduces: cite it there too. Do not list the source sentences the rewrite leaves out; that is computed from your lines.
+
+The question the source answers (context only):
+"""
+Our head of growth presented a customer lifetime value of $15,000, calculated by dividing our $180 average monthly revenue per customer by our 1.2% monthly churn rate, and wants to raise what we're willing to spend to win a new customer to $5,000. We've only been selling for three years, so no customer has actually stayed with us longer than 36 months. How far should I trust that $15,000, and what would a more honest estimate look like?
+"""
+
+The source, sentence by sentence:
+"""
+[S1] **Short answer: don't build a spending decision on $15,000.
+[S2] The arithmetic is fine; the assumption underneath it isn't, and the gap is big enough to flip the decision.**
+
+[S3] **The mechanical problem**
+
+[S4] LTV = ARPU / churn is the constant-hazard shortcut: it assumes every customer, in every month of their relationship, carries the same 1.2% chance of leaving — forever.
+[S5] That math implies an average customer lifetime of 1/0.012 = 83 months (~6.9 years).
+[S6] The company is 36 months old.
+[S7] The formula is asserting behavior for years 4 through 7 of a customer relationship that has never once been observed — no customer exists yet who could confirm or contradict it.
+
+[S8] **How much of the $15,000 is real vs. invented**
+
+[S9] Split it at the 36-month mark, using their own churn rate: expected revenue collected in months 0–35 = 180 × [1 − 0.988³⁶] / 0.012 ≈ 180 × 29.4 ≈ **$5,290**.
+[S10] That's the slice of "lifetime value" that falls inside a window the business has actually been able to watch happen.
+[S11] The other **~$9,700 — roughly two-thirds of the claimed number** — is revenue the formula expects from month 37 onward, a period with zero observed customers.
+[S12] Whatever assumption drives that piece, it isn't evidence.
+
+[S13] **Other things making it worse**
+
+[S14] - *Revenue vs. margin*: $180 is revenue; CAC is a cash cost, so it belongs against gross profit, not revenue.
+[S15] Cost to serve a customer isn't zero.
+[S16] A generic 70% gross margin (swap in your real number) turns the naive $15,000 into $10,500, and the honest 36-month figure into ~$3,700.
+[S17] - *Blended churn*: 1.2% is presumably measured across the whole active base at once — new signups and 34-month veterans together.
+[S18] If churn declines with tenure (the usual pattern), that blended number tells you little about what a 5-year-tenured customer's actual odds are, in either direction.
+[S19] - *No discounting*: nothing here present-values months 40–83.
+[S20] Revenue in year 6 isn't worth what revenue in year 1 is.
+[S21] - *Single point estimate*: presenting $15,000 as one clean number hides exactly the uncertainty that matters for this call.
+
+[S22] **What a more honest estimate looks like**
+
+[S23] - Build actual per-cohort survival curves — % of the month-1 signup cohort still active at month 2, 3…36; same for the month-12 cohort, etc. — instead of assuming one constant hazard rate.
+[S24] This is what the data can actually support.
+[S25] - Report LTV capped at the observed window (36 months) as the defensible figure, and label anything past that as a scenario, not a fact: "$5,290 revenue / ~$3,700 margin-adjusted, observed; $15,000 only if post-36-month churn holds flat forever (unverified)."
+[S26] - Switch the numerator to gross margin dollars, and discount if projecting years out.
+[S27] - Cross-check with CAC payback period, which needs less extrapolation: at $5,000 CAC and ~70% margin, monthly margin per customer is $126, so payback ≈ 5,000/126 ≈ **40 months** — longer than the company has existed.
+[S28] You'd be betting a customer acquired today behaves like your best 3-year survivors, sustained past the point where any survivors exist to check against, just to break even.
+
+[S29] Bottom line: raising CAC to $5,000 off the $15,000 figure spends real, sticky dollars against a number that's roughly two-thirds extrapolation beyond the company's own lifetime.
+[S30] Rebuild it off actual cohort curves and real gross margin.
+[S31] If 3:1 survives that, raise the target with confidence.
+[S32] If the honest number lands closer to 1:1, this is the wrong direction to move.
+"""
+
+The rewrite, sentence by sentence (header lines are not numbered):
+"""
+## Recommendation
+
+[R1] Do not build a spending decision on the $15,000 lifetime value figure.
+[R2] The arithmetic in it is fine, but the assumption underneath it is not, and the gap between what the formula claims and what the business has actually observed is big enough to flip the decision.
+
+[R3] Raising the acquisition target to $5,000 off the $15,000 figure would spend real, sticky dollars against a number that is roughly two-thirds extrapolation beyond the company's own lifetime.
+[R4] The better course is to rebuild the estimate from actual cohort curves and real gross margin.
+[R5] If a 3:1 ratio survives that rebuild, you can raise the target with confidence.
+[R6] If the honest number lands closer to 1:1, raising the target is the wrong direction to move.
+
+## Why
+
+[R7] The formula is a constant-hazard shortcut.
+[R8] LTV = ARPU / churn assumes that every customer, in every month of their relationship, carries the same 1.2% chance of leaving, forever.
+[R9] That math implies an average customer lifetime of 1/0.012 = 83 months, or about 6.9 years.
+[R10] The company is 36 months old.
+[R11] So the formula asserts behavior for years 4 through 7 of a customer relationship that has never once been observed.
+[R12] No customer exists yet who could confirm or contradict it.
+
+[R13] Most of the $15,000 is therefore invented rather than real.
+[R14] Split it at the 36-month mark, using the company's own churn rate.
+[R15] Expected revenue collected in months 0 to 35 is 180 × [1 − 0.988³⁶] / 0.012, which is about 180 × 29.4, or roughly $5,290.
+[R16] That is the slice of "lifetime value" that falls inside a window the business has actually been able to watch happen.
+[R17] The other roughly $9,700, which is about two-thirds of the claimed number, is revenue the formula expects from month 37 onward, a period with zero observed customers.
+[R18] Whatever assumption drives that piece, it is not evidence.
+
+[R19] Several other things make the figure worse.
+
+[R20] - Revenue versus margin: $180 is revenue, but acquisition cost is a cash cost, so it belongs against gross profit rather than revenue.
+[R21] The cost to serve a customer is not zero.
+[R22] A generic 70% gross margin (swap in your real number) turns the naive $15,000 into $10,500, and the honest 36-month figure into about $3,700.
+[R23] - Blended churn: the 1.2% is presumably measured across the whole active base at once, with new signups and 34-month veterans together.
+[R24] If churn declines with tenure, which is the usual pattern, that blended number tells you little about what a five-year-tenured customer's actual odds are, in either direction.
+[R25] - No discounting: nothing in the calculation present-values months 40 to 83.
+[R26] Revenue in year 6 is not worth what revenue in year 1 is.
+[R27] - Single point estimate: presenting $15,000 as one clean number hides exactly the uncertainty that matters for this call.
+
+[R28] The payback cross-check points the same way.
+[R29] At a $5,000 acquisition cost and roughly 70% margin, monthly margin per customer is $126, so payback is about 5,000/126, or roughly 40 months.
+[R30] That is longer than the company has existed.
+[R31] You would be betting that a customer acquired today behaves like your best three-year survivors, sustained past the point where any survivors exist to check against, just to break even.
+
+## What to do
+
+[R32] First, build actual per-cohort survival curves instead of assuming one constant hazard rate.
+[R33] That means the percentage of the month-1 signup cohort still active at month 2, 3, and on through 36, and the same for the month-12 cohort, and so on.
+[R34] This is what the data can actually support.
+
+[R35] Second, report lifetime value capped at the observed window of 36 months as the defensible figure, and label anything past that as a scenario, not a fact.
+[R36] The wording could read: "$5,290 revenue / ~$3,700 margin-adjusted, observed; $15,000 only if post-36-month churn holds flat forever (unverified)."
+
+[R37] Third, switch the numerator to gross margin dollars, and discount if you are projecting years out.
+[R38] Use your real gross margin in place of the generic 70% figure.
+
+[R39] Fourth, cross-check with the payback period on acquisition cost, which needs less extrapolation.
+[R40] At $5,000 and roughly 70% margin, monthly margin per customer is $126, so payback is about 40 months, longer than the company has existed.
+
+[R41] Finally, once the cohort-based, margin-based figure exists, compare it with the acquisition target.
+[R42] If 3:1 survives, raise the target with confidence.
+[R43] If the honest number lands closer to 1:1, do not raise it.
+
+## Risks of this plan
+
+[R44] The risks here are mostly those of acting on the existing figure, and the caveats the source attaches to its own numbers.
+
+[R45] The main risk is spending real, sticky dollars against a number that is roughly two-thirds extrapolation beyond the company's own lifetime.
+[R46] Whatever assumption drives the portion past month 36, it is not evidence.
+
+[R47] The 70% gross margin used in the adjusted figures is a generic assumption.
+[R48] You should swap in your real number, so the $10,500, the $3,700 and the $126 monthly margin, and therefore the 40-month payback, all depend on a placeholder rather than a measured margin.
+
+[R49] The 1.2% churn rate is presumably a blended measure across new signups and long-tenured customers together.
+[R50] If churn declines with tenure, which is the usual pattern, that blended figure tells you little about what a five-year-tenured customer's actual odds are, in either direction.
+
+[R51] The calculation is also not discounted, so later revenue is overstated relative to early revenue, and presenting a single point estimate hides the uncertainty that matters for this decision.
+
+[R52] Finally, the $15,000 figure holds only if churn after month 36 holds flat forever, which is unverified.
+[R53] Betting on it means betting that a customer acquired today behaves like your best three-year survivors, past the point where any survivors exist to check against, just to break even.
+
+## Strongest counter-position
+
+[R54] The source makes no case that $15,000 is right.
+[R55] The nearest thing to a limit on its own answer is the conditional it states: the $15,000 figure holds only if post-36-month churn stays flat forever, and that is unverified.
+[R56] The source also says that if 3:1 survives the rebuild from actual cohort curves and real gross margin, you can raise the target with confidence.
+
+[R57] It also notes that the blended churn figure tells you little about a long-tenured customer's actual odds, in either direction.
+[R58] The source's point is that the number tells you little, not that it is necessarily too optimistic or too pessimistic.
+
+[R59] The source's own caveat on its numbers is that the 70% margin is generic and should be replaced with your real number.
+
+## Confidence
+
+[R60] Claims stated without a hedge are High.
+
+[R61] - High: LTV = ARPU / churn assumes the same 1.2% chance of leaving in every month, forever.
+[R62] - High: That math implies an average customer lifetime of 83 months, about 6.9 years, against a company that is 36 months old.
+[R63] - High: No customer exists yet who could confirm or contradict behavior in years 4 through 7.
+[R64] - High: Expected revenue in months 0 to 35 is about $5,290, and the remainder, about $9,700, which is roughly two-thirds of the claimed number, falls from month 37 onward, a period with zero observed customers.
+[R65] - High: Acquisition cost is a cash cost and belongs against gross profit, not revenue, and the cost to serve a customer is not zero.
+[R66] - High: A generic 70% gross margin turns the naive $15,000 into $10,500 and the honest 36-month figure into about $3,700.
+[R67] - High: Nothing in the calculation present-values months 40 to 83.
+[R68] - High: Presenting a single clean number hides the uncertainty that matters for this call.
+[R69] - High: Per-cohort survival curves are what the data can actually support.
+[R70] - High: At a $5,000 acquisition cost and roughly 70% margin, monthly margin is $126 and payback is about 40 months, longer than the company has existed.
+
+[R71] Claims stated with a hedge:
+
+[R72] - Medium: The 1.2% churn rate is presumably measured across the whole active base at once.
+[R73] - Medium: Churn declining with tenure is the usual pattern.
+
+[R74] Unknowns the source names:
+
+[R75] - Whether churn after month 36 holds flat forever, which is unverified.
+[R76] - Your real gross margin, which replaces the generic 70%.
+[R77] - What a five-year-tenured customer's actual odds of leaving are, in either direction.
+[R78] - Whether the honest number lands at 3:1 or closer to 1:1 once rebuilt from cohort curves and real gross margin.
+"""
+
+Return only this block, one line per rewrite sentence, R1 to R78 in order:
+```audit
+R1: ...
+R2: ...
+```

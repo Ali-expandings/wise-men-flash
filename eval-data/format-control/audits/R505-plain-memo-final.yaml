@@ -1,0 +1,25 @@
+question: R505
+arm: plain-memo
+from_attempt: 2
+deleted:
+- R: 9
+  label: STRONGER
+  refs:
+  - 48
+  note: the source says a finding is "a hypothesis worth tracking, not a verdict" only "when most of those [checklist items] point weak"; the rewrite drops that condition and says it outright about this
+    dementia finding
+  text: Treat the dementia finding as a hypothesis worth tracking, not a verdict.
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 48
+  cited_once_or_more: 48
+  cited_twice_or_more: 39
+  max: 9
+  mean: 3.08
+words: 1882

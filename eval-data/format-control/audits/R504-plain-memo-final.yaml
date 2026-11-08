@@ -1,0 +1,24 @@
+question: R504
+arm: plain-memo
+from_attempt: 2
+deleted:
+- R: 57
+  label: STRONGER
+  refs:
+  - 18
+  note: drops the source's condition "if churn declines with tenure (the usual pattern)" and states without condition that the blended figure tells little about a long-tenured customer's odds
+  text: It also notes that the blended churn figure tells you little about a long-tenured customer's actual odds, in either direction.
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 32
+  cited_once_or_more: 32
+  cited_twice_or_more: 28
+  max: 25
+  mean: 4.56
+words: 1372

@@ -1,0 +1,24 @@
+question: R508
+arm: plain-memo
+from_attempt: 2
+deleted:
+- R: 68
+  label: WEAKER
+  refs:
+  - 4
+  note: the source says these gaps are "exactly where deals like this actually fail"; the rewrite softens this to "a place where deals like this can fail" (S5 otherwise restated)
+  text: 'None of the gaps disqualifies you, but each is a place where deals like this can fail, and the source names these risks and caveats:'
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 37
+  cited_once_or_more: 37
+  cited_twice_or_more: 37
+  max: 13
+  mean: 4.41
+words: 2092

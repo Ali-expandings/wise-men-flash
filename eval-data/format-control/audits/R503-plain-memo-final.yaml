@@ -1,0 +1,18 @@
+question: R503
+arm: plain-memo
+from_attempt: 2
+deleted: []
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 19
+  cited_once_or_more: 19
+  cited_twice_or_more: 19
+  max: 11
+  mean: 5.47
+words: 1502

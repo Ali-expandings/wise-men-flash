@@ -1,0 +1,115 @@
+You are checking a rewrite against its source, sentence by sentence. The rewrite was meant to put the source into a fixed six-section format while saying nothing the source does not say, at the same certainty.
+
+The rules the rewrite had to follow.
+Allowed: restating a source sentence in fuller words; splitting or merging sentences; moving content between sections; restating a point where the format calls for it (the first section sums up what the later sections say); connecting sentences that make no claim; and three fixed sentences, used when the source gives nothing for a section: "No further risks are named.", "No case against this recommendation is made beyond the risks above." and "No unknowns are named."
+Not allowed: any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state (a fact from the question counts as new unless the source states it); and any change in how certain a claim is, in either direction.
+The last section labels claims High, Medium or Low by a fixed rule from the source's own wording: a claim the source states without a hedge is High; with "likely", "probably", "usually", "typically" or "suggests", Medium; with "may", "might", "could", "possibly" or "unclear", Low. A label that follows this rule is not a change in certainty; a label that breaks it is.
+
+For every rewrite sentence, R1 to R42, give exactly one line, in one of these forms:
+R<k>: S<i>, S<j>                  the source sentence or sentences it restates (name all of them)
+R<k>: CONNECTIVE                  it only connects or introduces, and makes no claim
+R<k>: FIXED                       it is one of the three fixed sentences, word for word
+R<k>: NEW — <what is new>         it states something the source does not; if it otherwise restates source sentences, name them: R<k>: NEW — S<i>, S<j> — <what is new>
+R<k>: STRONGER — S<i> — <what changed>    it states a source claim with more certainty than the source does
+R<k>: WEAKER — S<i> — <what changed>      it states a source claim with less certainty than the source does
+Judge each rewrite sentence against the whole source, not only against the sentences near it. A source sentence that is only a bold lead-in or a line ending in a colon is restated by any rewrite sentence that carries the content it introduces: cite it there too. Do not list the source sentences the rewrite leaves out; that is computed from your lines.
+
+The question the source answers (context only):
+"""
+Of the last ten mid-size deals we lost, our sales team logged 'missing automation features' as the reason for seven, and our closest competitor has a polished automation builder. I'm deciding whether to spend two quarters building our own or to buy a small startup that already has one, which would use up most of our cash reserve. For a company of about 80 people, which path makes more sense?
+"""
+
+The source, sentence by sentence:
+"""
+[S1] Before picking a lane, pressure-test the "7 of 10" number.
+[S2] Sales-logged loss reasons skew toward whatever's easiest to blame — "missing feature" is a lot more comfortable to write up than "we got outsold" or "we were priced wrong" or "we pitched the wrong buyer."
+[S3] Pull 3-4 of those deals and check with the actual prospect or the AE's notes/call recordings whether automation was really the deciding factor or just the visible excuse.
+[S4] If it holds up, keep reading.
+
+[S5] **The real choice isn't binary.**
+[S6] Build vs. buy skips a third option that fits your situation better: license or embed an existing automation engine (Workato, Tray.ai, n8n, Zapier's partner/embed API) into your product.
+[S7] That gets a genuinely polished builder in front of prospects in weeks, costs a subscription or rev-share instead of your cash reserve, and buys you real data on whether automation actually closes deals before you commit two quarters or your war chest to it.
+
+[S8] **Why "buy" is the riskier of your two named options.**
+[S9] At 80 people, your cash reserve isn't spare change — it's your runway through a bad quarter, a slow raise, a downturn.
+[S10] Spending most of it to acquire a small startup for one feature is a bet-the-company move, and small-company acquisitions almost never save the time you think they will: replatforming the acquired product onto your auth/billing/data model, retaining the founding team past their cliff, merging support and docs — that's typically 12-18 months, not zero.
+[S11] You don't skip the two quarters, you add integration risk and cash risk on top of a similar timeline.
+[S12] It only makes sense if you're already profitable (reserve isn't your survival buffer), the price is small relative to reserve rather than "most of it," or the team's expertise is the real prize and the product is secondary.
+
+[S13] **Why "build in two quarters" is optimistic.**
+[S14] The core workflow engine might land in two quarters.
+[S15] The polish — templates, edge-case handling, reliability, the UX refinement that's actually what "polished" means to a buyer comparing you to a competitor who's had a head start — usually runs 2-3x that.
+[S16] And pulling meaningful engineering headcount off roadmap for two-plus quarters at an 80-person company has real opportunity cost elsewhere; account for what else slips.
+
+[S17] **Recommendation:** don't spend most of your cash reserve on this.
+[S18] Stop the bleeding now with a partner/embed integration, build the differentiated core in-house on a realistic (not optimistic) timeline, and keep the acquisition option only for a target priced well under "most of reserve" or where you're clearly buying a team, not a feature.
+[S19] If you're already cash-flow positive and the reserve isn't your lifeline, or no embeddable option fits your stack (heavily regulated, on-prem, etc.), that changes the math toward buy — but as framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+"""
+
+The rewrite, sentence by sentence (header lines are not numbered):
+"""
+## Recommendation
+[R1] Don't spend most of your cash reserve on this.
+[R2] Stop the bleeding now with a partner or embed integration.
+[R3] Build the differentiated core in-house on a realistic (not optimistic) timeline.
+[R4] Keep the acquisition option only for a target priced well under "most of reserve" or where you are clearly buying a team, not a feature.
+[R5] As framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+
+## Why
+[R6] The real choice isn't binary.
+[R7] Build versus buy skips a third option that fits your situation better: license or embed an existing automation engine.
+[R8] That gets a genuinely polished builder in front of prospects in weeks.
+[R9] It costs a subscription or rev-share instead of your cash reserve.
+[R10] It also buys you real data on whether automation actually closes deals before you commit two quarters or your war chest to it.
+
+[R11] Buying is the riskier of your two named options.
+[R12] At 80 people, your cash reserve isn't spare change.
+[R13] It is your runway through a bad quarter, a slow raise, or a downturn.
+[R14] Spending most of it to acquire a small startup for one feature is a bet-the-company move.
+[R15] Small-company acquisitions almost never save the time you think they will.
+[R16] Replatforming the acquired product onto your auth, billing and data model, retaining the founding team past their cliff, and merging support and docs is typically 12-18 months, not zero.
+[R17] You don't skip the two quarters.
+[R18] You add integration risk and cash risk on top of a similar timeline.
+
+[R19] Building in two quarters is optimistic.
+[R20] The core workflow engine might land in two quarters.
+[R21] The polish usually runs 2-3x that.
+[R22] Polish means templates, edge-case handling, reliability, and the UX refinement that is actually what "polished" means to a buyer comparing you to a competitor who has had a head start.
+[R23] Pulling meaningful engineering headcount off roadmap for two-plus quarters at an 80-person company has real opportunity cost elsewhere.
+
+## What to do
+[R24] 1. Before picking a lane, pressure-test the "7 of 10" number.
+[R25] Sales-logged loss reasons skew toward whatever is easiest to blame.
+[R26] "Missing feature" is a lot more comfortable to write up than "we got outsold," "we were priced wrong," or "we pitched the wrong buyer."
+[R27] 2. Pull 3-4 of those deals.
+[R28] Check with the actual prospect, or the AE's notes and call recordings, whether automation was really the deciding factor or just the visible excuse.
+[R29] If it holds up, keep reading.
+[R30] 3. License or embed an existing automation engine, such as Workato, Tray.ai, n8n, or Zapier's partner/embed API.
+[R31] 4. Build the differentiated core in-house on a realistic timeline, and account for what else slips.
+[R32] 5. Keep the acquisition option only for a target priced well under "most of reserve," or where you are clearly buying a team, not a feature.
+
+## Risks of this plan
+[R33] Building pulls engineering headcount off roadmap, so other work slips.
+[R34] The "7 of 10" figure may turn out to be the visible excuse rather than the real cause.
+[R35] Your polished builder from a licensed engine depends on an embeddable option fitting your stack.
+
+## Strongest counter-position
+[R36] Acquisition only makes sense if you're already profitable (reserve isn't your survival buffer), the price is small relative to reserve rather than "most of it," or the team's expertise is the real prize and the product is secondary.
+[R37] If you're already cash-flow positive and the reserve isn't your lifeline, or no embeddable option fits your stack (heavily regulated, on-prem, etc.), that changes the math toward buy.
+[R38] But as framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+
+## Confidence
+[R39] High: your reserve is your runway; spending most of it on a one-feature acquisition is a bet-the-company move; small-company acquisitions almost never save the time you think they will; buying adds integration risk and cash risk on top of a similar timeline; sales-logged loss reasons skew toward easy blame; embedding gets a polished builder in front of prospects in weeks at subscription or rev-share cost; the recommendation is disproportionate-risk as framed.
+
+[R40] Medium: replatforming and related integration is typically 12-18 months; polish usually runs 2-3x the core build.
+
+[R41] Low: the core workflow engine might land in two quarters.
+
+[R42] Unknowns: whether automation was really the deciding factor in those deals; whether you are already profitable or cash-flow positive; the price relative to reserve; whether the team's expertise is the real prize; whether an embeddable option fits your stack.
+"""
+
+Return only this block, one line per rewrite sentence, R1 to R42 in order:
+```audit
+R1: ...
+R2: ...
+```

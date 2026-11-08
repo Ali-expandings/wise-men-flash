@@ -1,0 +1,150 @@
+question: R507
+arm: plain-memo
+attempt: 2
+rewrite_sentences: 122
+source_sentences: 27
+counts:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+pass: true
+flagged: []
+dropped: []
+reuse:
+  source_sentences: 27
+  cited_once_or_more: 27
+  cited_twice_or_more: 25
+  max: 8
+  mean: 4.67
+labels:
+  RESTATES: 109
+  CONNECTIVE: 13
+  FIXED: 0
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+script_checks_pass: false
+map:
+  R1: S1
+  R2: S1
+  R3: S1, S2, S7, S11
+  R4: S1, S15
+  R5: S26
+  R6: S27
+  R7: S27
+  R8: CONNECTIVE
+  R9: S16
+  R10: S18
+  R11: S20
+  R12: S11
+  R13: S22
+  R14: S24
+  R15: S10, S15, S27
+  R16: S1, S15
+  R17: S2, S22
+  R18: CONNECTIVE
+  R19: S2
+  R20: S3
+  R21: S3
+  R22: S4
+  R23: S4
+  R24: CONNECTIVE
+  R25: S5
+  R26: S5
+  R27: S6
+  R28: S6
+  R29: CONNECTIVE
+  R30: S7
+  R31: S7
+  R32: S8
+  R33: S8
+  R34: S8
+  R35: S9
+  R36: S10
+  R37: S10
+  R38: CONNECTIVE
+  R39: S11
+  R40: S12
+  R41: S12, S13
+  R42: S13
+  R43: CONNECTIVE
+  R44: S15
+  R45: S15
+  R46: CONNECTIVE
+  R47: S16
+  R48: S17
+  R49: S17
+  R50: S17
+  R51: S17
+  R52: S17
+  R53: S18
+  R54: S18
+  R55: S18
+  R56: S19
+  R57: S20
+  R58: S21
+  R59: S21
+  R60: S11
+  R61: S13
+  R62: S13
+  R63: S14
+  R64: S14
+  R65: S14
+  R66: S22
+  R67: S22
+  R68: S23
+  R69: S23
+  R70: S24
+  R71: S24
+  R72: S24
+  R73: S24
+  R74: S25
+  R75: S10
+  R76: S10
+  R77: CONNECTIVE
+  R78: S8
+  R79: S8
+  R80: S8
+  R81: S8
+  R82: S12
+  R83: S12
+  R84: S12, S13
+  R85: S20, S21
+  R86: S21
+  R87: S21
+  R88: S4
+  R89: S4
+  R90: S4
+  R91: S5
+  R92: S5
+  R93: S6
+  R94: S6
+  R95: S24
+  R96: S24
+  R97: S24
+  R98: S25
+  R99: S23
+  R100: S23
+  R101: CONNECTIVE
+  R102: S26
+  R103: S15, S26, S27
+  R104: CONNECTIVE
+  R105: S22
+  R106: S23
+  R107: S3, S4
+  R108: CONNECTIVE
+  R109: CONNECTIVE
+  R110: S1
+  R111: S2
+  R112: S3
+  R113: S5
+  R114: S7, S8
+  R115: S10
+  R116: S11, S13
+  R117: S20
+  R118: S22
+  R119: S26, S27
+  R120: CONNECTIVE
+  R121: S3
+  R122: S3

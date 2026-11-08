@@ -1,0 +1,24 @@
+question: R505
+arm: plain-memo-short
+from_attempt: 2
+deleted:
+- R: 54
+  label: STRONGER
+  refs:
+  - 9
+  note: '"that''s where this kind of study is structurally weak" becomes "this kind of study can''t settle" the causal question'
+  text: Whether the drug causes dementia is a separate question that this kind of study can't settle.
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 48
+  cited_once_or_more: 48
+  cited_twice_or_more: 22
+  max: 3
+  mean: 1.56
+words: 1078

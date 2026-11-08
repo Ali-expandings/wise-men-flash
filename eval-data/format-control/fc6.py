@@ -283,6 +283,10 @@ def arefs(s, nS):
     for a, b in re.findall(r"S(\d+)(?:\s*[-–]\s*S?(\d+))?", s):
         out += list(range(int(a), int(b) + 1)) if b else [int(a)]
     assert out and all(1 <= x <= nS for x in out), ("source sentence number out of range", s); return sorted(set(out))
+def is_fixed(s):
+    """A fixed sentence, word for word, allowing quotes, list markers and a short label before it ("Unknowns: No unknowns are named.")."""
+    s = re.sub(r"^[-*+]\s+", "", s.strip()).strip('"*_ ')
+    return any(s == f or re.fullmatch(r"[\w ]{1,30}:\s*" + re.escape(f), s) for f in FIXED.values())
 def parse_audit(text, rw_sents, nS):
     blocks = re.findall(r"```audit\s*\n(.*?)```", text, re.S); nR = len(rw_sents)
     lines = blocks[0].splitlines() if len(blocks) == 1 else [l for l in text.splitlines() if re.match(r"^\s*R\d+:", l)]
@@ -294,7 +298,7 @@ def parse_audit(text, rw_sents, nS):
         if y: m[k] = {"label": "RESTATES", "refs": arefs(y[1], nS), "note": (y[2] or "").strip()}; continue
         y = re.fullmatch(r"(CONNECTIVE|FIXED)(?:\s*[—–-]+\s*(.*))?", b)
         if y:
-            if y[1] == "FIXED": assert rw_sents[k - 1].strip('"') in FIXED.values(), ("FIXED on a sentence that is not a fixed sentence", k)
+            if y[1] == "FIXED": assert is_fixed(rw_sents[k - 1]), ("FIXED on a sentence that is not a fixed sentence", k)
             m[k] = {"label": y[1], "refs": [], "note": (y[2] or "").strip()}; continue
         y = re.fullmatch(r"(NEW|STRONGER|WEAKER)\s*[—–:-]+\s*(.+)", b, re.S); assert y, ("unknown audit label", line)
         z = re.match(rf"({AREFS})\s*(?:[—–-]+\s*(.*))?$", y[2], re.S)
@@ -382,7 +386,9 @@ def final_build(q, arm):
         refs[int(r[1:])] = {"label": "RESTATES" if lab.startswith("S") else lab, "refs": [int(x) for x in re.findall(r"S(\d+)", v)], "note": ""}
     after = audit_summary(refs, rw_s, src_s, keep)
     hdr = header_lines(f_rewrite(q, arm, n))
-    note = (f"final: attempt {n}, which passed the script checks and the audit" if not kill else
+    fails = [nm for nm, ok, _ in script_check(q, arm, raw) if not ok]
+    note = ((f"final: attempt {n}, which passed the script checks and the audit" if not fails else
+             f"final: attempt {n}; it passed the audit but still fails the script check(s) {', '.join(fails)} after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)") if not kill else
             f"final: attempt {n} with {len(kill)} sentence(s) deleted under PREREG-6 Part A rule 3 ({', '.join(f'R{x}' for x in sorted(kill))})"
             + (f"; fixed sentence inserted in {', '.join(inserted)}" if inserted else "") + f"; {after['counts']['DROPPED']} source sentence(s) cited nowhere, disclosed in {rel(f_audit(q, arm, 'final', 'yaml'))}")
     raw_final = "".join(f"# {l}\n" for l in hdr) + f"# {note}\n\n" + final + "\n"
@@ -514,7 +520,10 @@ def packet_list():
     return [(t, q, j) for q in QIDS for t in TYPES for j in JUDGES] + [("B1", q, j) for q in B1Q for j in JUDGES] + [("B2", q, j) for q in B2Q for j in JUDGES]
 def inputs_ready(part, q):
     need = {"M": [f_rewrite(q, PM)], "S": [f_rewrite(q, PS)], "P": [], "B1": [f_draft(q, "0.2.0"), shipped_file(q, "0.2.0")], "B2": [f_draft(q, "0.1.0")]}[part]
-    return [p for p in need if not os.path.exists(p)]
+    miss = [p for p in need if not os.path.exists(p)]
+    if part in ("M", "S") and not miss and not check_ok(script_check(q, TYPES[part], rd(f_rewrite(q, TYPES[part])))):
+        miss.append(f_rewrite(q, TYPES[part]) + " (fails the script checks; held for the owner's decision, see DEVIATIONS.md)")
+    return miss
 def blind():
     made, missing = 0, {}
     for arm in CONTROLS:
@@ -776,7 +785,9 @@ def spotcheck():
                         parts.append(("~~" + s + "~~" if k in dele else s) + f" [R{k}: {v}" + ("; DELETED" if k in dele else "") + "]")
                     L += [(u["pre"] if u["pre"] else "") + " ".join(parts), ""]
             if fi["inserted_fixed_sentence_in"]: L += ["Fixed sentence inserted after deletion in: " + ", ".join(fi["inserted_fixed_sentence_in"]), ""]
-            L += [f"Audit result for this version{' (after the one retry)' if n == 2 else ''}: NEW {fi['counts_after']['NEW']}, STRONGER {fi['counts_after']['STRONGER']}, WEAKER {fi['counts_after']['WEAKER']}, DROPPED {fi['counts_after']['DROPPED']}."
+            lo, hi, _ = band(arm, q); inb = lo <= fi["words"] <= hi
+            L += [f"Length: {fi['words']:,} words; its pre-registered band is {lo:,}–{hi:,}" + (" (inside)." if inb else " (outside the band, which the plan's rules could not repair; the owner decides how it is used, see DEVIATIONS.md)."), ""]
+            L += [f"Audit result for this version{' (after the one retry' + (' and the deletions' if fi['deleted'] else '') + ')' if n == 2 else ''}: NEW {fi['counts_after']['NEW']}, STRONGER {fi['counts_after']['STRONGER']}, WEAKER {fi['counts_after']['WEAKER']}, DROPPED {fi['counts_after']['DROPPED']}."
                   + (" Deleted: " + "; ".join(f"R{d['R']} ({d['label']}: {d['note']})" for d in fi["deleted"]) + "." if fi["deleted"] else " Nothing deleted.")
                   + (" Source sentences carried nowhere (disclosed, not put back): " + ", ".join(f"S{d['S']}" for d in fi["dropped"]) + "." if fi["dropped"] else ""), ""]
     wr(os.path.join(H, "SPOTCHECK.md"), "\n".join(L)); print("wrote SPOTCHECK.md for", q2)

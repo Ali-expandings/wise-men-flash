@@ -1,0 +1,63 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+We freeze production deploys for the last two weeks of December, and three years in a row, the first two weeks of January have been our worst stretch for outages, even though January traffic is lower than December's. Our 60 engineers keep merging code during the freeze and it all ships once the freeze lifts, but each incident review blames a different specific bug, so nobody treats it as one pattern. What is actually going wrong, and is the freeze protecting us or just moving the risk to January?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+Freeze stops deploys, not merges. Two weeks of 60 engineers' work piles up in the queue, then ships as one giant batch the day freeze lifts. That's the mechanism, and it explains everything else.
+
+**Why batch size, not month, drives the outages.** Risk of a deploy scales with number of interacting changes, not calendar. One change breaks: obvious what broke, fast rollback, contained blast radius. Two weeks of 60 engineers' changes land together: independent changes interacting in ways never tested in combination, unclear which change caused which symptom, rollback hard because changes are entangled with each other. Add: code merged days or weeks earlier means author context has decayed by ship time — slower triage when it breaks. Add: "clear the queue" pressure after freeze lifts usually means shipping faster with less individual scrutiny per change, not more.
+
+**Lower January traffic is the tell, not a counterpoint.** If load drove this, December — higher traffic — would be worse. It isn't. Traffic down, incidents up, three years running: that isolates the cause away from load and toward something structurally different about how code ships in January. Big-bang deploy of accumulated change fits; traffic doesn't.
+
+**Why reviews keep missing the pattern.** Each postmortem does root-cause analysis on one incident and correctly finds a proximate bug — that part's not wrong. But no single incident review is scoped to ask "is deploy batch size itself a risk factor across incidents." That's a cross-incident question, and nobody's tracking the aggregate metric (incident rate vs. deploy size, or incident timing relative to freeze-lift date) that would surface it. Proximate cause differs every time; accelerant is constant. Standard blind spot — postmortems find what broke, not why breaks cluster.
+
+**Protecting or moving risk: moving it, probably with a multiplier.** Goal of protecting high-stakes December days from deploy risk is legitimate. But "stop deploying, let merges queue, dump it all at once" doesn't delay risk evenly — it concentrates many weeks of change into one high-risk event. Total risk shipped is likely higher than if those changes had deployed incrementally across the same weeks. Freeze isn't neutral time-shifting; it's batching, and batching is its own risk multiplier on top of relocation.
+
+**Cheap way to confirm before next January.** Check the three past Januaries: do incidents cluster in the first days right after freeze lifts (big-bang signature) rather than spreading evenly through the month? Is deploy size (commits/services touched) in that window abnormally large vs. a typical week? Does broken code trace specifically to freeze-window merges vs. normal same-day-merge-and-ship code? Yes to those confirms the mechanism without waiting for a fourth data point.
+
+**Fix keeps freeze's goal, changes its mechanism.** Options: decouple merge from release with feature flags, so "freeze" means flags stay off, not code stays unshipped — January lift becomes flag flips, not a code dump, and flags can flip gradually with rollback per-feature. Or thin the freeze — allow low-risk/flagged changes through continuously, freeze only what actually touches checkout/revenue paths. Or force staged rollout of the backlog in January instead of one shipment — canary a subset of accumulated changes at a time. Any of these keeps December protected without concentrating two weeks of risk into one deploy.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 481 and 587 words in all, counting the six header lines (aim for about 534), which is about the length of the source (534 words). Count your words before you reply.
+
+Return only the memo, starting with the line "## Recommendation".

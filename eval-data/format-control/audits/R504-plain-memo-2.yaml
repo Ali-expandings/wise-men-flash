@@ -1,0 +1,112 @@
+question: R504
+arm: plain-memo
+attempt: 2
+rewrite_sentences: 78
+source_sentences: 32
+counts:
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 0
+  DROPPED: 0
+pass: false
+flagged:
+- R: 57
+  label: STRONGER
+  refs:
+  - 18
+  note: drops the source's condition "if churn declines with tenure (the usual pattern)" and states without condition that the blended figure tells little about a long-tenured customer's odds
+  text: It also notes that the blended churn figure tells you little about a long-tenured customer's actual odds, in either direction.
+dropped: []
+reuse:
+  source_sentences: 32
+  cited_once_or_more: 32
+  cited_twice_or_more: 28
+  max: 25
+  mean: 4.56
+labels:
+  RESTATES: 72
+  CONNECTIVE: 5
+  FIXED: 0
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 0
+script_checks_pass: true
+map:
+  R1: S1
+  R2: S2
+  R3: S29
+  R4: S30
+  R5: S31
+  R6: S32
+  R7: S3, S4
+  R8: S3, S4
+  R9: S3, S5
+  R10: S3, S6
+  R11: S3, S7
+  R12: S3, S7
+  R13: S8, S11
+  R14: S8, S9
+  R15: S8, S9
+  R16: S8, S10
+  R17: S8, S11
+  R18: S8, S12
+  R19: S13
+  R20: S13, S14
+  R21: S13, S15
+  R22: S13, S16
+  R23: S13, S17
+  R24: S13, S18
+  R25: S13, S19
+  R26: S13, S20
+  R27: S13, S21
+  R28: S22, S27, S28
+  R29: S22, S27
+  R30: S22, S27
+  R31: S22, S28
+  R32: S22, S23
+  R33: S22, S23
+  R34: S22, S24
+  R35: S22, S25
+  R36: S22, S25
+  R37: S22, S26
+  R38: S13, S16, S30
+  R39: S22, S27
+  R40: S22, S27
+  R41: S30, S31
+  R42: S31
+  R43: S32
+  R44: CONNECTIVE
+  R45: S29
+  R46: S8, S11, S12
+  R47: S13, S16
+  R48: S13, S16, S22, S27
+  R49: S13, S17
+  R50: S13, S18
+  R51: S13, S19, S20, S21
+  R52: S22, S25
+  R53: S22, S28
+  R54: CONNECTIVE
+  R55: S22, S25
+  R56: S30, S31
+  R57: STRONGER — S18
+  R58: S13, S18
+  R59: S13, S16
+  R60: CONNECTIVE
+  R61: S3, S4
+  R62: S3, S5, S6
+  R63: S3, S7
+  R64: S8, S9, S11
+  R65: S13, S14, S15
+  R66: S13, S16
+  R67: S13, S19
+  R68: S13, S21
+  R69: S22, S23, S24
+  R70: S22, S27
+  R71: CONNECTIVE
+  R72: S13, S17
+  R73: S13, S18
+  R74: CONNECTIVE
+  R75: S22, S25
+  R76: S13, S16
+  R77: S13, S18
+  R78: S30, S31, S32

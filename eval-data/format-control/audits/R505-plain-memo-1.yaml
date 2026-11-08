@@ -1,0 +1,291 @@
+question: R505
+arm: plain-memo
+attempt: 1
+rewrite_sentences: 157
+source_sentences: 48
+counts:
+  NEW: 8
+  STRONGER: 5
+  WEAKER: 4
+  DROPPED: 0
+pass: false
+flagged:
+- R: 39
+  label: STRONGER
+  refs:
+  - 21
+  note: the source's "may" covers the undercounting too ("may just go undiagnosed longer, and undercount"); the rewrite says flatly that it undercounts cases
+  text: That undercounts cases in the "unexposed" group.
+- R: 73
+  label: NEW
+  refs:
+  - 38
+  note: the warning not to scare her into stopping "a drug she may need" comes from the question; the source never talks about scaring her
+  text: Do not scare her into stopping a drug she may need.
+- R: 95
+  label: STRONGER
+  refs:
+  - 41
+  note: the source says her doctor "can weigh" her reflux history against a taper; the rewrite says the doctor "has to weigh" it
+  text: Her doctor has to weigh her actual reflux history against a taper, and erosive esophagitis, Barrett's and prior bleeding are the examples given.
+- R: 96
+  label: NEW
+  refs:
+  - 41
+  note: the claim that stopping could harm her if she has erosive esophagitis, Barrett's or prior bleeding is not in the source
+  text: Scaring her into stopping could harm her if one of those applies.
+- R: 105
+  label: NEW
+  refs:
+  - 25
+  - 32
+  note: the caveat that the plan does not rule out part of the association being real is the rewrite's inference; the source never states it
+  text: It also does not rule out that part of the association is real.
+- R: 107
+  label: NEW
+  refs:
+  - 33
+  - 40
+  - 41
+  note: the claim that only the history review and B12 level can tell you anything about her is not in the source
+  text: Only a review of her own history and her B12 level can tell you anything about her.
+- R: 113
+  label: NEW
+  refs:
+  - 9
+  note: adds that the causal question "has not been answered either way here", which the source does not say
+  text: Whether it means the drug causes dementia is a separate question, but it has not been answered either way here.
+- R: 116
+  label: NEW
+  refs:
+  - 32
+  note: adds the counter-argument that this does not show the whole signal is bias, which the source does not make
+  text: The mixed evidence across independent datasets is what you would expect if part of the signal is bias, but that is not the same as showing the whole signal is bias.
+- R: 117
+  label: STRONGER
+  refs:
+  - 25
+  note: the source calls it "a strong signal that" a chunk was confounding; the rewrite says the chunk simply was confounding
+  text: The source says only that a chunk of the original figure was confounding by indication when the fairer comparison was used.
+- R: 126
+  label: NEW
+  refs:
+  - 35
+  - 48
+  note: 'adds a caveat the source does not state: that the answer is limited because the plan rests on the current state of the evidence'
+  text: 'That is the limit on the answer: the plan rests on the current state of the evidence, and the dementia data stays a hypothesis to track.'
+- R: 142
+  label: WEAKER
+  refs:
+  - 14
+  note: '"tend to" is not one of the listed hedge words, so the rule makes this High; it is labeled Medium'
+  text: Decade-long PPI users tend to have more severe GERD and more comorbidities.
+- R: 143
+  label: WEAKER
+  refs:
+  - 23
+  note: '"tend to" is not one of the listed hedge words, so the rule makes this High; it is labeled Medium'
+  text: Studies comparing PPI users to non-users tend to find bigger effects than studies using an alternative reflux drug as the comparator.
+- R: 144
+  label: WEAKER
+  refs:
+  - 24
+  note: '"often" is not one of the listed hedge words, so the rule makes this High; it is labeled Medium'
+  text: When researchers use the fairer comparison, the association often shrinks or disappears.
+- R: 145
+  label: STRONGER
+  refs:
+  - 18
+  note: the claim contains "may" ("may help cause the prescription"), which the rule puts at Low; it is labeled Medium
+  text: Early, undiagnosed cognitive decline can change diet, self-care and GI symptoms, which means early dementia may help cause the prescription.
+- R: 149
+  label: WEAKER
+  refs:
+  - 33
+  note: the source says without a hedge that acid suppression "can reduce" B12 absorption (High by the rule); the rewrite adds "could be present" and labels it Low
+  text: Long-term acid suppression can reduce B12 absorption, so a B12 problem could be present, which is why it is worth ruling out.
+- R: 155
+  label: STRONGER
+  refs:
+  - 41
+  note: the source says her doctor "can weigh" her reflux history; the rewrite says the doctor "has to weigh" it
+  text: Her actual reflux history, including erosive esophagitis, Barrett's and prior bleeding, which her doctor has to weigh against a taper.
+- R: 156
+  label: NEW
+  refs:
+  - 40
+  note: says her B12 level "has not yet been checked", which the source does not state
+  text: Her B12 level, which has not yet been checked.
+dropped: []
+reuse:
+  source_sentences: 48
+  cited_once_or_more: 48
+  cited_twice_or_more: 40
+  max: 10
+  mean: 3.6
+labels:
+  RESTATES: 131
+  CONNECTIVE: 9
+  FIXED: 0
+  NEW: 8
+  STRONGER: 5
+  WEAKER: 4
+script_checks_pass: false
+map:
+  R1: S1
+  R2: CONNECTIVE
+  R3: S42
+  R4: S40, S42
+  R5: S40
+  R6: S41
+  R7: S38
+  R8: S10, S11
+  R9: S10, S11, S48
+  R10: S36, S37
+  R11: S2, S4
+  R12: S3
+  R13: S3
+  R14: S4
+  R15: S2, S5
+  R16: S8
+  R17: S6
+  R18: S6
+  R19: S7
+  R20: S7
+  R21: S8
+  R22: S9
+  R23: CONNECTIVE
+  R24: S10
+  R25: S11
+  R26: S12
+  R27: CONNECTIVE
+  R28: S13
+  R29: S13, S14
+  R30: S13, S14
+  R31: S13, S15
+  R32: S16
+  R33: S16, S17
+  R34: S16, S18
+  R35: S16, S18
+  R36: S19
+  R37: S19, S20
+  R38: S19, S21
+  R39: STRONGER — S21
+  R40: S22
+  R41: S22, S23
+  R42: S22, S23
+  R43: S22, S24
+  R44: S22, S25
+  R45: S26
+  R46: S26, S27
+  R47: S26, S28
+  R48: S26, S28
+  R49: S29
+  R50: S29
+  R51: S30
+  R52: S31
+  R53: S31
+  R54: S32
+  R55: S32
+  R56: S33
+  R57: S33
+  R58: S33
+  R59: S33
+  R60: S34
+  R61: S34
+  R62: CONNECTIVE
+  R63: S35
+  R64: S35
+  R65: S36
+  R66: S36
+  R67: S37
+  R68: S2
+  R69: S2, S3
+  R70: S4, S5
+  R71: S38
+  R72: S39
+  R73: NEW — S38
+  R74: S40
+  R75: S42
+  R76: S36, S42
+  R77: S40
+  R78: S33
+  R79: S33
+  R80: S41
+  R81: S41
+  R82: S1, S38, S41
+  R83: S43
+  R84: S43
+  R85: S44
+  R86: S45
+  R87: S46
+  R88: S47
+  R89: S48
+  R90: S38, S39
+  R91: S39
+  R92: S39
+  R93: S38, S39, S40
+  R94: S40, S41
+  R95: STRONGER — S41
+  R96: NEW — S41
+  R97: CONNECTIVE
+  R98: S15
+  R99: S15
+  R100: S4
+  R101: S3, S4
+  R102: S4, S5
+  R103: S9, S37
+  R104: S37
+  R105: NEW — S25, S32
+  R106: S48
+  R107: NEW — S33, S40, S41
+  R108: S8, S42
+  R109: S8
+  R110: S6
+  R111: S30
+  R112: S7
+  R113: NEW — S9
+  R114: S27, S28
+  R115: S28
+  R116: NEW — S32
+  R117: STRONGER — S25
+  R118: S24
+  R119: S24
+  R120: S33
+  R121: S33
+  R122: S33, S40
+  R123: S34
+  R124: S8, S35
+  R125: S35
+  R126: NEW — S35, S48
+  R127: CONNECTIVE
+  R128: S10, S11
+  R129: S17
+  R130: S27, S28
+  R131: S33
+  R132: S39
+  R133: S35
+  R134: S36
+  R135: S30
+  R136: S31
+  R137: S34
+  R138: S15
+  R139: S23
+  R140: CONNECTIVE
+  R141: S3
+  R142: WEAKER — S14
+  R143: WEAKER — S23
+  R144: WEAKER — S24
+  R145: STRONGER — S18
+  R146: CONNECTIVE
+  R147: S7
+  R148: S4
+  R149: WEAKER — S33
+  R150: S18
+  R151: CONNECTIVE
+  R152: S9
+  R153: S2, S3, S4
+  R154: S7
+  R155: STRONGER — S41
+  R156: NEW — S40
+  R157: S34

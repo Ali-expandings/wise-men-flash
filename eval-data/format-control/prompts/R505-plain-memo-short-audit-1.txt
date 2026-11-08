@@ -1,0 +1,180 @@
+You are checking a rewrite against its source, sentence by sentence. The rewrite was meant to put the source into a fixed six-section format while saying nothing the source does not say, at the same certainty.
+
+The rules the rewrite had to follow.
+Allowed: restating a source sentence in fuller words; splitting or merging sentences; moving content between sections; restating a point where the format calls for it (the first section sums up what the later sections say); connecting sentences that make no claim; and three fixed sentences, used when the source gives nothing for a section: "No further risks are named.", "No case against this recommendation is made beyond the risks above." and "No unknowns are named."
+Not allowed: any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state (a fact from the question counts as new unless the source states it); and any change in how certain a claim is, in either direction.
+The last section labels claims High, Medium or Low by a fixed rule from the source's own wording: a claim the source states without a hedge is High; with "likely", "probably", "usually", "typically" or "suggests", Medium; with "may", "might", "could", "possibly" or "unclear", Low. A label that follows this rule is not a change in certainty; a label that breaks it is.
+
+For every rewrite sentence, R1 to R72, give exactly one line, in one of these forms:
+R<k>: S<i>, S<j>                  the source sentence or sentences it restates (name all of them)
+R<k>: CONNECTIVE                  it only connects or introduces, and makes no claim
+R<k>: FIXED                       it is one of the three fixed sentences, word for word
+R<k>: NEW — <what is new>         it states something the source does not; if it otherwise restates source sentences, name them: R<k>: NEW — S<i>, S<j> — <what is new>
+R<k>: STRONGER — S<i> — <what changed>    it states a source claim with more certainty than the source does
+R<k>: WEAKER — S<i> — <what changed>      it states a source claim with less certainty than the source does
+Judge each rewrite sentence against the whole source, not only against the sentences near it. A source sentence that is only a bold lead-in or a line ending in a colon is restated by any rewrite sentence that carries the content it introduces: cite it there too. Do not list the source sentences the rewrite leaves out; that is computed from your lines.
+
+The question the source answers (context only):
+"""
+A study of health records from several million people found that those who took a common acid-reflux medication for more than five years were about 30% more likely to be diagnosed with dementia, and my mother has taken it daily for over a decade. How seriously should I take this kind of large records-based study, and what are the ways it usually goes wrong? I don't want to scare her into stopping a drug she may need, but I also don't want to wave away a real risk.
+"""
+
+The source, sentence by sentence:
+"""
+[S1] Take this seriously enough to raise with her doctor, not seriously enough to act on alone.
+
+[S2] First, confirm what she's actually taking.
+[S3] "Common acid-reflux medication" usually means a proton pump inhibitor (PPI) — omeprazole, esomeprazole, pantoprazole, lansoprazole — as opposed to an H2 blocker like famotidine, which is a different drug class with different (thinner) dementia data.
+[S4] If she's on an H2 blocker, this specific research may not even apply to her.
+[S5] This matters enough to check first.
+
+[S6] On PPIs and dementia: this isn't one study, it's a small research area going back to around 2015, with relative-risk increases across different studies ranging roughly 20–45%.
+[S7] Your "30% after five-plus years" fits that pattern — possibly a large recent US claims-based cohort (several million patients, risk concentrated in the longest-duration users), which tracks with your mother's decade of use.
+[S8] The finding keeps recurring, which is worth noting.
+[S9] Whether it means the drug causes dementia is a separate question, and that's where this kind of study is structurally weak.
+
+[S10] Big records-based studies (insurance claims, EHR data — not trials) are good at spotting patterns across millions of people cheaply.
+[S11] They're bad at telling you why the pattern exists, because nobody was randomized to take the drug.
+[S12] People who end up on it for ten years differ from people who don't, in ways that matter:
+
+[S13] - **Confounding by indication.**
+[S14] Decade-long PPI users tend to have more severe GERD and more comorbidities generally — anything correlated with worse baseline health can also correlate with dementia risk.
+[S15] Researchers adjust for what they can measure, not for everything that's actually different between the groups.
+[S16] - **Reverse causation.**
+[S17] Dementia has a prodromal phase lasting years before diagnosis.
+[S18] Early, undiagnosed cognitive decline can change diet, self-care, and GI symptoms — meaning early dementia may help cause the prescription, not the other way around.
+[S19] - **Detection bias.**
+[S20] Someone refilling a prescription monthly is in the healthcare system constantly, so a cognitive complaint is more likely to get noticed and worked up.
+[S21] Someone on no medications with the same early decline may just go undiagnosed longer, and undercount in the "unexposed" group.
+[S22] - **Comparator choice.**
+[S23] Studies comparing PPI users to non-users tend to find bigger effects than studies comparing PPI users to people on an alternative reflux drug — a fairer comparison, since both groups needed treatment for something.
+[S24] When researchers use the fairer comparison, the association often shrinks or disappears.
+[S25] That's a strong signal that a chunk of the original 30–45% was confounding by indication, not the drug itself.
+[S26] - **Relative vs. absolute risk.**
+[S27] "30% more likely" is relative.
+[S28] Hypothetically, if baseline dementia risk over the study's follow-up window is 8%, a 30% relative bump takes it to about 10.4% — a real increase, but nowhere near as dramatic as "30%" sounds on its own.
+
+[S29] The fuller picture on PPIs specifically is mixed, not one-directional.
+[S30] The original German insurance-claims study (2016, JAMA Neurology) found the association.
+[S31] Since then, other groups — including a large Finnish nationwide study focused specifically on Alzheimer's — found no association once they used tighter designs.
+[S32] That kind of split, across independent datasets, is what you'd expect if part of the signal is bias rather than biology, not what you'd expect from a robust causal effect.
+[S33] There is a mechanism worth taking seriously on its own merits, separate from the dementia headlines: long-term acid suppression can reduce B12 absorption, and B12 deficiency is an established, reversible cause of cognitive symptoms in older adults — worth ruling out for her regardless.
+[S34] The amyloid/brain-mechanism angle sometimes cited alongside this is much weaker, mostly mouse and cell-culture work, not established in humans.
+
+[S35] No major GI or geriatric society currently recommends stopping PPIs because of the dementia data specifically — it's not considered consistent or strong enough for that.
+[S36] Most do recommend periodically checking whether a long-term patient still needs the drug, and at what dose, because of other, better-established risks: fracture, kidney disease, C. diff infection, B12/magnesium deficiency.
+[S37] That gives you a productive way to act on this without needing to believe the dementia link is causal.
+
+[S38] For your mother: don't let her stop on her own.
+[S39] Long-term PPI use causes rebound acid hypersecretion, so quitting cold can produce a worse flare than she started with.
+[S40] The useful move is asking her prescriber, at her next visit, to review whether she still needs it and at what dose, with a B12 level checked while they're at it.
+[S41] Her doctor can weigh her actual reflux history — erosive esophagitis, Barrett's, prior bleeding — against a taper.
+[S42] That's the right-sized response: not "the study is scary, she needs to stop," not "ignore it," but a routine medication review that would be good practice anyway.
+
+[S43] For the next scary-study headline, a fast checklist: what's the comparator (non-users, or people on an alternative treatment)?
+[S44] Is the headline number relative or absolute risk?
+[S45] Does it replicate across independent datasets and designs?
+[S46] Is there a plausible mechanism, and is the evidence for it human or animal/cell?
+[S47] Has any professional society changed its guidance because of it?
+[S48] When most of those point weak, it's a hypothesis worth tracking, not a verdict.
+"""
+
+The rewrite, sentence by sentence (header lines are not numbered):
+"""
+## Recommendation
+[R1] Take this seriously enough to raise with her doctor, not seriously enough to act on alone.
+[R2] The right-sized response is a routine medication review that would be good practice anyway.
+[R3] It is not "the study is scary, she needs to stop," and it is not "ignore it."
+[R4] Don't let her stop on her own.
+[R5] Ask her prescriber, at her next visit, to review whether she still needs the drug and at what dose, and have a B12 level checked at the same time.
+[R6] The dementia link is a hypothesis worth tracking, not a verdict, and you can act on it without needing to believe it is causal.
+
+## Why
+[R7] First, the finding keeps recurring.
+[R8] This is a small research area going back to around 2015, with relative-risk increases across different studies ranging roughly 20–45%.
+[R9] Your "30% after five-plus years" fits that pattern.
+[R10] It is possibly a large recent US claims-based cohort of several million patients, with risk concentrated in the longest-duration users, which tracks with your mother's decade of use.
+[R11] Whether it means the drug causes dementia is a separate question, and that is where this kind of study is structurally weak.
+
+[R12] Big records-based studies (insurance claims, EHR data, not trials) are good at spotting patterns across millions of people cheaply.
+[R13] They are bad at telling you why the pattern exists, because nobody was randomized to take the drug.
+[R14] People who end up on it for ten years differ from people who don't, in ways that matter:
+
+[R15] - Confounding by indication: decade-long PPI users tend to have more severe GERD and more comorbidities generally.
+[R16] Anything correlated with worse baseline health can also correlate with dementia risk.
+[R17] Researchers adjust for what they can measure, not for everything that is actually different between the groups.
+[R18] - Reverse causation: dementia has a prodromal phase lasting years before diagnosis.
+[R19] Early, undiagnosed cognitive decline can change diet, self-care, and GI symptoms, so early dementia may help cause the prescription, not the other way around.
+[R20] - Detection bias: someone refilling a prescription monthly is in the healthcare system constantly, so a cognitive complaint is more likely to get noticed and worked up.
+[R21] Someone on no medications with the same early decline may just go undiagnosed longer, and undercount in the "unexposed" group.
+[R22] - Comparator choice: studies comparing PPI users to non-users tend to find bigger effects than studies comparing PPI users to people on an alternative reflux drug, which is a fairer comparison since both groups needed treatment for something.
+[R23] When researchers use the fairer comparison, the association often shrinks or disappears.
+[R24] That is a strong signal that a chunk of the original 30–45% was confounding by indication, not the drug itself.
+[R25] - Relative vs. absolute risk: "30% more likely" is relative.
+[R26] Hypothetically, if baseline dementia risk over the study's follow-up window is 8%, a 30% relative bump takes it to about 10.4%.
+[R27] That is a real increase, but nowhere near as dramatic as "30%" sounds on its own.
+
+[R28] The fuller picture on PPIs is mixed, not one-directional.
+[R29] The original German insurance-claims study (2016, JAMA Neurology) found the association.
+[R30] Since then, other groups, including a large Finnish nationwide study focused specifically on Alzheimer's, found no association once they used tighter designs.
+[R31] That kind of split across independent datasets is what you'd expect if part of the signal is bias rather than biology, not what you'd expect from a robust causal effect.
+
+[R32] No major GI or geriatric society currently recommends stopping PPIs because of the dementia data specifically, since it is not considered consistent or strong enough for that.
+[R33] Most do recommend periodically checking whether a long-term patient still needs the drug, and at what dose, because of other, better-established risks: fracture, kidney disease, C. diff infection, B12/magnesium deficiency.
+
+## What to do
+[R34] 1. Confirm what she is actually taking.
+[R35] "Common acid-reflux medication" usually means a proton pump inhibitor (PPI), such as omeprazole, esomeprazole, pantoprazole or lansoprazole, as opposed to an H2 blocker like famotidine, which is a different drug class with different (thinner) dementia data.
+[R36] If she is on an H2 blocker, this specific research may not even apply to her.
+[R37] This matters enough to check first.
+[R38] 2. Do not let her stop on her own.
+[R39] 3. At her next visit, ask her prescriber to review whether she still needs the drug and at what dose, with a B12 level checked while they're at it.
+[R40] B12 is worth ruling out for her regardless: long-term acid suppression can reduce B12 absorption, and B12 deficiency is an established, reversible cause of cognitive symptoms in older adults.
+[R41] 4. Let her doctor weigh her actual reflux history (erosive esophagitis, Barrett's, prior bleeding) against a taper.
+[R42] 5. For the next scary-study headline, use a fast checklist:
+[R43] - What is the comparator: non-users, or people on an alternative treatment?
+[R44] - Is the headline number relative or absolute risk?
+[R45] - Does it replicate across independent datasets and designs?
+[R46] - Is there a plausible mechanism, and is the evidence for it human or animal/cell?
+[R47] - Has any professional society changed its guidance because of it?
+
+[R48] When most of those point weak, it is a hypothesis worth tracking, not a verdict.
+
+## Risks of this plan
+[R49] Quitting cold is the main risk.
+[R50] Long-term PPI use causes rebound acid hypersecretion, so stopping abruptly can produce a worse flare than she started with.
+[R51] That is why a taper, if any, belongs with her doctor, who can weigh her actual reflux history.
+
+[R52] The other caveat is that the study's number is relative, not absolute, and the amyloid/brain-mechanism angle sometimes cited alongside this is much weaker, mostly mouse and cell-culture work, not established in humans.
+[R53] Researchers also adjust only for what they can measure, so some confounding stays hidden.
+
+## Strongest counter-position
+[R54] The finding keeps recurring, which is worth noting, and a 30% relative increase is a real increase, not nothing.
+[R55] The B12 mechanism is worth taking seriously on its own merits, separate from the dementia headlines.
+[R56] So waving the study away would be a mistake.
+[R57] The source's answer is still that the evidence is mixed: independent datasets split, and the association often shrinks or disappears with the fairer comparison.
+
+## Confidence
+[R58] - Records-based studies cannot randomize, so they are weak at showing why a pattern exists: High.
+[R59] - Confounding by indication, reverse causation and detection bias can distort such studies: High.
+[R60] - Long-term PPI use causes rebound acid hypersecretion, so quitting cold can produce a worse flare: High.
+[R61] - The B12 deficiency mechanism (reduced absorption, reversible cognitive symptoms) is established: High.
+[R62] - No major GI or geriatric society currently recommends stopping PPIs because of the dementia data: High.
+[R63] - "Common acid-reflux medication" usually means a PPI: Medium.
+[R64] - Decade-long PPI users tend to have more severe GERD and more comorbidities: Medium.
+[R65] - Studies against non-users tend to find bigger effects than studies against an alternative reflux drug: Medium.
+[R66] - Most societies recommend periodic review of long-term use: Medium.
+[R67] - Your study is possibly a large recent US claims-based cohort: Low.
+[R68] - Part of the signal may be bias rather than biology, and a chunk of the original 30–45% was confounding by indication: stated as what the split would be expected to show, and as a signal; no hedge-free causal claim is made.
+[R69] - Early dementia may help cause the prescription: Low.
+[R70] - If she is on an H2 blocker, this research may not apply to her: Low.
+
+[R71] Unknowns the source names: whether the drug causes dementia at all, which is a separate question from the association.
+[R72] Also unknown is which drug she takes, and her actual reflux history (erosive esophagitis, Barrett's, prior bleeding).
+"""
+
+Return only this block, one line per rewrite sentence, R1 to R72 in order:
+```audit
+R1: ...
+R2: ...
+```

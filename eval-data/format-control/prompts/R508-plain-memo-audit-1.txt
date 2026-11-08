@@ -1,0 +1,260 @@
+You are checking a rewrite against its source, sentence by sentence. The rewrite was meant to put the source into a fixed six-section format while saying nothing the source does not say, at the same certainty.
+
+The rules the rewrite had to follow.
+Allowed: restating a source sentence in fuller words; splitting or merging sentences; moving content between sections; restating a point where the format calls for it (the first section sums up what the later sections say); connecting sentences that make no claim; and three fixed sentences, used when the source gives nothing for a section: "No further risks are named.", "No case against this recommendation is made beyond the risks above." and "No unknowns are named."
+Not allowed: any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state (a fact from the question counts as new unless the source states it); and any change in how certain a claim is, in either direction.
+The last section labels claims High, Medium or Low by a fixed rule from the source's own wording: a claim the source states without a hedge is High; with "likely", "probably", "usually", "typically" or "suggests", Medium; with "may", "might", "could", "possibly" or "unclear", Low. A label that follows this rule is not a change in certainty; a label that breaks it is.
+
+For every rewrite sentence, R1 to R145, give exactly one line, in one of these forms:
+R<k>: S<i>, S<j>                  the source sentence or sentences it restates (name all of them)
+R<k>: CONNECTIVE                  it only connects or introduces, and makes no claim
+R<k>: FIXED                       it is one of the three fixed sentences, word for word
+R<k>: NEW — <what is new>         it states something the source does not; if it otherwise restates source sentences, name them: R<k>: NEW — S<i>, S<j> — <what is new>
+R<k>: STRONGER — S<i> — <what changed>    it states a source claim with more certainty than the source does
+R<k>: WEAKER — S<i> — <what changed>      it states a source claim with less certainty than the source does
+Judge each rewrite sentence against the whole source, not only against the sentences near it. A source sentence that is only a bold lead-in or a line ending in a colon is restated by any rewrite sentence that carries the content it introduces: cite it there too. Do not list the source sentences the rewrite leaves out; that is computed from your lines.
+
+The question the source answers (context only):
+"""
+My boss is retiring next year and has offered to sell me the landscaping business I've worked at for eight years, which would take most of our savings plus a bank loan, and my partner is supportive but nervous. I'm leaning toward yes because I already run the crews and know most of the clients by name, but I've never handled the books, the bidding, or the cash flow, and I can't tell whether clients are loyal to the business or to him. Is my leaning reasonable, and what would make you tell me to walk away?
+"""
+
+The source, sentence by sentence:
+"""
+[S1] Your leaning is reasonable, but "reasonable to lean yes" and "ready to sign" are different things.
+[S2] You have the one advantage an outside buyer never gets: you already run operations and already have the crews' trust.
+[S3] Most acquisitions die on operations or culture — you've solved that part already.
+[S4] What you haven't solved — books, bidding, cash flow, and whether clients are loyal to a brand or to a man — is exactly where deals like this actually fail.
+[S5] None of it disqualifies you.
+[S6] All of it needs answers with numbers, not gut feel, before money moves.
+
+[S7] **Client loyalty** is the one variable that decides everything else, so stop guessing and get data.
+[S8] Pull the client list, rank by revenue, look at the top 10-15 accounts: how long have they been customers, do they deal with your boss personally or with the crews, are they on recurring seasonal contracts or one-off jobs.
+[S9] Recurring-contract clients rarely bolt over an ownership change if service holds.
+[S10] Handshake relationships with the owner are the risk.
+[S11] If he'll let you sit in on renewal conversations for a few months before close, do it — you'll learn more from ten real conversations than from any spreadsheet.
+
+[S12] **Books, bidding, cash flow** are fixable, not dealbreakers, but fix them before close.
+[S13] Line up a bookkeeper or fractional CFO before you sign — landscaping runs thin and seasonal, someone needs to watch cash weekly.
+[S14] Shadow your boss on bidding for a full season if you can; underpricing jobs is the quietest way new owners bleed out.
+[S15] And get three years of financials and tax returns in front of a CPA who's actually done acquisition reviews, not your regular tax preparer — have them calculate seller's discretionary earnings, not the number your boss quotes you.
+
+[S16] **The money mechanics** matter more than the sticker price.
+[S17] What's the debt service coverage ratio once you pay yourself a real market wage, not owner-take-everything cash flow?
+[S18] If that's not comfortably above the loan payment — 1.25-1.5x with room to spare — the price is too high or the loan too big, full stop.
+[S19] "Most of our savings plus a loan" also means zero cushion, and this business is seasonal: equipment breaks, you'll lose a client or two in year one no matter what you do.
+[S20] You need a reserve sitting outside the deal, not inside it.
+
+[S21] **Structure the deal to share the risk** instead of absorbing it all on day one.
+[S22] Ask for a transition period — your boss part-time for 6-12 months, personally introducing you to every major account and reachable for questions; seller financing or an earnout tied to client retention, so if the loyalty turns out to be personal, he eats part of that risk with you; and a non-compete, so he's not down the road undercutting you with the relationships he kept.
+
+[S23] What would make me say walk away:
+
+[S24] - Financials he can't or won't produce clean — commingled personal expenses, off-book cash jobs, numbers that don't reconcile to tax returns.
+[S25] Can't price it, can't buy it safely.
+[S26] - Debt service coverage that only works in a best-case year, with no margin for a slow season or two lost accounts.
+[S27] - Data (or his own admission) showing top clients are loyal to him personally, and he won't agree to a transition period, seller note, or earnout — meaning he won't share that risk with you.
+[S28] - Key crew leads signaling they'd leave if he leaves — you'd be buying a business you can't staff.
+[S29] - Equipment near end of life with no price adjustment for the capex you'll need in year one or two.
+[S30] - No cash reserve left outside the business — one bad season from insolvency on both the loan and your household savings.
+[S31] - Your partner's nervousness turns out to be about something specific and unresolved, not general jitters about a big decision.
+[S32] Ask directly what worries them, not whether they're okay with it.
+
+[S33] Eight years in makes it tempting to treat "I basically know this business" as a substitute for the diligence an outside buyer would be forced to do.
+[S34] It isn't.
+[S35] Do the homework anyway.
+[S36] If the numbers hold up and your boss is willing to share the transition risk with you, this is a better bet than almost any outside buyer would get.
+[S37] If he wants full price, all cash, no transition, no visibility into the books — that's your answer already.
+"""
+
+The rewrite, sentence by sentence (header lines are not numbered):
+"""
+## Recommendation
+
+[R1] Your leaning toward yes is reasonable, but "reasonable to lean yes" and "ready to sign" are different things.
+[R2] You already run operations and already have the crews' trust.
+[R3] An outside buyer never gets that advantage.
+[R4] Most acquisitions die on operations or culture, and you have already solved that part.
+
+[R5] What you have not solved is the books, the bidding, the cash flow, and whether clients are loyal to a brand or to a man.
+[R6] Those are exactly where deals like this actually fail.
+[R7] None of them disqualifies you, but all of them need answers with numbers, not gut feel, before money moves.
+
+[R8] So the bottom line is conditional.
+[R9] Do the homework anyway, and structure the deal so your boss shares the risk with you.
+[R10] If the numbers hold up and your boss is willing to share the transition risk, this is a better bet than almost any outside buyer would get.
+[R11] If he wants full price, all cash, no transition and no visibility into the books, that is your answer already, and you should walk away.
+
+[R12] The walk-away conditions are these:
+[R13] - Financials he cannot or will not produce cleanly.
+[R14] - Debt service coverage that only works in a best-case year.
+[R15] - Top clients who are loyal to him personally, combined with his refusal to share that risk.
+[R16] - Key crew leads who would leave if he leaves.
+[R17] - Equipment near end of life with no price adjustment.
+[R18] - No cash reserve left outside the business.
+[R19] - A specific, unresolved worry behind your partner's nervousness.
+
+## Why
+
+[R20] Your position is unusually strong in one respect.
+[R21] You already run operations and already have the crews' trust.
+[R22] Most acquisitions die on operations or culture, and you have solved that part.
+[R23] That is why the lean toward yes holds up.
+
+[R24] The gaps are real, though.
+[R25] Books, bidding, cash flow, and whether clients are loyal to the business or to your boss are where deals like this actually fail.
+[R26] None of that disqualifies you.
+[R27] It does mean you need numbers rather than gut feel before money moves.
+
+[R28] Client loyalty is the one variable that decides everything else.
+[R29] That is why you should stop guessing and get data.
+[R30] Recurring-contract clients rarely bolt over an ownership change if service holds.
+[R31] Handshake relationships with the owner are the risk.
+[R32] You will learn more from ten real conversations with clients than from any spreadsheet.
+
+[R33] Books, bidding and cash flow are fixable, not dealbreakers, but they need to be fixed before close.
+[R34] Landscaping runs thin and seasonal, so someone needs to watch cash weekly.
+[R35] Underpricing jobs is the quietest way new owners bleed out.
+
+[R36] The money mechanics matter more than the sticker price.
+[R37] The test is the debt service coverage ratio once you pay yourself a real market wage, not owner-take-everything cash flow.
+[R38] If that ratio is not comfortably above the loan payment, at 1.25-1.5x with room to spare, the price is too high or the loan too big, full stop.
+
+[R39] "Most of our savings plus a loan" also means zero cushion.
+[R40] The business is seasonal, equipment breaks, and you will lose a client or two in year one no matter what you do.
+[R41] That is why a reserve has to sit outside the deal, not inside it.
+
+[R42] Sharing the risk instead of absorbing it all on day one is the reason for the deal structure below.
+[R43] If the loyalty turns out to be personal, your boss should bear part of that risk with you.
+[R44] A non-compete keeps him from being down the road undercutting you with the relationships he kept.
+
+[R45] Finally, eight years in makes it tempting to treat "I basically know this business" as a substitute for the diligence an outside buyer would be forced to do.
+[R46] It is not a substitute.
+[R47] If the numbers hold up and he shares the transition risk, this is a better bet than almost any outside buyer would get.
+
+## What to do
+
+[R48] On client loyalty, get data:
+[R49] - Pull the client list and rank it by revenue.
+[R50] - Look at the top 10-15 accounts.
+[R51] - For each, find out how long they have been customers, whether they deal with your boss personally or with the crews, and whether they are on recurring seasonal contracts or one-off jobs.
+[R52] - If he will let you sit in on renewal conversations for a few months before close, do it.
+
+[R53] On books, bidding and cash flow, fix them before close:
+[R54] - Line up a bookkeeper or fractional CFO before you sign, because someone needs to watch cash weekly in a thin, seasonal business.
+[R55] - Shadow your boss on bidding for a full season if you can.
+[R56] Underpricing jobs is the quietest way new owners bleed out.
+[R57] - Put three years of financials and tax returns in front of a CPA who has actually done acquisition reviews, not your regular tax preparer.
+[R58] - Have that CPA calculate seller's discretionary earnings, not the number your boss quotes you.
+
+[R59] On the money mechanics:
+[R60] - Work out the debt service coverage ratio after you pay yourself a real market wage, not owner-take-everything cash flow.
+[R61] - It should be comfortably above the loan payment, at 1.25-1.5x with room to spare.
+[R62] If it is not, the price is too high or the loan too big.
+[R63] - Keep a reserve sitting outside the deal, not inside it.
+
+[R64] On structure, share the risk instead of absorbing it all on day one:
+[R65] - Ask for a transition period.
+[R66] Your boss would stay part-time for 6-12 months, personally introduce you to every major account, and be reachable for questions.
+[R67] - Ask for seller financing or an earnout tied to client retention.
+[R68] If the loyalty turns out to be personal, he takes part of that risk with you.
+[R69] - Ask for a non-compete.
+
+[R70] On your partner, ask directly what worries them, not whether they are okay with it.
+
+[R71] Do the homework anyway.
+[R72] Your eight years in the business do not replace the diligence an outside buyer would be forced to do.
+
+## Risks of this plan
+
+[R73] None of the gaps disqualifies you, but each is a place where deals like this actually fail.
+[R74] The risks and caveats are these:
+
+[R75] - **Client loyalty.**
+[R76] You cannot yet tell whether clients are loyal to the business or to your boss.
+[R77] Handshake relationships with the owner are the risk.
+[R78] If top clients are loyal to him personally and he will not agree to a transition period, a seller note or an earnout, he is not sharing that risk with you.
+[R79] That is a reason to walk away.
+[R80] - **Underpricing.**
+[R81] Underpricing jobs is the quietest way new owners bleed out, and you have never handled bidding.
+[R82] - **Seasonal, thin cash flow.**
+[R83] Landscaping runs thin and seasonal, and you have never handled cash flow.
+[R84] Someone needs to watch it weekly.
+[R85] - **Zero cushion.**
+[R86] "Most of our savings plus a loan" means no cushion.
+[R87] Equipment breaks, and you will lose a client or two in year one no matter what you do.
+[R88] With no cash reserve outside the business, you would be one bad season from insolvency on both the loan and your household savings.
+[R89] - **Unreliable numbers.**
+[R90] The number your boss quotes you may not be the right one.
+[R91] Financials with commingled personal expenses, off-book cash jobs, or figures that do not reconcile to tax returns cannot be priced and cannot be bought safely.
+[R92] - **Coverage.**
+[R93] Debt service coverage that only works in a best-case year leaves no margin for a slow season or two lost accounts.
+[R94] If the ratio is not comfortably above the loan payment, the price is too high or the loan too big.
+[R95] - **Crew.**
+[R96] If key crew leads signal that they would leave if he leaves, you would be buying a business you cannot staff.
+[R97] - **Equipment.**
+[R98] Equipment near end of life, with no price adjustment for the capex you will need in year one or two, is a walk-away condition.
+[R99] - **Your partner.**
+[R100] If your partner's nervousness turns out to be about something specific and unresolved, rather than general jitters about a big decision, that is a reason to walk away.
+[R101] - **Overconfidence.**
+[R102] Eight years in makes it tempting to treat "I basically know this business" as a substitute for diligence.
+[R103] It is not one.
+[R104] - **A hard-line seller.**
+[R105] If he wants full price, all cash, no transition and no visibility into the books, that is your answer already.
+
+## Strongest counter-position
+
+[R106] The source's strongest limit on its own answer is that reasonable is not the same as ready.
+[R107] "Reasonable to lean yes" and "ready to sign" are different things.
+[R108] Your advantage in operations and crew trust has not solved the books, the bidding, the cash flow, or the question of whether clients are loyal to the brand or to your boss.
+[R109] Those are exactly where deals like this actually fail.
+
+[R110] The source also warns that your familiarity is not a substitute for diligence.
+[R111] Eight years in makes it tempting to treat "I basically know this business" as enough.
+[R112] It is not enough, and you should do the homework anyway.
+
+[R113] The source does not argue that you should decline the deal outright.
+[R114] It says none of the gaps disqualifies you.
+[R115] It names conditions under which you should walk away, and it says the answer is already no if he wants full price, all cash, no transition, and no visibility into the books.
+
+## Confidence
+
+[R116] Levels follow the source's own wording.
+[R117] The source uses none of the hedge words "likely", "probably", "usually", "typically", "suggests", "may", "might", "could", "possibly" or "unclear" on its main claims, so each claim below is stated without a hedge.
+
+[R118] - Your leaning is reasonable, and "reasonable to lean yes" differs from "ready to sign": High.
+[R119] - You have the advantage of already running operations and already having the crews' trust: High.
+[R120] - Most acquisitions die on operations or culture, and you have solved that part: High.
+[R121] - Books, bidding, cash flow and client loyalty are exactly where deals like this actually fail, and none of them disqualifies you: High.
+[R122] - Client loyalty is the one variable that decides everything else: High.
+[R123] - Recurring-contract clients rarely bolt over an ownership change if service holds, and handshake relationships with the owner are the risk: High, with "rarely" kept as the source words it.
+[R124] - You will learn more from ten real conversations than from any spreadsheet: High.
+[R125] - Books, bidding and cash flow are fixable, not dealbreakers, but should be fixed before close: High.
+[R126] - Underpricing jobs is the quietest way new owners bleed out: High.
+[R127] - A CPA who has done acquisition reviews should calculate seller's discretionary earnings, not the number your boss quotes you: High.
+[R128] - The money mechanics matter more than the sticker price, and a coverage ratio not comfortably above the loan payment, at 1.25-1.5x with room to spare, means the price is too high or the loan too big, full stop: High.
+[R129] - "Most of our savings plus a loan" means zero cushion, and you need a reserve outside the deal: High.
+[R130] - The business is seasonal, equipment breaks, and you will lose a client or two in year one no matter what you do: High.
+[R131] - A transition period, seller financing or an earnout tied to client retention, and a non-compete share the risk: High.
+[R132] - The listed walk-away conditions are reasons to walk away: High.
+[R133] - "I basically know this business" is not a substitute for diligence: High.
+[R134] - If the numbers hold up and he shares the transition risk, this is a better bet than almost any outside buyer would get: High.
+[R135] - If he wants full price, all cash, no transition and no visibility into the books, that is your answer already: High.
+
+[R136] Unknowns the source names:
+[R137] - Whether clients are loyal to the business or to your boss, including how long the top accounts have been customers, whether they deal with him or with the crews, and whether they are on recurring seasonal contracts or one-off jobs.
+[R138] - Whether the books, bidding and cash flow, which you have never handled, can be brought under control.
+[R139] - Whether the financials are clean, including whether they reconcile to tax returns, and what the seller's discretionary earnings really are.
+[R140] - What the debt service coverage ratio is once you pay yourself a real market wage.
+[R141] - Whether your boss will agree to a transition period, a seller note or an earnout, and a non-compete.
+[R142] - Whether key crew leads would leave if he leaves.
+[R143] - How near end of life the equipment is, and what capex you will need in year one or two.
+[R144] - Whether a cash reserve can be kept outside the deal.
+[R145] - What specifically worries your partner.
+"""
+
+Return only this block, one line per rewrite sentence, R1 to R145 in order:
+```audit
+R1: ...
+R2: ...
+```

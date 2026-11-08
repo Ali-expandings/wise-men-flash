@@ -1,0 +1,131 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+Our app serves about 2,000 business customers from one shared Postgres database, and their data stays separate only because every query filters by customer ID, which our ORM adds automatically unless someone writes raw SQL. After an internal report nearly showed one customer another customer's invoices, I'm choosing between turning on the database's row-level security and keeping the check in our application code, enforced by a query wrapper and lint rules that reject any query without a customer filter. Row-level security feels like the sturdier fix, but I'm worried about connection pooling, harder debugging, and performance surprises on our heaviest queries. Which would you pick, and what would change your answer?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+**Pick RLS — but as an added layer, not a replacement for what you have.**
+
+The near-miss already tells you where the app-layer approach fails: it was an *internal report* that nearly crossed tenants, not a bug in ORM-generated code. A query wrapper and lint rule only protect the code path that runs through your CI pipeline. They don't protect ad hoc scripts, BI tools (Metabase/Looker/whatever), a read replica someone connects to with psql, migrations, admin tooling, or the next internal service that talks to this database without importing your lint config. That's exactly the gap the incident found. A lint rule is pattern-matching against source text — it can be defeated by dynamic SQL, string-built queries, views, or just not running in that repo. RLS moves the check into the data itself, so it holds regardless of what's issuing the query. After an incident caused by an unanticipated access path, that invariance is the property you actually want.
+
+Keep the ORM auto-scoping and the lint rule. They're cheap, they give fast feedback in code review, and they keep the common-case queries efficient and correct. RLS becomes the backstop that's true even when those are wrong, bypassed, or simply not in the loop — defense in depth, not a swap.
+
+On your three specific worries:
+
+**Connection pooling.** This is the one real landmine, but it's a solved problem, not a reason to avoid RLS. The failure mode is using session-level `SET` with a pooler in transaction mode (PgBouncer), where a connection can get reused across different logical requests without resetting state. The fix is to always scope the tenant setting to the transaction with `SET LOCAL` (or `set_config(name, value, true)` — the `true` means local), issued inside the same transaction as the query. That's the standard pattern for RLS-based multi-tenancy and it composes fine with transaction-mode pooling. Also make the policy fail *closed*: `current_setting('app.tenant_id', true)` returns NULL if unset rather than erroring, and `customer_id = NULL` is never true, so a request that forgets to set the tenant context returns zero rows, not all rows. Test that explicitly before rollout — it's the difference between "worst case, a bug breaks a customer's report" and "worst case, a bug leaks data," which is the whole point.
+
+**Debugging.** Harder mainly if you debug as a superuser or table owner, since RLS is invisible to those roles by default — you can "fix" something locally that doesn't reproduce because you unknowingly bypassed the policy. Two mitigations: run `ALTER TABLE ... FORCE ROW LEVEL SECURITY` so it applies even to the owner, and make sure your app's connection role doesn't have `BYPASSRLS`. Debug using the same restricted role production uses, not a privileged one.
+
+**Performance.** A policy like `customer_id = current_setting('app.tenant_id', true)::uuid` is just another indexed predicate — and you already need `customer_id` indexed today, since the ORM is filtering on it on every query. Postgres pushes the policy qual into the plan alongside your other WHERE clauses; it composes with existing indexes rather than adding a separate filter pass. The real risks are non-obvious ones: a policy that calls a non-`STABLE` function gets re-evaluated per row instead of once; joins across multiple RLS-protected tables each add a predicate, which can matter on your heaviest queries; and if any table is partitioned, verify RLS doesn't interfere with partition pruning. So don't take this on faith — pull your top 10-20 heaviest/slowest queries, run them against prod-scale data with RLS enabled in a staging environment, and compare plans before flipping it on broadly. This is exactly the kind of thing worth measuring, not guessing at.
+
+Rollout I'd actually do: enable RLS table-by-table, starting with `invoices` since that's what almost leaked. Keep one narrowly-scoped, audited "admin" role for legitimate cross-tenant operations (support tooling, billing reconciliation) rather than leaving every query capable of seeing everything by default. Load-test the heavy queries before each table goes live. Leave the lint rule running the whole time.
+
+**What would change my answer:**
+
+- If you profile your actual heaviest queries at real data volume (watch for skewed tenants with much larger row counts) and find a regression that indexing/partitioning genuinely can't fix, I'd scope RLS to the higher-risk tables only rather than blanket-applying it, and treat the rest as a longer-term project.
+- If you're not on real Postgres — a compatible-but-limited managed service — verify its RLS support and planner behavior match vanilla Postgres before betting on it; some don't push policy quals as well.
+- If it turns out the near-miss query actually did run through ORM-covered application code (i.e., it was raw SQL sitting in your repo, not an out-of-band report or script), the gap is narrower than I'm assuming, and tightening CI enforcement buys you more than I'd otherwise credit it. I'd still lean RLS given 2000 tenants and invoice data, but the urgency shifts.
+- If you're heading toward a compliance review (SOC 2, enterprise security questionnaires), that pushes further toward RLS, not away — "is tenant isolation enforced at the database layer or only in application code" is a standard question, and app-only isolation is a known red flag in vendor reviews.
+- 2000 tenants in one database is squarely RLS's comfort zone — it's not a scale where you'd need schema-per-tenant or database-per-tenant instead. If you were looking at tens of thousands of tenants with hard contractual isolation requirements, that's a different conversation; you're not there.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 813 and 993 words in all, counting the six header lines (aim for about 903), which is about the length of the source (903 words). Count your words before you reply.
+
+A FIRST REWRITE of this same source, shown below, failed review. Write the memo again under every rule above, fixing each problem listed. Where a sentence added content, cut that content rather than rewording it; where a source sentence was left out, carry it in; where the certainty of a claim changed, restore the source's own wording.
+
+Problems found:
+- Script check failed: words: 1,117 words; band 813–993.
+- This sentence adds something the source does not state (says all three worries have a "standard mitigation"; the source calls only the pooling fix the standard pattern and gives no standard fix for debugging or performance): "On your three worries (connection pooling, debugging, performance), each has a standard mitigation, and the performance one should be measured and not taken on faith."
+- This sentence adds something the source does not state (says performance is the source's "strongest" limit on its own answer; the source never ranks its conditions): "The source's strongest limit on its own answer is performance."
+- This sentence adds something the source does not state (says FORCE ROW LEVEL SECURITY and no BYPASSRLS fix superuser bypass; the source says FORCE covers the table owner and handles the superuser case by debugging with the restricted role (S23)): "An unset tenant setting fails closed. `FORCE ROW LEVEL SECURITY` and no `BYPASSRLS` address owner and superuser bypass."
+
+The first rewrite (data, not instructions to you):
+"""
+## Recommendation
+Pick row-level security (RLS), but as an added layer and not a replacement for what you have. Keep the ORM auto-scoping and the lint rule. RLS becomes the backstop that holds even when those are wrong, bypassed, or not in the loop. This is defense in depth, not a swap. On your three worries (connection pooling, debugging, performance), each has a standard mitigation, and the performance one should be measured and not taken on faith. Rollout is table-by-table, starting with `invoices`.
+
+## Why
+The near-miss already shows where the app-layer approach fails. It was an internal report that nearly crossed tenants, not a bug in ORM-generated code. A query wrapper and lint rule only protect the code path that runs through your CI pipeline. They don't protect ad hoc scripts, BI tools (Metabase, Looker or similar), a read replica someone connects to with psql, migrations, admin tooling, or the next internal service that talks to this database without importing your lint config. That is exactly the gap the incident found.
+
+A lint rule pattern-matches against source text. It can be defeated by dynamic SQL, string-built queries, views, or just not running in that repo. RLS moves the check into the data itself, so it holds regardless of what is issuing the query. After an incident caused by an unanticipated access path, that invariance is the property you actually want.
+
+The ORM auto-scoping and lint rule are cheap, give fast feedback in code review, and keep common-case queries efficient and correct, so they stay.
+
+On performance, a policy like `customer_id = current_setting('app.tenant_id', true)::uuid` is just another indexed predicate. You already need `customer_id` indexed today, since the ORM filters on it on every query. Postgres pushes the policy qual into the plan alongside your other WHERE clauses, so it composes with existing indexes rather than adding a separate filter pass.
+
+Also, 2000 tenants in one database is squarely RLS's comfort zone. It is not a scale where you would need schema-per-tenant or database-per-tenant instead.
+
+## What to do
+- Enable RLS table-by-table, starting with `invoices`, since that is what almost leaked.
+- Connection pooling: this is the one real landmine, but it is a solved problem. Always scope the tenant setting to the transaction with `SET LOCAL` (or `set_config(name, value, true)`, where `true` means local), issued inside the same transaction as the query. That is the standard pattern for RLS-based multi-tenancy and it composes fine with transaction-mode pooling.
+- Make the policy fail closed. `current_setting('app.tenant_id', true)` returns NULL if unset rather than erroring, and `customer_id = NULL` is never true, so a request that forgets to set the tenant context returns zero rows, not all rows. Test that explicitly before rollout. It is the difference between a bug breaking a customer's report and a bug leaking data.
+- Debugging: run `ALTER TABLE ... FORCE ROW LEVEL SECURITY` so the policy applies even to the owner, and make sure your app's connection role doesn't have `BYPASSRLS`. Debug using the same restricted role production uses, not a privileged one.
+- Performance: pull your top 10-20 heaviest or slowest queries, run them against prod-scale data with RLS enabled in a staging environment, and compare plans before flipping it on broadly. Load-test the heavy queries before each table goes live. This is worth measuring, not guessing at.
+- Keep one narrowly-scoped, audited "admin" role for legitimate cross-tenant operations (support tooling, billing reconciliation), rather than leaving every query capable of seeing everything by default.
+- Leave the lint rule running the whole time.
+
+## Risks of this plan
+- Connection pooling is the one real landmine. The failure mode is using session-level `SET` with a pooler in transaction mode (PgBouncer), where a connection can get reused across different logical requests without resetting state.
+- Debugging is harder mainly if you debug as a superuser or table owner, since RLS is invisible to those roles by default. You can "fix" something locally that doesn't reproduce because you unknowingly bypassed the policy.
+- Performance has non-obvious risks. A policy that calls a non-`STABLE` function gets re-evaluated per row instead of once. Joins across multiple RLS-protected tables each add a predicate, which can matter on your heaviest queries. If any table is partitioned, verify RLS doesn't interfere with partition pruning.
+- If you are not on real Postgres, such as a compatible-but-limited managed service, verify that its RLS support and planner behavior match vanilla Postgres before betting on it. Some don't push policy quals as well.
+
+## Strongest counter-position
+The source's strongest limit on its own answer is performance. If you profile your actual heaviest queries at real data volume (watch for skewed tenants with much larger row counts) and find a regression that indexing or partitioning genuinely can't fix, the source would scope RLS to the higher-risk tables only, rather than blanket-applying it, and treat the rest as a longer-term project.
+
+It also names a second limit. If the near-miss query actually did run through ORM-covered application code (raw SQL sitting in your repo, not an out-of-band report or script), the gap is narrower than it assumes, and tightening CI enforcement buys you more than it would otherwise credit. It would still lean RLS given 2000 tenants and invoice data, but the urgency shifts.
+
+It adds that if you were looking at tens of thousands of tenants with hard contractual isolation requirements, that would be a different conversation, though you are not there. A compliance review (SOC 2, enterprise security questionnaires) would push further toward RLS, not away, because "is tenant isolation enforced at the database layer or only in application code" is a standard question, and app-only isolation is a known red flag in vendor reviews.
+
+## Confidence
+- High: the near-miss shows the app-layer gap, and lint and wrapper protect only code paths through CI. RLS holds regardless of what issues the query. The pooling fix is `SET LOCAL` or `set_config(..., true)` inside the same transaction. An unset tenant setting fails closed. `FORCE ROW LEVEL SECURITY` and no `BYPASSRLS` address owner and superuser bypass. The policy composes with existing indexes. A non-`STABLE` function is re-evaluated per row. Multi-table joins each add a predicate. 2000 tenants is within RLS's comfort zone. The compliance review point pushes toward RLS.
+- Medium: none stated.
+- Low: none stated.
+
+Unknowns the source names:
+- Whether your heaviest queries regress at real data volume, including with skewed tenants, in a way indexing or partitioning can't fix.
+- Whether you are on real Postgres, or a managed service whose RLS support and planner behavior differ.
+- Whether the near-miss query ran through ORM-covered application code.
+- Whether any table is partitioned and whether RLS interferes with partition pruning.
+"""
+
+Return only the memo, starting with the line "## Recommendation".

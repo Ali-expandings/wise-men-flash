@@ -1,0 +1,82 @@
+question: R502
+arm: plain-memo-short
+attempt: 1
+rewrite_sentences: 48
+source_sentences: 35
+counts:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 1
+  DROPPED: 0
+pass: false
+flagged:
+- R: 46
+  label: WEAKER
+  refs:
+  - 21
+  note: the source says "moving it" without a hedge ("probably" applies only to the multiplier); the rewrite hedges the moving-risk claim itself with "probably" and labels it Medium
+  text: The freeze is probably moving risk rather than protecting against it.
+dropped: []
+reuse:
+  source_sentences: 35
+  cited_once_or_more: 35
+  cited_twice_or_more: 19
+  max: 8
+  mean: 2.26
+labels:
+  RESTATES: 43
+  CONNECTIVE: 1
+  FIXED: 3
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 1
+script_checks_pass: false
+map:
+  R1: S21
+  R2: S1, S2
+  R3: S3
+  R4: S22, S31
+  R5: S31, S32, S33, S34
+  R6: S31, S35
+  R7: S4
+  R8: S4, S5
+  R9: S4, S6
+  R10: S4, S7
+  R11: S4, S8
+  R12: S4, S9
+  R13: S10
+  R14: S10, S11
+  R15: S10, S12
+  R16: S10, S13
+  R17: S10, S14
+  R18: S15, S16
+  R19: S15, S17
+  R20: S15, S18
+  R21: S15, S19
+  R22: S15, S20
+  R23: S21, S23
+  R24: S21, S23
+  R25: S21, S24
+  R26: S21, S25
+  R27: S26, S27
+  R28: S26, S27
+  R29: S26, S28
+  R30: S26, S29
+  R31: S26, S30
+  R32: S31, S32
+  R33: S31, S32
+  R34: S31, S32
+  R35: S31, S33
+  R36: S31, S34
+  R37: FIXED
+  R38: FIXED
+  R39: S1, S2
+  R40: S5
+  R41: S10, S13
+  R42: S20
+  R43: S25
+  R44: S9
+  R45: S24
+  R46: WEAKER — S21
+  R47: CONNECTIVE
+  R48: FIXED

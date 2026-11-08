@@ -1,0 +1,29 @@
+question: R506
+arm: plain-memo
+from_attempt: 2
+deleted:
+- R: 65
+  label: NEW
+  refs:
+  - 19
+  note: adds a step (check the draft against the listed failure modes) that the source does not prescribe
+  text: Check the draft against the ways these go wrong, which are listed in the next section.
+- R: 80
+  label: NEW
+  refs: []
+  note: says both following caveats come from the stakes; the source links only the exposure point to the layoffs and never ties the over-apologizing point (S8) to the stakes
+  text: Two further caveats come from the stakes.
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 29
+  cited_once_or_more: 29
+  cited_twice_or_more: 28
+  max: 26
+  mean: 7.41
+words: 1645

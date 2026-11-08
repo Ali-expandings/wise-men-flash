@@ -1,0 +1,237 @@
+You are checking a rewrite against its source, sentence by sentence. The rewrite was meant to put the source into a fixed six-section format while saying nothing the source does not say, at the same certainty.
+
+The rules the rewrite had to follow.
+Allowed: restating a source sentence in fuller words; splitting or merging sentences; moving content between sections; restating a point where the format calls for it (the first section sums up what the later sections say); connecting sentences that make no claim; and three fixed sentences, used when the source gives nothing for a section: "No further risks are named.", "No case against this recommendation is made beyond the risks above." and "No unknowns are named."
+Not allowed: any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state (a fact from the question counts as new unless the source states it); and any change in how certain a claim is, in either direction.
+The last section labels claims High, Medium or Low by a fixed rule from the source's own wording: a claim the source states without a hedge is High; with "likely", "probably", "usually", "typically" or "suggests", Medium; with "may", "might", "could", "possibly" or "unclear", Low. A label that follows this rule is not a change in certainty; a label that breaks it is.
+
+For every rewrite sentence, R1 to R128, give exactly one line, in one of these forms:
+R<k>: S<i>, S<j>                  the source sentence or sentences it restates (name all of them)
+R<k>: CONNECTIVE                  it only connects or introduces, and makes no claim
+R<k>: FIXED                       it is one of the three fixed sentences, word for word
+R<k>: NEW — <what is new>         it states something the source does not; if it otherwise restates source sentences, name them: R<k>: NEW — S<i>, S<j> — <what is new>
+R<k>: STRONGER — S<i> — <what changed>    it states a source claim with more certainty than the source does
+R<k>: WEAKER — S<i> — <what changed>      it states a source claim with less certainty than the source does
+Judge each rewrite sentence against the whole source, not only against the sentences near it. A source sentence that is only a bold lead-in or a line ending in a colon is restated by any rewrite sentence that carries the content it introduces: cite it there too. Do not list the source sentences the rewrite leaves out; that is computed from your lines.
+
+The question the source answers (context only):
+"""
+Three months ago I wrote the analysis our executives used to justify closing our smallest regional office, and I've just found a formula error that overstated that office's losses by about 40%. The office is already closed and its staff were laid off. I can't decide whether my correction to the executive team should read as a plain technical fix or a personal apology, or whether it should say anything about how the decision might have gone with the right numbers. What tone is right for a message like this, and how do these usually go wrong?
+"""
+
+The source, sentence by sentence:
+"""
+[S1] Separate three things you're currently treating as one decision, because collapsing them is exactly how these letters go wrong: the factual correction, the acknowledgment of fault, and the claim about what would have happened.
+[S2] They don't deserve equal airtime.
+
+[S3] **Tone: factual and briefly owned, not clinical and not penitential.**
+[S4] Lead with the correction itself — what the formula error was, why it happened, what the corrected loss figure is — plainly, in the first paragraph, no hedging.
+[S5] That's what executives actually need and will act on.
+[S6] Then own it in one direct sentence: you found the error, it was yours, you're correcting it.
+[S7] Don't extend that into three paragraphs of remorse.
+[S8] Over-apologizing doesn't read as more accountable — it shifts the message's center of gravity from the numbers to your feelings, and it quietly puts the burden on the reader to reassure you.
+[S9] A memo that's mostly apology also buries the one thing they urgently need, which is the corrected number.
+
+[S10] **Don't assert the counterfactual — that's the part to be most careful about.**
+[S11] "I made a formula error" and "the office shouldn't have closed" are different claims, and the second one you probably can't back.
+[S12] The original decision likely weighed things beyond this one figure — lease terms, strategic footprint, other offices under review — that you may not have full visibility into, and a corrected loss number alone doesn't tell you what the call would have been.
+[S13] State the correct numbers clearly and let the executives draw their own conclusion.
+[S14] If someone asks you directly whether it would have changed the outcome, "I don't know — that's not just my call to make" is honest, not evasive.
+
+[S15] **This is exposure, not just tone.**
+[S16] The closure meant real layoffs.
+[S17] A written statement asserting the decision rested on bad numbers, paired with speculation that the outcome would have differed, is the kind of sentence that can resurface later if anyone affected ever disputes their termination.
+[S18] That's not a reason to soften the facts — get them exactly right and say them clearly — but it's a reason to keep speculation out of the written record, and if your company has any legal/HR function, loop them in before this goes to the full executive team, given people's jobs were on the line.
+
+[S19] Where these usually go wrong, concretely:
+
+[S20] - **Burying the correction under apology** — executives have to dig for the actual number.
+[S21] - **Defensive minimizing** — "small error," "probably wouldn't have mattered anyway."
+[S22] Reads as covering yourself, especially given the stakes, and erodes trust in your next analysis more than the error itself does.
+[S23] - **Asserting the counterfactual as fact** — claiming the decision would or wouldn't have changed, when you don't actually know that.
+[S24] - **No remediation** — stating what broke without saying what you're checking elsewhere (same formula used in other models?) or what changes in your review process.
+[S25] Without that, the memo just documents a mistake instead of closing the loop.
+[S26] - **Wrong sequencing** — the exec team finding out cold, with your manager blindsided alongside them.
+[S27] Give whoever owns that relationship a heads-up first.
+
+[S28] Structurally: correction and corrected numbers first, one sentence of ownership, what you're checking/fixing going forward, then open for questions.
+[S29] Consider a short verbal heads-up to your manager or the decision-owner before the written version goes to the full executive team — for something this consequential, the first they hear of it shouldn't be a cold email.
+"""
+
+The rewrite, sentence by sentence (header lines are not numbered):
+"""
+## Recommendation
+
+[R1] Separate the three things you are currently treating as one decision.
+[R2] They are the factual correction, the acknowledgment of fault, and the claim about what would have happened.
+[R3] Collapsing them into one is exactly how these letters go wrong, and they do not deserve equal airtime.
+
+[R4] The right tone is factual and briefly owned, not clinical and not penitential.
+[R5] Lead with the correction itself: what the formula error was, why it happened, and what the corrected loss figure is.
+[R6] Put it plainly in the first paragraph, with no hedging.
+[R7] Then own the error in one direct sentence.
+[R8] You found the error, it was yours, and you are correcting it.
+[R9] Do not stretch that into three paragraphs of remorse.
+
+[R10] Do not assert the counterfactual.
+[R11] This is the part to be most careful about.
+[R12] State the correct numbers clearly and let the executives draw their own conclusion.
+
+[R13] This is exposure, not just tone.
+[R14] The closure meant real layoffs, so keep speculation out of the written record.
+[R15] If your company has any legal or HR function, loop them in before the message goes to the full executive team.
+[R16] Give whoever owns that relationship a short verbal heads-up first, so the first the executives hear of it is not a cold email.
+
+[R17] In structure, the message runs as follows: the correction and the corrected numbers first, then one sentence of ownership, then what you are checking and fixing going forward, then an invitation for questions.
+
+## Why
+
+[R18] The tone question has an answer once the three pieces are pulled apart.
+[R19] The executives need the correction, because that is what they actually need and will act on.
+[R20] A memo that spends its length on feeling rather than figures fails them on the one point they care about.
+
+[R21] Over-apologizing does not read as more accountable.
+[R22] It shifts the message's center of gravity from the numbers to your feelings.
+[R23] It also quietly puts the burden on the reader to reassure you.
+[R24] A memo that is mostly apology buries the one thing the executives urgently need, which is the corrected number.
+[R25] That is why one direct sentence of ownership is enough, and why a longer expression of remorse works against you.
+
+[R26] The counterfactual deserves the most care because two claims are easily confused.
+[R27] "I made a formula error" and "the office shouldn't have closed" are different claims, and the second one you probably can't back.
+[R28] The original decision likely weighed things beyond this one figure.
+[R29] Examples are lease terms, strategic footprint, and other offices under review.
+[R30] You may not have full visibility into those factors.
+[R31] A corrected loss number alone doesn't tell you what the call would have been.
+[R32] Stating the correct numbers clearly and letting the executives draw their own conclusion keeps you inside what you actually know.
+
+[R33] If someone asks you directly whether the correction would have changed the outcome, "I don't know — that's not just my call to make" is honest, not evasive.
+[R34] It reports the limit of your position accurately rather than guessing past it.
+
+[R35] The exposure point rests on the human stakes.
+[R36] The closure meant real layoffs.
+[R37] A written statement asserting the decision rested on bad numbers, paired with speculation that the outcome would have differed, is the kind of sentence that can resurface later if anyone affected ever disputes their termination.
+[R38] This is not a reason to soften the facts.
+[R39] It is a reason to get the facts exactly right and say them clearly, while keeping speculation out of the written record.
+[R40] Given that people's jobs were on the line, it is also the reason to involve any legal or HR function before the message reaches the full executive team.
+
+[R41] The sequencing advice follows from the same weight.
+[R42] For something this consequential, the first the executives hear of it shouldn't be a cold email, and your manager should not be blindsided alongside them.
+
+## What to do
+
+[R43] First, separate the three pieces in your own head before drafting: the factual correction, the acknowledgment of fault, and the claim about what would have happened.
+[R44] Give them unequal space in the message, with the correction getting the most.
+
+[R45] Second, before the written version goes out, consider a short verbal heads-up to your manager or the decision-owner.
+[R46] Whoever owns that relationship should get a heads-up first.
+[R47] The aim is that neither the executive team nor your manager finds out cold.
+
+[R48] Third, if your company has any legal or HR function, loop them in before this goes to the full executive team.
+[R49] People's jobs were on the line, which is why this step comes before the send.
+
+[R50] Fourth, write the message in this order:
+
+[R51] 1. **The correction and the corrected numbers, first.**
+[R52] In the first paragraph, plainly and with no hedging, say what the formula error was, why it happened, and what the corrected loss figure is.
+[R53] 2. **One sentence of ownership.**
+[R54] You found the error, it was yours, and you are correcting it.
+[R55] Do not extend it into three paragraphs of remorse.
+[R56] 3. **What you are checking and fixing going forward.**
+[R57] Say what you are checking elsewhere, for example whether the same formula was used in other models.
+[R58] Say what changes in your review process.
+[R59] Without this, the memo just documents a mistake instead of closing the loop.
+[R60] 4. **An opening for questions.**
+[R61] Close by inviting questions.
+
+[R62] Fifth, keep the numbers clear and the speculation out.
+[R63] State the correct numbers clearly and let the executives draw their own conclusion.
+[R64] Do not claim in writing that the decision would or wouldn't have changed.
+
+[R65] Sixth, prepare one answer for the direct question.
+[R66] If someone asks whether it would have changed the outcome, the honest reply is "I don't know — that's not just my call to make."
+
+[R67] Seventh, check your draft against the failure modes.
+[R68] Make sure the correction is not buried under apology.
+[R69] Make sure you have not minimized the error with phrases like "small error" or "probably wouldn't have mattered anyway".
+[R70] Make sure you have not asserted the counterfactual as fact.
+[R71] Make sure the remediation is present.
+[R72] Make sure the sequencing gave the right person a heads-up first.
+
+## Risks of this plan
+
+[R73] The source names these risks, which are the ways a message like this usually goes wrong.
+
+[R74] - **Burying the correction under apology.**
+[R75] Executives have to dig for the actual number.
+[R76] A memo that is mostly apology buries the one thing they urgently need.
+[R77] - **Defensive minimizing.**
+[R78] Phrases such as "small error" or "probably wouldn't have mattered anyway" read as covering yourself, especially given the stakes.
+[R79] They erode trust in your next analysis more than the error itself does.
+[R80] - **Asserting the counterfactual as fact.**
+[R81] This means claiming the decision would or wouldn't have changed when you don't actually know that.
+[R82] - **No remediation.**
+[R83] Stating what broke without saying what you are checking elsewhere, such as whether the same formula is used in other models, or what changes in your review process.
+[R84] Without that, the memo just documents a mistake instead of closing the loop.
+[R85] - **Wrong sequencing.**
+[R86] The executive team finds out cold, with your manager blindsided alongside them.
+
+[R87] Two further risks come from the stakes rather than from the drafting.
+[R88] First, over-apologizing shifts the message's center of gravity from the numbers to your feelings and quietly puts the burden on the reader to reassure you.
+[R89] Second, there is legal exposure.
+[R90] A written statement that the decision rested on bad numbers, paired with speculation that the outcome would have differed, can resurface later if anyone affected ever disputes their termination, because the closure meant real layoffs.
+[R91] Keeping speculation out of the written record, and involving any legal or HR function first, is the guard against that.
+
+## Strongest counter-position
+
+[R92] The source does not argue against its own answer at length.
+[R93] The limit it raises on its own advice concerns the counterfactual.
+[R94] The claim that the office shouldn't have closed is one you probably can't back.
+[R95] The original decision likely weighed things beyond this one figure, such as lease terms, strategic footprint, and other offices under review.
+[R96] You may not have full visibility into those things, and a corrected loss number alone doesn't tell you what the call would have been.
+
+[R97] The limit therefore falls on any version of the message that goes further than the numbers.
+[R98] It also falls on you if you are asked directly.
+[R99] In that case the source's answer is that you don't know, and that the question is not just your call to make.
+
+[R100] The source also marks a limit on its own caution about exposure.
+[R101] The legal risk is not a reason to soften the facts.
+[R102] The facts still need to be exactly right and stated clearly.
+[R103] Only speculation is kept out of the written record.
+
+## Confidence
+
+[R104] **High** (stated by the source without a hedge):
+[R105] - The three pieces are the factual correction, the acknowledgment of fault, and the claim about what would have happened, and they don't deserve equal airtime.
+[R106] - The right tone is factual and briefly owned, not clinical and not penitential.
+[R107] - The correction leads, plainly, in the first paragraph, with no hedging.
+[R108] - Ownership is one direct sentence, not three paragraphs of remorse.
+[R109] - Over-apologizing doesn't read as more accountable, and a memo mostly apology buries the corrected number.
+[R110] - "I made a formula error" and "the office shouldn't have closed" are different claims.
+[R111] - A corrected loss number alone doesn't tell you what the call would have been.
+[R112] - You should state the correct numbers clearly and let the executives draw their own conclusion.
+[R113] - "I don't know — that's not just my call to make" is honest, not evasive.
+[R114] - The closure meant real layoffs, and a written statement that the decision rested on bad numbers, paired with speculation, is the kind of sentence that can resurface later if anyone affected ever disputes their termination.
+[R115] - Exposure is not a reason to soften the facts, but it is a reason to keep speculation out of the written record and to loop in any legal or HR function first.
+[R116] - The structure is correction first, one sentence of ownership, what you are checking and fixing, then questions.
+[R117] - Without remediation, the memo just documents a mistake instead of closing the loop.
+
+[R118] **Medium** (stated with a hedge such as "probably", "likely" or "usually"):
+[R119] - The claim that the office shouldn't have closed is one you probably can't back.
+[R120] - The original decision likely weighed things beyond this one figure.
+[R121] - These letters usually go wrong in the ways listed: burying the correction, defensive minimizing, asserting the counterfactual, offering no remediation, and wrong sequencing.
+
+[R122] **Low** (stated with "may", "might", "could" or "possibly"):
+[R123] - You may not have full visibility into the other factors the decision weighed.
+
+[R124] **Unknowns the source names:**
+[R125] - What the call would have been with the corrected loss number.
+[R126] A corrected figure alone doesn't tell you that.
+[R127] - How much of the original decision rested on factors beyond this one figure, such as lease terms, strategic footprint, and other offices under review, which you may not have full visibility into.
+[R128] - Whether the same formula is used in other models, which the source says you should be checking.
+"""
+
+Return only this block, one line per rewrite sentence, R1 to R128 in order:
+```audit
+R1: ...
+R2: ...
+```

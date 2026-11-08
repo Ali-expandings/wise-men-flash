@@ -1,0 +1,162 @@
+question: R506
+arm: plain-memo
+attempt: 1
+rewrite_sentences: 128
+source_sentences: 29
+counts:
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 0
+  DROPPED: 0
+pass: false
+flagged:
+- R: 16
+  label: STRONGER
+  refs:
+  - 29
+  note: the source only says to "consider" a short verbal heads-up; the rewrite turns this into a flat instruction to give one (the rest restates S27, S26, S19)
+  text: Give whoever owns that relationship a short verbal heads-up first, so the first the executives hear of it is not a cold email.
+dropped: []
+reuse:
+  source_sentences: 29
+  cited_once_or_more: 29
+  cited_twice_or_more: 28
+  max: 19
+  mean: 5.93
+labels:
+  RESTATES: 121
+  CONNECTIVE: 6
+  FIXED: 0
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 0
+script_checks_pass: false
+map:
+  R1: S1
+  R2: S1
+  R3: S1, S2
+  R4: S3
+  R5: S4
+  R6: S4
+  R7: S6
+  R8: S6
+  R9: S7
+  R10: S10
+  R11: S10
+  R12: S13
+  R13: S15
+  R14: S16, S17, S18
+  R15: S18
+  R16: STRONGER — S29
+  R17: S28
+  R18: S1
+  R19: S5
+  R20: S8, S9
+  R21: S8
+  R22: S8
+  R23: S8
+  R24: S9
+  R25: S6, S7, S8, S9
+  R26: S10, S11
+  R27: S11
+  R28: S12
+  R29: S12
+  R30: S12
+  R31: S12
+  R32: S13, S23
+  R33: S14
+  R34: S14
+  R35: S15, S16
+  R36: S16
+  R37: S17
+  R38: S18
+  R39: S18
+  R40: S18
+  R41: S29
+  R42: S19, S26, S29
+  R43: S1
+  R44: S2, S4, S6, S9
+  R45: S29
+  R46: S19, S27
+  R47: S19, S26
+  R48: S18
+  R49: S18
+  R50: S28
+  R51: S4, S28
+  R52: S4
+  R53: S6, S28
+  R54: S6
+  R55: S7
+  R56: S24, S28
+  R57: S19, S24
+  R58: S19, S24
+  R59: S19, S25
+  R60: S28
+  R61: S28
+  R62: S13, S18
+  R63: S13
+  R64: S10, S18, S23
+  R65: S14
+  R66: S14
+  R67: S19
+  R68: S19, S20
+  R69: S19, S21
+  R70: S19, S23
+  R71: S19, S24
+  R72: S19, S26, S27
+  R73: S19
+  R74: S19, S20
+  R75: S20
+  R76: S9, S20
+  R77: S19, S21
+  R78: S21, S22
+  R79: S22
+  R80: S19, S23
+  R81: S23
+  R82: S19, S24
+  R83: S24
+  R84: S25
+  R85: S19, S26
+  R86: S26
+  R87: CONNECTIVE
+  R88: S8
+  R89: S15, S17
+  R90: S16, S17
+  R91: S18
+  R92: CONNECTIVE
+  R93: S10
+  R94: S11
+  R95: S12
+  R96: S12
+  R97: S13, S18
+  R98: S14
+  R99: S14
+  R100: S18
+  R101: S18
+  R102: S18
+  R103: S18
+  R104: CONNECTIVE
+  R105: S1, S2
+  R106: S3
+  R107: S4
+  R108: S6, S7
+  R109: S8, S9
+  R110: S11
+  R111: S12
+  R112: S13
+  R113: S14
+  R114: S16, S17
+  R115: S18
+  R116: S28
+  R117: S25
+  R118: CONNECTIVE
+  R119: S11
+  R120: S12
+  R121: S19, S20, S21, S23, S24, S26
+  R122: CONNECTIVE
+  R123: S12
+  R124: CONNECTIVE
+  R125: S12
+  R126: S12
+  R127: S12
+  R128: S24

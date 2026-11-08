@@ -1,0 +1,135 @@
+You are checking a rewrite against its source, sentence by sentence. The rewrite was meant to put the source into a fixed six-section format while saying nothing the source does not say, at the same certainty.
+
+The rules the rewrite had to follow.
+Allowed: restating a source sentence in fuller words; splitting or merging sentences; moving content between sections; restating a point where the format calls for it (the first section sums up what the later sections say); connecting sentences that make no claim; and three fixed sentences, used when the source gives nothing for a section: "No further risks are named.", "No case against this recommendation is made beyond the risks above." and "No unknowns are named."
+Not allowed: any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state (a fact from the question counts as new unless the source states it); and any change in how certain a claim is, in either direction.
+The last section labels claims High, Medium or Low by a fixed rule from the source's own wording: a claim the source states without a hedge is High; with "likely", "probably", "usually", "typically" or "suggests", Medium; with "may", "might", "could", "possibly" or "unclear", Low. A label that follows this rule is not a change in certainty; a label that breaks it is.
+
+For every rewrite sentence, R1 to R54, give exactly one line, in one of these forms:
+R<k>: S<i>, S<j>                  the source sentence or sentences it restates (name all of them)
+R<k>: CONNECTIVE                  it only connects or introduces, and makes no claim
+R<k>: FIXED                       it is one of the three fixed sentences, word for word
+R<k>: NEW — <what is new>         it states something the source does not; if it otherwise restates source sentences, name them: R<k>: NEW — S<i>, S<j> — <what is new>
+R<k>: STRONGER — S<i> — <what changed>    it states a source claim with more certainty than the source does
+R<k>: WEAKER — S<i> — <what changed>      it states a source claim with less certainty than the source does
+Judge each rewrite sentence against the whole source, not only against the sentences near it. A source sentence that is only a bold lead-in or a line ending in a colon is restated by any rewrite sentence that carries the content it introduces: cite it there too. Do not list the source sentences the rewrite leaves out; that is computed from your lines.
+
+The question the source answers (context only):
+"""
+I'm the hiring manager for a team lead role, and a former colleague told me privately that our top candidate left their last job in the middle of an internal investigation into how they treated junior staff. She asked me not to repeat it, she doesn't know how the investigation ended, and the candidate's formal references are glowing. What do I owe the candidate, the people who would report to them, and my former colleague, and what can I realistically do with information I can't verify or cite?
+"""
+
+The source, sentence by sentence:
+"""
+[S1] Three duties pull in different directions here, and the resolution is to let the tip change your *process*, not your *verdict*.
+
+[S2] **The candidate** is owed a decision based on evidence they had a chance to address, not on an anonymous, unresolved allegation.
+[S3] "Left during an investigation" is consistent with being pushed out, resigning under pressure, resigning for unrelated reasons while it was still open, or being cleared entirely — your colleague doesn't know which, and neither do you.
+[S4] Treating an unresolved investigation as a proxy for guilt isn't fair to the candidate, and if this decision is ever questioned, "I heard a rumor" is not a basis you want in a rejection file.
+[S5] The glowing formal references don't cancel this out, but not for the reason it feels like they should — references are chosen by the candidate precisely because they'll be glowing, so they were never strong evidence against this kind of concern in the first place.
+[S6] Their being positive doesn't corroborate anything; it just reflects normal selection bias.
+
+[S7] **The people who'd report to them** have the most at stake and the least voice in this process — they can't vet their future manager, you're doing it on their behalf.
+[S8] The asymmetry is real: a wrong "no hire" costs one strong candidate a job they can get elsewhere; a wrong "hire" puts several junior people under someone with a live pattern, repeatedly, backed by the authority of the role.
+[S9] That doesn't mean you convict on hearsay.
+[S10] It means how hard you dig before deciding should scale with how much power the role holds over vulnerable people — independent of this tip, but the tip is a reason to prioritize it now.
+
+[S11] **Your former colleague** is owed protection as a source.
+[S12] She shared something that could cost her if it traces back to her, on the express condition it goes no further.
+[S13] Don't repeat the specific claim to the candidate, HR, or other interviewers in any form attributable to her — not her name, not "someone who worked with them told me."
+[S14] If it surfaces at all in how you explain your process, keep it generic ("this is a people-manager role, I want deeper reference checks than usual") — true on its own terms, untraceable to that one conversation.
+
+[S15] What you can actually do with something you can't verify or cite: use it to raise your diligence, not to reach a conclusion.
+
+[S16] - Go beyond the reference list the candidate gave you.
+[S17] Find former peers or reports through LinkedIn or mutual connections and ask open, behavioral questions: how they handled conflict with a junior report, what turnover looked like on their team, whether people would work for them again.
+[S18] - Build interview questions around management of junior staff specifically — concrete past examples (a hard feedback conversation, a mistake by a report, a conflict they had to resolve), not abstract leadership philosophy.
+[S19] Specific, unrehearsed detail is harder to fake than a values statement.
+[S20] - Don't put the original claim to the candidate directly.
+[S21] It's unverifiable and unattributable, and confronting them with it either breaks your colleague's confidence or forces you to lie about your source.
+[S22] - If expanded diligence turns up nothing more, decide on what the process actually produced — interviews and checks you can stand behind — not on the original tip.
+[S23] At that point you've done what's reasonable; you don't get to hold a candidate hostage to a rumor indefinitely.
+[S24] - If you do hire them, hedge the risk without pre-punishing them for it: earlier-than-usual check-ins with their new reports, an accessible way for those reports to raise concerns, skip-levels sooner than standard.
+[S25] Good practice for any new manager, and it happens to cover this specific risk too.
+
+[S26] Bottom line: one secondhand, unresolved, unattributable claim isn't enough to reject someone.
+[S27] It is enough to justify real time finding out more before you decide — and for a role with authority over junior people, you'd want to do most of that digging anyway.
+"""
+
+The rewrite, sentence by sentence (header lines are not numbered):
+"""
+## Recommendation
+[R1] Let the tip change your process, not your verdict.
+[R2] One secondhand, unresolved, unattributable claim isn't enough to reject someone.
+[R3] It is enough to justify real time finding out more before you decide, and for a role with authority over junior people, you'd want to do most of that digging anyway.
+[R4] Use what you can't verify or cite to raise your diligence, not to reach a conclusion.
+[R5] Protect your former colleague as a source, and don't treat the unresolved investigation as a proxy for guilt.
+
+## Why
+[R6] Three duties pull in different directions here.
+
+[R7] The candidate is owed a decision based on evidence they had a chance to address, not on an anonymous, unresolved allegation.
+[R8] "Left during an investigation" is consistent with being pushed out, resigning under pressure, resigning for unrelated reasons while it was still open, or being cleared entirely.
+[R9] Your colleague doesn't know which, and neither do you.
+[R10] Treating an unresolved investigation as a proxy for guilt isn't fair to the candidate.
+[R11] If this decision is ever questioned, "I heard a rumor" is not a basis you want in a rejection file.
+[R12] The glowing formal references don't cancel the concern out, but not for the reason it feels like they should.
+[R13] References are chosen by the candidate precisely because they'll be glowing, so they were never strong evidence against this kind of concern in the first place.
+[R14] Their being positive doesn't corroborate anything; it just reflects normal selection bias.
+
+[R15] The people who'd report to them have the most at stake and the least voice in this process.
+[R16] They can't vet their future manager, so you're doing it on their behalf.
+[R17] The asymmetry is real: a wrong "no hire" costs one strong candidate a job they can get elsewhere, while a wrong "hire" puts several junior people under someone with a live pattern, repeatedly, backed by the authority of the role.
+[R18] That doesn't mean you convict on hearsay.
+[R19] It means how hard you dig before deciding should scale with how much power the role holds over vulnerable people.
+[R20] That holds independent of this tip, but the tip is a reason to prioritize it now.
+
+[R21] Your former colleague shared something that could cost her if it traces back to her, on the express condition that it goes no further.
+[R22] She is owed protection as a source.
+
+## What to do
+[R23] - Go beyond the reference list the candidate gave you.
+[R24] Find former peers or reports through LinkedIn or mutual connections and ask open, behavioral questions: how they handled conflict with a junior report, what turnover looked like on their team, and whether people would work for them again.
+[R25] - Build interview questions around management of junior staff specifically.
+[R26] Ask for concrete past examples (a hard feedback conversation, a mistake by a report, a conflict they had to resolve), not abstract leadership philosophy.
+[R27] Specific, unrehearsed detail is harder to fake than a values statement.
+[R28] - Don't put the original claim to the candidate directly.
+[R29] It's unverifiable and unattributable, and confronting them with it either breaks your colleague's confidence or forces you to lie about your source.
+[R30] - Don't repeat the specific claim to the candidate, HR, or other interviewers in any form attributable to her: not her name, not "someone who worked with them told me."
+[R31] If it surfaces at all in how you explain your process, keep it generic ("this is a people-manager role, I want deeper reference checks than usual"), which is true on its own terms and untraceable to that one conversation.
+[R32] - If expanded diligence turns up nothing more, decide on what the process actually produced, meaning interviews and checks you can stand behind, not on the original tip.
+[R33] At that point you've done what's reasonable.
+[R34] - If you do hire them, hedge the risk without pre-punishing them for it: earlier-than-usual check-ins with their new reports, an accessible way for those reports to raise concerns, and skip-levels sooner than standard.
+[R35] This is good practice for any new manager, and it happens to cover this specific risk too.
+
+## Risks of this plan
+[R36] The source names these risks and caveats:
+[R37] - Confronting the candidate with the claim either breaks your colleague's confidence or forces you to lie about your source.
+[R38] - If the claim traces back to her, it could cost her.
+[R39] - Rejecting on a rumor leaves you with a weak basis in the file if the decision is ever questioned.
+[R40] - Hiring wrongly would put several junior people under someone with a live pattern, repeatedly, backed by the authority of the role.
+[R41] - Rejecting wrongly would cost one strong candidate a job they can get elsewhere.
+[R42] - Digging has to end somewhere: you don't get to hold a candidate hostage to a rumor indefinitely.
+
+## Strongest counter-position
+[R43] The source's own limit on its answer is that the tip is not enough to convict or reject.
+[R44] Hearsay that is secondhand, unresolved and unattributable can't carry a verdict, and you don't get to hold a candidate hostage to a rumor indefinitely.
+[R45] The source also says the asymmetry of harm is real, which is why it argues for digging rather than for ignoring the tip.
+
+## Confidence
+[R46] - High: the tip should change your process, not your verdict.
+[R47] - High: one secondhand, unresolved, unattributable claim isn't enough to reject someone, but it is enough to justify real time finding out more.
+[R48] - High: "left during an investigation" is consistent with being pushed out, resigning under pressure, resigning for unrelated reasons while it was still open, or being cleared entirely.
+[R49] - High: references are chosen by the candidate precisely because they'll be glowing, so positive references don't corroborate anything.
+[R50] - High: how hard you dig should scale with how much power the role holds over vulnerable people.
+[R51] - High: don't put the claim to the candidate directly, and don't repeat it in any form attributable to your former colleague.
+[R52] - High: if expanded diligence turns up nothing more, decide on what the process actually produced.
+[R53] - Unknowns the source names: how the investigation ended, and why the candidate left.
+[R54] Your colleague doesn't know which of the possibilities applies, and neither do you.
+"""
+
+Return only this block, one line per rewrite sentence, R1 to R54 in order:
+```audit
+R1: ...
+R2: ...
+```

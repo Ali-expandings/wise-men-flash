@@ -1,0 +1,70 @@
+question: R503
+arm: plain-memo-short
+attempt: 2
+rewrite_sentences: 42
+source_sentences: 19
+counts:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+pass: true
+flagged: []
+dropped: []
+reuse:
+  source_sentences: 19
+  cited_once_or_more: 19
+  cited_twice_or_more: 17
+  max: 9
+  mean: 3.84
+labels:
+  RESTATES: 42
+  CONNECTIVE: 0
+  FIXED: 0
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+script_checks_pass: false
+map:
+  R1: S17
+  R2: S18
+  R3: S18
+  R4: S18
+  R5: S19
+  R6: S5
+  R7: S5, S6
+  R8: S5, S7
+  R9: S5, S7
+  R10: S5, S7
+  R11: S8
+  R12: S8, S9
+  R13: S8, S9
+  R14: S8, S10
+  R15: S8, S10
+  R16: S8, S10
+  R17: S8, S11
+  R18: S8, S11
+  R19: S13
+  R20: S13, S14
+  R21: S13, S15
+  R22: S13, S15
+  R23: S13, S16
+  R24: S1
+  R25: S2
+  R26: S2
+  R27: S3
+  R28: S3
+  R29: S4
+  R30: S5, S6, S18
+  R31: S16, S18
+  R32: S18
+  R33: S16
+  R34: S2, S3, S4
+  R35: S7, S19
+  R36: S8, S12
+  R37: S19
+  R38: S19
+  R39: S2, S7, S9, S10, S11, S19
+  R40: S10, S15
+  R41: S14
+  R42: S3, S4, S12, S19

@@ -1,0 +1,124 @@
+question: R504
+arm: plain-memo
+attempt: 1
+rewrite_sentences: 80
+source_sentences: 32
+counts:
+  NEW: 1
+  STRONGER: 0
+  WEAKER: 1
+  DROPPED: 0
+pass: false
+flagged:
+- R: 51
+  label: NEW
+  refs:
+  - 9
+  - 17
+  - 18
+  note: the claim that the 36-month $5,290 figure inherits the blended-churn weakness; the source calls $5,290 the observed, defensible figure and applies the blended-churn problem only to long-tenure odds
+  text: That means the first 36-month figure of about $5,290, which uses the same 1.2%, inherits that weakness too.
+- R: 75
+  label: WEAKER
+  refs:
+  - 11
+  - 16
+  - 27
+  note: labelled Medium, but the source states these without a listed hedge ("roughly" and "~" are not hedge words), so the rule makes them High
+  text: 'Medium: The $9,700 is roughly two-thirds of the claimed number, and the 70% margin is roughly the figure used, so the margin-adjusted amounts are approximate.'
+dropped: []
+reuse:
+  source_sentences: 32
+  cited_once_or_more: 32
+  cited_twice_or_more: 28
+  max: 26
+  mean: 4.53
+labels:
+  RESTATES: 73
+  CONNECTIVE: 5
+  FIXED: 0
+  NEW: 1
+  STRONGER: 0
+  WEAKER: 1
+script_checks_pass: true
+map:
+  R1: S1
+  R2: S2
+  R3: S29
+  R4: S30
+  R5: S31
+  R6: S32
+  R7: S3, S4
+  R8: S3, S4
+  R9: S3, S5
+  R10: S3, S6
+  R11: S3, S7
+  R12: S3, S7
+  R13: S8, S11
+  R14: S8, S9
+  R15: S8, S9
+  R16: S8, S10
+  R17: S8, S11
+  R18: S8, S12
+  R19: S13
+  R20: S13, S14
+  R21: S13, S15
+  R22: S13, S16
+  R23: S13, S17
+  R24: S13, S18
+  R25: S13, S19
+  R26: S13, S20
+  R27: S13, S21
+  R28: S22, S27
+  R29: S22, S27
+  R30: S22, S27
+  R31: S22, S28
+  R32: S22, S23
+  R33: S22, S23
+  R34: S22, S24
+  R35: S22, S25
+  R36: S22, S25
+  R37: S22, S26
+  R38: S13, S16, S30
+  R39: S22, S27
+  R40: S22, S27
+  R41: S30, S31
+  R42: S31
+  R43: S32
+  R44: CONNECTIVE
+  R45: S29
+  R46: S8, S12
+  R47: S13, S16
+  R48: S13, S16, S22, S27
+  R49: S13, S17
+  R50: S13, S18
+  R51: NEW — S9, S17, S18
+  R52: S13, S19, S20, S21
+  R53: S22, S25
+  R54: S22, S28
+  R55: CONNECTIVE
+  R56: S22, S25
+  R57: S31
+  R58: S13, S18
+  R59: S13, S18
+  R60: S13, S18
+  R61: S13, S16
+  R62: CONNECTIVE
+  R63: S3, S4
+  R64: S3, S5, S6
+  R65: S3, S7
+  R66: S8, S9, S11
+  R67: S13, S14, S15
+  R68: S13, S19
+  R69: S13, S21
+  R70: S22, S23, S24
+  R71: S22, S27
+  R72: CONNECTIVE
+  R73: S13, S17
+  R74: S13, S18
+  R75: WEAKER — S11, S16, S27
+  R76: CONNECTIVE
+  R77: S22, S25
+  R78: S13, S16
+  R79: S13, S18
+  R80: S30, S31, S32

@@ -1,0 +1,102 @@
+question: R505
+arm: plain-memo-short
+attempt: 2
+rewrite_sentences: 68
+source_sentences: 48
+counts:
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 0
+  DROPPED: 0
+pass: false
+flagged:
+- R: 54
+  label: STRONGER
+  refs:
+  - 9
+  note: '"that''s where this kind of study is structurally weak" becomes "this kind of study can''t settle" the causal question'
+  text: Whether the drug causes dementia is a separate question that this kind of study can't settle.
+dropped: []
+reuse:
+  source_sentences: 48
+  cited_once_or_more: 48
+  cited_twice_or_more: 22
+  max: 3
+  mean: 1.56
+labels:
+  RESTATES: 67
+  CONNECTIVE: 0
+  FIXED: 0
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 0
+script_checks_pass: false
+map:
+  R1: S1
+  R2: S42
+  R3: S42
+  R4: S38
+  R5: S6
+  R6: S6
+  R7: S7
+  R8: S8
+  R9: S9
+  R10: S10
+  R11: S11
+  R12: S12
+  R13: S13, S14
+  R14: S15
+  R15: S16, S17
+  R16: S18
+  R17: S19, S20
+  R18: S21
+  R19: S22, S23
+  R20: S23
+  R21: S24
+  R22: S25
+  R23: S26, S27
+  R24: S28
+  R25: S28
+  R26: S29
+  R27: S30
+  R28: S31
+  R29: S32
+  R30: S35
+  R31: S35
+  R32: S36
+  R33: S37
+  R34: S2
+  R35: S3
+  R36: S3
+  R37: S4
+  R38: S5
+  R39: S38
+  R40: S40
+  R41: S33
+  R42: S33
+  R43: S41
+  R44: S43
+  R45: S43
+  R46: S44
+  R47: S45
+  R48: S46
+  R49: S47
+  R50: S48
+  R51: S39
+  R52: S34
+  R53: S8, S28
+  R54: STRONGER — S9
+  R55: S11
+  R56: S39
+  R57: S33
+  R58: S35
+  R59: S36
+  R60: S24
+  R61: S34
+  R62: S3
+  R63: S14
+  R64: S23
+  R65: S7
+  R66: S18
+  R67: S4
+  R68: S2, S9, S41

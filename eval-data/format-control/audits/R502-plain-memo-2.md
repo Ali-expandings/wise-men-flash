@@ -1,0 +1,101 @@
+# audit: plain-memo attempt 2 | question: R502 | auditor: fresh wise-member/opus = claude-opus-5-5 | run: 2026-11-08 (round 6, PREREG-6 rules)
+# input: prompts/R502-plain-memo-audit-2.txt (sha256 78f8413f87900a72), read under a neutral file name | tools used: Read x1
+# session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: afb83cd7ba94b26ec | transcript sha256: 784b3973df5c3303b0cf92b4ed61658fd5c85f754be6820efd2a34547e4b4ebb
+# minutes: 1.3 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 4/8041/18150/20212 | list-price USD: 0.34
+
+```audit
+R1: S31
+R2: S1
+R3: S2
+R4: S3
+R5: S21
+R6: S22
+R7: S25
+R8: S25
+R9: S31
+R10: S35
+R11: S26, S27
+R12: S30
+R13: S4
+R14: S5
+R15: S6
+R16: S7
+R17: S7
+R18: S7
+R19: S7
+R20: S8, S9
+R21: S8
+R22: S8
+R23: S9
+R24: S10
+R25: S11
+R26: S12
+R27: S13
+R28: S13
+R29: S14
+R30: S14
+R31: S15
+R32: S16
+R33: S17
+R34: S18
+R35: S18
+R36: S19
+R37: S20
+R38: S23
+R39: S23
+R40: S24
+R41: S25
+R42: S25
+R43: S27
+R44: S26
+R45: CONNECTIVE
+R46: S27
+R47: S28
+R48: S29
+R49: S30
+R50: S31
+R51: S32, S33, S34, S35
+R52: S32
+R53: S32
+R54: S32
+R55: S32
+R56: S33
+R57: S33
+R58: S34
+R59: S34
+R60: FIXED
+R61: CONNECTIVE
+R62: S22
+R63: S22, S31
+R64: S31
+R65: CONNECTIVE
+R66: S16
+R67: S16
+R68: S17, S18, S20
+R69: CONNECTIVE
+R70: S1, S2
+R71: S3
+R72: S5
+R73: S6
+R74: S7
+R75: S8
+R76: S10
+R77: S11, S12, S13
+R78: S16, S17, S18
+R79: S19
+R80: S21
+R81: S23
+R82: S25
+R83: S35
+R84: CONNECTIVE
+R85: S9
+R86: S21
+R87: S24
+R88: CONNECTIVE
+R89: CONNECTIVE
+R90: CONNECTIVE
+R91: S27
+R92: S28
+R93: S29
+R94: S18, S27, S28
+```

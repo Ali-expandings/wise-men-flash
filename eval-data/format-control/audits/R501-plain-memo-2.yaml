@@ -1,0 +1,125 @@
+question: R501
+arm: plain-memo
+attempt: 2
+rewrite_sentences: 97
+source_sentences: 41
+counts:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+pass: true
+flagged: []
+dropped: []
+reuse:
+  source_sentences: 41
+  cited_once_or_more: 41
+  cited_twice_or_more: 33
+  max: 39
+  mean: 5
+labels:
+  RESTATES: 90
+  CONNECTIVE: 7
+  FIXED: 0
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+script_checks_pass: true
+map:
+  R1: S1
+  R2: S9, S11
+  R3: S11
+  R4: S2
+  R5: S2
+  R6: S7, S8
+  R7: S12, S13, S14, S20, S21, S24, S28, S29
+  R8: S30
+  R9: CONNECTIVE
+  R10: S2
+  R11: S2
+  R12: S3
+  R13: S4
+  R14: S5
+  R15: S6
+  R16: S6
+  R17: S7
+  R18: S8
+  R19: S9
+  R20: S10
+  R21: S11
+  R22: S12, S13, S15
+  R23: S12, S13, S15
+  R24: S12, S13, S17
+  R25: S12, S20, S21
+  R26: S12, S20, S21
+  R27: S12, S24, S25
+  R28: S12, S24, S25
+  R29: S12, S24, S26
+  R30: S34, S40
+  R31: S34, S40
+  R32: S34, S41
+  R33: S34, S39
+  R34: S34, S39
+  R35: S34, S39
+  R36: S9, S33
+  R37: S1, S11
+  R38: S30
+  R39: S12, S13, S16
+  R40: S12, S13, S16
+  R41: S12, S13, S17
+  R42: S12, S13, S18
+  R43: S12, S13, S18
+  R44: S12, S13, S19
+  R45: S12, S13, S19
+  R46: S12, S20, S22
+  R47: S12, S20, S23
+  R48: S12, S24, S28
+  R49: S12, S24, S28
+  R50: S12, S24, S29
+  R51: S31
+  R52: S32
+  R53: S12, S13, S14
+  R54: S12, S13, S15
+  R55: S12, S13, S14, S16
+  R56: S12, S20, S21
+  R57: S12, S20, S21
+  R58: S12, S24, S27
+  R59: S12, S24, S27
+  R60: S12, S24, S27
+  R61: S12, S24, S27
+  R62: S12, S13, S18
+  R63: S12, S13, S19
+  R64: S34, S36
+  R65: S34, S36
+  R66: S34, S36
+  R67: S34, S37
+  R68: S34, S37
+  R69: S34, S37
+  R70: S34, S38
+  R71: S34, S35
+  R72: S34, S35
+  R73: S34, S35
+  R74: CONNECTIVE
+  R75: S1
+  R76: S2
+  R77: S3, S4
+  R78: S7
+  R79: S12, S13, S14, S16
+  R80: S12, S13, S18
+  R81: S12, S20, S21, S22
+  R82: S12, S24, S25, S26
+  R83: S12, S24, S27
+  R84: S12, S24, S27
+  R85: S34, S36
+  R86: S34, S40
+  R87: S34, S39
+  R88: CONNECTIVE
+  R89: CONNECTIVE
+  R90: CONNECTIVE
+  R91: CONNECTIVE
+  R92: CONNECTIVE
+  R93: S34, S35
+  R94: S34, S36
+  R95: S34, S37
+  R96: S34, S39
+  R97: S12, S24, S27

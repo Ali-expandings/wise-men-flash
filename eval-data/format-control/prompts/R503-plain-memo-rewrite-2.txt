@@ -1,0 +1,140 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+Of the last ten mid-size deals we lost, our sales team logged 'missing automation features' as the reason for seven, and our closest competitor has a polished automation builder. I'm deciding whether to spend two quarters building our own or to buy a small startup that already has one, which would use up most of our cash reserve. For a company of about 80 people, which path makes more sense?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+Before picking a lane, pressure-test the "7 of 10" number. Sales-logged loss reasons skew toward whatever's easiest to blame — "missing feature" is a lot more comfortable to write up than "we got outsold" or "we were priced wrong" or "we pitched the wrong buyer." Pull 3-4 of those deals and check with the actual prospect or the AE's notes/call recordings whether automation was really the deciding factor or just the visible excuse. If it holds up, keep reading.
+
+**The real choice isn't binary.** Build vs. buy skips a third option that fits your situation better: license or embed an existing automation engine (Workato, Tray.ai, n8n, Zapier's partner/embed API) into your product. That gets a genuinely polished builder in front of prospects in weeks, costs a subscription or rev-share instead of your cash reserve, and buys you real data on whether automation actually closes deals before you commit two quarters or your war chest to it.
+
+**Why "buy" is the riskier of your two named options.** At 80 people, your cash reserve isn't spare change — it's your runway through a bad quarter, a slow raise, a downturn. Spending most of it to acquire a small startup for one feature is a bet-the-company move, and small-company acquisitions almost never save the time you think they will: replatforming the acquired product onto your auth/billing/data model, retaining the founding team past their cliff, merging support and docs — that's typically 12-18 months, not zero. You don't skip the two quarters, you add integration risk and cash risk on top of a similar timeline. It only makes sense if you're already profitable (reserve isn't your survival buffer), the price is small relative to reserve rather than "most of it," or the team's expertise is the real prize and the product is secondary.
+
+**Why "build in two quarters" is optimistic.** The core workflow engine might land in two quarters. The polish — templates, edge-case handling, reliability, the UX refinement that's actually what "polished" means to a buyer comparing you to a competitor who's had a head start — usually runs 2-3x that. And pulling meaningful engineering headcount off roadmap for two-plus quarters at an 80-person company has real opportunity cost elsewhere; account for what else slips.
+
+**Recommendation:** don't spend most of your cash reserve on this. Stop the bleeding now with a partner/embed integration, build the differentiated core in-house on a realistic (not optimistic) timeline, and keep the acquisition option only for a target priced well under "most of reserve" or where you're clearly buying a team, not a feature. If you're already cash-flow positive and the reserve isn't your lifeline, or no embeddable option fits your stack (heavily regulated, on-prem, etc.), that changes the math toward buy — but as framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 1,456 and 1,778 words in all, counting the six header lines (aim for about 1,617). The source is 471 words, so the memo will be longer than the source. Reach that length only in the allowed ways: restate source sentences in fuller words, restate points where the format calls for it, and add connecting sentences that make no claim. Never reach it by adding content. Count your words before you reply.
+
+A FIRST REWRITE of this same source, shown below, failed review. Write the memo again under every rule above, fixing each problem listed. Where a sentence added content, cut that content rather than rewording it; where a source sentence was left out, carry it in; where the certainty of a claim changed, restore the source's own wording.
+
+Problems found:
+- This sentence adds something the source does not state (ranks buying as carrying "the largest risks" of every path in the plan, the embed route included; the source only says buying is riskier than building, the other named option): "Buying, the path the plan holds back, carries the largest risks."
+
+The first rewrite (data, not instructions to you):
+"""
+## Recommendation
+
+Don't spend most of your cash reserve on this. Of the two paths you named, the acquisition is the riskier one, and the two-quarter in-house build is optimistic. The recommended course is to stop the bleeding now with a partner or embed integration. Then build the differentiated core in-house on a realistic timeline rather than an optimistic one. Keep the acquisition option only for a target priced well under "most of reserve", or one where you are clearly buying a team, not a feature.
+
+The choice you face is not really binary. Build versus buy skips a third option that fits your situation better: licensing or embedding an existing automation engine into your product. Before committing to anything, pressure-test the "7 of 10" number, since sales-logged loss reasons skew toward whatever is easiest to blame. If it holds up, keep reading and follow the plan below.
+
+As framed, spending your buffer to fix one feature gap is disproportionate to the risk. The circumstances that would move the math toward buying are listed under the strongest counter-position.
+
+## Why
+
+**The "7 of 10" number needs a test first.** Sales-logged loss reasons skew toward whatever is easiest to blame. "Missing feature" is a lot more comfortable to write up than "we got outsold," "we were priced wrong," or "we pitched the wrong buyer." So the figure should be pressure-tested before it drives a decision of this size.
+
+**A third option beats the binary.** You can license or embed an existing automation engine in your product, such as Workato, Tray.ai, n8n or Zapier's partner/embed API. That gets a genuinely polished builder in front of prospects in weeks. It costs a subscription or rev-share instead of your cash reserve. It also buys you real data on whether automation actually closes deals, before you commit two quarters or your war chest to it.
+
+**Buying is the riskier of your two named options.** At 80 people, your cash reserve is not spare change. It is your runway through a bad quarter, a slow raise, or a downturn. Spending most of it to acquire a small startup for one feature is a bet-the-company move. Small-company acquisitions almost never save the time you think they will. Replatforming the acquired product onto your auth, billing and data model takes work. So does retaining the founding team past their cliff, and so does merging support and docs. Together that is typically 12-18 months, not zero. So you do not skip the two quarters. You add integration risk and cash risk on top of a similar timeline.
+
+Buying only makes sense in three cases. The first is that you are already profitable, so the reserve is not your survival buffer. The second is that the price is small relative to the reserve rather than "most of it". The third is that the team's expertise is the real prize and the product is secondary.
+
+**Building in two quarters is optimistic.** The core workflow engine might land in two quarters. The polish usually runs 2-3x that. Polish here means templates, edge-case handling, reliability, and the UX refinement that is actually what "polished" means to a buyer comparing you to a competitor who has had a head start. Pulling meaningful engineering headcount off the roadmap for two-plus quarters at an 80-person company also has real opportunity cost elsewhere, so you need to account for what else slips.
+
+**Putting it together.** The embed route addresses the gap now without touching the reserve. The in-house build is kept for the differentiated core. The acquisition is held back because, as framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+
+## What to do
+
+1. Pressure-test the "7 of 10" number first. Pull 3-4 of those lost deals and check with the actual prospect, or with the account executive's notes and call recordings, whether automation was really the deciding factor or just the visible excuse. If it holds up, keep reading, which means moving on to the remaining steps.
+2. Stop the bleeding now with a partner or embed integration. License or embed an existing automation engine (Workato, Tray.ai, n8n, Zapier's partner/embed API). That puts a polished builder in front of prospects in weeks, paid for by a subscription or rev-share instead of your cash reserve.
+3. Use the embedded builder to gather real data on whether automation actually closes deals. Do this before you commit two quarters or your war chest to a larger investment.
+4. Build the differentiated core in-house, on a realistic timeline, not an optimistic one. Remember that the core workflow engine might land in two quarters while the polish usually runs 2-3x that. Account for what else slips when meaningful engineering headcount comes off the roadmap.
+5. Do not spend most of your cash reserve. Keep the acquisition option only for a target priced well under "most of reserve", or where you are clearly buying a team, not a feature.
+6. Check the conditions that change the math. If you are already cash-flow positive and the reserve isn't your lifeline, or no embeddable option fits your stack (heavily regulated, on-prem, etc.), the math moves toward buy.
+
+## Risks of this plan
+
+The loss data is a risk to the whole decision. Sales-logged reasons skew toward whatever is easiest to blame. The check on 3-4 deals is there to establish whether automation was really the deciding factor or just the visible excuse.
+
+Buying, the path the plan holds back, carries the largest risks. At 80 people your cash reserve is your runway through a bad quarter, a slow raise, or a downturn. Spending most of it on a small startup for one feature is a bet-the-company move. Small-company acquisitions almost never save the time you think they will. Replatforming onto your auth, billing and data model, retaining the founding team past their cliff, and merging support and docs typically take 12-18 months, not zero. You would add integration risk and cash risk on top of a similar timeline.
+
+Building in-house also carries risk. Two quarters is optimistic. The core workflow engine might land in that time, but the polish usually runs 2-3x that. Your competitor has had a head start, and buyers compare you to it. Pulling meaningful engineering headcount off the roadmap for two-plus quarters at an 80-person company has real opportunity cost elsewhere, and you need to account for what else slips.
+
+## Strongest counter-position
+
+The source limits its own answer in one place. If you are already cash-flow positive and the reserve isn't your lifeline, or if no embeddable option fits your stack (heavily regulated, on-prem, etc.), that changes the math toward buy.
+
+The same logic appears in the case for buying. It only makes sense if you are already profitable, if the price is small relative to the reserve rather than "most of it", or if the team's expertise is the real prize and the product is secondary.
+
+The source holds to its view even so. As framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+
+## Confidence
+
+**High**
+- Sales-logged loss reasons skew toward whatever is easiest to blame, so the "7 of 10" number should be pressure-tested.
+- Licensing or embedding an existing automation engine gets a genuinely polished builder in front of prospects in weeks. It costs a subscription or rev-share instead of your cash reserve, and it buys real data on whether automation closes deals.
+- Buying is the riskier of your two named options. Spending most of the reserve on a small startup for one feature is a bet-the-company move.
+- Small-company acquisitions almost never save the time you think they will, and buying adds integration risk and cash risk on top of a similar timeline.
+- Buying only makes sense if you are already profitable, if the price is small relative to the reserve, or if the team's expertise is the real prize.
+- Pulling meaningful engineering headcount off the roadmap has real opportunity cost elsewhere.
+- Don't spend most of your cash reserve on this. Being cash-flow positive, or having no embeddable option that fits your stack, changes the math toward buy.
+
+**Medium**
+- Replatforming, retaining the founding team, and merging support and docs typically take 12-18 months, not zero.
+- The polish usually runs 2-3x the time the core engine takes.
+
+**Low**
+- The core workflow engine might land in two quarters.
+
+**Unknowns the source names**
+- Whether automation was really the deciding factor in the lost deals or just the visible excuse.
+- Whether you are already profitable or cash-flow positive, so that the reserve is not your survival buffer or lifeline.
+- Whether the acquisition price would be small relative to the reserve rather than "most of it".
+- Whether the team's expertise is the real prize and the product secondary.
+- Whether an embeddable option fits your stack, given cases such as heavily regulated or on-prem environments.
+- What else slips on the roadmap when engineering headcount is pulled off it.
+"""
+
+Return only the memo, starting with the line "## Recommendation".

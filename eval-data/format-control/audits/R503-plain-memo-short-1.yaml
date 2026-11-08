@@ -1,0 +1,81 @@
+question: R503
+arm: plain-memo-short
+attempt: 1
+rewrite_sentences: 39
+source_sentences: 19
+counts:
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 1
+  DROPPED: 0
+pass: false
+flagged:
+- R: 35
+  label: STRONGER
+  refs:
+  - 12
+  note: the source gives these as necessary conditions ("it only makes sense if"); the rewrite turns them into sufficient ones ("acquisition also makes sense if the price is small... or if the team's expertise
+    is the real prize")
+  text: Acquisition also makes sense if the price is small relative to reserve, or if the team's expertise is the real prize and the product is secondary.
+- R: 37
+  label: WEAKER
+  refs:
+  - 10
+  note: '"small-company acquisitions almost never save the time you think they will" has none of the listed hedge words, so the rule makes it High, but it is labelled Medium (the "typically 12-18 months"
+    part of S10 and the S15 polish claim are correctly Medium)'
+  text: 'Medium: small-company acquisitions almost never save time, with integration typically taking 12-18 months; polish usually runs 2-3x the core build.'
+dropped: []
+reuse:
+  source_sentences: 19
+  cited_once_or_more: 19
+  cited_twice_or_more: 13
+  max: 6
+  mean: 2.53
+labels:
+  RESTATES: 37
+  CONNECTIVE: 0
+  FIXED: 0
+  NEW: 0
+  STRONGER: 1
+  WEAKER: 1
+script_checks_pass: false
+map:
+  R1: S17
+  R2: S18
+  R3: S19
+  R4: S5, S6
+  R5: S9
+  R6: S9
+  R7: S10
+  R8: S8
+  R9: S10
+  R10: S10
+  R11: S11
+  R12: S11
+  R13: S13
+  R14: S14
+  R15: S15
+  R16: S15
+  R17: S16
+  R18: S6, S7
+  R19: S7
+  R20: S7
+  R21: S1
+  R22: S2
+  R23: S2
+  R24: S3
+  R25: S4
+  R26: S6, S18
+  R27: S16, S18
+  R28: S18
+  R29: S12
+  R30: S19
+  R31: S19
+  R32: S2, S3
+  R33: S16
+  R34: S19
+  R35: STRONGER — S12
+  R36: S2, S7, S9, S10, S19
+  R37: WEAKER — S10
+  R38: S14
+  R39: S3, S12, S19

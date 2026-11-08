@@ -1,0 +1,170 @@
+question: R508
+arm: plain-memo
+attempt: 2
+rewrite_sentences: 136
+source_sentences: 37
+counts:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 1
+  DROPPED: 0
+pass: false
+flagged:
+- R: 68
+  label: WEAKER
+  refs:
+  - 4
+  note: the source says these gaps are "exactly where deals like this actually fail"; the rewrite softens this to "a place where deals like this can fail" (S5 otherwise restated)
+  text: 'None of the gaps disqualifies you, but each is a place where deals like this can fail, and the source names these risks and caveats:'
+dropped: []
+reuse:
+  source_sentences: 37
+  cited_once_or_more: 37
+  cited_twice_or_more: 37
+  max: 13
+  mean: 4.41
+labels:
+  RESTATES: 120
+  CONNECTIVE: 15
+  FIXED: 0
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 1
+script_checks_pass: false
+map:
+  R1: S1
+  R2: S2
+  R3: S3
+  R4: S4
+  R5: S4
+  R6: S5
+  R7: S6
+  R8: S1, S36, S37
+  R9: S35
+  R10: S36
+  R11: S37
+  R12: S23
+  R13: S23, S24
+  R14: S23, S26
+  R15: S23, S27
+  R16: S23, S28
+  R17: S23, S29
+  R18: S23, S30
+  R19: S23, S31
+  R20: S2
+  R21: S2, S3
+  R22: S1, S3
+  R23: S4
+  R24: S4
+  R25: S5, S6
+  R26: S7
+  R27: S9
+  R28: S10
+  R29: S11
+  R30: S12
+  R31: S13
+  R32: S14
+  R33: S16
+  R34: S17
+  R35: S18
+  R36: S19
+  R37: S19
+  R38: S19, S20
+  R39: S21
+  R40: S21, S22
+  R41: S22
+  R42: S22
+  R43: S33
+  R44: S34
+  R45: S36
+  R46: S7
+  R47: S8
+  R48: S8
+  R49: S8
+  R50: S11
+  R51: S12
+  R52: S13
+  R53: S14
+  R54: S15
+  R55: S15
+  R56: CONNECTIVE
+  R57: S17
+  R58: S18
+  R59: S18
+  R60: S20
+  R61: S21
+  R62: S22
+  R63: S22
+  R64: S22
+  R65: S32
+  R66: S35
+  R67: S33, S34
+  R68: WEAKER — S4
+  R69: CONNECTIVE
+  R70: S10
+  R71: S27
+  R72: S23, S27
+  R73: CONNECTIVE
+  R74: S14
+  R75: CONNECTIVE
+  R76: S13
+  R77: CONNECTIVE
+  R78: S19
+  R79: S19
+  R80: S30
+  R81: CONNECTIVE
+  R82: S24, S25
+  R83: CONNECTIVE
+  R84: S26
+  R85: S18
+  R86: CONNECTIVE
+  R87: S28
+  R88: CONNECTIVE
+  R89: S23, S29
+  R90: CONNECTIVE
+  R91: S23, S31
+  R92: CONNECTIVE
+  R93: S33
+  R94: S34
+  R95: CONNECTIVE
+  R96: S37
+  R97: S1
+  R98: S2, S4
+  R99: S4
+  R100: S33, S34
+  R101: S33
+  R102: S34, S35
+  R103: S1, S5
+  R104: S5
+  R105: S23
+  R106: S37
+  R107: CONNECTIVE
+  R108: CONNECTIVE
+  R109: S1
+  R110: S2
+  R111: S3
+  R112: S4, S5
+  R113: S7
+  R114: S9, S10
+  R115: S11
+  R116: S12
+  R117: S14
+  R118: S15
+  R119: S16, S18
+  R120: S19, S20
+  R121: S19
+  R122: S21, S22
+  R123: S23, S24, S25, S26, S27, S28, S29, S30, S31
+  R124: S33, S34
+  R125: S36
+  R126: S37
+  R127: CONNECTIVE
+  R128: S4, S8
+  R129: S4, S6
+  R130: S15, S24
+  R131: S17
+  R132: S22, S27
+  R133: S28
+  R134: S29
+  R135: S20, S30
+  R136: S31, S32

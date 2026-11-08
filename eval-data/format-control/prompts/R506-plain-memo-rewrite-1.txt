@@ -1,0 +1,67 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+Three months ago I wrote the analysis our executives used to justify closing our smallest regional office, and I've just found a formula error that overstated that office's losses by about 40%. The office is already closed and its staff were laid off. I can't decide whether my correction to the executive team should read as a plain technical fix or a personal apology, or whether it should say anything about how the decision might have gone with the right numbers. What tone is right for a message like this, and how do these usually go wrong?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+Separate three things you're currently treating as one decision, because collapsing them is exactly how these letters go wrong: the factual correction, the acknowledgment of fault, and the claim about what would have happened. They don't deserve equal airtime.
+
+**Tone: factual and briefly owned, not clinical and not penitential.** Lead with the correction itself — what the formula error was, why it happened, what the corrected loss figure is — plainly, in the first paragraph, no hedging. That's what executives actually need and will act on. Then own it in one direct sentence: you found the error, it was yours, you're correcting it. Don't extend that into three paragraphs of remorse. Over-apologizing doesn't read as more accountable — it shifts the message's center of gravity from the numbers to your feelings, and it quietly puts the burden on the reader to reassure you. A memo that's mostly apology also buries the one thing they urgently need, which is the corrected number.
+
+**Don't assert the counterfactual — that's the part to be most careful about.** "I made a formula error" and "the office shouldn't have closed" are different claims, and the second one you probably can't back. The original decision likely weighed things beyond this one figure — lease terms, strategic footprint, other offices under review — that you may not have full visibility into, and a corrected loss number alone doesn't tell you what the call would have been. State the correct numbers clearly and let the executives draw their own conclusion. If someone asks you directly whether it would have changed the outcome, "I don't know — that's not just my call to make" is honest, not evasive.
+
+**This is exposure, not just tone.** The closure meant real layoffs. A written statement asserting the decision rested on bad numbers, paired with speculation that the outcome would have differed, is the kind of sentence that can resurface later if anyone affected ever disputes their termination. That's not a reason to soften the facts — get them exactly right and say them clearly — but it's a reason to keep speculation out of the written record, and if your company has any legal/HR function, loop them in before this goes to the full executive team, given people's jobs were on the line.
+
+Where these usually go wrong, concretely:
+
+- **Burying the correction under apology** — executives have to dig for the actual number.
+- **Defensive minimizing** — "small error," "probably wouldn't have mattered anyway." Reads as covering yourself, especially given the stakes, and erodes trust in your next analysis more than the error itself does.
+- **Asserting the counterfactual as fact** — claiming the decision would or wouldn't have changed, when you don't actually know that.
+- **No remediation** — stating what broke without saying what you're checking elsewhere (same formula used in other models?) or what changes in your review process. Without that, the memo just documents a mistake instead of closing the loop.
+- **Wrong sequencing** — the exec team finding out cold, with your manager blindsided alongside them. Give whoever owns that relationship a heads-up first.
+
+Structurally: correction and corrected numbers first, one sentence of ownership, what you're checking/fixing going forward, then open for questions. Consider a short verbal heads-up to your manager or the decision-owner before the written version goes to the full executive team — for something this consequential, the first they hear of it shouldn't be a cold email.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 1,422 and 1,736 words in all, counting the six header lines (aim for about 1,579). The source is 574 words, so the memo will be longer than the source. Reach that length only in the allowed ways: restate source sentences in fuller words, restate points where the format calls for it, and add connecting sentences that make no claim. Never reach it by adding content. Count your words before you reply.
+
+Return only the memo, starting with the line "## Recommendation".

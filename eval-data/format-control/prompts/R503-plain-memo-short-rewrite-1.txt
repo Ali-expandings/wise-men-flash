@@ -1,0 +1,59 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+Of the last ten mid-size deals we lost, our sales team logged 'missing automation features' as the reason for seven, and our closest competitor has a polished automation builder. I'm deciding whether to spend two quarters building our own or to buy a small startup that already has one, which would use up most of our cash reserve. For a company of about 80 people, which path makes more sense?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+Before picking a lane, pressure-test the "7 of 10" number. Sales-logged loss reasons skew toward whatever's easiest to blame — "missing feature" is a lot more comfortable to write up than "we got outsold" or "we were priced wrong" or "we pitched the wrong buyer." Pull 3-4 of those deals and check with the actual prospect or the AE's notes/call recordings whether automation was really the deciding factor or just the visible excuse. If it holds up, keep reading.
+
+**The real choice isn't binary.** Build vs. buy skips a third option that fits your situation better: license or embed an existing automation engine (Workato, Tray.ai, n8n, Zapier's partner/embed API) into your product. That gets a genuinely polished builder in front of prospects in weeks, costs a subscription or rev-share instead of your cash reserve, and buys you real data on whether automation actually closes deals before you commit two quarters or your war chest to it.
+
+**Why "buy" is the riskier of your two named options.** At 80 people, your cash reserve isn't spare change — it's your runway through a bad quarter, a slow raise, a downturn. Spending most of it to acquire a small startup for one feature is a bet-the-company move, and small-company acquisitions almost never save the time you think they will: replatforming the acquired product onto your auth/billing/data model, retaining the founding team past their cliff, merging support and docs — that's typically 12-18 months, not zero. You don't skip the two quarters, you add integration risk and cash risk on top of a similar timeline. It only makes sense if you're already profitable (reserve isn't your survival buffer), the price is small relative to reserve rather than "most of it," or the team's expertise is the real prize and the product is secondary.
+
+**Why "build in two quarters" is optimistic.** The core workflow engine might land in two quarters. The polish — templates, edge-case handling, reliability, the UX refinement that's actually what "polished" means to a buyer comparing you to a competitor who's had a head start — usually runs 2-3x that. And pulling meaningful engineering headcount off roadmap for two-plus quarters at an 80-person company has real opportunity cost elsewhere; account for what else slips.
+
+**Recommendation:** don't spend most of your cash reserve on this. Stop the bleeding now with a partner/embed integration, build the differentiated core in-house on a realistic (not optimistic) timeline, and keep the acquisition option only for a target priced well under "most of reserve" or where you're clearly buying a team, not a feature. If you're already cash-flow positive and the reserve isn't your lifeline, or no embeddable option fits your stack (heavily regulated, on-prem, etc.), that changes the math toward buy — but as framed, spending your buffer to fix one feature gap is disproportionate to the risk.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 424 and 518 words in all, counting the six header lines (aim for about 471), which is about the length of the source (471 words). Count your words before you reply.
+
+Return only the memo, starting with the line "## Recommendation".

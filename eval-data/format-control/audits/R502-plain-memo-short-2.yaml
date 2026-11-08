@@ -1,0 +1,75 @@
+question: R502
+arm: plain-memo-short
+attempt: 2
+rewrite_sentences: 47
+source_sentences: 35
+counts:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+pass: true
+flagged: []
+dropped: []
+reuse:
+  source_sentences: 35
+  cited_once_or_more: 35
+  cited_twice_or_more: 14
+  max: 3
+  mean: 1.49
+labels:
+  RESTATES: 44
+  CONNECTIVE: 1
+  FIXED: 2
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+script_checks_pass: false
+map:
+  R1: S21
+  R2: S1, S2
+  R3: S3
+  R4: S31
+  R5: S4
+  R6: S5
+  R7: S6
+  R8: S7
+  R9: S8
+  R10: S9
+  R11: S10
+  R12: S11
+  R13: S12
+  R14: S13
+  R15: S14
+  R16: S15, S16
+  R17: S17
+  R18: S18
+  R19: S19
+  R20: S20
+  R21: S23
+  R22: S23
+  R23: S24
+  R24: S25
+  R25: S26, S27
+  R26: S27
+  R27: S28
+  R28: S29
+  R29: S30
+  R30: S31, S32, S35
+  R31: S35
+  R32: S32
+  R33: S32
+  R34: S33
+  R35: S34
+  R36: FIXED
+  R37: S22
+  R38: S1
+  R39: S5
+  R40: S11, S12, S13
+  R41: S25
+  R42: S21, S25
+  R43: S21
+  R44: S9
+  R45: S24
+  R46: CONNECTIVE
+  R47: FIXED

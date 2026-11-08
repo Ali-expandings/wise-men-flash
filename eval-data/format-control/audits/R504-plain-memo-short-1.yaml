@@ -1,0 +1,95 @@
+question: R504
+arm: plain-memo-short
+attempt: 1
+rewrite_sentences: 47
+source_sentences: 32
+counts:
+  NEW: 1
+  STRONGER: 0
+  WEAKER: 2
+  DROPPED: 0
+pass: false
+flagged:
+- R: 38
+  label: NEW
+  refs:
+  - 22
+  - 25
+  note: calls the "$15,000 only if churn holds flat" condition an objection or counter-position to the source's own answer and says the source raises "one limit" against itself; the source makes no counter-argument
+  text: 'The source raises no objection to its own answer beyond one limit: the $15,000 holds only if post-36-month churn stays flat forever, which is the scenario it labels unverified.'
+- R: 44
+  label: WEAKER
+  refs:
+  - 11
+  - 29
+  note: the source says "roughly two-thirds" with none of the listed hedge words, so the rule gives High; labelled Medium
+  text: 'Medium: roughly two-thirds of the claimed number is extrapolation.'
+- R: 46
+  label: WEAKER
+  refs:
+  - 17
+  note: '"presumably" is a probability-level hedge (closest to "probably", Medium), not a possibility-level one like may/might/could; labelled Low'
+  text: 'Low: the blended-churn description rests on a presumption ("presumably").'
+dropped: []
+reuse:
+  source_sentences: 32
+  cited_once_or_more: 32
+  cited_twice_or_more: 17
+  max: 14
+  mean: 2.88
+labels:
+  RESTATES: 43
+  CONNECTIVE: 0
+  FIXED: 1
+  NEW: 1
+  STRONGER: 0
+  WEAKER: 2
+script_checks_pass: false
+map:
+  R1: S1
+  R2: S2
+  R3: S29
+  R4: S30
+  R5: S31
+  R6: S32
+  R7: S3, S4
+  R8: S3, S4
+  R9: S3, S5
+  R10: S3, S6, S7
+  R11: S3, S7
+  R12: S8, S9
+  R13: S8, S9
+  R14: S8, S10
+  R15: S8, S11
+  R16: S8, S12
+  R17: S13
+  R18: S13, S14
+  R19: S13, S15
+  R20: S13, S16
+  R21: S13, S17
+  R22: S13, S18
+  R23: S13, S19
+  R24: S13, S20
+  R25: S13, S21
+  R26: S22, S23
+  R27: S22, S24
+  R28: S22, S25
+  R29: S22, S26
+  R30: S22, S27
+  R31: S22, S27
+  R32: S22, S27
+  R33: S22, S28
+  R34: S13, S16
+  R35: S16, S22, S27
+  R36: S13, S17, S18
+  R37: S22, S25
+  R38: NEW — S22, S25
+  R39: FIXED
+  R40: S3, S4, S5, S6
+  R41: S8, S9, S10, S11
+  R42: S13, S14
+  R43: S22, S27
+  R44: WEAKER — S11, S29
+  R45: S13, S17, S18
+  R46: WEAKER — S17
+  R47: S3, S7, S13, S16, S18, S22, S25

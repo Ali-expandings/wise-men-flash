@@ -1,0 +1,10 @@
+# script checks (fc6.py check, PREREG-6 Part A rule 1) | rewrites/R504-plain-memo-short-1.md | question: R504 | arm: plain-memo-short
+
+PASS  headers: the six headers in order, nothing before the first, no other heading, no rule
+FAIL  words: 784 words; band 513–627
+PASS  numbers: every number appears in the source
+PASS  links: no link the source lacks
+PASS  citations: no citation the source lacks
+PASS  unverified-tag: 1 '(unverified' tag(s); the source has 1
+PASS  first-name: the author's first name is absent
+PASS  normalize: normalize() removes nothing but the provenance header

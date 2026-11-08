@@ -1,0 +1,127 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+My boss is retiring next year and has offered to sell me the landscaping business I've worked at for eight years, which would take most of our savings plus a bank loan, and my partner is supportive but nervous. I'm leaning toward yes because I already run the crews and know most of the clients by name, but I've never handled the books, the bidding, or the cash flow, and I can't tell whether clients are loyal to the business or to him. Is my leaning reasonable, and what would make you tell me to walk away?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+Your leaning is reasonable, but "reasonable to lean yes" and "ready to sign" are different things. You have the one advantage an outside buyer never gets: you already run operations and already have the crews' trust. Most acquisitions die on operations or culture — you've solved that part already. What you haven't solved — books, bidding, cash flow, and whether clients are loyal to a brand or to a man — is exactly where deals like this actually fail. None of it disqualifies you. All of it needs answers with numbers, not gut feel, before money moves.
+
+**Client loyalty** is the one variable that decides everything else, so stop guessing and get data. Pull the client list, rank by revenue, look at the top 10-15 accounts: how long have they been customers, do they deal with your boss personally or with the crews, are they on recurring seasonal contracts or one-off jobs. Recurring-contract clients rarely bolt over an ownership change if service holds. Handshake relationships with the owner are the risk. If he'll let you sit in on renewal conversations for a few months before close, do it — you'll learn more from ten real conversations than from any spreadsheet.
+
+**Books, bidding, cash flow** are fixable, not dealbreakers, but fix them before close. Line up a bookkeeper or fractional CFO before you sign — landscaping runs thin and seasonal, someone needs to watch cash weekly. Shadow your boss on bidding for a full season if you can; underpricing jobs is the quietest way new owners bleed out. And get three years of financials and tax returns in front of a CPA who's actually done acquisition reviews, not your regular tax preparer — have them calculate seller's discretionary earnings, not the number your boss quotes you.
+
+**The money mechanics** matter more than the sticker price. What's the debt service coverage ratio once you pay yourself a real market wage, not owner-take-everything cash flow? If that's not comfortably above the loan payment — 1.25-1.5x with room to spare — the price is too high or the loan too big, full stop. "Most of our savings plus a loan" also means zero cushion, and this business is seasonal: equipment breaks, you'll lose a client or two in year one no matter what you do. You need a reserve sitting outside the deal, not inside it.
+
+**Structure the deal to share the risk** instead of absorbing it all on day one. Ask for a transition period — your boss part-time for 6-12 months, personally introducing you to every major account and reachable for questions; seller financing or an earnout tied to client retention, so if the loyalty turns out to be personal, he eats part of that risk with you; and a non-compete, so he's not down the road undercutting you with the relationships he kept.
+
+What would make me say walk away:
+
+- Financials he can't or won't produce clean — commingled personal expenses, off-book cash jobs, numbers that don't reconcile to tax returns. Can't price it, can't buy it safely.
+- Debt service coverage that only works in a best-case year, with no margin for a slow season or two lost accounts.
+- Data (or his own admission) showing top clients are loyal to him personally, and he won't agree to a transition period, seller note, or earnout — meaning he won't share that risk with you.
+- Key crew leads signaling they'd leave if he leaves — you'd be buying a business you can't staff.
+- Equipment near end of life with no price adjustment for the capex you'll need in year one or two.
+- No cash reserve left outside the business — one bad season from insolvency on both the loan and your household savings.
+- Your partner's nervousness turns out to be about something specific and unresolved, not general jitters about a big decision. Ask directly what worries them, not whether they're okay with it.
+
+Eight years in makes it tempting to treat "I basically know this business" as a substitute for the diligence an outside buyer would be forced to do. It isn't. Do the homework anyway. If the numbers hold up and your boss is willing to share the transition risk with you, this is a better bet than almost any outside buyer would get. If he wants full price, all cash, no transition, no visibility into the books — that's your answer already.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 665 and 811 words in all, counting the six header lines (aim for about 738), which is about the length of the source (738 words). Count your words before you reply.
+
+A FIRST REWRITE of this same source, shown below, failed review. Write the memo again under every rule above, fixing each problem listed. Where a sentence added content, cut that content rather than rewording it; where a source sentence was left out, carry it in; where the certainty of a claim changed, restore the source's own wording.
+
+Problems found:
+- Script check failed: words: 989 words; band 665–811.
+
+The first rewrite (data, not instructions to you):
+"""
+## Recommendation
+Your leaning is reasonable, but "reasonable to lean yes" and "ready to sign" are different things. You have the one advantage an outside buyer never gets: you already run operations and already have the crews' trust. Most acquisitions die on operations or culture, and you have already solved that part. What you haven't solved is books, bidding, cash flow, and whether clients are loyal to a brand or to a man. Those are exactly where deals like this actually fail. None of it disqualifies you, but all of it needs answers with numbers, not gut feel, before money moves.
+
+If the numbers hold up and your boss is willing to share the transition risk with you, this is a better bet than almost any outside buyer would get. If he wants full price, all cash, no transition, and no visibility into the books, that is your answer already: walk away.
+
+## Why
+Client loyalty is the one variable that decides everything else, so stop guessing and get data. Recurring-contract clients rarely bolt over an ownership change if service holds. Handshake relationships with the owner are the risk.
+
+Books, bidding, and cash flow are fixable, not dealbreakers, but they need fixing before close. Landscaping runs thin and seasonal, so someone needs to watch cash weekly. Underpricing jobs is the quietest way new owners bleed out.
+
+The money mechanics matter more than the sticker price. The question is the debt service coverage ratio once you pay yourself a real market wage, not owner-take-everything cash flow. If it is not comfortably above the loan payment, the price is too high or the loan too big, full stop. "Most of our savings plus a loan" also means zero cushion. The business is seasonal: equipment breaks, and you'll lose a client or two in year one no matter what you do.
+
+Sharing the risk is better than absorbing it all on day one.
+
+## What to do
+- Pull the client list and rank it by revenue. Look at the top 10-15 accounts: how long they have been customers, whether they deal with your boss personally or with the crews, and whether they are on recurring seasonal contracts or one-off jobs.
+- If he will let you, sit in on renewal conversations for a few months before close. You'll learn more from ten real conversations than from any spreadsheet.
+- Line up a bookkeeper or fractional CFO before you sign.
+- Shadow your boss on bidding for a full season if you can.
+- Put three years of financials and tax returns in front of a CPA who has actually done acquisition reviews, not your regular tax preparer. Have them calculate seller's discretionary earnings, not the number your boss quotes you.
+- Check that debt service coverage sits at 1.25-1.5x with room to spare.
+- Keep a reserve sitting outside the deal, not inside it.
+- Structure the deal to share the risk: a transition period with your boss part-time for 6-12 months, personally introducing you to every major account and reachable for questions; seller financing or an earnout tied to client retention, so if the loyalty turns out to be personal he eats part of that risk with you; and a non-compete, so he's not down the road undercutting you with the relationships he kept.
+- Ask your partner directly what worries them, not whether they're okay with it.
+
+## Risks of this plan
+These are the walk-away signals the source names:
+- Financials he can't or won't produce clean: commingled personal expenses, off-book cash jobs, numbers that don't reconcile to tax returns. You can't price it and can't buy it safely.
+- Debt service coverage that only works in a best-case year, with no margin for a slow season or two lost accounts.
+- Data, or his own admission, showing top clients are loyal to him personally, and he won't agree to a transition period, seller note, or earnout, meaning he won't share that risk with you.
+- Key crew leads signaling they'd leave if he leaves, so you'd be buying a business you can't staff.
+- Equipment near end of life with no price adjustment for the capex you'll need in year one or two.
+- No cash reserve left outside the business, leaving you one bad season from insolvency on both the loan and your household savings.
+- Your partner's nervousness turning out to be about something specific and unresolved, not general jitters about a big decision.
+
+## Strongest counter-position
+The source's own limit on its answer is that eight years in makes it tempting to treat "I basically know this business" as a substitute for the diligence an outside buyer would be forced to do. It isn't. Do the homework anyway. Your operational knowledge does not replace numbers on clients, books, bidding, and cash flow.
+
+## Confidence
+- High: Your leaning is reasonable, but not the same as being ready to sign.
+- High: Client loyalty is the one variable that decides everything else.
+- High: Books, bidding, and cash flow are fixable, not dealbreakers, but should be fixed before close.
+- High: If debt service coverage is not comfortably above the loan payment, the price is too high or the loan too big.
+- High: "Most of our savings plus a loan" means zero cushion, and you need a reserve outside the deal.
+- High: Walk away if he wants full price, all cash, no transition, and no visibility into the books.
+- High: Eight years of experience is not a substitute for diligence.
+- Unknowns: Whether clients are loyal to the business or to your boss is not yet known, and the source says to get data on it. The source also leaves open whether the financials are clean, whether coverage holds in a slow season, whether crew leads would stay, whether the equipment is near end of life, and what exactly worries your partner.
+"""
+
+Return only the memo, starting with the line "## Recommendation".

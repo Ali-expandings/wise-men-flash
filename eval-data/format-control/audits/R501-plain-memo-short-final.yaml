@@ -1,0 +1,18 @@
+question: R501
+arm: plain-memo-short
+from_attempt: 2
+deleted: []
+inserted_fixed_sentence_in: []
+dropped: []
+counts_after:
+  NEW: 0
+  STRONGER: 0
+  WEAKER: 0
+  DROPPED: 0
+reuse:
+  source_sentences: 41
+  cited_once_or_more: 41
+  cited_twice_or_more: 30
+  max: 6
+  mean: 2.15
+words: 1021
