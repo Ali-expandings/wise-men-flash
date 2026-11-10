@@ -727,7 +727,8 @@ def lines():
           "The owner's spot check of two rewrites before judging (Part A, rule 4) was skipped: he left the call to the analyst (Amendment 2), so the blind audits are the only check that the rewrites add nothing to the answer they restate.", ""]
     f = m["flash"]; b = m["B1"]
     L += [f"**A1 (primary): the win over the plain answer survives format matching — {f['word']}.** Flash − plain-memo (`D_ctrl`, M packets): {iv(f['D_ctrl'])}; flash − plain answer (`D_plain`, P packets): {iv(f['D_plain'])}."
-          + (" The 3-answer sitting did not reproduce round 5's gap (the `D_plain` interval is not above zero), so A1 is inconclusive and `S` is not reported." if f["word"] == "inconclusive" else ""), ""]
+          + (" The 3-answer sitting did not reproduce round 5's gap (the `D_plain` interval is not above zero), so A1 is inconclusive and `S` is not reported." if f["word"] == "inconclusive" else ""), "",
+          "Read A1 with this: the control is a faithful rewrite of the plain answer under the pre-registered rules, not a format-only twin of it. The rewriters carried the prompt's word \"the source\" into every long rewrite and half the short ones, and most judges of those packets named it as a fault; both rewrites scored below the plain answer they restate. So this round rules out length as the driver of the gap (long and short rewrites scored alike) more firmly than it rules out format. Details under Honest limits.", ""]
     L += [f"**B1 (primary): the checker improves the memo (0.2.0) — {b['word']}.** Shipped − draft (`C`, total /25): {iv(b['C'])}. "
           "B1 measured wise-men-flash 0.2.0, whose practitioner anchor and Devil's Advocate ran on `opus` (`claude-opus-5-5`); 0.3.0, released on 2026-11-10, routes those two seats to `fable` (falling back to `opus`), which no round has measured.", ""]
     L += ["## Part A: the format-matched control", ""]

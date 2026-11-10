@@ -8,6 +8,8 @@ The caveat. Every answer, rewrite, audit, judge and classifier here is a Claude 
 
 **A1 (primary): the win over the plain answer survives format matching — holds.** Flash − plain-memo (`D_ctrl`, M packets): +8.3 [+7.5, +9.3] over 8 questions; flash − plain answer (`D_plain`, P packets): +5.8 [+4.8, +7.0] over 8 questions.
 
+Read A1 with this: the control is a faithful rewrite of the plain answer under the pre-registered rules, not a format-only twin of it. The rewriters carried the prompt's word "the source" into every long rewrite and half the short ones, and most judges of those packets named it as a fault; both rewrites scored below the plain answer they restate. So this round rules out length as the driver of the gap (long and short rewrites scored alike) more firmly than it rules out format. Details under Honest limits.
+
 **B1 (primary): the checker improves the memo (0.2.0) — clearly improves.** Shipped − draft (`C`, total /25): +2.0 [+1.2, +2.5] over 7 questions. B1 measured wise-men-flash 0.2.0, whose practitioner anchor and Devil's Advocate ran on `opus` (`claude-opus-5-5`); 0.3.0, released on 2026-11-10, routes those two seats to `fable` (falling back to `opus`), which no round has measured.
 
 ## Part A: the format-matched control
