@@ -1,13 +1,13 @@
 question: R508
 arm: plain-memo
-from_attempt: 2
+from_attempt: 3
 deleted:
-- R: 68
-  label: WEAKER
-  refs:
-  - 4
-  note: the source says these gaps are "exactly where deals like this actually fail"; the rewrite softens this to "a place where deals like this can fail" (S5 otherwise restated)
-  text: 'None of the gaps disqualifies you, but each is a place where deals like this can fail, and the source names these risks and caveats:'
+- R: 27
+  label: STRONGER
+  refs: &id001
+  - 22
+  note: states that the boss eats part of the risk if loyalty is personal without the source's condition that this follows only from seller financing or an earnout tied to client retention
+  text: If the loyalty turns out to be personal, your boss eats part of that risk with you.
 inserted_fixed_sentence_in: []
 dropped: []
 counts_after:
@@ -18,7 +18,18 @@ counts_after:
 reuse:
   source_sentences: 37
   cited_once_or_more: 37
-  cited_twice_or_more: 37
-  max: 13
-  mean: 4.41
-words: 2092
+  cited_twice_or_more: 35
+  max: 7
+  mean: 3.43
+words: 1664
+amendment_2_retry:
+  words: 1664
+  deleted:
+  - R: 27
+    label: STRONGER
+    refs: *id001
+    note: states that the boss eats part of the risk if loyalty is personal without the source's condition that this follows only from seller financing or an earnout tied to client retention
+    text: If the loyalty turns out to be personal, your boss eats part of that risk with you.
+  dropped: []
+  script_check_failures: []
+  used: true

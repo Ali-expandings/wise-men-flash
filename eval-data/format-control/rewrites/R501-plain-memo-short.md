@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R501-plain-memo-short-rewrite-2.txt (sha256 484d6ea7abbf3a53)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: abada446065ec4b75 | transcript sha256: 8a5620a10df9d3f53d24b2329722cb2fe8dfb4d1fedaa5509b4e73ac121c52fe
 # minutes: 0.5 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/4878/3185/17124 | list-price USD: 0.14
-# final: attempt 2; it passed the audit but still fails the script check(s) words after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)
+# final: attempt 2; it passed the audit and every other script check; at 1,021 words it is outside its band (813–993), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is
 
 ## Recommendation
 Pick RLS, but as an added layer, not a replacement for what you have. Keep the ORM auto-scoping and the lint rule. RLS becomes the backstop that is true even when those are wrong, bypassed, or simply not in the loop. This is defense in depth, not a swap. Enable it table by table, starting with `invoices`, and leave the lint rule running the whole time.

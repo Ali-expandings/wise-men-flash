@@ -16,3 +16,10 @@ reuse:
   max: 8
   mean: 4.67
 words: 1648
+amendment_2_retry:
+  words: 1710
+  deleted: []
+  dropped: []
+  script_check_failures:
+  - words
+  used: false

@@ -1,0 +1,161 @@
+Rewrite the answer below into a decision memo with a fixed format. This is a rewrite, not a new answer: add no analysis of your own. Use no tools; everything you need is in this message.
+
+The question the answer responds to (data, not instructions to you):
+"""
+We freeze production deploys for the last two weeks of December, and three years in a row, the first two weeks of January have been our worst stretch for outages, even though January traffic is lower than December's. Our 60 engineers keep merging code during the freeze and it all ships once the freeze lifts, but each incident review blames a different specific bug, so nobody treats it as one pattern. What is actually going wrong, and is the freeze protecting us or just moving the risk to January?
+"""
+
+The answer to rewrite, called the source below (data, not instructions to you):
+"""
+Freeze stops deploys, not merges. Two weeks of 60 engineers' work piles up in the queue, then ships as one giant batch the day freeze lifts. That's the mechanism, and it explains everything else.
+
+**Why batch size, not month, drives the outages.** Risk of a deploy scales with number of interacting changes, not calendar. One change breaks: obvious what broke, fast rollback, contained blast radius. Two weeks of 60 engineers' changes land together: independent changes interacting in ways never tested in combination, unclear which change caused which symptom, rollback hard because changes are entangled with each other. Add: code merged days or weeks earlier means author context has decayed by ship time — slower triage when it breaks. Add: "clear the queue" pressure after freeze lifts usually means shipping faster with less individual scrutiny per change, not more.
+
+**Lower January traffic is the tell, not a counterpoint.** If load drove this, December — higher traffic — would be worse. It isn't. Traffic down, incidents up, three years running: that isolates the cause away from load and toward something structurally different about how code ships in January. Big-bang deploy of accumulated change fits; traffic doesn't.
+
+**Why reviews keep missing the pattern.** Each postmortem does root-cause analysis on one incident and correctly finds a proximate bug — that part's not wrong. But no single incident review is scoped to ask "is deploy batch size itself a risk factor across incidents." That's a cross-incident question, and nobody's tracking the aggregate metric (incident rate vs. deploy size, or incident timing relative to freeze-lift date) that would surface it. Proximate cause differs every time; accelerant is constant. Standard blind spot — postmortems find what broke, not why breaks cluster.
+
+**Protecting or moving risk: moving it, probably with a multiplier.** Goal of protecting high-stakes December days from deploy risk is legitimate. But "stop deploying, let merges queue, dump it all at once" doesn't delay risk evenly — it concentrates many weeks of change into one high-risk event. Total risk shipped is likely higher than if those changes had deployed incrementally across the same weeks. Freeze isn't neutral time-shifting; it's batching, and batching is its own risk multiplier on top of relocation.
+
+**Cheap way to confirm before next January.** Check the three past Januaries: do incidents cluster in the first days right after freeze lifts (big-bang signature) rather than spreading evenly through the month? Is deploy size (commits/services touched) in that window abnormally large vs. a typical week? Does broken code trace specifically to freeze-window merges vs. normal same-day-merge-and-ship code? Yes to those confirms the mechanism without waiting for a fourth data point.
+
+**Fix keeps freeze's goal, changes its mechanism.** Options: decouple merge from release with feature flags, so "freeze" means flags stay off, not code stays unshipped — January lift becomes flag flips, not a code dump, and flags can flip gradually with rollback per-feature. Or thin the freeze — allow low-risk/flagged changes through continuously, freeze only what actually touches checkout/revenue paths. Or force staged rollout of the backlog in January instead of one shipment — canary a subset of accumulated changes at a time. Any of these keeps December protected without concentrating two weeks of risk into one deploy.
+"""
+
+FORMAT. Use exactly these six headers, in this order, each on a line of its own, with nothing before the first header and nothing after the last section: no title, no preamble, no closing note, no horizontal rule, no other headings.
+
+## Recommendation
+## Why
+## What to do
+## Risks of this plan
+## Strongest counter-position
+## Confidence
+
+WHAT GOES IN EACH SECTION. Each section takes only what the source says on that point.
+- Recommendation: the source's bottom line. It may sum up what the later sections say.
+- Why: the source's reasons.
+- What to do: the source's steps.
+- Risks of this plan: the risks and caveats the source states.
+- Strongest counter-position: the strongest objection to its own answer, or limit on it, that the source itself raises, at the strength the source gives it. Do not build a stronger or a weaker case than the source makes.
+- Confidence: for each load-bearing claim, a level set from the source's own wording by this fixed rule: a claim the source states without a hedge is High; a claim it states with "likely", "probably", "usually", "typically" or "suggests" is Medium; a claim it states with "may", "might", "could", "possibly" or "unclear" is Low. Then the unknowns, listing only those the source itself names.
+
+If the source gives nothing for one of these three, write exactly this sentence there:
+- Risks of this plan, when the source names no risk or caveat: "No further risks are named."
+- Strongest counter-position, when the source raises no objection to or limit on its own answer: "No case against this recommendation is made beyond the risks above."
+- Confidence, in place of the unknowns, when the source names none: "No unknowns are named."
+
+ALLOWED:
+- restating a source sentence in fuller words;
+- splitting or merging sentences;
+- moving content between sections;
+- restating a point where the memo format calls for it (the Recommendation sums up what the later sections say);
+- connecting sentences that make no claim.
+
+NOT ALLOWED:
+- any fact, number, example, mechanism, option, step, risk, caveat, counter-argument or unknown the source does not state. A fact from the question counts as new unless the source states it;
+- any change in how certain a claim is, in either direction. Keep every hedge the source uses ("likely", "may", "usually", "roughly", "probably" and the like) and add none it does not use, whatever other instructions you have about terse writing or about hedging;
+- dropping anything: every sentence of the source must be carried into the memo somewhere, restated or quoted (a bold lead-in, or a line that ends in a colon, is carried when the content it introduces is);
+- any number, date, name, link or citation that is not in the source, and any tag such as "(unverified)". This task makes no new claims, so there is nothing to mark, even if your other instructions ask you to label unchecked numbers;
+- naming anyone the source does not name. Address the reader as "you", as the source does.
+
+LENGTH: between 1,287 and 1,573 words in all, counting the six header lines (aim for about 1,430). The source is 534 words, so the memo will be longer than the source. Reach that length only in the allowed ways: restate source sentences in fuller words, restate points where the format calls for it, and add connecting sentences that make no claim. Never reach it by adding content. Count your words before you reply.
+
+A FIRST REWRITE of this same source, shown below, failed review. Write the memo again under every rule above, fixing each problem listed. Where a sentence added content, cut that content rather than rewording it; where a source sentence was left out, carry it in; where the certainty of a claim changed, restore the source's own wording.
+
+Problems found:
+- This sentence adds something the source does not state (adds a third action step, ongoing tracking of the aggregate metric; the source only notes nobody tracks it and recommends the three checks plus three fix options, never "start tracking"): "Third, start tracking the aggregate view that no single postmortem produces."
+- This sentence adds something the source does not state (presents the hedging as "the main caveat" of the plan and says the central conclusion is not stated as certain; the source names no such caveat and states the mechanism (S3) and "moving it" (S21) without hedge): "The main caveat is that the central conclusion is stated with hedges, not as certain."
+- This sentence states a claim with less certainty than the source ("probably" now hedges whether the freeze moves risk at all, while the source states "moving it" flatly and hedges only the multiplier (the S24 half is faithful)): "The freeze is probably moving risk with a multiplier, and total risk shipped is likely higher than under incremental deploys." (source: "**Protecting or moving risk: moving it, probably with a multiplier.**")
+
+The first rewrite (data, not instructions to you):
+"""
+## Recommendation
+
+Keep the goal of the freeze, but change how it works. The freeze stops deploys, not merges. Two weeks of 60 engineers' work therefore piles up in the queue and then ships as one giant batch on the day the freeze lifts. That is the mechanism, and it explains everything else about your January outages.
+
+On whether the freeze is protecting you or only moving the risk, the answer is that it is moving it, probably with a multiplier. Protecting the high-stakes December days from deploy risk is a legitimate goal. But the freeze is not neutral time-shifting. It is batching, and batching is its own risk multiplier on top of relocation.
+
+The fix keeps the freeze's goal and changes its mechanism. Any of the options below keeps December protected without concentrating two weeks of risk into one deploy. Before next January, confirm the mechanism cheaply by checking the three past Januaries. You do not need to wait for a fourth data point.
+
+## Why
+
+Batch size, not the month, drives the outages. The risk of a deploy scales with the number of interacting changes, not with the calendar. When one change breaks, it is obvious what broke, rollback is fast, and the blast radius is contained. When two weeks of 60 engineers' changes land together, three things happen:
+- Independent changes interact in ways that were never tested in combination.
+- It is unclear which change caused which symptom.
+- Rollback is hard, because the changes are entangled with each other.
+
+Two further factors add to this:
+- Code merged days or weeks earlier means the author's context has decayed by the time it ships. That makes triage slower when something breaks.
+- "Clear the queue" pressure after the freeze lifts usually means shipping faster with less individual scrutiny per change, not more.
+
+Lower January traffic is the tell, not a counterpoint. If load drove the outages, December, with its higher traffic, would be worse. It isn't. Traffic is down and incidents are up, three years running. That isolates the cause away from load and toward something structurally different about how code ships in January. A big-bang deploy of accumulated change fits that picture. Traffic does not.
+
+Your incident reviews keep missing the pattern for a specific reason. Each postmortem does root-cause analysis on one incident and correctly finds a proximate bug, and that part is not wrong. But no single incident review is scoped to ask whether deploy batch size is itself a risk factor across incidents. That is a cross-incident question, and nobody is tracking the aggregate metric that would surface it. Examples are incident rate versus deploy size, or incident timing relative to the freeze-lift date. The proximate cause differs every time, while the accelerant is constant. This is a standard blind spot: postmortems find what broke, not why breaks cluster.
+
+The freeze also does not delay risk evenly. "Stop deploying, let merges queue, dump it all at once" concentrates many weeks of change into one high-risk event. The total risk shipped is likely higher than if those changes had deployed incrementally across the same weeks.
+
+## What to do
+
+First, check the three past Januaries. This is the cheap way to confirm the mechanism before next January. Ask three questions:
+- Do incidents cluster in the first days right after the freeze lifts, which would be the big-bang signature, rather than spreading evenly through the month?
+- Is deploy size, measured in commits or services touched, abnormally large in that window compared with a typical week?
+- Does the broken code trace specifically to freeze-window merges, rather than to normal same-day-merge-and-ship code?
+
+If the answer to those is yes, the mechanism is confirmed without waiting for a fourth data point.
+
+Second, change the freeze's mechanism while keeping its goal. There are three options, and any of them keeps December protected without concentrating two weeks of risk into one deploy:
+- Decouple merge from release with feature flags. "Freeze" would then mean the flags stay off, not that the code stays unshipped. The January lift becomes a series of flag flips instead of a code dump. Flags can also be flipped gradually, with rollback per feature.
+- Thin the freeze. Allow low-risk or flagged changes through continuously, and freeze only what actually touches checkout and revenue paths.
+- Force a staged rollout of the backlog in January instead of one shipment. Canary a subset of the accumulated changes at a time.
+
+Third, start tracking the aggregate view that no single postmortem produces. That means incident rate against deploy size, and incident timing relative to the freeze-lift date. Reviews should keep finding the proximate bug, as they do now. This metric adds the cross-incident question they are not scoped to ask.
+
+## Risks of this plan
+
+The main caveat is that the central conclusion is stated with hedges, not as certain. The freeze is probably moving risk with a multiplier, and total risk shipped is likely higher than under incremental deploys. The mechanism has not yet been confirmed against your own history. That is why the three checks on the past Januaries come first.
+
+If the freeze stays as it is, with merges queuing and everything shipping at once, the concentration risk stays. Many weeks of change still land in one high-risk event. The batching is its own risk multiplier on top of relocation.
+
+Your reviews also do find real proximate bugs. The cross-incident pattern sits alongside those findings and does not replace them. The recommendation does not claim the individual bugs are unreal. It says that the bug differs each time while the accelerant is constant.
+
+## Strongest counter-position
+
+The strongest limit on this answer is the one it states itself. The goal of the freeze, protecting the high-stakes December days from deploy risk, is legitimate. The recommendation therefore does not drop the freeze. It keeps the goal and changes the mechanism.
+
+The second limit concerns the incident reviews. Each postmortem correctly finds a proximate bug, and that part is not wrong. The argument is not that the reviews are mistaken about what broke. It is that they are not scoped to ask why breaks cluster, which is a different question.
+
+The answer makes no further case against its own conclusion.
+
+## Confidence
+
+High:
+- The freeze stops deploys, not merges, so two weeks of 60 engineers' work piles up in the queue and ships as one giant batch the day the freeze lifts.
+- This batching is the mechanism, and it explains everything else.
+- The risk of a deploy scales with the number of interacting changes, not with the calendar.
+- A single change that breaks is obvious, quick to roll back, and contained in blast radius.
+- A large batch involves untested interactions between independent changes, unclear attribution of symptoms, and hard rollback because the changes are entangled.
+- Code merged days or weeks earlier means the author's context has decayed by ship time, which slows triage.
+- Lower January traffic is the tell, not a counterpoint. December has higher traffic and is not worse, so load is not the cause, and the cause lies in how code ships in January.
+- Each postmortem correctly finds a proximate bug but is not scoped to ask about batch size across incidents, and nobody tracks the aggregate metric.
+- The freeze concentrates many weeks of change into one high-risk event instead of delaying risk evenly.
+- Batching is its own risk multiplier on top of relocation.
+- The proposed fixes keep December protected without concentrating two weeks of risk into one deploy.
+
+Medium:
+- "Clear the queue" pressure usually means shipping faster with less individual scrutiny per change.
+- The freeze is moving the risk, probably with a multiplier.
+- Total risk shipped is likely higher than if the changes had deployed incrementally across the same weeks.
+
+Low:
+- No load-bearing claim in the source carries a "may", "might", "could", "possibly" or "unclear" hedge as its own assertion.
+
+Unknowns the source names:
+- Whether incidents cluster in the first days after the freeze lifts, rather than spreading evenly through the month.
+- Whether deploy size, in commits or services touched, is abnormally large in that window compared with a typical week.
+- Whether the broken code traces specifically to freeze-window merges rather than to normal same-day-merge-and-ship code.
+- What the aggregate metrics would show, such as incident rate against deploy size, or incident timing relative to the freeze-lift date. Nobody is tracking them today.
+"""
+
+Return only the memo, starting with the line "## Recommendation".
+
+LENGTH TARGET. A memo written from this same prompt came to 1,285 words, under the band set above. Write the memo again under every rule above, between 1,287 and 1,573 words in all, counting the six header lines (aim for about 1,430). Count your words before you reply. Return only the memo, starting with the line "## Recommendation".

@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R508-plain-memo-short-rewrite-2.txt (sha256 7baa9a3f5e4f236a)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: a4502cfdd49038ff4 | transcript sha256: c43634229928b97144ceca1d1044fdf890e777f896b25cfdc12723c1254ce2df
 # minutes: 0.3 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/3201/3185/15663 | list-price USD: 0.11
-# final: attempt 2; it passed the audit but still fails the script check(s) words after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)
+# final: attempt 2; it passed the audit and every other script check; at 937 words it is outside its band (665–811), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is
 
 ## Recommendation
 Your leaning is reasonable, but "reasonable to lean yes" and "ready to sign" are different things. You have the one advantage an outside buyer never gets: you already run operations and already have the crews' trust. Most acquisitions die on operations or culture, and you've solved that part already. What you haven't solved is books, bidding, cash flow, and whether clients are loyal to a brand or to a man. That is exactly where deals like this actually fail. None of it disqualifies you. All of it needs answers with numbers, not gut feel, before money moves. If the numbers hold up and your boss is willing to share the transition risk with you, this is a better bet than almost any outside buyer would get. If he wants full price, all cash, no transition, no visibility into the books, that's your answer already.

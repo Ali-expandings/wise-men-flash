@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R507-plain-memo-short-rewrite-2.txt (sha256 b29c19f8f963ea56)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: a949b8c75ee5081f9 | transcript sha256: 6defd4e01188222930a41c5b32cb74f0bc63ddf091961f9cc7cf9651f7b87b5a
 # minutes: 0.3 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/2342/3185/15618 | list-price USD: 0.09
-# final: attempt 2; it passed the audit but still fails the script check(s) words after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)
+# final: attempt 2; it passed the audit and every other script check; at 831 words it is outside its band (599–731), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is
 
 ## Recommendation
 Let the tip change your process, not your verdict. One secondhand, unresolved, unattributable claim isn't enough to reject someone. It is enough to justify real time finding out more before you decide, and for a role with authority over junior people, you'd want to do most of that digging anyway. Use what you can't verify or cite to raise your diligence, not to reach a conclusion.

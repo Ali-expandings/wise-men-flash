@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R505-plain-memo-short-rewrite-2.txt (sha256 13b3ad45ddca4840)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: aeb3aac9e9d37ee0b | transcript sha256: 47b6502e448906a09dcc29de0284de42ad94a64be163928ad5883d93a2af72fd
 # minutes: 0.4 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/4102/3185/17164 | list-price USD: 0.13
-# final: attempt 2 with 1 sentence(s) deleted under PREREG-6 Part A rule 3 (R54); 0 source sentence(s) cited nowhere, disclosed in audits/R505-plain-memo-short-final.yaml
+# final: attempt 2 with 1 sentence(s) deleted under PREREG-6 Part A rule 3 (R54); 0 source sentence(s) cited nowhere, disclosed in audits/R505-plain-memo-short-final.yaml; at 1,078 words it is outside its band (771–941), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is
 
 ## Recommendation
 

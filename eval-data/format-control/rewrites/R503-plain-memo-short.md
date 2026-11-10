@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R503-plain-memo-short-rewrite-2.txt (sha256 009dd16d152cbb38)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: a944751c26e710b8f | transcript sha256: 3a755eca3aa27a87acd9973511112de1b1c5e86741fe0dc29ca550a28dfdcbb7
 # minutes: 0.2 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/2210/3185/15376 | list-price USD: 0.09
-# final: attempt 2; it passed the audit but still fails the script check(s) words after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)
+# final: attempt 2; it passed the audit and every other script check; at 735 words it is outside its band (424–518), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is
 
 ## Recommendation
 Don't spend most of your cash reserve on this. Stop the bleeding now with a partner or embed integration. Build the differentiated core in-house on a realistic (not optimistic) timeline. Keep the acquisition option only for a target priced well under "most of reserve" or where you are clearly buying a team, not a feature. As framed, spending your buffer to fix one feature gap is disproportionate to the risk.

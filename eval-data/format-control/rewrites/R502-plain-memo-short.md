@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R502-plain-memo-short-rewrite-2.txt (sha256 c65f46d1e4294673)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: aa4a195fc56d35573 | transcript sha256: ccf12ce1826d7ed390ac7e2640cea47beaa112ab9f01d00cf211e3d012a6f754
 # minutes: 0.5 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/4371/3185/15285 | list-price USD: 0.12
-# final: attempt 2; it passed the audit but still fails the script check(s) words after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)
+# final: attempt 2; it passed the audit and every other script check; at 629 words it is outside its band (481–587), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is
 
 ## Recommendation
 The freeze is moving risk, probably with a multiplier, not protecting you from it. The freeze stops deploys, not merges, so two weeks of 60 engineers' work ships as one giant batch the day it lifts. That mechanism explains everything else. Keep the freeze's goal but change its mechanism.

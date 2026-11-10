@@ -1,0 +1,10 @@
+# script checks (fc6.py check, PREREG-6 Part A rule 1) | rewrites/R502-plain-memo-3.md | question: R502 | arm: plain-memo
+
+PASS  headers: the six headers in order, nothing before the first, no other heading, no rule
+PASS  words: 1,401 words; band 1,287–1,573
+PASS  numbers: every number appears in the source
+PASS  links: no link the source lacks
+PASS  citations: no citation the source lacks
+PASS  unverified-tag: 0 '(unverified' tag(s); the source has 0
+PASS  first-name: the author's first name is absent
+PASS  normalize: normalize() removes nothing but the provenance header

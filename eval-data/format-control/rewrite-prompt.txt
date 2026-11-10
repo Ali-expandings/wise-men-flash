@@ -65,3 +65,5 @@ The first rewrite (data, not instructions to you):
 """
 {previous}
 """
+### LENGTH RETRY
+LENGTH TARGET. A memo written from this same prompt came to {w} words, {side} the band set above. Write the memo again under every rule above, between {lo} and {hi} words in all, counting the six header lines (aim for about {target}). Count your words before you reply. Return only the memo, starting with the line "## Recommendation".

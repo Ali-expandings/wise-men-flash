@@ -2,7 +2,7 @@
 # rewriter: fresh wise-men-flash:wise-member/sonnet = claude-sonnet-5-5 | tools used: none | prompt: prompts/R507-plain-memo-rewrite-2.txt (sha256 ce467dbc0faa5351)
 # session: 3237f3a5-15e9-425e-8e26-e9f420a55eb9 | agent: ab46628ee7f63d8aa | transcript sha256: 3b9a05295e60ba4dba4da7487e8c4aecbd10d4f5c2320c8375d56c48b2a11be2
 # minutes: 0.2 | subagent calls: 0 (transcripts matched: 0) | tokens in/out/cache-read/cache-write: 2/3039/3185/17157 | list-price USD: 0.11
-# final: attempt 2; it passed the audit but still fails the script check(s) words after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)
+# final: attempt 2; it passed the audit and every other script check; at 1,648 words it is outside its band (1,713–2,093), and Amendment 2's length-only retry (attempt 3) failed the script check(s) words at 1,710 words, so this rewrite is judged as it is, its word count disclosed
 
 ## Recommendation
 

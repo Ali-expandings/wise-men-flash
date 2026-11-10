@@ -28,6 +28,7 @@ FIXED = {"## Risks of this plan": "No further risks are named.",
 JUDGES = ["j1", "j2", "j3"]
 B1Q = list(QIDS); B2Q = ["R503", "R505", "R507", "R508"]; B2_TIES = ["R501", "R502", "R504", "R506"]; NEW_RUNS = ["R501", "R503", "R505", "R507"]
 VER = {"B1": "0.2.0", "B2": "0.1.0"}
+AMEND2 = ["R502", "R507", "R508"]; AMEND2_COMMIT = "191188c"  # PREREG-6 Amendment 2: plain-memo's one length-only retry (attempt 3); plain-memo-short's band dropped
 STORED = {  # PREREG-6 Part B: the checker agents whose first prompt holds each stored draft
     ("0.2.0", "R502"): ("9adc81fe-890f-46b2-a03e-059fac726935", "a4b33fef412b2ff86"), ("0.2.0", "R504"): ("9adc81fe-890f-46b2-a03e-059fac726935", "aaa7e67bfd9247418"),
     ("0.2.0", "R506"): ("9adc81fe-890f-46b2-a03e-059fac726935", "a40fc420212bdbc0c"), ("0.2.0", "R508"): ("9adc81fe-890f-46b2-a03e-059fac726935", "a3de0644c5ffd71eb"),
@@ -198,6 +199,11 @@ def script_check(q, arm, raw):
     return res
 def check_text(res): return "\n".join(f"{'PASS' if ok else 'FAIL'}  {name}: {detail}" for name, ok, detail in res) + "\n"
 def check_ok(res): return all(ok for _, ok, _ in res)
+def retried(q): return q in AMEND2 and audit_of(q, PM, 3) is not None
+def gating_fails(q, arm, res):
+    """The failed script checks that keep a final rewrite out of the packets. Amendment 2: plain-memo-short's band is dropped, and a
+    plain-memo final still outside its band once its length-only retry has been audited is judged as it is."""
+    return [name for name, ok, _ in res if not ok and not (name == "words" and (arm == PS or (arm == PM and retried(q))))]
 
 # --- Part A: files ---
 def f_prompt(q, arm, kind, n): return os.path.join(D["prompts"], f"{q}-{arm}-{kind}-{n}.txt")
@@ -240,9 +246,20 @@ def rewrite_prompt(q):
         else: wr(p, t)
         print(q, arm, f"attempt {n}:", rel(p), f"({words(t)} words; send verbatim to a fresh wise-men-flash:wise-member on sonnet)")
 
+def length_retry(q):
+    """Amendment 2: plain-memo's one length-only retry, for R502, R507 and R508 only: attempt 2's prompt, byte for byte, plus the target."""
+    assert q in AMEND2, ("Amendment 2 allows the length-only retry only for", AMEND2)
+    assert attempt_state(q, PM, 1) == "fail" and attempt_state(q, PM, 2) in ("pass", "fail"), (q, "attempt 2 must be saved and audited first")
+    lo, hi, target = band(PM, q); w = words(body(f_rewrite(q, PM, 2)))
+    t = rd(f_prompt(q, PM, "rewrite", 2)) + "\n\n" + fill(sections("rewrite-prompt.txt")["LENGTH RETRY"], {"w": f"{w:,}", "side": "under" if w < lo else "over", "lo": f"{lo:,}", "hi": f"{hi:,}", "target": f"{target:,}"})
+    p = f_prompt(q, PM, "rewrite", 3)
+    if os.path.exists(p): assert rd(p) == t, ("a stored prompt differs from a rebuild", p); return t
+    assert not (lo <= w <= hi), (q, "attempt 2 is inside its band: Amendment 2 retries only rewrites outside it")
+    assert [nm for nm, ok, _ in script_check(q, PM, rd(f_rewrite(q, PM))) if not ok] == ["words"], (q, "Amendment 2's retry is for a final that fails its band and nothing else")
+    wr(p, t); print(q, PM, "attempt 3 (Amendment 2, length only):", rel(p), f"({words(t)} words; send verbatim to a fresh wise-men-flash:wise-member on sonnet)"); return t
 def save_control(T, q):
     i = tinfo(T); got = i["prompt"]
-    hits = [(arm, n) for arm in CONTROLS for n in (1, 2) if os.path.exists(f_prompt(q, arm, "rewrite", n)) and rd(f_prompt(q, arm, "rewrite", n)).strip() == got.strip()]
+    hits = [(arm, n) for arm in CONTROLS for n in (1, 2, 3) if os.path.exists(f_prompt(q, arm, "rewrite", n)) and rd(f_prompt(q, arm, "rewrite", n)).strip() == got.strip()]
     assert len(hits) == 1, ("the transcript's prompt matches no stored rewrite prompt for", q, "exactly"); arm, n = hits[0]
     assert not os.path.exists(f_rewrite(q, arm, n)), ("already saved", rel(f_rewrite(q, arm, n)))
     tools = ", ".join(f"{a} {json.dumps(b)[:80]}" for a, b in i["tools"]) or "none"
@@ -256,7 +273,7 @@ def save_control(T, q):
 
 def check(q):
     for arm in CONTROLS:
-        for n in (1, 2, "final"):
+        for n in (1, 2, 3, "final"):
             p = f_rewrite(q, arm, None if n == "final" else n)
             if not os.path.exists(p): continue
             res = script_check(q, arm, rd(p)); wr(f_check(q, arm, n), f"# script checks (fc6.py check, PREREG-6 Part A rule 1) | {rel(p)} | question: {q} | arm: {arm}\n\n" + check_text(res))
@@ -267,7 +284,7 @@ def audit_packet(q, arm, n):
     return fill(S["PACKET"], {"n": str(nR), "question": QS[q]["text"], "source": src_n, "rewrite": rw_n}) + "\n"
 def audit_prompt(q, copy_dir=None):
     for arm in CONTROLS:
-        for n in (1, 2):
+        for n in (1, 2, 3):
             if not os.path.exists(f_rewrite(q, arm, n)) or audit_of(q, arm, n) is not None: continue
             p = f_prompt(q, arm, "audit", n); t = audit_packet(q, arm, n)
             if os.path.exists(p): assert rd(p) == t, ("a stored audit prompt differs from a rebuild", p)
@@ -319,7 +336,7 @@ def audit_summary(m, rw_sents, src_sents, keep=None):
             "labels": {x: sum(1 for k in keep if m[k]["label"] == x) for x in ("RESTATES", "CONNECTIVE", "FIXED", "NEW", "STRONGER", "WEAKER")}}
 def save_audit(T, q):
     i = tinfo(T); reads = [x.get("file_path", "") for nm, x in i["tools"] if nm == "Read"]; others = [nm for nm, _ in i["tools"] if nm != "Read"]
-    hits = [(arm, n) for arm in CONTROLS for n in (1, 2) if os.path.exists(f_prompt(q, arm, "audit", n))
+    hits = [(arm, n) for arm in CONTROLS for n in (1, 2, 3) if os.path.exists(f_prompt(q, arm, "audit", n))
             and reads and all(os.path.basename(r) in (sha(rd(f_prompt(q, arm, "audit", n)))[:12] + ".txt", os.path.basename(f_prompt(q, arm, "audit", n))) for r in reads)]
     assert len(hits) == 1, ("the auditor's Read matches no stored audit prompt for", q, reads); arm, n = hits[0]; p = f_prompt(q, arm, "audit", n)
     for r in reads:
@@ -344,13 +361,9 @@ def save_audit(T, q):
     print("audit", q, arm, n, s["counts"], "| script checks", "pass" if check_ok(chk) else "FAIL", "| attempt", "PASSES" if s["pass"] and check_ok(chk) else "fails")
     finalize(q, arm)
 
-def final_build(q, arm):
-    """The rewrite that enters the packets: the first passing attempt; otherwise attempt 2 with every sentence still marked NEW,
-    STRONGER or WEAKER deleted (a section left empty gets its fixed sentence) and the source sentences then cited nowhere disclosed."""
-    s1, s2 = attempt_state(q, arm, 1), attempt_state(q, arm, 2)
-    if s1 == "pass": n = 1
-    elif s1 == "fail" and s2 in ("pass", "fail"): n = 2
-    else: return None
+def _build(q, arm, n):
+    """One audited attempt as it would enter the packets: if it does not pass outright, every sentence its audit marks NEW, STRONGER
+    or WEAKER deleted (a section left empty gets its fixed sentence), and the source sentences then cited nowhere recomputed."""
     raw = rd(f_rewrite(q, arm, n)); text = normalize("wise-men", raw); a = audit_of(q, arm, n)
     kill = set() if attempt_state(q, arm, n) == "pass" else {f["R"] for f in a["flagged"]}
     out, k, inserted = [], 0, []
@@ -386,14 +399,39 @@ def final_build(q, arm):
         refs[int(r[1:])] = {"label": "RESTATES" if lab.startswith("S") else lab, "refs": [int(x) for x in re.findall(r"S(\d+)", v)], "note": ""}
     after = audit_summary(refs, rw_s, src_s, keep)
     hdr = header_lines(f_rewrite(q, arm, n))
-    fails = [nm for nm, ok, _ in script_check(q, arm, raw) if not ok]
-    note = ((f"final: attempt {n}, which passed the script checks and the audit" if not fails else
-             f"final: attempt {n}; it passed the audit but still fails the script check(s) {', '.join(fails)} after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)") if not kill else
-            f"final: attempt {n} with {len(kill)} sentence(s) deleted under PREREG-6 Part A rule 3 ({', '.join(f'R{x}' for x in sorted(kill))})"
-            + (f"; fixed sentence inserted in {', '.join(inserted)}" if inserted else "") + f"; {after['counts']['DROPPED']} source sentence(s) cited nowhere, disclosed in {rel(f_audit(q, arm, 'final', 'yaml'))}")
-    raw_final = "".join(f"# {l}\n" for l in hdr) + f"# {note}\n\n" + final + "\n"
+    fails = [nm for nm, ok, _ in script_check(q, arm, "".join(f"# {l}\n" for l in hdr) + "\n" + final + "\n") if not ok]
     info = {"question": q, "arm": arm, "from_attempt": n, "deleted": [f for f in a["flagged"] if f["R"] in kill], "inserted_fixed_sentence_in": inserted,
             "dropped": after["dropped"], "counts_after": after["counts"], "reuse": after["reuse"], "words": words(final)}
+    return {"final": final, "info": info, "kill": kill, "inserted": inserted, "after": after, "hdr": hdr, "fails": fails}
+def final_build(q, arm):
+    """The rewrite that enters the packets: the first passing attempt; otherwise attempt 2 with every sentence still marked NEW,
+    STRONGER or WEAKER deleted (a section left empty gets its fixed sentence) and the source sentences then cited nowhere disclosed.
+    Amendment 2 (2026-11-10): for plain-memo R502, R507 and R508, the one length-only retry (attempt 3), under the same deletion rule,
+    replaces that rewrite if it is then clean (no source sentence left uncited) and passes every script check, its band included;
+    otherwise the earlier rewrite is judged as it is. plain-memo-short's band is dropped, so its finals are judged as they are."""
+    s1, s2 = attempt_state(q, arm, 1), attempt_state(q, arm, 2)
+    if s1 == "pass": n = 1
+    elif s1 == "fail" and s2 in ("pass", "fail"): n = 2
+    else: return None
+    b = _build(q, arm, n); why3 = None; r3 = None
+    if arm == PM and q in AMEND2 and attempt_state(q, arm, 3) in ("pass", "fail"):
+        b3 = _build(q, arm, 3)
+        r3 = {"words": b3["info"]["words"], "deleted": [dict(x) for x in b3["info"]["deleted"]], "dropped": [dict(x) for x in b3["info"]["dropped"]], "script_check_failures": list(b3["fails"]), "used": not b3["info"]["dropped"] and not b3["fails"]}
+        if r3["used"]: b, n = b3, 3
+        else: why3 = " and ".join(x for x in (f"failed the script check(s) {', '.join(b3['fails'])}" + (f" at {b3['info']['words']:,} words" if "words" in b3["fails"] else "") if b3["fails"] else "",
+                                               f"left {len(b3['info']['dropped'])} source sentence(s) cited nowhere" if b3["info"]["dropped"] else "") if x)
+    final, info, kill, inserted, after, hdr, fails = (b[k] for k in ("final", "info", "kill", "inserted", "after", "hdr", "fails"))
+    lo, hi, _ = band(arm, q); w = info["words"]; a2 = ", Amendment 2's length-only retry," if n == 3 else ""
+    if not kill: note = f"final: attempt {n}{a2[:-1] if a2 else ''}, which passed the script checks and the audit" if not fails else f"final: attempt {n}; it passed the audit"
+    else: note = (f"final: attempt {n}{a2} with {len(kill)} sentence(s) deleted under PREREG-6 Part A rule 3 ({', '.join(f'R{x}' for x in sorted(kill))})"
+                  + (f"; fixed sentence inserted in {', '.join(inserted)}" if inserted else "") + f"; {after['counts']['DROPPED']} source sentence(s) cited nowhere, disclosed in {rel(f_audit(q, arm, 'final', 'yaml'))}")
+    if fails == ["words"] and arm == PS:
+        note += f"{' and every other script check' if not kill else ''}; at {w:,} words it is outside its band ({lo:,}–{hi:,}), which Amendment 2 (2026-11-10) drops for plain-memo-short, so it is judged as it is"
+    elif fails == ["words"] and arm == PM and why3:
+        note += f"{' and every other script check' if not kill else ''}; at {w:,} words it is outside its band ({lo:,}–{hi:,}), and Amendment 2's length-only retry (attempt 3) {why3}, so this rewrite is judged as it is, its word count disclosed"
+    elif fails: note += f"{' but' if not kill else '; it'} still fails the script check(s) {', '.join(fails)} after the one retry, which PREREG-6 gives no rule for (see DEVIATIONS.md)"
+    raw_final = "".join(f"# {l}\n" for l in hdr) + f"# {note}\n\n" + final + "\n"
+    if r3: info["amendment_2_retry"] = r3
     return raw_final, info
 def finalize(q, arm):
     b = final_build(q, arm)
@@ -523,8 +561,9 @@ def packet_list():
 def inputs_ready(part, q):
     need = {"M": [f_rewrite(q, PM)], "S": [f_rewrite(q, PS)], "P": [], "B1": [f_draft(q, "0.2.0"), shipped_file(q, "0.2.0")], "B2": [f_draft(q, "0.1.0")]}[part]
     miss = [p for p in need if not os.path.exists(p)]
-    if part in ("M", "S") and not miss and not check_ok(script_check(q, TYPES[part], rd(f_rewrite(q, TYPES[part])))):
-        miss.append(f_rewrite(q, TYPES[part]) + " (fails the script checks; held for the owner's decision, see DEVIATIONS.md)")
+    if part in ("M", "S") and not miss:
+        bad = gating_fails(q, TYPES[part], script_check(q, TYPES[part], rd(f_rewrite(q, TYPES[part]))))
+        if bad: miss.append(f_rewrite(q, TYPES[part]) + f" (fails the script check(s) {', '.join(bad)}; see DEVIATIONS.md)")
     return miss
 def blind():
     made, missing = 0, {}
@@ -817,6 +856,6 @@ def seal():
 
 if __name__ == "__main__":
     cmd = {"seal": seal, "rewrite-prompt": rewrite_prompt, "save-control": save_control, "check": check, "audit-prompt": audit_prompt, "save-audit": save_audit,
-           "extract": extract, "run-prompt": run_prompt, "save-run": save_run, "blind": blind, "savejudge": savejudge, "parse": parse, "classify-input": classify_input,
+           "length-retry": length_retry, "extract": extract, "run-prompt": run_prompt, "save-run": save_run, "blind": blind, "savejudge": savejudge, "parse": parse, "classify-input": classify_input,
            "save-classify": save_classify, "report": report, "results": results, "verify": verify, "spotcheck": spotcheck}
     cmd[sys.argv[1]](*sys.argv[2:])

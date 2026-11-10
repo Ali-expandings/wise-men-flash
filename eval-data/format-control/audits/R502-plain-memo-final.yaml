@@ -1,7 +1,24 @@
 question: R502
 arm: plain-memo
-from_attempt: 2
-deleted: []
+from_attempt: 3
+deleted:
+- R: 65
+  label: NEW
+  refs: &id001
+  - 8
+  - 9
+  note: claims both factors would still be present in any January that ships a large accumulated batch (presented as a risk that remains under the plan); the source never says this, and it drops S9's "usually"
+  text: Both would still be present in any January that ships a large accumulated batch.
+- R: 77
+  label: NEW
+  refs: &id002 []
+  note: not the fixed sentence word for word ("further" inserted); a meta-claim about the source that the source does not make
+  text: No further case against this recommendation is made beyond the risks above.
+- R: 97
+  label: NEW
+  refs: &id003 []
+  note: not one of the three fixed sentences; an interpretive meta-claim about the source's hedging (it treats S7's "unclear" as not a hedge) that the source does not state
+  text: No load-bearing claim in the source carries a "may", "might", "could", "possibly" or "unclear" hedge as its own assertion.
 inserted_fixed_sentence_in: []
 dropped: []
 counts_after:
@@ -12,7 +29,29 @@ counts_after:
 reuse:
   source_sentences: 35
   cited_once_or_more: 35
-  cited_twice_or_more: 33
-  max: 5
-  mean: 2.86
-words: 1285
+  cited_twice_or_more: 32
+  max: 6
+  mean: 3.06
+words: 1355
+amendment_2_retry:
+  words: 1355
+  deleted:
+  - R: 65
+    label: NEW
+    refs: *id001
+    note: claims both factors would still be present in any January that ships a large accumulated batch (presented as a risk that remains under the plan); the source never says this, and it drops S9's
+      "usually"
+    text: Both would still be present in any January that ships a large accumulated batch.
+  - R: 77
+    label: NEW
+    refs: *id002
+    note: not the fixed sentence word for word ("further" inserted); a meta-claim about the source that the source does not make
+    text: No further case against this recommendation is made beyond the risks above.
+  - R: 97
+    label: NEW
+    refs: *id003
+    note: not one of the three fixed sentences; an interpretive meta-claim about the source's hedging (it treats S7's "unclear" as not a hedge) that the source does not state
+    text: No load-bearing claim in the source carries a "may", "might", "could", "possibly" or "unclear" hedge as its own assertion.
+  dropped: []
+  script_check_failures: []
+  used: true

@@ -1,7 +1,7 @@
 # script checks (fc6.py check, PREREG-6 Part A rule 1) | rewrites/R502-plain-memo.md | question: R502 | arm: plain-memo
 
 PASS  headers: the six headers in order, nothing before the first, no other heading, no rule
-FAIL  words: 1,285 words; band 1,287–1,573
+PASS  words: 1,355 words; band 1,287–1,573
 PASS  numbers: every number appears in the source
 PASS  links: no link the source lacks
 PASS  citations: no citation the source lacks
