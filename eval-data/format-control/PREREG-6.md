@@ -149,3 +149,11 @@ At the 2026-07 list prices in `h2h5.py`, this comes to about $65–80 of usage: 
 - The `F` and `S` estimates compare different judges across the M and P packets, with flash as the shared anchor.
 - B1 mixes four runs from 2026-10-22 with four new ones, all 0.2.0 on the same models. The 2026-10-22 four were chosen because their 0.1.0 answers had failed. B1 and B2 use different models and are never compared with each other.
 - The drafts come from local transcripts that are not in the repository. The SHA-256 hashes let the owner's machine re-check them; nobody else can.
+
+## Amendment 2, 2026-11-10 (before any judge ran; owner left the call to the analyst)
+
+Step 2 left 10 of 16 rewrites outside their word bands with clean audits, and the plan had no rule for that (`DEVIATIONS.md`). Fixed now, before any judging:
+
+- **`plain-memo-short`:** the ±10% band is dropped. The memo format adds a summary Recommendation and a Confidence section, so the plain answer's own length is close to unreachable without cutting source content. The arm's purpose, a format change with no padding, holds as produced: all eight are 624–1,078 words against flash's 1,430–2,000. All eight go to judging as they are, and their word counts are reported.
+- **`plain-memo`:** the three rewrites outside flash's band (R502, R507, R508) get one length-only retry by a fresh rewriter with the same prompt plus the target, audited the same way. A retry that is clean and in band replaces the earlier rewrite; otherwise the earlier clean rewrite is judged as it is and its word count is disclosed. No other rewrite is touched.
+- **Owner's spot check (step 3):** not done. The owner was asked and left it to the analyst's verdict; the blind audits found no NEW, STRONGER, WEAKER or DROPPED sentence in any final rewrite. `RESULTS-6.md` states that the spot check was skipped.
