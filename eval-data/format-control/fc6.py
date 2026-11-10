@@ -723,16 +723,19 @@ def lines():
     for part in ("B1", "B2"):
         if R[part]: corr.append(f"{part}: " + ", ".join(f"{NAMES[a]} {r2(st.mean(R[part][q][a]['correctness'] for q in R[part]))}" for a in ("draft", "shipped")))
     L += ["Correctness first. In round 5 a plain answer scored higher on correctness than flash and wise-men (4.3 against 3.8 for both). In this round, correctness out of 5 (mean of three judges, then of questions), by packet type: " + "; ".join(corr) + ".", ""]
-    L += ["The caveat. Every answer, rewrite, audit, judge and classifier here is a Claude model, there are no human grades, and this tests one known bias of LLM judges with LLM judges. It cannot answer whether AI validating AI can be trusted; only human blind ratings can, and they are a separate step.", ""]
+    L += ["The caveat. Every answer, rewrite, audit, judge and classifier here is a Claude model, there are no human grades, and this tests one known bias of LLM judges with LLM judges. It cannot answer whether AI validating AI can be trusted; only human blind ratings can, and they are a separate step. "
+          "The owner's spot check of two rewrites before judging (Part A, rule 4) was skipped: he left the call to the analyst (Amendment 2), so the blind audits are the only check that the rewrites add nothing to the answer they restate.", ""]
     f = m["flash"]; b = m["B1"]
     L += [f"**A1 (primary): the win over the plain answer survives format matching — {f['word']}.** Flash − plain-memo (`D_ctrl`, M packets): {iv(f['D_ctrl'])}; flash − plain answer (`D_plain`, P packets): {iv(f['D_plain'])}."
           + (" The 3-answer sitting did not reproduce round 5's gap (the `D_plain` interval is not above zero), so A1 is inconclusive and `S` is not reported." if f["word"] == "inconclusive" else ""), ""]
-    L += [f"**B1 (primary): the checker improves the memo (0.2.0) — {b['word']}.** Shipped − draft (`C`, total /25): {iv(b['C'])}.", ""]
+    L += [f"**B1 (primary): the checker improves the memo (0.2.0) — {b['word']}.** Shipped − draft (`C`, total /25): {iv(b['C'])}. "
+          "B1 measured wise-men-flash 0.2.0, whose practitioner anchor and Devil's Advocate ran on `opus` (`claude-opus-5-5`); 0.3.0, released on 2026-11-10, routes those two seats to `fable` (falling back to `opus`), which no round has measured.", ""]
     L += ["## Part A: the format-matched control", ""]
     for tag, hero in (("flash", FL), ("wise-men", WM)):
         x = m[tag]; nm = NAMES[hero]
         L += [f"- {'A1' if tag == 'flash' else 'A2'} ({nm}): {x['word']}. `D_ctrl` {iv(x['D_ctrl'])}; `D_plain` {iv(x['D_plain'])}."]
-        L += [f"- A3 ({nm}): format effect `F` = `D_plain` − `D_ctrl` {iv(x['F'])}" + (f"; share of the gap format and length explain, `S` = {r2(x['share']['S'])} [{r2(x['share']['ci'][0])}, {r2(x['share']['ci'][1])}]." if x["share"] else "; `S` not reported (the replication guard failed or no question has both packet types).")]
+        L += [f"- A3 ({nm}): format effect `F` = `D_plain` − `D_ctrl` {iv(x['F'])}" + (f"; share of the gap format and length explain, `S` = {s2(x['share']['S'])} [{s2(x['share']['ci'][0])}, {s2(x['share']['ci'][1])}]." if x["share"] else "; `S` not reported (the replication guard failed or no question has both packet types).")
+              + (" Both are negative: next to the same anchor, the format-matched rewrite scored below the plain answer it restates, so format and length explain none of the gap, and the stated prediction (`F` > 0) did not hold." if x["F"] and x["F"]["mean"] < 0 else "")]
         L += [f"- A5 ({nm}): `D_short` {iv(x['D_short'])} ({x['word_short']} by A1's rule); format only `F_fmt` = `D_plain` − `D_short` {iv(x['F_fmt'])}; length `F_len` = `D_short` − `D_ctrl` {iv(x['F_len'])}."
               + (" `D_short` holds while `D_ctrl` does not: the stretched rewrite, not the format, closed the gap." if x["word_short"].startswith("holds") and not x["word"].startswith("holds") else "")]
         L += [f"- A4 ({nm}): correctness, plain-memo − {nm} (M) {iv(x['corr_M'])}; plain answer − {nm} (P) {iv(x['corr_P'])}; plain-memo-short − {nm} (S) {iv(x['corr_S'])}.", ""]
@@ -764,22 +767,47 @@ def lines():
         if not R[part]: continue
         arms = [FL, WM, TYPES[part]] if part in TYPES else ["draft", "shipped"]
         L += [f"| {part} | " + " | ".join(NAMES[a] for a in arms) + " |", "|---|" + "--:|" * len(arms)] + [f"| {q} | " + " | ".join(r2(R[part][q][a]["composite"]) for a in arms) + " |" for q in sorted(R[part])] + [""]
-    L += ["## The rewrites: audit results", "", "| question | arm | from attempt | NEW / STRONGER / WEAKER / DROPPED, attempt 1 | after the retry | deleted | dropped, disclosed | words |", "|---|---|--:|---|---|--:|--:|--:|"]
+    L += ["## The rewrites: audit results", "", "NEW / STRONGER / WEAKER / DROPPED as each audit found them, before the deletion rule. Attempt 3 is Amendment 2's length-only retry (`plain-memo` R502, R507, R508). Words and band are the final's.", "",
+          "| question | arm | from attempt | attempt 1 | attempt 2 | attempt 3 | deleted | dropped, disclosed | words | band |", "|---|---|--:|---|---|---|--:|--:|--:|---|"]
     for q in QIDS:
         for arm in CONTROLS:
             fy = f_audit(q, arm, "final", "yaml")
             if not os.path.exists(fy): continue
-            fi = yaml.safe_load(rd(fy)); a1, a2 = audit_of(q, arm, 1), audit_of(q, arm, 2)
+            fi = yaml.safe_load(rd(fy)); a1, a2, a3 = audit_of(q, arm, 1), audit_of(q, arm, 2), audit_of(q, arm, 3)
             fmt = lambda a: "/".join(str(a["counts"][x]) for x in ("NEW", "STRONGER", "WEAKER", "DROPPED")) if a else "–"
-            L += [f"| {q} | {arm} | {fi['from_attempt']} | {fmt(a1)} | {fmt(a2)} | {len(fi['deleted'])} | {len(fi['dropped'])} | {fi['words']} |"]
+            r3 = fi.get("amendment_2_retry"); lo, hi, _ = band(arm, q)
+            t3 = fmt(a3) + (f" ({r3['words']:,} words, {'used' if r3['used'] else 'not used'})" if r3 else "")
+            bd = f"{lo:,}–{hi:,}, " + ("in" if lo <= fi["words"] <= hi else "out") + (" (band dropped)" if arm == PS else "")
+            L += [f"| {q} | {arm} | {fi['from_attempt']} | {fmt(a1)} | {fmt(a2)} | {t3} | {len(fi['deleted'])} | {len(fi['dropped'])} | {fi['words']:,} | {bd} |"]
+    L += ["", "## Judges", ""] + judge_lines()
     dv = os.path.join(H, "DEVIATIONS.md")
     L += ["", "## Deviations and disclosures", ""] + ([l for l in rd(dv).split("\n") if l.startswith("- ")] if os.path.exists(dv) else ["- none recorded"])
     L += ["", "## Reproduce", "", "`python3 eval-data/format-control/fc6.py report` prints this page; `results` rewrites it; `verify` rebuilds every packet from the stored answers, rewrites and drafts, every final rewrite from its attempt and audit, and re-parses every judgment. "
           "The drafts and the new runs were taken from local agent transcripts, which are not in the repository; their headers carry each transcript's SHA-256, so the owner's machine can re-check them.", ""]
     return L
+def s2(x): return ("−" if x < 0 else "") + r2(abs(x))
+SRC_QUOTE = re.compile(r"[\"“]the source[\"”]|\"the source|the source says|“the source")
+def judge_lines():
+    """Counts from the stored judgments: valid ones by part, re-runs, the models in every judge header."""
+    L, valid, models = [], {}, {}
+    for part in PARTS:
+        valid[part] = len(glob.glob(os.path.join(D["judgments"], part, "R50?-j?.md")))
+    inval = sorted(glob.glob(os.path.join(D["judgments"], "*", "*-invalid-*.md")))
+    for p in glob.glob(os.path.join(D["judgments"], "*", "*.md")):
+        m = re.search(r"\| model: ([\w.-]+)", rd(p)); models[m[1] if m else "?"] = models.get(m[1] if m else "?", 0) + 1
+    L += [f"- {sum(valid.values())} valid judgments (" + ", ".join(f"{p} {valid[p]}" for p in PARTS) + "), each by a fresh `wise-member` agent on `opus` that read its packet and nothing else."
+          + (f" {len(inval)} judgment(s) failed and were re-run once by a fresh judge on the same packet: " + "; ".join(f"{rel(p)} ({re.search(r'# invalid: (.*)', rd(p))[1]})" for p in inval) + "." if inval else " None failed.")
+          + " Model in every judge transcript, re-runs included: " + ", ".join(f"`{k}` ×{v}" for k, v in sorted(models.items())) + "."]
+    q = {part: sum(1 for qq in QIDS for j in JUDGES if os.path.exists(f_judgment(part, qq, j)) and SRC_QUOTE.search(rd(f_judgment(part, qq, j)).split("\n\n", 1)[1])) for part in TYPES}
+    n = {arm: sum(1 for qq in QIDS if re.search(r"\bthe source\b", body(f_rewrite(qq, arm)), re.I)) for arm in CONTROLS}
+    L += [f"- What the control carried besides format. The rewrite rules let the Strongest counter-position and Confidence sections hold only what the plain answer says, so where it raised no objection the section says so, and Confidence follows a fixed hedge-word rule. "
+          f"The rewrite prompt calls the plain answer \"the source\", and the rewriters carried that word into {n[PM]} of 8 `plain-memo` and {n[PS]} of 8 `plain-memo-short` finals (the audits check content, not this label, so none flagged it); "
+          f"{q['M']} of 24 M-packet and {q['S']} of 24 S-packet judgments quote \"the source\" as a fault ({q['P']} of 24 P-packet judgments, whose packets hold no rewrite). "
+          "Both rewrites scored below the plain answer on every axis. These are part of what A1 measured: the control is a faithful rewrite under the pre-registered rules, not a format-only twin of the plain answer, and the verdicts above stand as pre-registered."]
+    return L
 def report(): print("\n".join(lines()))
 def results():
-    L = ["# Round 6 results: a format-matched control and the checker on and off", "", f"Pre-registration: [`PREREG-6.md`](PREREG-6.md), committed as `{PREREG_COMMIT}` before any rewrite, run or judgment.", ""] + lines()
+    L = ["# Round 6 results: a format-matched control and the checker on and off", "", f"Pre-registration: [`PREREG-6.md`](PREREG-6.md), committed as `{PREREG_COMMIT}` before any rewrite, run or judgment, and amended before any judge ran (Amendment 2, `{AMEND2_COMMIT}`, 2026-11-10).", ""] + lines()
     wr(os.path.join(H, "RESULTS-6.md"), "\n".join(L)); print("wrote RESULTS-6.md")
 
 def verify():

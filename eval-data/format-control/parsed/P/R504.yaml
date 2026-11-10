@@ -1,0 +1,69 @@
+question_id: R504
+part: P
+judges:
+  j1:
+    direct:
+      correctness: 4
+      insight: 3
+      practical: 3
+      risk: 3
+      dissent: 1
+      composite: 14
+    wise-men-3.14:
+      correctness: 3
+      insight: 5
+      practical: 4
+      risk: 4
+      dissent: 5
+      composite: 21
+    wise-men-flash:
+      correctness: 3
+      insight: 4
+      practical: 5
+      risk: 4
+      dissent: 4
+      composite: 20
+  j2:
+    wise-men-3.14:
+      correctness: 3
+      insight: 5
+      practical: 4
+      risk: 4
+      dissent: 5
+      composite: 21
+    wise-men-flash:
+      correctness: 4
+      insight: 4
+      practical: 5
+      risk: 5
+      dissent: 4
+      composite: 22
+    direct:
+      correctness: 4
+      insight: 3
+      practical: 3
+      risk: 2
+      dissent: 1
+      composite: 13
+  j3:
+    wise-men-flash:
+      correctness: 4
+      insight: 4
+      practical: 5
+      risk: 5
+      dissent: 4
+      composite: 22
+    direct:
+      correctness: 4
+      insight: 3
+      practical: 3
+      risk: 3
+      dissent: 1
+      composite: 14
+    wise-men-3.14:
+      correctness: 3
+      insight: 5
+      practical: 4
+      risk: 4
+      dissent: 5
+      composite: 21

@@ -51,6 +51,7 @@ if python3 -c 'import yaml' 2>/dev/null; then
   H2H5_STDOUT=1 python3 eval-data/head-to-head/h2h5.py results 2>/dev/null | diff -q - eval-data/head-to-head/RESULTS-V5.md >/dev/null \
     && say "RESULTS-V5.md matches a fresh regeneration" ok || bad "RESULTS-V5.md differs from h2h5.py results"
   python3 eval-data/head-to-head/h2h5.py verify >/dev/null 2>&1 && say "round-5 packets and scores rebuild from the raw data" ok || bad "h2h5.py verify failed"
+  python3 eval-data/format-control/fc6.py verify >/dev/null 2>&1 && say "round-6 packets, rewrites and scores rebuild" ok || bad "fc6.py verify failed"
   tmp=$(mktemp -d); CHARTS_OUT="$tmp" python3 scripts/make_charts.py >/dev/null 2>&1
   stale=$(for f in "$tmp"/*.svg; do cmp -s "$f" "assets/$(basename "$f")" || basename "$f"; done); rm -rf "$tmp"
   [ -z "$stale" ] && say "charts in assets/ are current" ok || bad "stale chart(s), run scripts/make_charts.py: $(echo $stale)"

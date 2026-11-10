@@ -1,0 +1,48 @@
+question_id: R505
+part: B1
+judges:
+  j1:
+    draft:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 4
+      composite: 23
+    shipped:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 5
+      composite: 24
+  j2:
+    shipped:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 4
+      composite: 23
+    draft:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 4
+      composite: 23
+  j3:
+    shipped:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 4
+      composite: 23
+    draft:
+      correctness: 4
+      insight: 5
+      practical: 5
+      risk: 5
+      dissent: 5
+      composite: 24
