@@ -6,6 +6,8 @@ A decision helper for [Claude Code](https://claude.com/claude-code). You ask a h
 
 It is the fast version of [wise-men](https://github.com/Ali-expandings/wise-men). About 15 minutes a question instead of 50.
 
+<p align="center"><img src="assets/demo-flash.gif" alt="21-second demo: three members answer in parallel, a checked memo comes back" width="760"></p>
+
 ## Try it in two minutes
 
 ```
@@ -36,6 +38,8 @@ Real example, shortened. Question: *"My boss offered to sell me the landscaping 
 ## Does it work?
 
 In a blind test on eight new questions, judged by three Claude Opus judges that didn't know which answer came from which tool, it scored 23.4/25. The full wise-men council scored 23.6 and took three times as long (16.7 vs 50.2 minutes). Six other popular Claude Code skills and a plain answer scored 14.9 to 19.1. On correctness alone, the plain answer scored higher (4.3 vs 3.8). Every judge and every answer was a Claude model, with no human grading, so read it as a strong signal, not proof. That test ran the strong seats on Opus; since 0.3.0 they run on Fable 5.2 where available, which hasn't been tested yet.
+
+A follow-up test (round 6, November 2026) took on the obvious objection, that judges just prefer long, structured memos. The plain answer was rewritten into the same memo format, once at flash's length and once at its own, with nothing new added. Flash still scored about 8 points higher, and length made no measurable difference; on correctness alone, flash and the plain answer tied (3.7 each). The rewrites read a little like rewrites, so treat it as evidence, not proof. The same test found the final checker clearly improves the memo: +2.0 of 25, and the contradictions judges listed fell from 32 to 12. Claude judged Claude again. Details: [RESULTS-6.md](eval-data/format-control/RESULTS-6.md).
 
 > "I tried both: wise-men and also the flash version, pretty good results. great job."
 > — [Bilgin Ibryam](https://generativeprogrammer.com), Generative Programmer
