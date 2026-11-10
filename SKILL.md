@@ -209,21 +209,21 @@ Any FAIL is blocking. Fix, or ship with the objection quoted. (GROUNDING and CON
 Route by tier, never by model id. Model names change faster than this file, so resolve the tiers from the environment you are running in, once per run, before the first spawn:
 
 1. **Read the allowed values of the Agent tool's `model` parameter.** That list, not this file, is what exists on this machine and plan.
-2. **Map the tiers to aliases:** strong = `opus`, mid = `sonnet`, cheap = `haiku`. Claude Code points each alias at the newest model in its family, so a new model release needs no edit here.
-3. **A tier missing from the list, or a spawn rejected for its model:** use the nearest tier that exists (strong → mid, mid → cheap, cheap → mid), retry that spawn once, keep the remap for the rest of the run, and add one footer line naming the requested and the actual tier.
+2. **Map the tiers to aliases:** strong = `fable` (the strongest model; `opus` when `fable` is not in the list), mid = `sonnet`, cheap = `haiku`. Claude Code points each alias at the newest model in its family, so a new model release needs no edit here.
+3. **A tier missing from the list, or a spawn rejected for its model:** use the nearest tier that exists (strong: `fable` → `opus` → mid; mid → cheap; cheap → mid), retry that spawn once, keep the remap for the rest of the run, and add one footer line naming the requested and the actual tier.
 4. **No `model` parameter at all** (another agent harness, or a provider that fixes the model): omit the field, so every seat runs on the session's model, and add one footer line: single-model council.
 
 Never fail a council over a model name.
 
 | Seat | Tier | Agent `model` | Why |
 |---|---|---|---|
-| Practitioner anchor | strong | `opus` | owns correctness; the strongest seat |
+| Practitioner anchor | strong | `fable` (else `opus`) | owns correctness; the strongest seat |
 | Domain member | mid | `sonnet` | the workhorse lens |
-| Devil's Advocate | strong | `opus` | a weak DA is council theatre; always the strong tier |
+| Devil's Advocate | strong | `fable` (else `opus`) | a weak DA is council theatre; always the strong tier |
 | Stage 4.5 checker | cheap | `haiku` | it checks the draft against the question and the brief — five pass/fail checks, no answers to cross-reference; keeping it cheap keeps the incentive to actually run it |
 | Chairman | main thread | — | the strongest model you have; never delegated |
 
-What was measured: the same aliases resolved to Opus 5, Sonnet 5 and Haiku 4.5 in round 4 (2026-09-18) and to Opus 5.5, Sonnet 5 and Haiku 4.5 in round 5 (2026-09-24), with no change to this file. A newer model behind an alias is untested by those rounds, not assumed better. Overrides: `--strong` puts the domain member on the strong tier too; `--cheap` drops the anchor/DA to mid (a weaker council — disclose it).
+What was measured: the same aliases resolved to Opus 5, Sonnet 5 and Haiku 4.5 in round 4 (2026-09-18) and to Opus 5.5, Sonnet 5 and Haiku 4.5 in round 5 (2026-09-24), with no change to this file. A newer model behind an alias is untested by those rounds, not assumed better. Since 0.3.0 (2026-11-10) the strong tier is `fable` (Fable 5.2 on that date), the strongest model available; both measured rounds ran the strong seats on `opus`, so this routing is untested by them. Overrides: `--strong` puts the domain member on the strong tier too; `--cheap` drops the anchor/DA to mid (a weaker council — disclose it).
 
 ## Honest limits
 
@@ -231,9 +231,11 @@ What was measured: the same aliases resolved to Opus 5, Sonnet 5 and Haiku 4.5 i
 - **Chairman = orchestrator** (a conflict of interest): the same thread picked the roster and wrote the memo. The one fresh checker is the mitigation, not a cure — it matters most when the main-thread model is not the strongest available.
 - **Members are offline**: they reason and flag; the orchestrator verifies afterwards (runbook step 6). A council cannot look anything up.
 - **No peer review, no debate**: that is the trade for speed. The full `wise-men` skill buys back the score those stages add (round 5: the full council 23.6 to flash's 23.4; round 4: 23.8 to 23.3 — both inside judge noise) at about three times the time and four and a half times the cost. On a hard, multi-part or irreversible question, spend it.
-- **my-call-first is unmeasured**: it follows HCI work on cognitive forcing (asking for a person's own judgment before they see AI advice tends to cut over-reliance, at the cost of an extra step people can find annoying), which is why it is opt-in. Whether it improves decisions made with this skill has not been tested.
+- **my-call-first is unmeasured**: it follows HCI work on cognitive forcing (asking for a person's own judgment before they see AI advice tends to cut over-reliance, at the cost of an extra step people can find annoying; de Jong et al., "Cognitive Forcing for Better Decision-Making: Reducing Overreliance on AI Systems Through Partial Explanations", ACM, 2025, doi:10.1145/3710946), which is why it is opt-in. Whether it improves decisions made with this skill has not been tested.
 - **Measured twice, by Claude judges only**: round 5 ran this skill as installed on eight questions (23.4/25); round 4 ran the profile it was extracted from as an arm inside `wise-men` on five (23.3/25). Every judge and every arm was a Claude model; there are no human grades.
 
 ## Credits
 
 Extracted from the `wise-men` skill (the fast tier). Inspired by github.com/karpathy/llm-council; design choices drew on (not validated by) Du 2023 multi-agent debate, Liang 2024 divergent thinking, Khan 2024 debate-via-persuasion, Zheng 2024 LLM-as-judge bias. MIT licensed.
+
+The my-call-first mode (0.3.0) was Sander de Jong's idea (Aalborg University), credited with his permission; it follows his work on cognitive forcing (de Jong et al., "Cognitive Forcing for Better Decision-Making: Reducing Overreliance on AI Systems Through Partial Explanations", ACM, 2025, doi:10.1145/3710946).

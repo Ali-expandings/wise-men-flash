@@ -19,7 +19,7 @@ Restart Claude Code, then ask:
 /wise-men-flash should we move everyone to annual billing to cut churn?
 ```
 
-**Want to decide first?** Add `--my-call-first`. When the memo is ready, the skill asks for your own call and reason before showing it, then shows where the memo agrees or differs and asks for your second call. Optional, because the extra step is only worth it on hard calls.
+**Want to decide first?** Add `--my-call-first`. When the memo is ready, the skill asks for your own call and reason before showing it, then shows where the memo agrees or differs and asks for your second call. Optional, because the extra step is only worth it on hard calls. The idea came from Sander de Jong, who researches cognitive forcing ([his paper](https://doi.org/10.1145/3710946)).
 
 ## What comes back
 
@@ -35,7 +35,7 @@ Real example, shortened. Question: *"My boss offered to sell me the landscaping 
 
 ## Does it work?
 
-In a blind test on eight new questions, judged by three Claude Opus judges that didn't know which answer came from which tool, it scored 23.4/25. The full wise-men council scored 23.6 and took three times as long (16.7 vs 50.2 minutes). Six other popular Claude Code skills and a plain answer scored 14.9 to 19.1. On correctness alone, the plain answer scored higher (4.3 vs 3.8). Every judge and every answer was a Claude model, with no human grading, so read it as a strong signal, not proof.
+In a blind test on eight new questions, judged by three Claude Opus judges that didn't know which answer came from which tool, it scored 23.4/25. The full wise-men council scored 23.6 and took three times as long (16.7 vs 50.2 minutes). Six other popular Claude Code skills and a plain answer scored 14.9 to 19.1. On correctness alone, the plain answer scored higher (4.3 vs 3.8). Every judge and every answer was a Claude model, with no human grading, so read it as a strong signal, not proof. That test ran the strong seats on Opus; since 0.3.0 they run on Fable 5.2 where available, which hasn't been tested yet.
 
 > "I tried both: wise-men and also the flash version, pretty good results. great job."
 > — [Bilgin Ibryam](https://generativeprogrammer.com), Generative Programmer
