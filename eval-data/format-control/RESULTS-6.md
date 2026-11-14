@@ -189,6 +189,10 @@ NEW / STRONGER / WEAKER / DROPPED as each audit found them, before the deletion 
 - Version: B1's seven questions measured wise-men-flash 0.2.0, whose two strong seats ran on `opus` (`claude-opus-5-5`). 0.3.0, released on 2026-11-10 before the judges ran, routes those seats to `fable` (falling back to `opus`); this round does not measure 0.3.0.
 - Consequences (PREREG-6): A1 holds and B1 clearly improves, so neither triggers a change to the README, DETAILS.md, SKILL.md or the wise-men README; none was made. `eval-data/README.md` and the CHANGELOG list the round.
 
+## Credits
+
+- Part B, the checker on and off, was asked for by Shuai Wu (University of Colorado Boulder), credited with his permission.
+
 ## Reproduce
 
 `python3 eval-data/format-control/fc6.py report` prints this page; `results` rewrites it; `verify` rebuilds every packet from the stored answers, rewrites and drafts, every final rewrite from its attempt and audit, and re-parses every judgment. The drafts and the new runs were taken from local agent transcripts, which are not in the repository; their headers carry each transcript's SHA-256, so the owner's machine can re-check them.

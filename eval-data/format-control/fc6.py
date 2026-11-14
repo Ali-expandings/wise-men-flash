@@ -783,9 +783,12 @@ def lines():
     L += ["", "## Judges", ""] + judge_lines()
     dv = os.path.join(H, "DEVIATIONS.md")
     L += ["", "## Deviations and disclosures", ""] + ([l for l in rd(dv).split("\n") if l.startswith("- ")] if os.path.exists(dv) else ["- none recorded"])
+    L += ["", "## Credits", ""] + CREDITS
     L += ["", "## Reproduce", "", "`python3 eval-data/format-control/fc6.py report` prints this page; `results` rewrites it; `verify` rebuilds every packet from the stored answers, rewrites and drafts, every final rewrite from its attempt and audit, and re-parses every judgment. "
           "The drafts and the new runs were taken from local agent transcripts, which are not in the repository; their headers carry each transcript's SHA-256, so the owner's machine can re-check them.", ""]
     return L
+# People whose questions shaped this round, each named with their permission (added after the results; no number depends on it).
+CREDITS = ["- Part B, the checker on and off, was asked for by Shuai Wu (University of Colorado Boulder), credited with his permission."]
 def s2(x): return ("−" if x < 0 else "") + r2(abs(x))
 SRC_QUOTE = re.compile(r"[\"“]the source[\"”]|\"the source|the source says|“the source")
 def judge_lines():
