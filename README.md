@@ -6,7 +6,7 @@ A decision helper for [Claude Code](https://claude.com/claude-code). You ask a h
 
 It is the fast version of [wise-men](https://github.com/Ali-expandings/wise-men). About 15 minutes a question instead of 50.
 
-<p align="center"><img src="assets/demo-flash.gif" alt="21-second demo: three members answer in parallel, a checked memo comes back" width="760"></p>
+<p align="center"><img src="assets/demo-flash.gif" alt="27-second demo: a real Claude Code run launches three agents, one of them a Devil's Advocate told to argue back; the memo keeps its strongest counter-position; then the blind-test result (8 of 8) and the listing in a 17.5k-star collection" width="420"></p>
 
 ## Try it in two minutes
 
