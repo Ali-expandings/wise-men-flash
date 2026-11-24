@@ -1,0 +1,8 @@
+<!-- model: claude-sonnet-5-5 -->
+```
+DISSENT: PASS — The counter-position attacks the premise the Recommendation rests on, that the $15,000 is best-case and the unobserved tail is unproven. It argues the tail may be better, not worse. It gives its win conditions (churn below 1% after month 12, later cohorts matching earlier ones, margin of about 80% or better) and the evidence that would show them (churn by tenure band, months 13-36).
+DISCLOSURE: PASS — The memo has no footer, no council or tier language, and nothing before "## Recommendation". It names no outside source.
+CLAIMS: PASS — I recomputed the figures and they match: $5,287 over 36 months, 65% beyond month 36, 83-month average stay, payback of about 34 and 49 months, $2,023 in year one, LTV:CAC of 3.0, 2.25, 1.36 and 0.70, and the $1,200 to $2,800 ceiling range. The margin and discount rate are labelled placeholders, and the claims about survival-curve flattening and channel quality are marked unverified.
+COVERAGE: PASS — The memo covers how far to trust the $15,000 and what an honest estimate looks like. It gives dated steps, a three-part restatement and per-channel ceilings. An independent analyst, not growth, does the cohort work. A few figures recur (65%, the 49-month payback), but not enough to fail.
+CONSISTENCY: FAIL — The Confidence section rates "the $15,000 is a best-case figure" as High confidence. The counter-position says revenue-only $15,000 "could be about right or even low", and the Risks say expansion revenue pushes the other way. Confidence also rates whether the tail is better or worse than constant 1.2% as Low. "Best-case" is an absolute claim that these undercut.
+```

@@ -1,0 +1,8 @@
+<!-- model: claude-haiku-5-5 -->
+```
+DISSENT: PASS — The counter-position argues "the tail is unobserved, not bad" against the Recommendation's reliance on the tail being unreliable, states it at full strength, and gives three conditions (churn below 1% after month 12, later cohorts matching earlier ones, margin around 80%+) plus the tenure-band churn evidence that would show it.
+DISCLOSURE: PASS — The memo has no separate footer; it opens directly with ## Recommendation, contains no council mechanics, and the closing Confidence and Material unknowns sections are memo content rather than council tiers or the check itself.
+CLAIMS: PASS — Arithmetic checks out: 180/0.012 = $15,000; 36-month revenue ≈ $5,287 (65% beyond month 36); 60-month ≈ $7,731; discounted 36/60-month/endless ≈ $3,498/$4,763/$6,813; LTV:CAC 3.0/2.25/1.36/0.70; payback ≈ 33.6 months revenue and ≈ 48.7 months at 75% margin; first-year revenue ≈ $2,024; 3:1 on discounted LTV ≈ $1,166–$2,271; 24-month margin ≈ $2,829. The 75% margin, 10% discount rate, and "survival curves typically flatten" are each tagged unverified once.
+COVERAGE: FAIL — All parts of the question are answered with concrete steps and the decision stays with finance or an analyst outside growth, but the memo repeats rather than says each thing once: the 49-month margin payback appears in Why, Risks and Confidence, and the 65% beyond-observed figure appears in Why, the table commentary and Confidence.
+CONSISTENCY: PASS — No contradictions found: the reversibility claims (ceiling raisable monthly, $5,000 hard to undo once spent) agree across Risks and the cost-of-being-wrong paragraph, the ranges are computed at both ends, and the $5,000 defensibility test in step 6 agrees with the 36-month margin figures.
+```

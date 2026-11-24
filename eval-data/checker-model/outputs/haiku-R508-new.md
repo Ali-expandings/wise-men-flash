@@ -1,0 +1,8 @@
+<!-- model: claude-haiku-5-5 -->
+```
+DISSENT: PASS — The counter-position attacks the premise the staged plan depends on (that diligence can settle whether clients are loyal to the business or to him), argues it at full strength, and names three conditions where it wins plus the evidence that would show each.
+DISCLOSURE: PASS — The memo has no footer, nothing precedes `## Recommendation`, and there are no council mechanics; the one source caveat (SBA rules taken from law-firm and lender summaries, confirm with lender) sits inline in the body.
+CLAIMS: PASS — The SBA seller-note rule and the earn-out question are flagged as unverified, and the 1.25/1.5 coverage figures and 20% stress test are tagged as rules of thumb in Confidence; the "about six months of household expenses" reserve is an untagged rule of thumb but is not load-bearing.
+COVERAGE: PASS — Both parts of the question are answered (the leaning is reasonable as a reason to pursue but not to sign, and there is a concrete walk-away list), with dated steps and an accountant rebuilding earnings from returns and bank statements rather than the seller's summary; the coverage thresholds and partner-tolerance point repeat across Risks, the walk-away list and Confidence, which is minor redundancy.
+CONSISTENCY: FAIL — "Everything short of signing is cheap and reversible" in Risks is undercut in the same paragraph by "Exclusivity or other binding terms can lock you in before closing," and the walk-away test sets the coverage floor at 1.25 while Risks says the deal "would have to be 1.5 times or better after the stress test."
+```

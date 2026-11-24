@@ -107,7 +107,7 @@ flowchart TB
     M1 & M2 & M3 --> D["<b>Validator</b><br/>five sections each · one retry"]
     D --> C["<b>Chairman</b> — the main thread<br/>one decision memo<br/>evidence over agreement"]
     C --> V["<b>Flagged facts checked</b><br/>a correction rewrites the sentence"]
-    V --> K["<b>Independent check</b><br/>cheap model, one pass<br/>dissent · disclosure · claims · coverage"]
+    V --> K["<b>Independent check</b><br/>mid model, one pass<br/>dissent · disclosure · claims · coverage · consistency"]
     K -.->|"fails: fix, or ship with its objection quoted"| C
     K --> A("<b>Your answer</b><br/>a decision memo · the first step<br/>strongest counter-position intact<br/>no council talk")
 
@@ -126,10 +126,10 @@ flowchart TB
 | A Devil's Advocate on the strong model, aimed at the premise the answer leans on, never allowed to abstain | a token contrarian too weak to change the outcome |
 | The answer is a decision memo with confidence per claim, and agreement between members never counts as evidence | council talk burying the answer; three members converging being mistaken for proof |
 | Claims the members flagged are checked before the answer ships, and a correction rewrites the sentence | the reader acting on the overstated version |
-| One fresh checker, on a cheap model so it always runs: dissent, disclosure, claims, coverage, consistency | the Chairman grading its own homework |
+| One fresh checker, one mid-model call so it always runs: dissent, disclosure, claims, coverage, consistency | the Chairman grading its own homework |
 | A four-call ceiling | a "fast" council that quietly grows into a slow one |
 
-Where the speed comes from, measured in round 4: no peer-review round, no debate, and a synthesis check that took 0.5–2.1 minutes on the cheap model against 9–11 minutes for the full council's six-item check.
+Where the speed comes from, measured in round 4: no peer-review round, no debate, and a synthesis check that took 0.5–2.1 minutes on the cheap model against 9–11 minutes for the full council's six-item check. Since 0.3.1 the check runs on the mid model, which named twice as many of the judges' contradictions in a 16-call test (`eval-data/checker-model/`); its calls took about as long.
 
 ## Flash or the full council?
 
@@ -142,7 +142,7 @@ Where the speed comes from, measured in round 4: no peer-review round, no debate
 | members | 3: anchor, one domain lens, Devil's Advocate | 3–7, by tier |
 | peer review | none | 3–7 graders, rubric-scored |
 | debate | none | on a mechanical trigger at deep and paranoid |
-| synthesis check | four items, cheap model | six items, mid model |
+| synthesis check | five items, mid model | six items, mid model |
 | tiers | one | solo · quick · standard · deep · paranoid |
 | answer | the same decision memo | the same decision memo |
 
