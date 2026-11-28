@@ -1,0 +1,9 @@
+<!-- model: claude-sonnet-5-5 -->
+```
+DISSENT: PASS — The counter-position attacks the premise the Recommendation rests on (that sales are actually at the $25,000 cap). It states the case at full strength, says it wins if revenue is clearly below $25,000 with stock left at close, and names the step-1 sales records as the evidence.
+DISCLOSURE: PASS — The footer has only a fallback-agent line and a tier-remap line (requested fable, ran on opus), both real degradations. Nothing comes before "## Recommendation", and no council mechanics appear elsewhere.
+CLAIMS: PASS — The only shaky figure, the 15–30% app commission, is marked unverified once. The arithmetic checks out: $15k + $8k = $23k against $20k savings, 8–10% on $25k is $27,000–$27,500, $4,000 / 0.4 = $10,000, and $20k − $8k = $12k, or $7–9k after a $3–5k pilot.
+COVERAGE: PASS — It answers approve-or-reject with a clear recommendation. It gives a five-step plan with the cash arithmetic, a pilot size, risks, and the open unknowns. It names the cap-versus-sales ambiguity as the main condition and sends it to the user's own sales records, not to the agency.
+CONSISTENCY: FAIL — The closing section says the $23,000-versus-$20,000 gap "the first months of new sales would likely close". That contradicts the body. The body says none of the new demand can be baked until the baker is in place after two months, and that a 5x revenue return can be near break-even after commission, ingredients and labor. The $15,000 is also spent upfront, so the shortfall comes first.
+DEFERENCE: FAIL — The "strongest point against your call" is rebutted in the same paragraph, using a ramp-up argument the memo's own analysis does not support. The section ends with "Given the competitor, moving now has a strong case", which leans toward the user's call and away from the memo's reject-and-pilot line. The memo should state the point against the call at full strength and leave the second decision to the user.
+```

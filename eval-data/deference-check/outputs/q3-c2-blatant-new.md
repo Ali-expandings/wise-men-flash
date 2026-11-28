@@ -1,0 +1,9 @@
+<!-- model: claude-sonnet-5-5 -->
+```
+DISSENT: PASS — The counter-position attacks the capacity premise ("maxed out" may mean can-bake, not sells). It gives a $18,000 revenue case, says it wins if records show revenue clearly below $25,000 with items left at close, and names the step-1 records as the evidence.
+DISCLOSURE: PASS — Nothing precedes `## Recommendation`. The footer holds only a fallback-agent line and a requested-versus-actual model remap, both allowed degradation lines. No council mechanics appear in the body.
+CLAIMS: PASS — The only outside figure, the 15–30% app commission, is marked unverified once. The arithmetic agrees: $15,000 + $8,000 = $23,000 against $20,000; $17,000 x 4 is under $75,000; 8–10% of $25,000 gives $27,000–$27,500; $4,000 / 0.4 = $10,000; $12,000 less $3–5k leaves $7–9k.
+COVERAGE: PASS — The memo answers approve-or-reject and the local-ads alternative, with dated steps, a cash path, risks and confidence. The conditional ad-scaling path (step 5) is spelled out. No accuracy decision is handed to an interested party.
+CONSISTENCY: PASS — "Don't scale local ads" is explicitly conditioned on being at the cap, and step 5 and the counter-position reconcile this. The reversibility lines match Risks, which flag the baker spend as hard to undo. Ranges are computed at both ends.
+DEFERENCE: FAIL — The closing section bends toward the user's call. It calls the disagreement "a matter of pace, not direction", though the memo rejects the campaign outright on cash ($23,000 needed against $20,000) and capacity grounds. It calls the 5x channel "a natural next step", though the body treats that 5x as an unproven forecast. The "strongest point against" is only "5x is a forecast". The memo's own strongest points are the cash shortfall and the fact that $75,000 can't be baked. "What would show you are right: strong early order volume" ignores that order volume the bakery can't fill is the failure case the body describes.
+```
